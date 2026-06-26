@@ -6,7 +6,7 @@
     "current_phase": "Baseline",
     "current_race_target": "Build a runnable base \u2014 first trail 10K"
   },
-  "_comment": "EDIT THIS FILE TO LOG PROGRESS. For each metric, update 'value' and 'date'. Set birthday above to your real DOB so the countdown and age are correct (placeholder is 1978-09-15). Status is computed automatically: green = at/above pacer, yellow = within 10%, red = >10% below. Add history entries to chart trends over time.",
+  "_comment": "EDIT THIS FILE TO LOG PROGRESS. For each metric, update 'value' and 'date'. Numbers have NO quotes (32); dates HAVE quotes (\"2026-06-26\"); keep the comma at the end of each line. Set birthday above to your real DOB so age and countdown are correct (placeholder is 1978-09-15). Status auto-computes: green = at/above pacer, yellow = within 10%, red = >10% below. Lab and protocol-only fields are tracked for trend, not scored.",
   "categories": [
     {
       "id": "body",
@@ -39,34 +39,94 @@
       ]
     },
     {
-      "id": "strength",
-      "name": "Strength",
-      "source": "Manual assessment",
+      "id": "aerobic",
+      "name": "Aerobic Capacity",
+      "source": "Field test",
+      "cadence": "Every 90 days",
+      "metrics": [
+        { "name": "PACER Test", "unit": "shuttles", "value": null, "pacer": null, "goal": null, "direction": "up", "date": null, "note": "Stop after two misses. Retarget each retest." },
+        { "name": "Cooper 12-min Run", "unit": "mi", "value": null, "pacer": 1.5, "goal": 1.75, "direction": "up", "date": null, "note": "Max distance covered in 12 min." }
+      ]
+    },
+    {
+      "id": "strength-endurance",
+      "name": "Strength Endurance",
+      "source": "Max reps to technical failure",
+      "cadence": "Every 3\u20136 months",
+      "metrics": [
+        { "name": "Push-ups", "unit": "reps", "value": null, "pacer": 40, "goal": 50, "direction": "up", "date": null },
+        { "name": "Pull-ups", "unit": "reps", "value": null, "pacer": 9, "goal": 15, "direction": "up", "date": null },
+        { "name": "Chin-ups", "unit": "reps", "value": null, "pacer": 10, "goal": 16, "direction": "up", "date": null },
+        { "name": "Dips", "unit": "reps", "value": null, "pacer": 17, "goal": 30, "direction": "up", "date": null },
+        { "name": "Hanging Knee Raises", "unit": "reps", "value": null, "pacer": 12, "goal": 20, "direction": "up", "date": null, "note": "Or toes-to-bar." }
+      ]
+    },
+    {
+      "id": "timed",
+      "name": "Timed Tests",
+      "source": "Max hold / time",
+      "cadence": "Every 3\u20136 months",
+      "metrics": [
+        { "name": "Plank", "unit": "sec", "value": null, "pacer": 90, "goal": 150, "direction": "up", "date": null },
+        { "name": "Side Plank L", "unit": "sec", "value": null, "pacer": 60, "goal": 90, "direction": "up", "date": null },
+        { "name": "Side Plank R", "unit": "sec", "value": null, "pacer": 60, "goal": 90, "direction": "up", "date": null },
+        { "name": "Wall Sit", "unit": "sec", "value": null, "pacer": 90, "goal": 150, "direction": "up", "date": null },
+        { "name": "Dead Hang", "unit": "sec", "value": null, "pacer": 75, "goal": 120, "direction": "up", "date": null },
+        { "name": "Farmer Carry 70s", "unit": "sec", "value": null, "pacer": 45, "goal": 75, "direction": "up", "date": null, "note": "Fixed weight, max time (or log distance)." }
+      ]
+    },
+    {
+      "id": "max-strength",
+      "name": "Max Strength",
+      "source": "Estimated 1RM from 3\u20135 rep test",
       "cadence": "Every 6 months",
       "metrics": [
-        { "name": "Pull-ups", "unit": "reps", "value": null, "pacer": 9, "goal": 15, "direction": "up", "date": null },
-        { "name": "Push-ups", "unit": "reps", "value": null, "pacer": 40, "goal": 50, "direction": "up", "date": null },
-        { "name": "Dips", "unit": "reps", "value": null, "pacer": 17, "goal": 30, "direction": "up", "date": null },
-        { "name": "Dead Hang", "unit": "sec", "value": null, "pacer": 75, "goal": 120, "direction": "up", "date": null },
-        { "name": "Bench Press", "unit": "x BW", "value": null, "pacer": 0.95, "goal": 1.1, "direction": "up", "date": null },
-        { "name": "Back Squat", "unit": "x BW", "value": null, "pacer": 1.18, "goal": 1.4, "direction": "up", "date": null },
-        { "name": "Deadlift", "unit": "x BW", "value": null, "pacer": 1.4, "goal": 1.75, "direction": "up", "date": null },
-        { "name": "RDL x5", "unit": "x BW", "value": null, "pacer": 1.0, "goal": 1.2, "direction": "up", "date": null },
-        { "name": "Farmer Carry 70s", "unit": "ft", "value": null, "pacer": 100, "goal": 150, "direction": "up", "date": null },
-        { "name": "Turkish Get-up", "unit": "kg/side", "value": null, "pacer": 24, "goal": 32, "direction": "up", "date": null }
+        { "name": "Trap Bar Deadlift", "unit": "lb e1RM", "value": null, "pacer": 305, "goal": 380, "direction": "up", "date": null },
+        { "name": "Bench Press", "unit": "lb e1RM", "value": null, "pacer": 205, "goal": 240, "direction": "up", "date": null },
+        { "name": "Front Squat", "unit": "lb e1RM", "value": null, "pacer": 185, "goal": 225, "direction": "up", "date": null, "note": "Back squat acceptable substitute." },
+        { "name": "Romanian Deadlift", "unit": "lb e1RM", "value": null, "pacer": 225, "goal": 275, "direction": "up", "date": null },
+        { "name": "Overhead Press", "unit": "lb e1RM", "value": null, "pacer": 135, "goal": 160, "direction": "up", "date": null }
       ]
     },
     {
       "id": "power",
       "name": "Power",
-      "source": "Manual assessment",
+      "source": "Best of 3 attempts",
       "cadence": "Every 6 months",
       "metrics": [
         { "name": "Vertical Jump", "unit": "in", "value": null, "pacer": 20, "goal": 22, "direction": "up", "date": null },
         { "name": "Broad Jump", "unit": "ft", "value": null, "pacer": 6.5, "goal": 7, "direction": "up", "date": null },
-        { "name": "Med Ball Chest Throw", "unit": "ft", "value": null, "pacer": null, "goal": null, "direction": "up", "date": null },
-        { "name": "Rotational Throw L", "unit": "ft", "value": null, "pacer": null, "goal": null, "direction": "up", "date": null },
-        { "name": "Rotational Throw R", "unit": "ft", "value": null, "pacer": null, "goal": null, "direction": "up", "date": null }
+        { "name": "Med Ball Chest Throw", "unit": "ft", "value": null, "pacer": null, "goal": null, "direction": "up", "date": null, "note": "Set baseline, then beat by 5%." },
+        { "name": "Med Ball Rotational Throw L", "unit": "ft", "value": null, "pacer": null, "goal": null, "direction": "up", "date": null },
+        { "name": "Med Ball Rotational Throw R", "unit": "ft", "value": null, "pacer": null, "goal": null, "direction": "up", "date": null }
+      ]
+    },
+    {
+      "id": "speed",
+      "name": "Speed & Agility",
+      "source": "Fastest time wins",
+      "cadence": "Every 6 months",
+      "metrics": [
+        { "name": "10-yard Sprint", "unit": "sec", "value": null, "pacer": null, "goal": null, "direction": "down", "date": null },
+        { "name": "40-yard Sprint", "unit": "sec", "value": null, "pacer": null, "goal": null, "direction": "down", "date": null },
+        { "name": "5-10-5 Shuttle", "unit": "sec", "value": null, "pacer": null, "goal": null, "direction": "down", "date": null },
+        { "name": "T-Test", "unit": "sec", "value": null, "pacer": null, "goal": null, "direction": "down", "date": null }
+      ]
+    },
+    {
+      "id": "longevity",
+      "name": "Longevity Tests",
+      "source": "Manual assessment",
+      "cadence": "Every 6 months, monthly quick checks",
+      "metrics": [
+        { "name": "Sit-to-Stand (30s)", "unit": "reps", "value": null, "pacer": 20, "goal": 25, "direction": "up", "date": null },
+        { "name": "Single-Leg Balance EO L", "unit": "sec", "value": null, "pacer": 52, "goal": 90, "direction": "up", "date": null },
+        { "name": "Single-Leg Balance EO R", "unit": "sec", "value": null, "pacer": 52, "goal": 90, "direction": "up", "date": null },
+        { "name": "Single-Leg Balance EC L", "unit": "sec", "value": null, "pacer": 15, "goal": 30, "direction": "up", "date": null },
+        { "name": "Single-Leg Balance EC R", "unit": "sec", "value": null, "pacer": 15, "goal": 30, "direction": "up", "date": null },
+        { "name": "Grip Strength L", "unit": "lb", "value": null, "pacer": null, "goal": null, "direction": "up", "date": null, "note": "Dynamometer. Set baseline first." },
+        { "name": "Grip Strength R", "unit": "lb", "value": null, "pacer": null, "goal": null, "direction": "up", "date": null },
+        { "name": "HR Recovery (1 min)", "unit": "bpm drop", "value": null, "pacer": 25, "goal": 40, "direction": "up", "date": null, "note": "Drop 1 min after standardized cardio effort." }
       ]
     },
     {
@@ -76,13 +136,8 @@
       "cadence": "Every 6 months, monthly quick checks",
       "metrics": [
         { "name": "Deep Squat Hold", "unit": "min", "value": null, "pacer": 2.5, "goal": 5, "direction": "up", "date": null },
-        { "name": "Balance EO L", "unit": "sec", "value": null, "pacer": 52, "goal": 90, "direction": "up", "date": null },
-        { "name": "Balance EO R", "unit": "sec", "value": null, "pacer": 52, "goal": 90, "direction": "up", "date": null },
-        { "name": "Balance EC L", "unit": "sec", "value": null, "pacer": 15, "goal": 30, "direction": "up", "date": null },
-        { "name": "Balance EC R", "unit": "sec", "value": null, "pacer": 15, "goal": 30, "direction": "up", "date": null },
         { "name": "Floor Rise (no hands)", "unit": "sec", "value": null, "pacer": 8, "goal": 5, "direction": "down", "date": null },
-        { "name": "Sit Cross-legged", "unit": "min", "value": null, "pacer": 3.5, "goal": 10, "direction": "up", "date": null },
-        { "name": "30-sec Sit-to-Stand", "unit": "reps", "value": null, "pacer": 20, "goal": 25, "direction": "up", "date": null }
+        { "name": "Sit Cross-legged", "unit": "min", "value": null, "pacer": 3.5, "goal": 10, "direction": "up", "date": null }
       ]
     },
     {
