@@ -141,6 +141,10 @@
     border-radius:3px;padding:13px 16px;margin-bottom:14px;font-size:.9rem;color:#3a4049;
   }
   .labs-note b{font-family:'Barlow Condensed',sans-serif;letter-spacing:.02em}
+  .labs-goal{display:inline-block;margin-top:5px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;padding:2px 9px;border-radius:3px}
+  .goal-open{color:var(--red);background:rgba(192,80,63,.1)}
+  .goal-met{color:var(--green);background:rgba(63,143,91,.12)}
+  .all-clear{grid-column:1/-1;text-align:center;padding:26px;color:var(--green);font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;letter-spacing:.04em;background:rgba(63,143,91,.06);border:1px solid rgba(63,143,91,.25);border-radius:3px}
 
   /* ---------- Episode export ---------- */
   #export{padding-bottom:40px}
@@ -388,18 +392,38 @@ function render(d){
 
   // category sections
   for(const c of d.categories){
-    const labsNote = c.id==='labs'
-      ? `<div class="labs-note"><b>Thyroid history on file:</b> 7.7 cm right nodule, multinodular enlargement, tracheal deviation, cancer ruled out. Labs tracked for trend, not pacer scoring.</div>`
-      : '';
+    const isLabs = c.id==='labs';
+
+    // Labs: show only out-of-range markers; goal is zero out of range
+    let metricsToShow = c.metrics;
+    let metaHtml = `${c.source}<br>${c.cadence}`;
+    let labsNote = '';
+    if(isLabs){
+      const outList = c.metrics.filter(m=>m.flag==='out');
+      const tested = c.metrics.filter(m=>m.value!==null && m.value!==undefined).length;
+      metricsToShow = outList;
+      const n = outList.length;
+      const counterClass = n===0 ? 'goal-met' : 'goal-open';
+      metaHtml = `${c.source}<br>
+        <span class="labs-goal ${counterClass}">
+          ${n===0 ? 'All markers in range \u2713' : `${n} out of range \u00b7 goal 0`}
+        </span>`;
+      labsNote = `<div class="labs-note"><b>Showing out-of-range markers only.</b> ${tested} markers tracked; the rest are in healthy range. Goal: zero out of range. Thyroid history on file: 7.7 cm right nodule, multinodular enlargement, cancer ruled out.</div>`;
+    }
+
+    const gridInner = metricsToShow.length
+      ? metricsToShow.map(metricCard).join('')
+      : `<div class="all-clear">Every tracked marker is in healthy range. Goal met.</div>`;
+
     html += `
       <section id="${c.id}">
         <div class="sec-head">
           <div class="sec-title">${c.name}</div>
-          <div class="sec-meta">${c.source}<br>${c.cadence}</div>
+          <div class="sec-meta">${metaHtml}</div>
         </div>
         ${labsNote}
         <div class="grid">
-          ${c.metrics.map(metricCard).join('')}
+          ${gridInner}
         </div>
       </section>`;
   }
