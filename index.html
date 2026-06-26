@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project 50 — Omar Lima</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#10151c;
+    --paper:#f6f5f1;
+    --card:#ffffff;
+    --line:#dcdad2;
+    --muted:#6b7078;
+    --navy:#16243a;
+    --steel:#4a7ec7;
+    --green:#3f8f5b;
+    --amber:#c89031;
+    --red:#c0503f;
+    --track:#e7e5dd;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Barlow',system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* ---------- Header ---------- */
+  header{
+    background:var(--navy);
+    color:#eef1f6;
+    padding:30px 0 26px;
+    border-bottom:3px solid var(--steel);
+  }
+  .eyebrow{
+    font-family:'Barlow Condensed',sans-serif;
+    text-transform:uppercase;letter-spacing:.28em;
+    font-size:.72rem;font-weight:600;color:var(--steel);
+  }
+  h1{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(2.6rem,7vw,4.4rem);
+    line-height:.92;letter-spacing:.01em;margin:.1em 0 .15em;
+  }
+  .sub{font-family:'Barlow Condensed',sans-serif;font-size:1.05rem;color:#c4ccd9;font-weight:500}
+
+  .hero-stats{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:rgba(255,255,255,.12);
+    margin-top:24px;border:1px solid rgba(255,255,255,.12);
+  }
+  .hero-stat{background:var(--navy);padding:14px 16px}
+  .hero-stat .k{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:.66rem;color:#8fa0bb;font-weight:600}
+  .hero-stat .v{font-family:'Bebas Neue',sans-serif;font-size:2rem;line-height:1;margin-top:3px}
+  .hero-stat .v small{font-size:.9rem;color:#aeb9cc;letter-spacing:.02em}
+
+  /* ---------- Nav ---------- */
+  nav{
+    position:sticky;top:0;z-index:20;
+    background:rgba(246,245,241,.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .navrow{display:flex;gap:4px;overflow-x:auto;padding:9px 0;scrollbar-width:none}
+  .navrow::-webkit-scrollbar{display:none}
+  .navrow a{
+    flex:0 0 auto;
+    font-family:'Barlow Condensed',sans-serif;font-weight:600;
+    text-transform:uppercase;letter-spacing:.08em;font-size:.82rem;
+    color:var(--muted);text-decoration:none;padding:5px 12px;border-radius:2px;
+    white-space:nowrap;transition:all .15s;
+  }
+  .navrow a:hover{color:var(--ink);background:var(--track)}
+
+  /* ---------- Sections ---------- */
+  section{padding:34px 0 8px}
+  .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+  .sec-title{font-family:'Bebas Neue',sans-serif;font-size:2rem;line-height:1;letter-spacing:.01em}
+  .sec-meta{font-family:'Barlow Condensed',sans-serif;font-size:.82rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:500;text-align:right}
+
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+
+  .metric{
+    background:var(--card);border:1px solid var(--line);border-radius:3px;
+    padding:15px 17px 17px;position:relative;
+  }
+  .metric.untracked{opacity:.62}
+  .m-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+  .m-name{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1.05rem;letter-spacing:.01em}
+  .m-val{font-family:'Bebas Neue',sans-serif;font-size:2rem;line-height:.85;text-align:right;white-space:nowrap}
+  .m-val small{font-size:.72rem;font-family:'Barlow',sans-serif;color:var(--muted);letter-spacing:.01em;font-weight:500}
+  .m-val.empty{color:var(--line)}
+
+  .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle}
+  .s-green{background:var(--green)} .s-amber{background:var(--amber)} .s-red{background:var(--red)} .s-none{background:var(--line)}
+
+  /* pacer bar — the signature element */
+  .bar{margin-top:14px}
+  .bar-track{position:relative;height:7px;background:var(--track);border-radius:4px;overflow:visible}
+  .bar-fill{position:absolute;left:0;top:0;bottom:0;border-radius:4px;background:var(--steel);transition:width .6s ease}
+  .bar-fill.green{background:var(--green)} .bar-fill.amber{background:var(--amber)} .bar-fill.red{background:var(--red)}
+  .pacer-tick{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--ink);opacity:.55}
+  .bar-labels{display:flex;justify-content:space-between;margin-top:6px;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+  .bar-labels b{color:var(--ink);font-weight:600}
+
+  .m-date{margin-top:9px;font-size:.7rem;color:var(--muted);font-family:'Barlow Condensed',sans-serif;letter-spacing:.06em;text-transform:uppercase}
+
+  .labs-note{
+    background:#fbfaf6;border:1px solid var(--line);border-left:3px solid var(--steel);
+    border-radius:3px;padding:13px 16px;margin-bottom:14px;font-size:.9rem;color:#3a4049;
+  }
+  .labs-note b{font-family:'Barlow Condensed',sans-serif;letter-spacing:.02em}
+
+  /* ---------- Episode export ---------- */
+  #export{padding-bottom:40px}
+  .export-card{
+    background:var(--navy);color:#eef1f6;border-radius:4px;
+    padding:30px 32px;border:1px solid rgba(255,255,255,.1);
+    background-image:linear-gradient(135deg,#16243a,#1d3252);
+  }
+  .export-card .eyebrow{margin-bottom:4px}
+  .export-card h2{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;line-height:.95;margin-bottom:20px}
+  .ex-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px 18px}
+  .ex-item .k{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:.66rem;color:#8fa0bb;font-weight:600}
+  .ex-item .v{font-family:'Bebas Neue',sans-serif;font-size:2.3rem;line-height:1;margin-top:2px}
+  .ex-item .v small{font-size:.8rem;color:#aeb9cc}
+  .ex-item.wide{grid-column:span 2}
+  .ex-item.wide .v{font-size:1.5rem;line-height:1.05}
+
+  footer{padding:26px 0 50px;text-align:center;color:var(--muted);font-size:.8rem;font-family:'Barlow Condensed',sans-serif;letter-spacing:.06em;text-transform:uppercase}
+
+  @media(max-width:680px){
+    .hero-stats{grid-template-columns:repeat(2,1fr)}
+    .grid{grid-template-columns:1fr}
+    .ex-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">The 50-Year Athlete Project</div>
+    <h1 id="hTitle">Project 50</h1>
+    <div class="sub" id="hSub">Loading…</div>
+    <div class="hero-stats" id="heroStats"></div>
+  </div>
+</header>
+
+<nav><div class="wrap"><div class="navrow" id="navrow"></div></div></nav>
+
+<main class="wrap" id="main"><p style="padding:40px 0;color:var(--muted)">Loading dashboard…</p></main>
+
+<footer><div class="wrap">Functional Core Fitness · Coach Omar Lima · Edit data.json to log progress</div></footer>
+
+<script>
+const DAY = 86400000;
+
+function fmt(v){
+  if(v===null||v===undefined) return null;
+  if(Number.isInteger(v)) return v.toLocaleString();
+  return (Math.round(v*100)/100).toLocaleString();
+}
+function daysUntil(dateStr){
+  const now=new Date(); const t=new Date(dateStr+"T00:00:00");
+  return Math.max(0, Math.round((t-now)/DAY));
+}
+function ageOn(birthday, ref){
+  const b=new Date(birthday), r=new Date(ref);
+  let a=r.getFullYear()-b.getFullYear();
+  const m=r.getMonth()-b.getMonth();
+  if(m<0||(m===0&&r.getDate()<b.getDate())) a--;
+  return a;
+}
+function nextBirthdayAt(birthday, targetAge){
+  const b=new Date(birthday);
+  return new Date(b.getFullYear()+targetAge, b.getMonth(), b.getDate());
+}
+
+// status + progress relative to pacer/goal
+function evaluate(m){
+  if(m.value===null||m.value===undefined) return {status:"none", pct:0, pacerPct:null};
+  const dir=m.direction;
+  if(dir==="neutral"||m.goal===null||m.goal===undefined){
+    return {status:"tracked", pct:0, pacerPct:null, flat:true};
+  }
+  // We need a baseline-to-goal span. Use pacer as the racing line.
+  // status: compare value to pacer
+  let status="red";
+  if(m.pacer!==null&&m.pacer!==undefined){
+    const meets = dir==="up" ? m.value>=m.pacer : m.value<=m.pacer;
+    const within = dir==="up" ? m.value>=m.pacer*0.9 : m.value<=m.pacer*1.1;
+    status = meets ? "green" : (within ? "amber" : "red");
+  } else status="tracked";
+
+  // progress fill: position of value between a soft baseline and goal
+  // baseline = pacer pulled back toward start so the bar has room
+  let lo, hi;
+  if(dir==="down"){ hi = m.pacer ?? m.value; lo = m.goal; }
+  else { lo = m.pacer ? Math.min(m.pacer, m.value) : m.value; hi = m.goal; }
+  // generic span: from a reasonable floor to the goal
+  let pct, pacerPct=null;
+  if(dir==="up"){
+    const floor = Math.min(m.value, m.pacer ?? m.value) * 0.85;
+    const span = m.goal - floor;
+    pct = span>0 ? (m.value-floor)/span*100 : 100;
+    if(m.pacer!=null) pacerPct=(m.pacer-floor)/span*100;
+  } else {
+    const ceil = Math.max(m.value, m.pacer ?? m.value) * 1.08;
+    const span = ceil - m.goal;
+    pct = span>0 ? (ceil-m.value)/span*100 : 100;
+    if(m.pacer!=null) pacerPct=(ceil-m.pacer)/span*100;
+  }
+  pct=Math.max(3,Math.min(100,pct));
+  if(pacerPct!=null) pacerPct=Math.max(0,Math.min(100,pacerPct));
+  return {status, pct, pacerPct};
+}
+
+function metricCard(m){
+  const ev=evaluate(m);
+  const untracked = m.value===null||m.value===undefined;
+  const sClass = {green:"s-green",amber:"s-amber",red:"s-red"}[ev.status]||"s-none";
+  const valHtml = untracked
+    ? `<div class="m-val empty">—</div>`
+    : `<div class="m-val">${fmt(m.value)}${m.unit?`<small> ${m.unit}</small>`:""}</div>`;
+
+  let barHtml="";
+  if(!untracked && !ev.flat && m.goal!=null){
+    const fillClass = ev.status==="green"?"green":ev.status==="amber"?"amber":ev.status==="red"?"red":"";
+    const tick = ev.pacerPct!=null ? `<div class="pacer-tick" style="left:${ev.pacerPct}%"></div>`:"";
+    barHtml=`
+      <div class="bar">
+        <div class="bar-track">
+          <div class="bar-fill ${fillClass}" style="width:${ev.pct}%"></div>
+          ${tick}
+        </div>
+        <div class="bar-labels">
+          <span>Now <b>${fmt(m.value)}</b></span>
+          ${m.pacer!=null?`<span>Pacer ${fmt(m.pacer)}</span>`:""}
+          <span>Goal <b>${fmt(m.goal)}</b></span>
+        </div>
+      </div>`;
+  } else if(!untracked && m.goal!=null && ev.flat){
+    barHtml=`<div class="m-date">Goal ${fmt(m.goal)} ${m.unit}</div>`;
+  } else if(!untracked && m.goal!=null){
+    barHtml=`<div class="bar"><div class="bar-labels"><span>Now <b>${fmt(m.value)}</b></span><span>Goal <b>${fmt(m.goal)}</b></span></div></div>`;
+  }
+
+  const dateHtml = m.date ? `<div class="m-date">Logged ${m.date}</div>`
+                          : (untracked?`<div class="m-date">Not yet tested</div>`:"");
+  return `<div class="metric ${untracked?'untracked':''}">
+    <div class="m-top">
+      <div class="m-name"><span class="dot ${sClass}"></span>${m.name}</div>
+      ${valHtml}
+    </div>
+    ${barHtml}
+    ${dateHtml}
+  </div>`;
+}
+
+fetch('data.json?v='+Date.now())
+  .then(r=>{ if(!r.ok) throw new Error(r.status); return r.json(); })
+  .then(render)
+  .catch(err=>{
+    document.getElementById('main').innerHTML =
+      `<p style="padding:40px 0;color:var(--red)">Couldn't load data.json (${err.message}). Make sure it's in the same folder and you're serving over http, not opening the file directly.</p>`;
+  });
+
+function render(d){
+  const a=d.athlete;
+  const fiftyDate = nextBirthdayAt(a.birthday,50);
+  const fiftyStr = fiftyDate.toISOString().slice(0,10);
+  const dLeft = daysUntil(fiftyStr);
+  const curAge = ageOn(a.birthday, new Date());
+
+  document.getElementById('hSub').textContent =
+    `${a.name} · Age ${curAge} · Phase: ${a.current_phase}`;
+
+  // pull key hero metrics
+  const find=(cat,name)=>{
+    const c=d.categories.find(x=>x.id===cat); if(!c)return null;
+    return c.metrics.find(m=>m.name===name)||null;
+  };
+  const vo2=find('engine','VO2 Max'), rhr=find('engine','Resting HR'),
+        hrv=find('engine','HRV (SDNN)'), wt=find('body','Weight'),
+        bf=find('body','DEXA Body Fat'), lean=find('body','Lean Mass');
+
+  const hero=[
+    {k:'Days to 50',v:dLeft.toLocaleString(),u:''},
+    {k:'Weight',v:fmt(wt?.value),u:'lb'},
+    {k:'DEXA Body Fat',v:fmt(bf?.value),u:'%'},
+    {k:'VO₂ Max',v:fmt(vo2?.value),u:''},
+  ];
+  document.getElementById('heroStats').innerHTML = hero.map(h=>
+    `<div class="hero-stat"><div class="k">${h.k}</div><div class="v">${h.v??'—'}${h.u?` <small>${h.u}</small>`:''}</div></div>`
+  ).join('');
+
+  // nav
+  document.getElementById('navrow').innerHTML =
+    `<a href="#export">Dashboard</a>` +
+    d.categories.map(c=>`<a href="#${c.id}">${c.name}</a>`).join('');
+
+  // episode export block
+  const exItems=[
+    {k:'Age',v:curAge},
+    {k:'Phase',v:a.current_phase},
+    {k:'Weight',v:fmt(wt?.value),u:'lb'},
+    {k:'DEXA BF',v:fmt(bf?.value),u:'%'},
+    {k:'Lean Mass',v:fmt(lean?.value),u:'lb'},
+    {k:'VO₂ Max',v:fmt(vo2?.value)},
+    {k:'HRV',v:fmt(hrv?.value),u:'ms'},
+    {k:'Resting HR',v:fmt(rhr?.value),u:'bpm'},
+    {k:'Race Target',v:a.current_race_target},
+    {k:'Days to 50',v:dLeft.toLocaleString()},
+  ];
+  let html = `
+    <section id="export">
+      <div class="export-card">
+        <div class="eyebrow">Episode Dashboard · ${fiftyStr.slice(0,4)} build</div>
+        <h2>Where I Stand Today</h2>
+        <div class="ex-grid">
+          ${exItems.map(e=>`<div class="ex-item${e.k==='Race Target'?' wide':''}"><div class="k">${e.k}</div><div class="v">${e.v??'—'}${e.u?` <small>${e.u}</small>`:''}</div></div>`).join('')}
+        </div>
+      </div>
+    </section>`;
+
+  // category sections
+  for(const c of d.categories){
+    const labsNote = c.id==='labs'
+      ? `<div class="labs-note"><b>Thyroid history on file:</b> 7.7 cm right nodule, multinodular enlargement, tracheal deviation, cancer ruled out. Labs tracked for trend, not pacer scoring.</div>`
+      : '';
+    html += `
+      <section id="${c.id}">
+        <div class="sec-head">
+          <div class="sec-title">${c.name}</div>
+          <div class="sec-meta">${c.source}<br>${c.cadence}</div>
+        </div>
+        ${labsNote}
+        <div class="grid">
+          ${c.metrics.map(metricCard).join('')}
+        </div>
+      </section>`;
+  }
+  document.getElementById('main').innerHTML = html;
+}
+</script>
+</body>
+</html>

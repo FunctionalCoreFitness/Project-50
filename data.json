@@ -1,0 +1,151 @@
+{
+  "athlete": {
+    "name": "Omar Lima",
+    "birthday": "1978-09-15",
+    "project_start": "2026-06-26",
+    "current_phase": "Baseline",
+    "current_race_target": "Build a runnable base \u2014 first trail 10K"
+  },
+  "_comment": "EDIT THIS FILE TO LOG PROGRESS. For each metric, update 'value' and 'date'. Set birthday above to your real DOB so the countdown and age are correct (placeholder is 1978-09-15). Status is computed automatically: green = at/above pacer, yellow = within 10%, red = >10% below. Add history entries to chart trends over time.",
+  "categories": [
+    {
+      "id": "body",
+      "name": "Body Composition",
+      "source": "BodySpec / DEXA",
+      "cadence": "Every 90 days",
+      "metrics": [
+        { "name": "Weight", "unit": "lb", "value": 217.5, "pacer": 213, "goal": 207, "direction": "down", "date": "2026-06-26" },
+        { "name": "DEXA Body Fat", "unit": "%", "value": 24.7, "pacer": 22, "goal": 19, "direction": "down", "date": "2026-06-26" },
+        { "name": "Fat Mass", "unit": "lb", "value": 53.8, "pacer": 47, "goal": 40, "direction": "down", "date": "2026-06-26" },
+        { "name": "Lean Mass", "unit": "lb", "value": 155.6, "pacer": 158, "goal": 162, "direction": "up", "date": "2026-06-26" },
+        { "name": "Bone Mass", "unit": "lb", "value": 8.1, "pacer": 8.1, "goal": 8.1, "direction": "up", "date": "2026-06-26" },
+        { "name": "Visceral Fat", "unit": "", "value": null, "pacer": null, "goal": null, "direction": "down", "date": null }
+      ]
+    },
+    {
+      "id": "engine",
+      "name": "Cardiovascular Engine",
+      "source": "Apple Health / Apple Watch",
+      "cadence": "Weekly + 90-day review",
+      "metrics": [
+        { "name": "VO2 Max", "unit": "mL/kg/min", "value": 34.6, "pacer": 38, "goal": 50, "direction": "up", "date": "2026-06-26" },
+        { "name": "Resting HR", "unit": "bpm", "value": 54.7, "pacer": 53, "goal": 49, "direction": "down", "date": "2026-06-26" },
+        { "name": "HRV (SDNN)", "unit": "ms", "value": 42.3, "pacer": 45, "goal": 60, "direction": "up", "date": "2026-06-26" },
+        { "name": "Walking HR", "unit": "bpm", "value": 82, "pacer": 80, "goal": 75, "direction": "down", "date": "2026-06-26" },
+        { "name": "Respiratory Rate", "unit": "/min", "value": 13.6, "pacer": 14, "goal": 14, "direction": "down", "date": "2026-06-26" },
+        { "name": "Blood Oxygen", "unit": "%", "value": 95, "pacer": 95, "goal": 96, "direction": "up", "date": "2026-06-26" },
+        { "name": "Steps", "unit": "/day", "value": 9400, "pacer": 10000, "goal": 11000, "direction": "up", "date": "2026-06-26" },
+        { "name": "Exercise", "unit": "min/day", "value": 68, "pacer": 60, "goal": 60, "direction": "up", "date": "2026-06-26" }
+      ]
+    },
+    {
+      "id": "strength",
+      "name": "Strength",
+      "source": "Manual assessment",
+      "cadence": "Every 6 months",
+      "metrics": [
+        { "name": "Pull-ups", "unit": "reps", "value": null, "pacer": 9, "goal": 15, "direction": "up", "date": null },
+        { "name": "Push-ups", "unit": "reps", "value": null, "pacer": 40, "goal": 50, "direction": "up", "date": null },
+        { "name": "Dips", "unit": "reps", "value": null, "pacer": 17, "goal": 30, "direction": "up", "date": null },
+        { "name": "Dead Hang", "unit": "sec", "value": null, "pacer": 75, "goal": 120, "direction": "up", "date": null },
+        { "name": "Bench Press", "unit": "x BW", "value": null, "pacer": 0.95, "goal": 1.1, "direction": "up", "date": null },
+        { "name": "Back Squat", "unit": "x BW", "value": null, "pacer": 1.18, "goal": 1.4, "direction": "up", "date": null },
+        { "name": "Deadlift", "unit": "x BW", "value": null, "pacer": 1.4, "goal": 1.75, "direction": "up", "date": null },
+        { "name": "RDL x5", "unit": "x BW", "value": null, "pacer": 1.0, "goal": 1.2, "direction": "up", "date": null },
+        { "name": "Farmer Carry 70s", "unit": "ft", "value": null, "pacer": 100, "goal": 150, "direction": "up", "date": null },
+        { "name": "Turkish Get-up", "unit": "kg/side", "value": null, "pacer": 24, "goal": 32, "direction": "up", "date": null }
+      ]
+    },
+    {
+      "id": "power",
+      "name": "Power",
+      "source": "Manual assessment",
+      "cadence": "Every 6 months",
+      "metrics": [
+        { "name": "Vertical Jump", "unit": "in", "value": null, "pacer": 20, "goal": 22, "direction": "up", "date": null },
+        { "name": "Broad Jump", "unit": "ft", "value": null, "pacer": 6.5, "goal": 7, "direction": "up", "date": null },
+        { "name": "Med Ball Chest Throw", "unit": "ft", "value": null, "pacer": null, "goal": null, "direction": "up", "date": null },
+        { "name": "Rotational Throw L", "unit": "ft", "value": null, "pacer": null, "goal": null, "direction": "up", "date": null },
+        { "name": "Rotational Throw R", "unit": "ft", "value": null, "pacer": null, "goal": null, "direction": "up", "date": null }
+      ]
+    },
+    {
+      "id": "movement",
+      "name": "Movement & Independence",
+      "source": "Manual assessment",
+      "cadence": "Every 6 months, monthly quick checks",
+      "metrics": [
+        { "name": "Deep Squat Hold", "unit": "min", "value": null, "pacer": 2.5, "goal": 5, "direction": "up", "date": null },
+        { "name": "Balance EO L", "unit": "sec", "value": null, "pacer": 52, "goal": 90, "direction": "up", "date": null },
+        { "name": "Balance EO R", "unit": "sec", "value": null, "pacer": 52, "goal": 90, "direction": "up", "date": null },
+        { "name": "Balance EC L", "unit": "sec", "value": null, "pacer": 15, "goal": 30, "direction": "up", "date": null },
+        { "name": "Balance EC R", "unit": "sec", "value": null, "pacer": 15, "goal": 30, "direction": "up", "date": null },
+        { "name": "Floor Rise (no hands)", "unit": "sec", "value": null, "pacer": 8, "goal": 5, "direction": "down", "date": null },
+        { "name": "Sit Cross-legged", "unit": "min", "value": null, "pacer": 3.5, "goal": 10, "direction": "up", "date": null },
+        { "name": "30-sec Sit-to-Stand", "unit": "reps", "value": null, "pacer": 20, "goal": 25, "direction": "up", "date": null }
+      ]
+    },
+    {
+      "id": "endurance",
+      "name": "Endurance & Race Readiness",
+      "source": "Apple Health / race results",
+      "cadence": "Weekly + race day",
+      "metrics": [
+        { "name": "Weekly Run Volume", "unit": "mi", "value": null, "pacer": null, "goal": null, "direction": "up", "date": null },
+        { "name": "Longest Run", "unit": "mi", "value": null, "pacer": null, "goal": null, "direction": "up", "date": null },
+        { "name": "Longest Hike", "unit": "mi", "value": null, "pacer": null, "goal": null, "direction": "up", "date": null },
+        { "name": "5K Time", "unit": "min", "value": null, "pacer": 32, "goal": 27, "direction": "down", "date": null },
+        { "name": "Trail 10K", "unit": "min", "value": null, "pacer": null, "goal": null, "direction": "down", "date": null },
+        { "name": "45-lb Ruck 5mi", "unit": "min", "value": null, "pacer": 82, "goal": 75, "direction": "down", "date": null },
+        { "name": "BJJ Rounds", "unit": "x5min", "value": null, "pacer": 6, "goal": 6, "direction": "up", "date": null }
+      ]
+    },
+    {
+      "id": "recovery",
+      "name": "Recovery",
+      "source": "Apple Health + manual checklist",
+      "cadence": "Daily / weekly",
+      "metrics": [
+        { "name": "Sleep Duration", "unit": "hr", "value": 6.75, "pacer": 7.5, "goal": 7.75, "direction": "up", "date": "2026-06-26" },
+        { "name": "Deep Sleep", "unit": "%", "value": 15, "pacer": 18, "goal": 20, "direction": "up", "date": "2026-06-26" },
+        { "name": "HRV Weekly Avg", "unit": "ms", "value": 42.3, "pacer": 45, "goal": 60, "direction": "up", "date": "2026-06-26" },
+        { "name": "Sauna Sessions", "unit": "/wk", "value": null, "pacer": 3, "goal": 4, "direction": "up", "date": null },
+        { "name": "Cold Plunge", "unit": "/wk", "value": null, "pacer": 3, "goal": 4, "direction": "up", "date": null },
+        { "name": "Mobility Sessions", "unit": "/wk", "value": null, "pacer": 3, "goal": 5, "direction": "up", "date": null },
+        { "name": "Subjective Recovery", "unit": "/10", "value": null, "pacer": 7, "goal": 8, "direction": "up", "date": null }
+      ]
+    },
+    {
+      "id": "labs",
+      "name": "Health & Labs",
+      "source": "Function Health / labs",
+      "cadence": "Lab cycle",
+      "metrics": [
+        { "name": "TSH", "unit": "mIU/L", "value": 1.28, "pacer": null, "goal": null, "direction": "neutral", "date": "2026-06-26" },
+        { "name": "Free T4", "unit": "ng/dL", "value": 1.3, "pacer": null, "goal": null, "direction": "neutral", "date": "2026-06-26" },
+        { "name": "Free T3", "unit": "pg/mL", "value": 3.9, "pacer": null, "goal": null, "direction": "neutral", "date": "2026-06-26" },
+        { "name": "TPO Antibodies", "unit": "IU/mL", "value": 1, "pacer": null, "goal": null, "direction": "down", "date": "2026-06-26" },
+        { "name": "Thyroglobulin Ab", "unit": "IU/mL", "value": null, "pacer": null, "goal": null, "direction": "down", "date": null },
+        { "name": "Fasting Glucose", "unit": "mg/dL", "value": null, "pacer": 99, "goal": 90, "direction": "down", "date": null },
+        { "name": "Insulin", "unit": "uIU/mL", "value": null, "pacer": null, "goal": null, "direction": "down", "date": null },
+        { "name": "HbA1c", "unit": "%", "value": null, "pacer": 5.4, "goal": 5.2, "direction": "down", "date": null },
+        { "name": "Triglycerides", "unit": "mg/dL", "value": null, "pacer": 100, "goal": 80, "direction": "down", "date": null },
+        { "name": "ApoB", "unit": "mg/dL", "value": null, "pacer": 90, "goal": 70, "direction": "down", "date": null },
+        { "name": "Omega-3 Index", "unit": "%", "value": null, "pacer": 8, "goal": 10, "direction": "up", "date": null },
+        { "name": "ALT", "unit": "U/L", "value": null, "pacer": null, "goal": null, "direction": "neutral", "date": null },
+        { "name": "AST", "unit": "U/L", "value": null, "pacer": null, "goal": null, "direction": "neutral", "date": null },
+        { "name": "Vitamin D", "unit": "ng/mL", "value": null, "pacer": 40, "goal": 50, "direction": "up", "date": null },
+        { "name": "CRP", "unit": "mg/L", "value": null, "pacer": 1, "goal": 0.5, "direction": "down", "date": null }
+      ]
+    }
+  ],
+  "phases": [
+    { "n": 1, "name": "Origin Story", "note": "Thyroid discovery and Function Health" },
+    { "n": 2, "name": "Baseline", "note": "BodySpec, Apple Health, strength/movement testing" },
+    { "n": 3, "name": "Build Foundation", "note": "Strength, mobility, recovery, health markers" },
+    { "n": 4, "name": "Become a Runner Again", "note": "Run durability and trail exposure" },
+    { "n": 5, "name": "Trail Athlete", "note": "Elevation, nutrition, gear, long efforts" },
+    { "n": 6, "name": "Ultra Foundation", "note": "50K, 50-mile or 100K prep" },
+    { "n": 7, "name": "100-Mile Goal", "note": "Final race build and execution" }
+  ]
+}
