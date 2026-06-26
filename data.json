@@ -4,7 +4,7 @@
     "birthday": "1978-09-15",
     "project_start": "2026-06-26",
     "current_phase": "Baseline",
-    "current_race_target": "Build a runnable base \u2014 first trail 10K"
+    "current_race_target": "Build a runnable base — first trail 10K"
   },
   "_comment": "EDIT THIS FILE TO LOG PROGRESS. For each metric, update 'value' and 'date'. Numbers have NO quotes (32); dates HAVE quotes (\"2026-06-26\"); keep the comma at the end of each line. To record history, add to the 'history' array: {\"value\": 212.3, \"date\": \"2026-02-01\"}. Status auto-computes: green = at/above pacer, yellow = within 10%, red = >10% below. Lab and protocol-only fields are tracked for trend, not scored.",
   "categories": [
@@ -14,16 +14,128 @@
       "source": "BodySpec / DEXA",
       "cadence": "Every 90 days",
       "metrics": [
-        { "name": "Weight", "unit": "lb", "value": 217.5, "pacer": 213, "goal": 207, "direction": "down", "date": "2026-06-26", "history": [{ "value": 212.3, "date": "2026-02-01" }] },
-        { "name": "DEXA Body Fat", "unit": "%", "value": 24.7, "pacer": 22, "goal": 19, "direction": "down", "date": "2026-06-26", "history": [{ "value": 25.4, "date": "2026-02-01" }] },
-        { "name": "Fat Mass", "unit": "lb", "value": 53.8, "pacer": 47, "goal": 40, "direction": "down", "date": "2026-06-26", "history": [{ "value": 54.0, "date": "2026-02-01" }] },
-        { "name": "Lean Mass", "unit": "lb", "value": 155.6, "pacer": 158, "goal": 162, "direction": "up", "date": "2026-06-26", "history": [{ "value": 150.1, "date": "2026-02-01" }] },
-        { "name": "Bone Mass", "unit": "lb", "value": 8.1, "pacer": 8.1, "goal": 8.1, "direction": "up", "date": "2026-06-26", "history": [{ "value": 8.2, "date": "2026-02-01" }] },
-        { "name": "Left Arm Lean", "unit": "lb", "value": 11.3, "pacer": null, "goal": null, "direction": "up", "date": "2026-06-26", "note": "Watch L/R balance vs right arm." },
-        { "name": "Right Arm Lean", "unit": "lb", "value": 11.1, "pacer": null, "goal": null, "direction": "up", "date": "2026-06-26" },
-        { "name": "Left Leg Lean", "unit": "lb", "value": 27.0, "pacer": null, "goal": null, "direction": "up", "date": "2026-06-26", "note": "1.2 lb behind right leg." },
-        { "name": "Right Leg Lean", "unit": "lb", "value": 28.2, "pacer": null, "goal": null, "direction": "up", "date": "2026-06-26" },
-        { "name": "Visceral Fat", "unit": "", "value": null, "pacer": null, "goal": null, "direction": "down", "date": null }
+        {
+          "name": "Weight",
+          "unit": "lb",
+          "value": 217.5,
+          "pacer": 213,
+          "goal": 207,
+          "direction": "down",
+          "date": "2026-06-26",
+          "history": [
+            {
+              "value": 212.3,
+              "date": "2026-02-01"
+            }
+          ]
+        },
+        {
+          "name": "DEXA Body Fat",
+          "unit": "%",
+          "value": 24.7,
+          "pacer": 22,
+          "goal": 19,
+          "direction": "down",
+          "date": "2026-06-26",
+          "history": [
+            {
+              "value": 25.4,
+              "date": "2026-02-01"
+            }
+          ]
+        },
+        {
+          "name": "Fat Mass",
+          "unit": "lb",
+          "value": 53.8,
+          "pacer": 47,
+          "goal": 40,
+          "direction": "down",
+          "date": "2026-06-26",
+          "history": [
+            {
+              "value": 54.0,
+              "date": "2026-02-01"
+            }
+          ]
+        },
+        {
+          "name": "Lean Mass",
+          "unit": "lb",
+          "value": 155.6,
+          "pacer": 158,
+          "goal": 162,
+          "direction": "up",
+          "date": "2026-06-26",
+          "history": [
+            {
+              "value": 150.1,
+              "date": "2026-02-01"
+            }
+          ]
+        },
+        {
+          "name": "Bone Mass",
+          "unit": "lb",
+          "value": 8.1,
+          "pacer": 8.1,
+          "goal": 8.1,
+          "direction": "up",
+          "date": "2026-06-26",
+          "history": [
+            {
+              "value": 8.2,
+              "date": "2026-02-01"
+            }
+          ]
+        },
+        {
+          "name": "Left Arm Lean",
+          "unit": "lb",
+          "value": 11.3,
+          "pacer": null,
+          "goal": null,
+          "direction": "up",
+          "date": "2026-06-26",
+          "note": "Watch L/R balance vs right arm."
+        },
+        {
+          "name": "Right Arm Lean",
+          "unit": "lb",
+          "value": 11.1,
+          "pacer": null,
+          "goal": null,
+          "direction": "up",
+          "date": "2026-06-26"
+        },
+        {
+          "name": "Left Leg Lean",
+          "unit": "lb",
+          "value": 27.0,
+          "pacer": null,
+          "goal": null,
+          "direction": "up",
+          "date": "2026-06-26",
+          "note": "1.2 lb behind right leg."
+        },
+        {
+          "name": "Right Leg Lean",
+          "unit": "lb",
+          "value": 28.2,
+          "pacer": null,
+          "goal": null,
+          "direction": "up",
+          "date": "2026-06-26"
+        },
+        {
+          "name": "Visceral Fat",
+          "unit": "",
+          "value": null,
+          "pacer": null,
+          "goal": null,
+          "direction": "down",
+          "date": null
+        }
       ]
     },
     {
@@ -32,15 +144,88 @@
       "source": "Apple Health / Apple Watch",
       "cadence": "Weekly + 90-day review",
       "metrics": [
-        { "name": "VO2 Max", "unit": "mL/kg/min", "value": 34.6, "pacer": 38, "goal": 50, "direction": "up", "date": "2026-06-26" },
-        { "name": "Resting HR", "unit": "bpm", "value": 54.7, "pacer": 53, "goal": 49, "direction": "down", "date": "2026-06-26" },
-        { "name": "HRV (SDNN)", "unit": "ms", "value": 42.3, "pacer": 45, "goal": 60, "direction": "up", "date": "2026-06-26" },
-        { "name": "Walking HR", "unit": "bpm", "value": 82, "pacer": 80, "goal": 75, "direction": "down", "date": "2026-06-26" },
-        { "name": "Respiratory Rate", "unit": "/min", "value": 13.6, "pacer": 14, "goal": 14, "direction": "down", "date": "2026-06-26" },
-        { "name": "Blood Oxygen", "unit": "%", "value": 95, "pacer": 95, "goal": 96, "direction": "up", "date": "2026-06-26" },
-        { "name": "Steps", "unit": "/day", "value": 9400, "pacer": 10000, "goal": 11000, "direction": "up", "date": "2026-06-26" },
-        { "name": "Exercise", "unit": "min/wk", "value": 473, "pacer": 420, "goal": 420, "direction": "up", "date": "2026-06-26" },
-        { "name": "Active Calories", "unit": "kcal/wk", "value": 6433, "pacer": null, "goal": null, "direction": "up", "date": "2026-06-26" }
+        {
+          "name": "VO2 Max",
+          "unit": "mL/kg/min",
+          "value": 34.6,
+          "pacer": 38,
+          "goal": 50,
+          "direction": "up",
+          "date": "2026-06-26"
+        },
+        {
+          "name": "Resting HR",
+          "unit": "bpm",
+          "value": 54.7,
+          "pacer": 53,
+          "goal": 49,
+          "direction": "down",
+          "date": "2026-06-26"
+        },
+        {
+          "name": "HRV (SDNN)",
+          "unit": "ms",
+          "value": 42.3,
+          "pacer": 45,
+          "goal": 60,
+          "direction": "up",
+          "date": "2026-06-26",
+          "note": "90-day avg. Recent daily readings ~52 ms."
+        },
+        {
+          "name": "Walking HR",
+          "unit": "bpm",
+          "value": 82,
+          "pacer": 80,
+          "goal": 75,
+          "direction": "down",
+          "date": "2026-06-26"
+        },
+        {
+          "name": "Respiratory Rate",
+          "unit": "/min",
+          "value": 13.6,
+          "pacer": 14,
+          "goal": 14,
+          "direction": "down",
+          "date": "2026-06-26"
+        },
+        {
+          "name": "Blood Oxygen",
+          "unit": "%",
+          "value": 95,
+          "pacer": 95,
+          "goal": 96,
+          "direction": "up",
+          "date": "2026-06-26"
+        },
+        {
+          "name": "Steps",
+          "unit": "/day",
+          "value": 9400,
+          "pacer": 10000,
+          "goal": 11000,
+          "direction": "up",
+          "date": "2026-06-26"
+        },
+        {
+          "name": "Exercise",
+          "unit": "min/wk",
+          "value": 473,
+          "pacer": 420,
+          "goal": 420,
+          "direction": "up",
+          "date": "2026-06-26"
+        },
+        {
+          "name": "Active Calories",
+          "unit": "kcal/wk",
+          "value": 6433,
+          "pacer": null,
+          "goal": null,
+          "direction": "up",
+          "date": "2026-06-26"
+        }
       ]
     },
     {
@@ -49,48 +234,200 @@
       "source": "Field test",
       "cadence": "Every 90 days",
       "metrics": [
-        { "name": "PACER Test", "unit": "shuttles", "value": null, "pacer": null, "goal": null, "direction": "up", "date": null, "note": "Stop after two misses. Retarget each retest." },
-        { "name": "Cooper 12-min Run", "unit": "mi", "value": null, "pacer": 1.5, "goal": 1.75, "direction": "up", "date": null, "note": "Max distance covered in 12 min." }
+        {
+          "name": "PACER Test",
+          "unit": "shuttles",
+          "value": null,
+          "pacer": null,
+          "goal": null,
+          "direction": "up",
+          "date": null,
+          "note": "Stop after two misses. Retarget each retest."
+        },
+        {
+          "name": "Cooper 12-min Run",
+          "unit": "mi",
+          "value": null,
+          "pacer": 1.5,
+          "goal": 1.75,
+          "direction": "up",
+          "date": null,
+          "note": "Max distance covered in 12 min."
+        }
       ]
     },
     {
       "id": "strength-endurance",
       "name": "Strength Endurance",
       "source": "Max reps to technical failure",
-      "cadence": "Every 3\u20136 months",
+      "cadence": "Every 3–6 months",
       "metrics": [
-        { "name": "Push-ups", "unit": "reps", "value": null, "pacer": 40, "goal": 50, "direction": "up", "date": null },
-        { "name": "Pull-ups", "unit": "reps", "value": null, "pacer": 9, "goal": 15, "direction": "up", "date": null },
-        { "name": "Chin-ups", "unit": "reps", "value": null, "pacer": 10, "goal": 16, "direction": "up", "date": null },
-        { "name": "Dips", "unit": "reps", "value": null, "pacer": 17, "goal": 30, "direction": "up", "date": null },
-        { "name": "Hanging Knee Raises", "unit": "reps", "value": null, "pacer": 12, "goal": 20, "direction": "up", "date": null, "note": "Or toes-to-bar." }
+        {
+          "name": "Push-ups",
+          "unit": "reps",
+          "value": null,
+          "pacer": 40,
+          "goal": 50,
+          "direction": "up",
+          "date": null
+        },
+        {
+          "name": "Pull-ups",
+          "unit": "reps",
+          "value": null,
+          "pacer": 9,
+          "goal": 15,
+          "direction": "up",
+          "date": null
+        },
+        {
+          "name": "Chin-ups",
+          "unit": "reps",
+          "value": null,
+          "pacer": 10,
+          "goal": 16,
+          "direction": "up",
+          "date": null
+        },
+        {
+          "name": "Dips",
+          "unit": "reps",
+          "value": null,
+          "pacer": 17,
+          "goal": 30,
+          "direction": "up",
+          "date": null
+        },
+        {
+          "name": "Hanging Knee Raises",
+          "unit": "reps",
+          "value": null,
+          "pacer": 12,
+          "goal": 20,
+          "direction": "up",
+          "date": null,
+          "note": "Or toes-to-bar."
+        }
       ]
     },
     {
       "id": "timed",
       "name": "Timed Tests",
       "source": "Max hold / time",
-      "cadence": "Every 3\u20136 months",
+      "cadence": "Every 3–6 months",
       "metrics": [
-        { "name": "Plank", "unit": "sec", "value": null, "pacer": 90, "goal": 150, "direction": "up", "date": null },
-        { "name": "Side Plank L", "unit": "sec", "value": null, "pacer": 60, "goal": 90, "direction": "up", "date": null },
-        { "name": "Side Plank R", "unit": "sec", "value": null, "pacer": 60, "goal": 90, "direction": "up", "date": null },
-        { "name": "Wall Sit", "unit": "sec", "value": null, "pacer": 90, "goal": 150, "direction": "up", "date": null },
-        { "name": "Dead Hang", "unit": "sec", "value": null, "pacer": 75, "goal": 120, "direction": "up", "date": null },
-        { "name": "Farmer Carry 70s", "unit": "sec", "value": null, "pacer": 45, "goal": 75, "direction": "up", "date": null, "note": "Fixed weight, max time (or log distance)." }
+        {
+          "name": "Plank",
+          "unit": "sec",
+          "value": null,
+          "pacer": 90,
+          "goal": 150,
+          "direction": "up",
+          "date": null
+        },
+        {
+          "name": "Side Plank L",
+          "unit": "sec",
+          "value": null,
+          "pacer": 60,
+          "goal": 90,
+          "direction": "up",
+          "date": null
+        },
+        {
+          "name": "Side Plank R",
+          "unit": "sec",
+          "value": null,
+          "pacer": 60,
+          "goal": 90,
+          "direction": "up",
+          "date": null
+        },
+        {
+          "name": "Wall Sit",
+          "unit": "sec",
+          "value": null,
+          "pacer": 90,
+          "goal": 150,
+          "direction": "up",
+          "date": null
+        },
+        {
+          "name": "Dead Hang",
+          "unit": "sec",
+          "value": null,
+          "pacer": 75,
+          "goal": 120,
+          "direction": "up",
+          "date": null
+        },
+        {
+          "name": "Farmer Carry 70s",
+          "unit": "sec",
+          "value": null,
+          "pacer": 45,
+          "goal": 75,
+          "direction": "up",
+          "date": null,
+          "note": "Fixed weight, max time (or log distance)."
+        }
       ]
     },
     {
       "id": "max-strength",
       "name": "Max Strength",
-      "source": "Estimated 1RM from 3\u20135 rep test",
+      "source": "Estimated 1RM from 3–5 rep test",
       "cadence": "Every 6 months",
       "metrics": [
-        { "name": "Trap Bar Deadlift", "unit": "lb e1RM", "value": null, "pacer": 305, "goal": 380, "direction": "up", "date": null, "note": "Goal: bodyweight+ pull." },
-        { "name": "Bench Press", "unit": "lb e1RM", "value": null, "pacer": 195, "goal": 218, "direction": "up", "date": null, "note": "Goal: bodyweight bench (~217 lb)." },
-        { "name": "Front Squat", "unit": "lb e1RM", "value": null, "pacer": 185, "goal": 218, "direction": "up", "date": null, "note": "Back squat OK. Goal: bodyweight." },
-        { "name": "Romanian Deadlift", "unit": "lb e1RM", "value": null, "pacer": 195, "goal": 218, "direction": "up", "date": null, "note": "Goal: bodyweight RDL." },
-        { "name": "Overhead Press", "unit": "lb e1RM", "value": null, "pacer": 135, "goal": 160, "direction": "up", "date": null }
+        {
+          "name": "Trap Bar Deadlift",
+          "unit": "lb e1RM",
+          "value": null,
+          "pacer": 305,
+          "goal": 380,
+          "direction": "up",
+          "date": null,
+          "note": "Goal: bodyweight+ pull."
+        },
+        {
+          "name": "Bench Press",
+          "unit": "lb e1RM",
+          "value": null,
+          "pacer": 195,
+          "goal": 218,
+          "direction": "up",
+          "date": null,
+          "note": "Goal: bodyweight bench (~217 lb)."
+        },
+        {
+          "name": "Front Squat",
+          "unit": "lb e1RM",
+          "value": null,
+          "pacer": 185,
+          "goal": 218,
+          "direction": "up",
+          "date": null,
+          "note": "Back squat OK. Goal: bodyweight."
+        },
+        {
+          "name": "Romanian Deadlift",
+          "unit": "lb e1RM",
+          "value": null,
+          "pacer": 195,
+          "goal": 218,
+          "direction": "up",
+          "date": null,
+          "note": "Goal: bodyweight RDL."
+        },
+        {
+          "name": "Overhead Press",
+          "unit": "lb e1RM",
+          "value": null,
+          "pacer": 135,
+          "goal": 160,
+          "direction": "up",
+          "date": null
+        }
       ]
     },
     {
@@ -99,11 +436,52 @@
       "source": "Best of 3 attempts",
       "cadence": "Every 6 months",
       "metrics": [
-        { "name": "Vertical Jump", "unit": "in", "value": null, "pacer": 20, "goal": 22, "direction": "up", "date": null },
-        { "name": "Broad Jump", "unit": "ft", "value": null, "pacer": 6.5, "goal": 7, "direction": "up", "date": null },
-        { "name": "Med Ball Chest Throw", "unit": "ft", "value": null, "pacer": null, "goal": null, "direction": "up", "date": null, "note": "Set baseline, then beat by 5%." },
-        { "name": "Med Ball Rotational Throw L", "unit": "ft", "value": null, "pacer": null, "goal": null, "direction": "up", "date": null },
-        { "name": "Med Ball Rotational Throw R", "unit": "ft", "value": null, "pacer": null, "goal": null, "direction": "up", "date": null }
+        {
+          "name": "Vertical Jump",
+          "unit": "in",
+          "value": null,
+          "pacer": 20,
+          "goal": 22,
+          "direction": "up",
+          "date": null
+        },
+        {
+          "name": "Broad Jump",
+          "unit": "ft",
+          "value": null,
+          "pacer": 6.5,
+          "goal": 7,
+          "direction": "up",
+          "date": null
+        },
+        {
+          "name": "Med Ball Chest Throw",
+          "unit": "ft",
+          "value": null,
+          "pacer": null,
+          "goal": null,
+          "direction": "up",
+          "date": null,
+          "note": "Set baseline, then beat by 5%."
+        },
+        {
+          "name": "Med Ball Rotational Throw L",
+          "unit": "ft",
+          "value": null,
+          "pacer": null,
+          "goal": null,
+          "direction": "up",
+          "date": null
+        },
+        {
+          "name": "Med Ball Rotational Throw R",
+          "unit": "ft",
+          "value": null,
+          "pacer": null,
+          "goal": null,
+          "direction": "up",
+          "date": null
+        }
       ]
     },
     {
@@ -112,10 +490,42 @@
       "source": "Fastest time wins",
       "cadence": "Every 6 months",
       "metrics": [
-        { "name": "10-yard Sprint", "unit": "sec", "value": null, "pacer": null, "goal": null, "direction": "down", "date": null },
-        { "name": "40-yard Sprint", "unit": "sec", "value": null, "pacer": null, "goal": null, "direction": "down", "date": null },
-        { "name": "5-10-5 Shuttle", "unit": "sec", "value": null, "pacer": null, "goal": null, "direction": "down", "date": null },
-        { "name": "T-Test", "unit": "sec", "value": null, "pacer": null, "goal": null, "direction": "down", "date": null }
+        {
+          "name": "10-yard Sprint",
+          "unit": "sec",
+          "value": null,
+          "pacer": null,
+          "goal": null,
+          "direction": "down",
+          "date": null
+        },
+        {
+          "name": "40-yard Sprint",
+          "unit": "sec",
+          "value": null,
+          "pacer": null,
+          "goal": null,
+          "direction": "down",
+          "date": null
+        },
+        {
+          "name": "5-10-5 Shuttle",
+          "unit": "sec",
+          "value": null,
+          "pacer": null,
+          "goal": null,
+          "direction": "down",
+          "date": null
+        },
+        {
+          "name": "T-Test",
+          "unit": "sec",
+          "value": null,
+          "pacer": null,
+          "goal": null,
+          "direction": "down",
+          "date": null
+        }
       ]
     },
     {
@@ -124,14 +534,80 @@
       "source": "Manual assessment",
       "cadence": "Every 6 months, monthly quick checks",
       "metrics": [
-        { "name": "Sit-to-Stand (30s)", "unit": "reps", "value": null, "pacer": 20, "goal": 25, "direction": "up", "date": null },
-        { "name": "Single-Leg Balance EO L", "unit": "sec", "value": null, "pacer": 52, "goal": 90, "direction": "up", "date": null },
-        { "name": "Single-Leg Balance EO R", "unit": "sec", "value": null, "pacer": 52, "goal": 90, "direction": "up", "date": null },
-        { "name": "Single-Leg Balance EC L", "unit": "sec", "value": null, "pacer": 15, "goal": 30, "direction": "up", "date": null },
-        { "name": "Single-Leg Balance EC R", "unit": "sec", "value": null, "pacer": 15, "goal": 30, "direction": "up", "date": null },
-        { "name": "Grip Strength L", "unit": "lb", "value": null, "pacer": null, "goal": null, "direction": "up", "date": null, "note": "Dynamometer. Set baseline first." },
-        { "name": "Grip Strength R", "unit": "lb", "value": null, "pacer": null, "goal": null, "direction": "up", "date": null },
-        { "name": "HR Recovery (1 min)", "unit": "bpm drop", "value": null, "pacer": 25, "goal": 40, "direction": "up", "date": null, "note": "Drop 1 min after standardized cardio effort." }
+        {
+          "name": "Sit-to-Stand (30s)",
+          "unit": "reps",
+          "value": null,
+          "pacer": 20,
+          "goal": 25,
+          "direction": "up",
+          "date": null
+        },
+        {
+          "name": "Single-Leg Balance, Eyes Open (L)",
+          "unit": "sec",
+          "value": null,
+          "pacer": 52,
+          "goal": 90,
+          "direction": "up",
+          "date": null
+        },
+        {
+          "name": "Single-Leg Balance, Eyes Open (R)",
+          "unit": "sec",
+          "value": null,
+          "pacer": 52,
+          "goal": 90,
+          "direction": "up",
+          "date": null
+        },
+        {
+          "name": "Single-Leg Balance, Eyes Closed (L)",
+          "unit": "sec",
+          "value": null,
+          "pacer": 15,
+          "goal": 30,
+          "direction": "up",
+          "date": null
+        },
+        {
+          "name": "Single-Leg Balance, Eyes Closed (R)",
+          "unit": "sec",
+          "value": null,
+          "pacer": 15,
+          "goal": 30,
+          "direction": "up",
+          "date": null
+        },
+        {
+          "name": "Grip Strength L",
+          "unit": "lb",
+          "value": null,
+          "pacer": null,
+          "goal": null,
+          "direction": "up",
+          "date": null,
+          "note": "Dynamometer. Set baseline first."
+        },
+        {
+          "name": "Grip Strength R",
+          "unit": "lb",
+          "value": null,
+          "pacer": null,
+          "goal": null,
+          "direction": "up",
+          "date": null
+        },
+        {
+          "name": "HR Recovery (1 min)",
+          "unit": "bpm drop",
+          "value": null,
+          "pacer": 25,
+          "goal": 40,
+          "direction": "up",
+          "date": null,
+          "note": "Drop 1 min after standardized cardio effort."
+        }
       ]
     },
     {
@@ -140,9 +616,33 @@
       "source": "Manual assessment",
       "cadence": "Every 6 months, monthly quick checks",
       "metrics": [
-        { "name": "Deep Squat Hold", "unit": "min", "value": null, "pacer": 2.5, "goal": 5, "direction": "up", "date": null },
-        { "name": "Floor Rise (no hands)", "unit": "sec", "value": null, "pacer": 8, "goal": 5, "direction": "down", "date": null },
-        { "name": "Sit Cross-legged", "unit": "min", "value": null, "pacer": 3.5, "goal": 10, "direction": "up", "date": null }
+        {
+          "name": "Deep Squat Hold",
+          "unit": "min",
+          "value": null,
+          "pacer": 2.5,
+          "goal": 5,
+          "direction": "up",
+          "date": null
+        },
+        {
+          "name": "Floor Rise (no hands)",
+          "unit": "sec",
+          "value": null,
+          "pacer": 8,
+          "goal": 5,
+          "direction": "down",
+          "date": null
+        },
+        {
+          "name": "Sit Cross-legged",
+          "unit": "min",
+          "value": null,
+          "pacer": 3.5,
+          "goal": 10,
+          "direction": "up",
+          "date": null
+        }
       ]
     },
     {
@@ -151,13 +651,69 @@
       "source": "Apple Health / race results",
       "cadence": "Weekly + race day",
       "metrics": [
-        { "name": "Weekly Run Volume", "unit": "mi", "value": null, "pacer": null, "goal": null, "direction": "up", "date": null },
-        { "name": "Longest Run", "unit": "mi", "value": null, "pacer": null, "goal": null, "direction": "up", "date": null },
-        { "name": "Longest Hike", "unit": "mi", "value": null, "pacer": null, "goal": null, "direction": "up", "date": null },
-        { "name": "5K Time", "unit": "min", "value": null, "pacer": 32, "goal": 27, "direction": "down", "date": null },
-        { "name": "Trail 10K", "unit": "min", "value": null, "pacer": null, "goal": null, "direction": "down", "date": null },
-        { "name": "45-lb Ruck 5mi", "unit": "min", "value": null, "pacer": 82, "goal": 75, "direction": "down", "date": null },
-        { "name": "BJJ Rounds", "unit": "x5min", "value": null, "pacer": 6, "goal": 6, "direction": "up", "date": null }
+        {
+          "name": "Weekly Run Volume",
+          "unit": "mi",
+          "value": null,
+          "pacer": null,
+          "goal": null,
+          "direction": "up",
+          "date": null
+        },
+        {
+          "name": "Longest Run",
+          "unit": "mi",
+          "value": null,
+          "pacer": null,
+          "goal": null,
+          "direction": "up",
+          "date": null
+        },
+        {
+          "name": "Longest Hike",
+          "unit": "mi",
+          "value": null,
+          "pacer": null,
+          "goal": null,
+          "direction": "up",
+          "date": null
+        },
+        {
+          "name": "5K Time",
+          "unit": "min",
+          "value": null,
+          "pacer": 32,
+          "goal": 27,
+          "direction": "down",
+          "date": null
+        },
+        {
+          "name": "Trail 10K",
+          "unit": "min",
+          "value": null,
+          "pacer": null,
+          "goal": null,
+          "direction": "down",
+          "date": null
+        },
+        {
+          "name": "45-lb Ruck 5mi",
+          "unit": "min",
+          "value": null,
+          "pacer": 82,
+          "goal": 75,
+          "direction": "down",
+          "date": null
+        },
+        {
+          "name": "BJJ Rounds",
+          "unit": "x5min",
+          "value": null,
+          "pacer": 6,
+          "goal": 6,
+          "direction": "up",
+          "date": null
+        }
       ]
     },
     {
@@ -166,13 +722,70 @@
       "source": "Apple Health + manual checklist",
       "cadence": "Daily / weekly",
       "metrics": [
-        { "name": "Sleep Duration", "unit": "hr", "value": 6.75, "pacer": 7.5, "goal": 7.75, "direction": "up", "date": "2026-06-26" },
-        { "name": "Deep Sleep", "unit": "%", "value": 15, "pacer": 18, "goal": 20, "direction": "up", "date": "2026-06-26" },
-        { "name": "HRV Weekly Avg", "unit": "ms", "value": 42.3, "pacer": 45, "goal": 60, "direction": "up", "date": "2026-06-26" },
-        { "name": "Sauna Sessions", "unit": "/wk", "value": null, "pacer": 3, "goal": 4, "direction": "up", "date": null },
-        { "name": "Cold Plunge", "unit": "/wk", "value": null, "pacer": 3, "goal": 4, "direction": "up", "date": null },
-        { "name": "Mobility Sessions", "unit": "/wk", "value": null, "pacer": 7, "goal": 7, "direction": "up", "date": null, "note": "Currently daily." },
-        { "name": "Subjective Recovery", "unit": "/10", "value": null, "pacer": 7, "goal": 8, "direction": "up", "date": null }
+        {
+          "name": "Sleep Duration",
+          "unit": "hr",
+          "value": 6.75,
+          "pacer": 7.5,
+          "goal": 7.75,
+          "direction": "up",
+          "date": "2026-06-26"
+        },
+        {
+          "name": "Deep Sleep",
+          "unit": "%",
+          "value": 15,
+          "pacer": 18,
+          "goal": 20,
+          "direction": "up",
+          "date": "2026-06-26"
+        },
+        {
+          "name": "HRV Weekly Avg",
+          "unit": "ms",
+          "value": 42.3,
+          "pacer": 45,
+          "goal": 60,
+          "direction": "up",
+          "date": "2026-06-26"
+        },
+        {
+          "name": "Sauna Sessions",
+          "unit": "/wk",
+          "value": null,
+          "pacer": 3,
+          "goal": 4,
+          "direction": "up",
+          "date": null
+        },
+        {
+          "name": "Cold Plunge",
+          "unit": "/wk",
+          "value": null,
+          "pacer": 3,
+          "goal": 4,
+          "direction": "up",
+          "date": null
+        },
+        {
+          "name": "Mobility Sessions",
+          "unit": "/wk",
+          "value": null,
+          "pacer": 7,
+          "goal": 7,
+          "direction": "up",
+          "date": null,
+          "note": "Currently daily."
+        },
+        {
+          "name": "Subjective Recovery",
+          "unit": "/10",
+          "value": null,
+          "pacer": 7,
+          "goal": 8,
+          "direction": "up",
+          "date": null
+        }
       ]
     },
     {
@@ -181,41 +794,561 @@
       "source": "Function Health / labs",
       "cadence": "Lab cycle",
       "metrics": [
-        { "name": "ALT", "unit": "U/L", "value": 68, "pacer": 40, "goal": 30, "direction": "down", "date": "2026-02-01", "note": "Above range. Recheck next panel." },
-        { "name": "Fasting Glucose", "unit": "mg/dL", "value": 114, "pacer": 99, "goal": 90, "direction": "down", "date": "2026-02-01", "note": "Above range." },
-        { "name": "eGFR", "unit": "mL/min", "value": 80, "pacer": 90, "goal": 90, "direction": "up", "date": "2026-02-01" },
-        { "name": "Vitamin D", "unit": "ng/mL", "value": 27, "pacer": 40, "goal": 50, "direction": "up", "date": "2026-02-01", "note": "Low. Supplementing." },
-        { "name": "TSH", "unit": "mIU/L", "value": 1.28, "pacer": null, "goal": null, "direction": "neutral", "date": "2026-02-01" },
-        { "name": "Free T4", "unit": "ng/dL", "value": 1.3, "pacer": null, "goal": null, "direction": "neutral", "date": "2026-02-01" },
-        { "name": "Free T3", "unit": "pg/mL", "value": 3.9, "pacer": null, "goal": null, "direction": "neutral", "date": "2026-02-01" },
-        { "name": "TPO Antibodies", "unit": "IU/mL", "value": 1, "pacer": null, "goal": null, "direction": "down", "date": "2026-02-01" },
-        { "name": "Reverse T3", "unit": "ng/dL", "value": null, "pacer": null, "goal": null, "direction": "neutral", "date": null },
-        { "name": "Thyroglobulin Ab", "unit": "IU/mL", "value": null, "pacer": null, "goal": null, "direction": "down", "date": null },
-        { "name": "hs-CRP", "unit": "mg/L", "value": null, "pacer": 1, "goal": 0.5, "direction": "down", "date": null },
-        { "name": "ApoB", "unit": "mg/dL", "value": null, "pacer": 90, "goal": 70, "direction": "down", "date": null },
-        { "name": "ApoA1", "unit": "mg/dL", "value": null, "pacer": null, "goal": null, "direction": "up", "date": null },
-        { "name": "LDL", "unit": "mg/dL", "value": null, "pacer": 100, "goal": 80, "direction": "down", "date": null },
-        { "name": "HDL", "unit": "mg/dL", "value": null, "pacer": 50, "goal": 60, "direction": "up", "date": null },
-        { "name": "Triglycerides", "unit": "mg/dL", "value": null, "pacer": 100, "goal": 80, "direction": "down", "date": null },
-        { "name": "Lp(a)", "unit": "nmol/L", "value": null, "pacer": 75, "goal": 30, "direction": "down", "date": null },
-        { "name": "Insulin", "unit": "uIU/mL", "value": null, "pacer": 8, "goal": 5, "direction": "down", "date": null },
-        { "name": "HbA1c", "unit": "%", "value": null, "pacer": 5.4, "goal": 5.2, "direction": "down", "date": null },
-        { "name": "AST", "unit": "U/L", "value": null, "pacer": 40, "goal": 30, "direction": "down", "date": null },
-        { "name": "GGT", "unit": "U/L", "value": null, "pacer": null, "goal": null, "direction": "down", "date": null },
-        { "name": "Creatinine", "unit": "mg/dL", "value": null, "pacer": null, "goal": null, "direction": "neutral", "date": null },
-        { "name": "BUN", "unit": "mg/dL", "value": null, "pacer": null, "goal": null, "direction": "neutral", "date": null },
-        { "name": "Sodium", "unit": "mmol/L", "value": null, "pacer": null, "goal": null, "direction": "neutral", "date": null },
-        { "name": "Potassium", "unit": "mmol/L", "value": null, "pacer": null, "goal": null, "direction": "neutral", "date": null },
-        { "name": "Calcium", "unit": "mg/dL", "value": null, "pacer": null, "goal": null, "direction": "neutral", "date": null },
-        { "name": "Magnesium", "unit": "mg/dL", "value": null, "pacer": null, "goal": null, "direction": "neutral", "date": null },
-        { "name": "B12", "unit": "pg/mL", "value": null, "pacer": null, "goal": null, "direction": "up", "date": null },
-        { "name": "Folate", "unit": "ng/mL", "value": null, "pacer": null, "goal": null, "direction": "up", "date": null },
-        { "name": "Testosterone Total", "unit": "ng/dL", "value": null, "pacer": null, "goal": null, "direction": "up", "date": null },
-        { "name": "Testosterone Free", "unit": "pg/mL", "value": null, "pacer": null, "goal": null, "direction": "up", "date": null },
-        { "name": "SHBG", "unit": "nmol/L", "value": null, "pacer": null, "goal": null, "direction": "neutral", "date": null },
-        { "name": "DHEA-S", "unit": "ug/dL", "value": null, "pacer": null, "goal": null, "direction": "neutral", "date": null },
-        { "name": "Cortisol", "unit": "ug/dL", "value": null, "pacer": null, "goal": null, "direction": "neutral", "date": null },
-        { "name": "CBC", "unit": "panel", "value": null, "pacer": null, "goal": null, "direction": "neutral", "date": null }
+        {
+          "name": "ALT",
+          "unit": "U/L",
+          "value": 57,
+          "pacer": 40,
+          "goal": 30,
+          "direction": "down",
+          "date": "2026-05-15",
+          "note": "Above range but improving (was 68 in Feb).",
+          "history": [
+            {
+              "value": 68,
+              "date": "2026-02-01"
+            }
+          ]
+        },
+        {
+          "name": "Fasting Glucose",
+          "unit": "mg/dL",
+          "value": 83,
+          "pacer": 99,
+          "goal": 90,
+          "direction": "down",
+          "date": "2026-05-15",
+          "note": "Back in range (was 114 in Feb).",
+          "history": [
+            {
+              "value": 114,
+              "date": "2026-02-01"
+            }
+          ]
+        },
+        {
+          "name": "eGFR",
+          "unit": "mL/min",
+          "value": 96,
+          "pacer": 90,
+          "goal": 90,
+          "direction": "up",
+          "date": "2026-05-15",
+          "history": [
+            {
+              "value": 80,
+              "date": "2026-02-01"
+            }
+          ]
+        },
+        {
+          "name": "Vitamin D",
+          "unit": "ng/mL",
+          "value": 27,
+          "pacer": 40,
+          "goal": 50,
+          "direction": "up",
+          "date": "2026-05-15",
+          "note": "Still low. Keep supplementing.",
+          "history": [
+            {
+              "value": 27,
+              "date": "2026-02-01"
+            }
+          ]
+        },
+        {
+          "name": "TSH",
+          "unit": "mIU/L",
+          "value": 1.28,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "Free T4",
+          "unit": "ng/dL",
+          "value": 1.3,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "Free T3",
+          "unit": "pg/mL",
+          "value": 3.9,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "TPO Antibodies",
+          "unit": "IU/mL",
+          "value": 1,
+          "pacer": null,
+          "goal": null,
+          "direction": "down",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "Reverse T3",
+          "unit": "ng/dL",
+          "value": null,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": null
+        },
+        {
+          "name": "Thyroglobulin Ab",
+          "unit": "IU/mL",
+          "value": 35,
+          "pacer": null,
+          "goal": null,
+          "direction": "down",
+          "date": "2026-05-15",
+          "note": "Above range. Matches known mildly elevated TgAb."
+        },
+        {
+          "name": "hs-CRP",
+          "unit": "mg/L",
+          "value": 0.8,
+          "pacer": 1,
+          "goal": 0.5,
+          "direction": "down",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "ApoB",
+          "unit": "mg/dL",
+          "value": 178,
+          "pacer": 90,
+          "goal": 70,
+          "direction": "down",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "ApoA1",
+          "unit": "mg/dL",
+          "value": null,
+          "pacer": null,
+          "goal": null,
+          "direction": "up",
+          "date": null
+        },
+        {
+          "name": "LDL",
+          "unit": "mg/dL",
+          "value": 223,
+          "pacer": 100,
+          "goal": 80,
+          "direction": "down",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "HDL",
+          "unit": "mg/dL",
+          "value": 45,
+          "pacer": 50,
+          "goal": 60,
+          "direction": "up",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "Triglycerides",
+          "unit": "mg/dL",
+          "value": 271,
+          "pacer": 100,
+          "goal": 80,
+          "direction": "down",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "Lp(a)",
+          "unit": "nmol/L",
+          "value": 10,
+          "pacer": 75,
+          "goal": 30,
+          "direction": "down",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "Insulin",
+          "unit": "uIU/mL",
+          "value": 5,
+          "pacer": 8,
+          "goal": 5,
+          "direction": "down",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "HbA1c",
+          "unit": "%",
+          "value": 5.6,
+          "pacer": 5.4,
+          "goal": 5.2,
+          "direction": "down",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "AST",
+          "unit": "U/L",
+          "value": null,
+          "pacer": 40,
+          "goal": 30,
+          "direction": "down",
+          "date": null
+        },
+        {
+          "name": "GGT",
+          "unit": "U/L",
+          "value": 20,
+          "pacer": null,
+          "goal": null,
+          "direction": "down",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "Creatinine",
+          "unit": "mg/dL",
+          "value": 0.98,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "BUN",
+          "unit": "mg/dL",
+          "value": 29,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-05-15",
+          "note": "Above range. Often diet/hydration related."
+        },
+        {
+          "name": "Sodium",
+          "unit": "mmol/L",
+          "value": 141,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "Potassium",
+          "unit": "mmol/L",
+          "value": 4.4,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "Calcium",
+          "unit": "mg/dL",
+          "value": 9.7,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "Magnesium",
+          "unit": "mg/dL",
+          "value": 6.2,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-05-15",
+          "note": "RBC magnesium."
+        },
+        {
+          "name": "B12",
+          "unit": "pg/mL",
+          "value": null,
+          "pacer": null,
+          "goal": null,
+          "direction": "up",
+          "date": null
+        },
+        {
+          "name": "Folate",
+          "unit": "ng/mL",
+          "value": null,
+          "pacer": null,
+          "goal": null,
+          "direction": "up",
+          "date": null
+        },
+        {
+          "name": "Testosterone Total",
+          "unit": "ng/dL",
+          "value": 748,
+          "pacer": null,
+          "goal": null,
+          "direction": "up",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "Testosterone Free",
+          "unit": "pg/mL",
+          "value": 83.9,
+          "pacer": null,
+          "goal": null,
+          "direction": "up",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "SHBG",
+          "unit": "nmol/L",
+          "value": 51,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-05-15",
+          "note": "Slightly above range."
+        },
+        {
+          "name": "DHEA-S",
+          "unit": "ug/dL",
+          "value": 197,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "Cortisol",
+          "unit": "ug/dL",
+          "value": 12.4,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "CBC",
+          "unit": "panel",
+          "value": null,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": null
+        },
+        {
+          "name": "Total Cholesterol",
+          "unit": "mg/dL",
+          "value": 316,
+          "pacer": 200,
+          "goal": 180,
+          "direction": "down",
+          "date": "2026-05-15",
+          "note": "Above range."
+        },
+        {
+          "name": "Non-HDL Cholesterol",
+          "unit": "mg/dL",
+          "value": 271,
+          "pacer": 130,
+          "goal": 110,
+          "direction": "down",
+          "date": "2026-05-15",
+          "note": "Above range. Tracks atherogenic load."
+        },
+        {
+          "name": "Total Chol / HDL Ratio",
+          "unit": "ratio",
+          "value": 7,
+          "pacer": 3.5,
+          "goal": 3,
+          "direction": "down",
+          "date": "2026-05-15",
+          "note": "Above range."
+        },
+        {
+          "name": "LDL Particle Number",
+          "unit": "nmol/L",
+          "value": 2440,
+          "pacer": 1000,
+          "goal": 800,
+          "direction": "down",
+          "date": "2026-05-15",
+          "note": "Above range."
+        },
+        {
+          "name": "LDL Small",
+          "unit": "nmol/L",
+          "value": 374,
+          "pacer": 142,
+          "goal": 100,
+          "direction": "down",
+          "date": "2026-05-15",
+          "note": "Above range. Small dense LDL."
+        },
+        {
+          "name": "LDL Pattern",
+          "unit": "A/B",
+          "value": null,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-05-15",
+          "note": "Pattern B (less favorable). Goal: shift to A."
+        },
+        {
+          "name": "Biological Age",
+          "unit": "years",
+          "value": 37.6,
+          "pacer": null,
+          "goal": null,
+          "direction": "down",
+          "date": "2026-05-15",
+          "note": "Younger than chronological age. Excellent."
+        },
+        {
+          "name": "Uric Acid",
+          "unit": "mg/dL",
+          "value": 5.8,
+          "pacer": 6,
+          "goal": 5,
+          "direction": "down",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "Leptin",
+          "unit": "ng/mL",
+          "value": 2,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "Ferritin",
+          "unit": "ng/mL",
+          "value": 169,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "Iron",
+          "unit": "mcg/dL",
+          "value": 91,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "Homocysteine",
+          "unit": "umol/L",
+          "value": 12.4,
+          "pacer": 10,
+          "goal": 8,
+          "direction": "down",
+          "date": "2026-05-15",
+          "note": "High-normal. B-vitamins/methylation support."
+        },
+        {
+          "name": "Zinc",
+          "unit": "mcg/dL",
+          "value": 67,
+          "pacer": null,
+          "goal": null,
+          "direction": "up",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "B12 (MMA)",
+          "unit": "nmol/L",
+          "value": 124,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-05-15",
+          "note": "Methylmalonic acid — B12 functional marker, in range."
+        },
+        {
+          "name": "Omega 6:3 Ratio",
+          "unit": "ratio",
+          "value": 13.7,
+          "pacer": 4,
+          "goal": 3,
+          "direction": "down",
+          "date": "2026-05-15",
+          "note": "High. Lower omega-6, raise omega-3."
+        },
+        {
+          "name": "LH",
+          "unit": "mIU/mL",
+          "value": 4.2,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "FSH",
+          "unit": "mIU/mL",
+          "value": 7.4,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "Prolactin",
+          "unit": "ng/mL",
+          "value": 9.2,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "Estradiol (E2)",
+          "unit": "pg/mL",
+          "value": 30,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-05-15",
+          "note": "Reported <30."
+        },
+        {
+          "name": "PSA Total",
+          "unit": "ng/mL",
+          "value": 0.8,
+          "pacer": 2,
+          "goal": 1,
+          "direction": "down",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "PSA Free",
+          "unit": "ng/mL",
+          "value": 0.2,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "HDL Large",
+          "unit": "nmol/L",
+          "value": 7972,
+          "pacer": null,
+          "goal": null,
+          "direction": "up",
+          "date": "2026-05-15"
+        }
       ]
     }
   ],
@@ -224,30 +1357,94 @@
     "groups": [
       {
         "title": "Supplement Stack",
-        "items": ["A-2 Thyroid Peptide Bioregulator", "Vitamin D", "Curcumin", "Berberine", "Omega-3", "Zinc Picolinate", "Magnesium", "Methyl Guard"],
+        "items": [
+          "A-2 Thyroid Peptide Bioregulator",
+          "Vitamin D",
+          "Curcumin",
+          "Berberine",
+          "Omega-3",
+          "Zinc Picolinate",
+          "Magnesium",
+          "Methyl Guard"
+        ],
         "note": "Selenium and NAD+ removed per latest review."
       },
       {
         "title": "Training Schedule (weekly)",
-        "items": ["BJJ: 4 sessions", "Strength: 2 sessions", "Zone 2: building", "Mobility: daily", "Recovery: daily"]
+        "items": [
+          "BJJ: 4 sessions",
+          "Strength: 2 sessions",
+          "Zone 2: building",
+          "Mobility: daily",
+          "Recovery: daily"
+        ]
       },
       {
         "title": "Recovery Equipment",
-        "items": ["Cold Plunge", "Infrared Sauna", "Steam Sauna", "4 Red Light Panels", "Chilipad", "25 lb Weighted Blanket", "Power Plate Pro", "Normatec Boots", "Normatec Hips", "Normatec Shoulders", "Foam Rollers", "Battle Star Roller", "Mobility Balls", "Massage Gun"]
+        "items": [
+          "Cold Plunge",
+          "Infrared Sauna",
+          "Steam Sauna",
+          "4 Red Light Panels",
+          "Chilipad",
+          "25 lb Weighted Blanket",
+          "Power Plate Pro",
+          "Normatec Boots",
+          "Normatec Hips",
+          "Normatec Shoulders",
+          "Foam Rollers",
+          "Battle Star Roller",
+          "Mobility Balls",
+          "Massage Gun"
+        ]
       },
       {
         "title": "Performance Goals",
-        "items": ["Strength: bodyweight bench, squat, deadlift, RDL", "Endurance: 100-mile trail ultra (2028)", "Body comp: cut fat, hold/build lean mass", "Cardio: VO2 max 34.6 to 50+", "Recovery: raise HRV, improve sleep continuity, fewer awakenings"]
+        "items": [
+          "Strength: bodyweight bench, squat, deadlift, RDL",
+          "Endurance: 100-mile trail ultra (2028)",
+          "Body comp: cut fat, hold/build lean mass",
+          "Cardio: VO2 max 34.6 to 50+",
+          "Recovery: raise HRV, improve sleep continuity, fewer awakenings"
+        ]
       }
     ]
   },
   "phases": [
-    { "n": 1, "name": "Origin Story", "note": "Thyroid discovery and Function Health" },
-    { "n": 2, "name": "Baseline", "note": "BodySpec, Apple Health, strength/movement testing" },
-    { "n": 3, "name": "Build Foundation", "note": "Strength, mobility, recovery, health markers" },
-    { "n": 4, "name": "Become a Runner Again", "note": "Run durability and trail exposure" },
-    { "n": 5, "name": "Trail Athlete", "note": "Elevation, nutrition, gear, long efforts" },
-    { "n": 6, "name": "Ultra Foundation", "note": "50K, 50-mile or 100K prep" },
-    { "n": 7, "name": "100-Mile Goal", "note": "Final race build and execution" }
+    {
+      "n": 1,
+      "name": "Origin Story",
+      "note": "Thyroid discovery and Function Health"
+    },
+    {
+      "n": 2,
+      "name": "Baseline",
+      "note": "BodySpec, Apple Health, strength/movement testing"
+    },
+    {
+      "n": 3,
+      "name": "Build Foundation",
+      "note": "Strength, mobility, recovery, health markers"
+    },
+    {
+      "n": 4,
+      "name": "Become a Runner Again",
+      "note": "Run durability and trail exposure"
+    },
+    {
+      "n": 5,
+      "name": "Trail Athlete",
+      "note": "Elevation, nutrition, gear, long efforts"
+    },
+    {
+      "n": 6,
+      "name": "Ultra Foundation",
+      "note": "50K, 50-mile or 100K prep"
+    },
+    {
+      "n": 7,
+      "name": "100-Mile Goal",
+      "note": "Final race build and execution"
+    }
   ]
 }

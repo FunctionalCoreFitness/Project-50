@@ -112,6 +112,8 @@
   .m-date{margin-top:9px;font-size:.7rem;color:var(--muted);font-family:'Barlow Condensed',sans-serif;letter-spacing:.06em;text-transform:uppercase}
   .m-note{margin-top:9px;font-size:.78rem;color:#5a6068;line-height:1.35;font-style:italic}
   .trend{display:inline-block;margin-top:9px;font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+  .m-target{margin-top:11px;font-family:'Barlow Condensed',sans-serif;font-size:.82rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+  .m-target b{color:var(--ink);font-weight:600}
   .tr-good{color:var(--green)} .tr-bad{color:var(--red)}
 
   /* Protocol */
@@ -278,6 +280,15 @@ function metricCard(m){
 
   const dateHtml = m.date ? `<div class="m-date">Logged ${m.date}</div>`
                           : (untracked?`<div class="m-date">Not yet tested</div>`:"");
+
+  // show the target even before testing
+  let targetHtml = "";
+  if(untracked && (m.pacer!=null || m.goal!=null)){
+    const bits=[];
+    if(m.pacer!=null) bits.push(`Pacer <b>${fmt(m.pacer)}</b>`);
+    if(m.goal!=null) bits.push(`Goal <b>${fmt(m.goal)}</b>`);
+    targetHtml = `<div class="m-target">${bits.join(" \u00b7 ")}${m.unit?` ${m.unit}`:""}</div>`;
+  }
   const noteHtml = m.note ? `<div class="m-note">${m.note}</div>` : "";
 
   // trend vs most recent history entry
@@ -301,6 +312,7 @@ function metricCard(m){
       ${valHtml}
     </div>
     ${barHtml}
+    ${targetHtml}
     ${trendHtml}
     ${noteHtml}
     ${dateHtml}
