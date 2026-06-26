@@ -111,6 +111,28 @@
 
   .m-date{margin-top:9px;font-size:.7rem;color:var(--muted);font-family:'Barlow Condensed',sans-serif;letter-spacing:.06em;text-transform:uppercase}
   .m-note{margin-top:9px;font-size:.78rem;color:#5a6068;line-height:1.35;font-style:italic}
+  .trend{display:inline-block;margin-top:9px;font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+  .tr-good{color:var(--green)} .tr-bad{color:var(--red)}
+
+  /* Protocol */
+  .protocol details{
+    background:var(--card);border:1px solid var(--line);border-radius:3px;margin-bottom:10px;overflow:hidden;
+  }
+  .protocol summary{
+    cursor:pointer;list-style:none;padding:13px 17px;
+    font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1.1rem;letter-spacing:.02em;
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  .protocol summary::-webkit-details-marker{display:none}
+  .protocol summary::after{content:"+";font-size:1.3rem;color:var(--steel);font-weight:400}
+  .protocol details[open] summary::after{content:"\2212"}
+  .protocol summary:hover{background:#fafaf7}
+  .protocol .body{padding:2px 17px 16px;border-top:1px solid var(--line)}
+  .protocol ul{list-style:none;columns:2;column-gap:28px}
+  .protocol li{padding:3px 0;font-size:.92rem;color:#3a4049;break-inside:avoid}
+  .protocol li::before{content:"\2014  ";color:var(--steel)}
+  .protocol .pnote{margin-top:10px;font-size:.8rem;font-style:italic;color:var(--muted)}
+  @media(max-width:600px){.protocol ul{columns:1}}
 
   .labs-note{
     background:#fbfaf6;border:1px solid var(--line);border-left:3px solid var(--steel);
@@ -257,12 +279,29 @@ function metricCard(m){
   const dateHtml = m.date ? `<div class="m-date">Logged ${m.date}</div>`
                           : (untracked?`<div class="m-date">Not yet tested</div>`:"");
   const noteHtml = m.note ? `<div class="m-note">${m.note}</div>` : "";
+
+  // trend vs most recent history entry
+  let trendHtml = "";
+  if(!untracked && m.history && m.history.length){
+    const prev = m.history[m.history.length-1];
+    if(prev && prev.value!=null){
+      const delta = Math.round((m.value - prev.value)*100)/100;
+      if(delta!==0){
+        const improving = m.direction==="up" ? delta>0 : delta<0;
+        const arrow = delta>0 ? "\u2191" : "\u2193";
+        const cls = improving ? "tr-good" : "tr-bad";
+        trendHtml = `<span class="trend ${cls}">${arrow} ${Math.abs(delta)} since ${prev.date}</span>`;
+      }
+    }
+  }
+
   return `<div class="metric ${untracked?'untracked':''}">
     <div class="m-top">
       <div class="m-name"><span class="dot ${sClass}"></span>${m.name}</div>
       ${valHtml}
     </div>
     ${barHtml}
+    ${trendHtml}
     ${noteHtml}
     ${dateHtml}
   </div>`;
@@ -308,7 +347,8 @@ function render(d){
   // nav
   document.getElementById('navrow').innerHTML =
     `<a href="#export">Dashboard</a>` +
-    d.categories.map(c=>`<a href="#${c.id}">${c.name}</a>`).join('');
+    d.categories.map(c=>`<a href="#${c.id}">${c.name}</a>`).join('') +
+    (d.protocol?`<a href="#protocol">Protocol</a>`:'');
 
   // episode export block
   const exItems=[
@@ -351,6 +391,30 @@ function render(d){
         </div>
       </section>`;
   }
+  // protocol section
+  if(d.protocol){
+    html += `
+      <section id="protocol" class="protocol">
+        <div class="sec-head">
+          <div class="sec-title">Protocol &amp; Context</div>
+          <div class="sec-meta">Reference<br>Tap to expand</div>
+        </div>`;
+    if(d.protocol.thyroid_history){
+      html += `<div class="labs-note"><b>Thyroid history:</b> ${d.protocol.thyroid_history}</div>`;
+    }
+    for(const g of d.protocol.groups){
+      html += `
+        <details>
+          <summary>${g.title}</summary>
+          <div class="body">
+            <ul>${g.items.map(i=>`<li>${i}</li>`).join('')}</ul>
+            ${g.note?`<div class="pnote">${g.note}</div>`:''}
+          </div>
+        </details>`;
+    }
+    html += `</section>`;
+  }
+
   document.getElementById('main').innerHTML = html;
 }
 </script>
