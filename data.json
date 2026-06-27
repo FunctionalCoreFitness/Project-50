@@ -76,12 +76,19 @@
         },
         {
           "name": "Visceral Fat",
-          "unit": "",
-          "value": null,
-          "pacer": null,
-          "goal": null,
+          "unit": "lb",
+          "value": 1.79,
+          "pacer": 1.5,
+          "goal": 1.0,
           "direction": "down",
-          "date": null
+          "date": "2026-06-24",
+          "history": [
+            {
+              "value": 1.58,
+              "date": "2026-03-09"
+            }
+          ],
+          "note": "DEXA visceral fat. Lower is better for metabolic health."
         }
       ]
     },
