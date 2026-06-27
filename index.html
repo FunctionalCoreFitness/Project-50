@@ -198,6 +198,7 @@
   .pub-tie{margin-top:8px;font-size:.78rem;background:#e8eef7;color:#2c5a99;border-radius:3px;padding:5px 9px;font-weight:500}
   .pub-sub{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:8px}
   @media(max-width:640px){.pub-sub{grid-template-columns:1fr}}
+  .pub-note{background:#f1f4f9;border-left:3px solid var(--steel);border-radius:3px;padding:10px 13px;font-size:.82rem;color:#46505e;line-height:1.45;margin-bottom:16px}
   .pub-block-h{font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:.8rem;color:var(--muted);margin-bottom:6px}
   .pub-block ul{list-style:none;margin:0;padding:0}
   .pub-block li{font-size:.88rem;padding:3px 0 3px 14px;position:relative}
@@ -738,6 +739,7 @@ function render(d){
       <div class="sec-head"><div class="sec-title">Publishing</div>
         <div class="sec-meta">${pub.cadence}</div></div>
       <div class="pub-week">${pub.weekly.map(dayCard).join('')}</div>
+      ${pub.schedule_note?`<div class="pub-note">${pub.schedule_note}</div>`:''}
       <div class="pub-sub">
         <div class="pub-block">
           <div class="pub-block-h">Monthly long-form</div>

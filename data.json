@@ -1886,33 +1886,34 @@
     ]
   },
   "publishing": {
-    "cadence": "4 long-form + 12 shorts / month · matches editor retainer",
+    "cadence": "4 long-form + 12 shorts / month · anchored to Friday (your strongest day)",
     "weekly": [
-      {
-        "day": "Monday",
-        "show": "Long-Form",
-        "type": "long",
-        "desc": "Edited 5-10 min. Exercise Library (or Independence Through Movement until Aug 22). The editor's video."
-      },
-      {
-        "day": "Tuesday",
-        "show": "Clip Short",
-        "type": "short",
-        "desc": "30-60 sec clip from Monday's long-form. Drives viewers to the full video."
-      },
       {
         "day": "Wednesday",
         "show": "Coach's Corner",
         "type": "short",
-        "desc": "One lesson I'm applying this week — tied to Current Focus. The audience learns what I'm learning."
+        "desc": "One lesson I'm applying this week — tied to Current Focus. Practical, single-topic (your best-performing format)."
       },
       {
         "day": "Friday",
+        "show": "Long-Form",
+        "type": "long",
+        "desc": "Edited 5-10 min, posted Friday AM to ride your biggest weekly spike. Exercise Library or Independence Through Movement. The editor's video."
+      },
+      {
+        "day": "Saturday",
+        "show": "Clip Short",
+        "type": "short",
+        "desc": "30-60 sec clip from Friday's long-form. Drives weekend viewers to the full video."
+      },
+      {
+        "day": "Sunday",
         "show": "Project 50 Update",
         "type": "short",
-        "desc": "What happened this week. Progress, setback, or something unexpected. Follow the journey."
+        "desc": "What happened this week — catches the weekend-warrior audience your analytics flagged on Sundays. Follow the journey."
       }
     ],
+    "schedule_note": "Based on 28-day analytics: spikes on Thu/Fri/Sun. Friday confirmed (data + general YouTube pattern). Sunday is a strong hypothesis — verify over the next month before locking. Mon/Tue remain quiet baseline days.",
     "monthly_long": [
       "Week 1 — Exercise Library",
       "Week 2 — Exercise Library",
