@@ -1605,5 +1605,114 @@
       "name": "100-Mile Goal",
       "note": "Final race build and execution"
     }
+  ],
+  "current_focus": {
+    "month": "July 2026",
+    "focus": "Improve sleep continuity",
+    "why": "Foundation pillar. Better sleep raises HRV and recovery before the aerobic build.",
+    "pillar": "Foundation"
+  },
+  "wins": [
+    {
+      "label": "Biological age under 40",
+      "achieved": true,
+      "date": "2026-05-15",
+      "note": "37.6 years on Function Health."
+    },
+    {
+      "label": "Glucose back in range",
+      "achieved": true,
+      "date": "2026-05-15",
+      "note": "114 to 83 mg/dL."
+    },
+    {
+      "label": "Lean mass gain +5 lb",
+      "achieved": true,
+      "date": "2026-06-26",
+      "note": "150.1 to 155.6 lb."
+    },
+    {
+      "label": "First 10 strict pull-ups",
+      "achieved": false
+    },
+    {
+      "label": "VO2 max above 40",
+      "achieved": false
+    },
+    {
+      "label": "Body fat under 22%",
+      "achieved": false
+    },
+    {
+      "label": "ApoB in range",
+      "achieved": false
+    },
+    {
+      "label": "First trail 10K",
+      "achieved": false
+    },
+    {
+      "label": "First 20-mile run",
+      "achieved": false
+    },
+    {
+      "label": "50K finish",
+      "achieved": false
+    },
+    {
+      "label": "100-mile finish",
+      "achieved": false
+    }
+  ],
+  "score_groups": [
+    {
+      "name": "Body Composition",
+      "categories": [
+        "body"
+      ]
+    },
+    {
+      "name": "Heart Health",
+      "categories": [
+        "engine"
+      ]
+    },
+    {
+      "name": "Strength",
+      "categories": [
+        "strength-endurance",
+        "timed",
+        "max-strength",
+        "power"
+      ]
+    },
+    {
+      "name": "Endurance",
+      "categories": [
+        "aerobic",
+        "endurance",
+        "speed"
+      ]
+    },
+    {
+      "name": "Mobility",
+      "categories": [
+        "gait",
+        "movement",
+        "longevity"
+      ]
+    },
+    {
+      "name": "Recovery",
+      "categories": [
+        "recovery"
+      ]
+    },
+    {
+      "name": "Blood Work",
+      "categories": [
+        "labs"
+      ]
+    }
   ]
 }

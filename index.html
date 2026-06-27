@@ -146,6 +146,36 @@
   .status-meter.big .meter-bar{height:14px;border-radius:7px}
   .status-meter.big .meter-label{font-size:1.05rem}
 
+  /* current focus */
+  .focus-card{background:var(--navy);color:#fff;border-radius:4px;padding:20px 24px;margin-bottom:14px}
+  .focus-tag{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;color:var(--steel);margin-bottom:6px}
+  .focus-main{font-family:'Bebas Neue',sans-serif;font-size:2rem;line-height:1.05;letter-spacing:.01em}
+  .focus-why{font-size:.9rem;color:#c7d2e0;margin-top:8px;max-width:62ch}
+
+  /* project 50 score */
+  .score-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+  .score-head-title{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:.01em}
+  .score-overall{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;line-height:1}
+  .score-overall small{font-size:1rem;color:var(--muted)}
+  .score-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:18px}
+  .score-card{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--track);border-radius:4px;padding:14px 16px;text-align:center}
+  .score-val{font-family:'Bebas Neue',sans-serif;font-size:2.6rem;line-height:1}
+  .score-name{font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-size:.92rem;margin-top:4px}
+  .score-sub{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
+  .sc-green{border-top-color:var(--green)} .sc-green .score-val,.score-overall.sc-green{color:var(--green)}
+  .sc-amber{border-top-color:var(--amber)} .sc-amber .score-val,.score-overall.sc-amber{color:var(--amber)}
+  .sc-red{border-top-color:var(--red)} .sc-red .score-val,.score-overall.sc-red{color:var(--red)}
+  .sc-none .score-val,.score-overall.sc-none{color:var(--muted)}
+
+  /* wins */
+  .wins-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+  .win{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:4px;padding:12px 14px}
+  .win.won{border-left:4px solid var(--green)}
+  .win.locked{opacity:.55;border-left:4px solid var(--track)}
+  .win-ico{font-size:1.4rem;line-height:1}
+  .win-label{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1rem;letter-spacing:.01em}
+  .win-sub{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+
   .gauge-card{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:20px 24px;margin-bottom:8px}
   .gauge-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:14px}
   .gauge-title{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.01em}
@@ -542,7 +572,76 @@ function render(d){
       </div>
     </section>`;
 
-  document.getElementById('main').innerHTML = gaugeHtml + html;
+  // ---- Project 50 Score: 0-100 per group ----
+  function scoreFor(catIds){
+    let g=0,a=0,r=0,t=0;
+    for(const id of catIds){
+      const c=d.categories.find(x=>x.id===id); if(!c) continue;
+      const s=sectionStatus(c.metrics, id==='labs');
+      g+=s.green; a+=s.amber; r+=s.red; t+=s.tested;
+    }
+    if(t===0) return {score:null, tested:0};
+    const score=Math.round(((g*1 + a*0.6 + r*0.2)/t)*100);
+    return {score, tested:t};
+  }
+  function scoreClass(sc){
+    if(sc===null) return 'sc-none';
+    if(sc>=80) return 'sc-green';
+    if(sc>=60) return 'sc-amber';
+    return 'sc-red';
+  }
+  let scoreCardsHtml='', scoreSum=0, scoreCount=0;
+  for(const grp of (d.score_groups||[])){
+    const {score,tested}=scoreFor(grp.categories);
+    if(score!==null){ scoreSum+=score; scoreCount++; }
+    scoreCardsHtml += `
+      <div class="score-card ${scoreClass(score)}">
+        <div class="score-val">${score===null?'\u2014':score}</div>
+        <div class="score-name">${grp.name}</div>
+        <div class="score-sub">${tested===0?'not yet tested':`${tested} tracked`}</div>
+      </div>`;
+  }
+  const project50 = scoreCount? Math.round(scoreSum/scoreCount) : null;
+  const scoreBlockHtml = `
+    <section id="p50-score">
+      <div class="score-head">
+        <div class="score-head-title">Project 50 Score</div>
+        <div class="score-overall ${scoreClass(project50)}">${project50===null?'\u2014':project50}<small>/100</small></div>
+      </div>
+      <div class="score-grid">${scoreCardsHtml}</div>
+    </section>`;
+
+  // ---- Current Focus ----
+  const cf=d.current_focus;
+  const focusHtml = cf ? `
+    <section id="focus">
+      <div class="focus-card">
+        <div class="focus-tag">Current Focus \u00b7 ${cf.month}${cf.pillar?` \u00b7 ${cf.pillar}`:''}</div>
+        <div class="focus-main">${cf.focus}</div>
+        ${cf.why?`<div class="focus-why">${cf.why}</div>`:''}
+      </div>
+    </section>` : '';
+
+  // ---- Wins ----
+  const wins=d.wins||[];
+  const winsHtml = wins.length ? `
+    <section id="wins">
+      <div class="sec-head"><div class="sec-title">Wins</div>
+        <div class="sec-meta">${wins.filter(w=>w.achieved).length} of ${wins.length} unlocked</div></div>
+      <div class="wins-grid">
+        ${wins.map(w=>`
+          <div class="win ${w.achieved?'won':'locked'}">
+            <div class="win-ico">${w.achieved?'\u{1F3C6}':'\u25CB'}</div>
+            <div class="win-body">
+              <div class="win-label">${w.label}</div>
+              <div class="win-sub">${w.achieved?(w.date||'Achieved'):'Goal'}</div>
+            </div>
+          </div>`).join('')}
+      </div>
+    </section>` : '';
+
+  document.getElementById('main').innerHTML =
+    focusHtml + scoreBlockHtml + gaugeHtml + html + winsHtml;
 }
 </script>
 </body>
