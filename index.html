@@ -80,6 +80,8 @@
     white-space:nowrap;transition:all .15s;
   }
   .navrow a:hover{color:var(--ink);background:var(--track)}
+  .navrow a.nav-update{color:var(--steel);border:1px solid var(--steel);margin-left:6px}
+  .navrow a.nav-update:hover{color:#fff;background:var(--steel)}
 
   /* ---------- Sections ---------- */
   section{padding:34px 0 8px}
@@ -494,7 +496,8 @@ function render(d){
     (d.publishing?`<a href="#publishing">Publishing</a>`:'') +
     (d.calendar?`<a href="#calendar">Calendar</a>`:'') +
     (d.wins?`<a href="#wins">Wins</a>`:'') +
-    (d.protocol?`<a href="#protocol">Protocol</a>`:'');
+    (d.protocol?`<a href="#protocol">Protocol</a>`:'') +
+    `<a href="update.html" class="nav-update">Update</a>`;
 
   // episode export block
   const exItems=[
