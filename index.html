@@ -6,20 +6,22 @@
 <title>Project 50 — Omar Lima</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#10151c;
-    --paper:#f6f5f1;
+    --ink:#141a22;
+    --paper:#fafaf7;
     --card:#ffffff;
-    --line:#dcdad2;
-    --muted:#6b7078;
+    --line:#e3e1d8;
+    --hair:#eeece4;
+    --muted:#7a828c;
     --navy:#16243a;
     --steel:#4a7ec7;
     --green:#3f8f5b;
     --amber:#c89031;
     --red:#c0503f;
-    --track:#e7e5dd;
+    --track:#edebe3;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -29,8 +31,9 @@
     color:var(--ink);
     line-height:1.5;
     -webkit-font-smoothing:antialiased;
+    font-variant-numeric:tabular-nums;
   }
-  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 22px}
 
   /* ---------- Header ---------- */
   header{
@@ -84,37 +87,44 @@
   .sec-title{font-family:'Bebas Neue',sans-serif;font-size:2rem;line-height:1;letter-spacing:.01em}
   .sec-meta{font-family:'Barlow Condensed',sans-serif;font-size:.82rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:500;text-align:right}
 
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
 
   .metric{
     background:var(--card);border:1px solid var(--line);border-radius:3px;
-    padding:15px 17px 17px;position:relative;
+    padding:14px 15px 15px;position:relative;
+    transition:border-color .15s ease, box-shadow .15s ease;
   }
-  .metric.untracked{opacity:.62}
+  .metric:hover{border-color:#cfcdc3;box-shadow:0 1px 0 rgba(20,26,34,.04),0 6px 18px -12px rgba(20,26,34,.25)}
+  .metric.untracked{opacity:.6}
   .m-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
-  .m-name{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1.05rem;letter-spacing:.01em}
-  .m-val{font-family:'Bebas Neue',sans-serif;font-size:2rem;line-height:.85;text-align:right;white-space:nowrap}
-  .m-val small{font-size:.72rem;font-family:'Barlow',sans-serif;color:var(--muted);letter-spacing:.01em;font-weight:500}
-  .m-val.empty{color:var(--line)}
+  .m-name{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:.98rem;letter-spacing:.01em;line-height:1.15}
+  .m-val{font-family:'Bebas Neue',sans-serif;font-size:2rem;line-height:.85;text-align:right;white-space:nowrap;font-feature-settings:"tnum"}
+  .m-val small{font-size:.66rem;font-family:var(--mono);color:var(--muted);letter-spacing:0;font-weight:500}
+  .m-val.empty{color:var(--track)}
 
-  .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle}
-  .s-green{background:var(--green)} .s-amber{background:var(--amber)} .s-red{background:var(--red)} .s-none{background:var(--line)}
+  .dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px;vertical-align:middle}
+  .s-green{background:var(--green)} .s-amber{background:var(--amber)} .s-red{background:var(--red)} .s-none{background:var(--track)}
+
+  /* sparkline */
+  .spark{display:block;width:100%;height:30px;margin:12px 0 4px}
 
   /* pacer bar — the signature element */
-  .bar{margin-top:14px}
-  .bar-track{position:relative;height:7px;background:var(--track);border-radius:4px;overflow:visible}
+  .bar{margin-top:12px}
+  .bar-track{position:relative;height:6px;background:var(--track);border-radius:4px;overflow:visible}
   .bar-fill{position:absolute;left:0;top:0;bottom:0;border-radius:4px;background:var(--steel);transition:width .6s ease}
   .bar-fill.green{background:var(--green)} .bar-fill.amber{background:var(--amber)} .bar-fill.red{background:var(--red)}
-  .pacer-tick{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--ink);opacity:.55}
-  .bar-labels{display:flex;justify-content:space-between;margin-top:6px;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
-  .bar-labels b{color:var(--ink);font-weight:600}
+  .pacer-tick{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--ink);opacity:.5}
+  .bar-labels{display:flex;justify-content:space-between;margin-top:6px;font-family:var(--mono);font-size:.64rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+  .bar-labels b{color:var(--ink);font-weight:700}
 
-  .m-date{margin-top:9px;font-size:.7rem;color:var(--muted);font-family:'Barlow Condensed',sans-serif;letter-spacing:.06em;text-transform:uppercase}
+  .m-date{margin-top:9px;font-size:.62rem;color:var(--muted);font-family:var(--mono);letter-spacing:.04em;text-transform:uppercase}
   .m-note{margin-top:9px;font-size:.78rem;color:#5a6068;line-height:1.35;font-style:italic}
   .m-warn{margin-top:11px;padding:9px 12px;background:rgba(192,80,63,.12);border:1px solid var(--red);border-radius:3px;color:var(--red);font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.02em;line-height:1.35}
-  .trend{display:inline-block;margin-top:9px;font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
-  .m-target{margin-top:11px;font-family:'Barlow Condensed',sans-serif;font-size:.82rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
-  .m-target b{color:var(--ink);font-weight:600}
+  .trend{display:inline-block;margin-top:9px;font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.02em;text-transform:uppercase}
+  .m-target{margin-top:11px;font-family:var(--mono);font-size:.7rem;letter-spacing:.02em;text-transform:uppercase;color:var(--muted)}
+  .m-target b{color:var(--ink);font-weight:700}
   .tr-good{color:var(--green)} .tr-bad{color:var(--red)}
 
   /* Protocol */
@@ -335,6 +345,29 @@ function evaluate(m){
   return {status, pct, pacerPct};
 }
 
+function sparkline(m){
+  if(!m.history || !m.history.length || m.value==null) return "";
+  // build series: history values (oldest->newest) then current
+  const pts = [...m.history.map(h=>h.value), m.value].filter(v=>v!=null);
+  if(pts.length<2) return "";
+  const w=120, h=30, pad=3;
+  const min=Math.min(...pts), max=Math.max(...pts);
+  const range=(max-min)||1;
+  const x=i=> pad + i*(w-2*pad)/(pts.length-1);
+  const y=v=> h-pad - ((v-min)/range)*(h-2*pad);
+  const dPath = pts.map((v,i)=>`${i?'L':'M'}${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(' ');
+  // color by whether the latest move is improving
+  const last=pts[pts.length-1], prev=pts[pts.length-2];
+  let stroke='var(--steel)';
+  if(m.direction==='up') stroke = last>=prev ? 'var(--green)':'var(--red)';
+  else if(m.direction==='down') stroke = last<=prev ? 'var(--green)':'var(--red)';
+  const cx=x(pts.length-1), cy=y(last);
+  return `<svg class="spark" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true">
+    <path d="${dPath}" fill="none" stroke="${stroke}" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+    <circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="2.4" fill="${stroke}"/>
+  </svg>`;
+}
+
 function metricCard(m){
   const ev=evaluate(m);
   const untracked = m.value===null||m.value===undefined;
@@ -399,11 +432,14 @@ function metricCard(m){
     }
   }
 
+  const sparkHtml = sparkline(m);
+
   return `<div class="metric ${untracked?'untracked':''}">
     <div class="m-top">
       <div class="m-name"><span class="dot ${sClass}"></span>${m.name}</div>
       ${valHtml}
     </div>
+    ${sparkHtml}
     ${barHtml}
     ${warnHtml}
     ${targetHtml}
