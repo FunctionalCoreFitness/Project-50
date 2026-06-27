@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project 50 — Update</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#141a22;--paper:#fafaf7;--card:#ffffff;--line:#e3e1d8;--hair:#eeece4;
+    --muted:#7a828c;--navy:#16243a;--steel:#4a7ec7;--green:#3f8f5b;--amber:#c89031;
+    --red:#c0503f;--track:#edebe3;--mono:'JetBrains Mono',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Barlow',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px 60px}
+  header{background:var(--navy);color:#eef1f6;padding:24px 0;border-bottom:3px solid var(--steel);margin-bottom:22px}
+  header .wrap{padding-bottom:0}
+  .eyebrow{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.26em;font-size:.7rem;font-weight:600;color:var(--steel)}
+  h1{font-family:'Bebas Neue',sans-serif;font-size:2.6rem;line-height:.95;letter-spacing:.01em;margin:.1em 0}
+  .lead{font-family:'Barlow Condensed',sans-serif;color:#c4ccd9;font-size:1rem}
+  .back{display:inline-block;margin-top:8px;color:var(--steel);text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-size:.9rem;letter-spacing:.04em}
+  section{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:18px 20px;margin-bottom:16px}
+  h2{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:.01em;margin-bottom:4px}
+  .hint{font-size:.85rem;color:var(--muted);margin-bottom:14px;line-height:1.4}
+  label{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:.78rem;color:var(--muted);margin:12px 0 4px}
+  input,select,textarea{width:100%;font-family:var(--mono);font-size:.92rem;padding:10px 12px;border:1px solid var(--line);border-radius:3px;background:#fff;color:var(--ink)}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--steel)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:520px){.row{grid-template-columns:1fr}}
+  button{font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:.92rem;padding:11px 18px;border:none;border-radius:3px;cursor:pointer;background:var(--steel);color:#fff}
+  button.ghost{background:transparent;color:var(--steel);border:1px solid var(--steel)}
+  button:disabled{opacity:.5;cursor:not-allowed}
+  .btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+  .token-warn{background:rgba(192,80,63,.08);border:1px solid var(--red);border-left:3px solid var(--red);border-radius:3px;padding:10px 12px;font-size:.82rem;color:#7a2e23;margin-top:10px;line-height:1.4}
+  .ok{color:var(--green)} .err{color:var(--red)}
+  .status{font-family:var(--mono);font-size:.85rem;margin-top:12px;padding:10px 12px;border-radius:3px;background:var(--hair);display:none}
+  .status.show{display:block}
+  .win-list label.win-row{display:flex;align-items:center;gap:10px;text-transform:none;letter-spacing:0;font-family:'Barlow',sans-serif;font-weight:500;font-size:.92rem;color:var(--ink);margin:6px 0;cursor:pointer}
+  .win-list input[type=checkbox]{width:auto}
+  .win-done{color:var(--green);font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.04em}
+  pre{background:#0f1722;color:#cdd6e3;font-family:var(--mono);font-size:.74rem;padding:12px;border-radius:3px;overflow:auto;max-height:260px;line-height:1.5;margin-top:10px}
+  .diff-add{color:#7ee0a0} .diff-old{color:#e08a8a;text-decoration:line-through}
+  .pill{display:inline-block;font-family:var(--mono);font-size:.7rem;background:var(--hair);padding:2px 8px;border-radius:3px;margin-left:6px;color:var(--muted)}
+  .change-item{font-size:.88rem;padding:6px 0;border-bottom:1px solid var(--hair)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="eyebrow">The 50-Year Athlete Project</div>
+    <h1>Update Console</h1>
+    <div class="lead">Log readings, mark wins, set focus — writes straight to GitHub.</div>
+    <a class="back" href="index.html">&larr; Back to dashboard</a>
+  </div>
+</header>
+<div class="wrap">
+
+  <!-- TOKEN -->
+  <section>
+    <h2>1 · Access</h2>
+    <div class="hint">Paste your fine-grained GitHub token (Contents: write, scoped to Project-50 only). It stays in this page's memory and is never saved or sent anywhere except GitHub. Closing the tab clears it.</div>
+    <label>GitHub token</label>
+    <input id="tok" type="password" placeholder="github_pat_..." autocomplete="off">
+    <div class="btn-row">
+      <button id="loadBtn">Load current data</button>
+    </div>
+    <div class="token-warn">Generate at GitHub → Settings → Developer settings → Fine-grained tokens. Repository access: only <b>Project-50</b>. Permission: <b>Contents → Read and write</b>. Never paste this token anywhere public.</div>
+    <div id="loadStatus" class="status"></div>
+  </section>
+
+  <!-- LOG READING -->
+  <section id="logSec" style="opacity:.5;pointer-events:none">
+    <h2>2 · Log a reading</h2>
+    <div class="hint">Pick a metric, enter the new value and date. The old value moves into history automatically so your trend line grows.</div>
+    <label>Metric</label>
+    <select id="metricSel"><option>— load data first —</option></select>
+    <div class="row">
+      <div><label>New value</label><input id="newVal" type="text" inputmode="decimal" placeholder="e.g. 216.4"></div>
+      <div><label>Date</label><input id="newDate" type="date"></div>
+    </div>
+    <div class="btn-row"><button class="ghost" id="queueReading">Add to changes</button></div>
+  </section>
+
+  <!-- WINS -->
+  <section id="winSec" style="opacity:.5;pointer-events:none">
+    <h2>3 · Mark wins</h2>
+    <div class="hint">Tick a win to mark it achieved with today's date. Untick to revert.</div>
+    <div id="winList" class="win-list"></div>
+  </section>
+
+  <!-- FOCUS -->
+  <section id="focusSec" style="opacity:.5;pointer-events:none">
+    <h2>4 · Current focus</h2>
+    <div class="hint">One priority for the month. Shows at the top of the dashboard and drives the Wednesday short.</div>
+    <div class="row">
+      <div><label>Month</label><input id="cfMonth" placeholder="Aug 2026"></div>
+      <div><label>Pillar</label>
+        <select id="cfPillar"><option>Foundation</option><option>Strength</option><option>Mobility</option><option>Longevity</option></select>
+      </div>
+    </div>
+    <label>Focus</label>
+    <input id="cfFocus" placeholder="Build aerobic base">
+    <label>Why</label>
+    <textarea id="cfWhy" rows="2" placeholder="One line on why this matters this month."></textarea>
+    <div class="btn-row"><button class="ghost" id="queueFocus">Add to changes</button></div>
+  </section>
+
+  <!-- REVIEW + COMMIT -->
+  <section id="reviewSec" style="opacity:.5;pointer-events:none">
+    <h2>5 · Review &amp; save</h2>
+    <div class="hint">Check the changes below, then commit. This fetches the latest file, applies your edits, and pushes one commit.</div>
+    <div id="changeList"><div class="hint" style="margin:0">No changes queued yet.</div></div>
+    <div class="btn-row">
+      <button id="commitBtn" disabled>Commit to GitHub</button>
+      <button class="ghost" id="clearBtn">Clear changes</button>
+    </div>
+    <div id="commitStatus" class="status"></div>
+  </section>
+
+</div>
+
+<script>
+const OWNER="FunctionalCoreFitness", REPO="Project-50", PATH="data.json", BRANCH="main";
+let DATA=null, SHA=null;
+let changes={readings:[], wins:{}, focus:null};
+
+const $=id=>document.getElementById(id);
+const today=()=>new Date().toISOString().slice(0,10);
+function setStatus(el,msg,cls){ el.className='status show '+(cls||''); el.textContent=msg; }
+function enable(id){ const s=$(id); s.style.opacity='1'; s.style.pointerEvents='auto'; }
+
+// ---- Load current data from GitHub ----
+$('loadBtn').onclick=async()=>{
+  const tok=$('tok').value.trim();
+  if(!tok){ setStatus($('loadStatus'),'Paste your token first.','err'); return; }
+  setStatus($('loadStatus'),'Loading…');
+  try{
+    const r=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}?ref=${BRANCH}`,
+      {headers:{Authorization:`Bearer ${tok}`,Accept:'application/vnd.github+json'}});
+    if(!r.ok) throw new Error(`GitHub ${r.status} — check token scope/permissions`);
+    const j=await r.json();
+    SHA=j.sha;
+    DATA=JSON.parse(decodeURIComponent(escape(atob(j.content))));
+    setStatus($('loadStatus'),'Loaded. Latest data is ready to edit.','ok');
+    buildMetricList(); buildWinList(); prefillFocus();
+    ['logSec','winSec','focusSec','reviewSec'].forEach(enable);
+  }catch(e){ setStatus($('loadStatus'),'Failed: '+e.message,'err'); }
+};
+
+function buildMetricList(){
+  const sel=$('metricSel'); sel.innerHTML='';
+  DATA.categories.forEach(c=>{
+    c.metrics.forEach((m,i)=>{
+      const o=document.createElement('option');
+      o.value=`${c.id}|${i}`;
+      o.textContent=`${c.name} › ${m.name}${m.value!=null?` (now ${m.value}${m.unit||''})`:' (untested)'}`;
+      sel.appendChild(o);
+    });
+  });
+}
+function buildWinList(){
+  const wl=$('winList'); wl.innerHTML='';
+  (DATA.wins||[]).forEach((w,i)=>{
+    const row=document.createElement('label'); row.className='win-row';
+    const cb=document.createElement('input'); cb.type='checkbox'; cb.checked=!!w.achieved; cb.dataset.i=i;
+    cb.onchange=()=>{ changes.wins[i]=cb.checked; renderChanges(); };
+    const txt=document.createElement('span'); txt.textContent=w.label;
+    row.appendChild(cb); row.appendChild(txt);
+    if(w.achieved){ const d=document.createElement('span'); d.className='win-done'; d.textContent='✓ '+(w.date||'done'); row.appendChild(d); }
+    wl.appendChild(row);
+  });
+}
+function prefillFocus(){
+  const cf=DATA.current_focus||{};
+  $('cfMonth').value=cf.month||''; $('cfFocus').value=cf.focus||'';
+  $('cfWhy').value=cf.why||''; if(cf.pillar) $('cfPillar').value=cf.pillar;
+}
+
+// ---- Queue a reading ----
+$('queueReading').onclick=()=>{
+  const [cid,idx]=$('metricSel').value.split('|');
+  const val=$('newVal').value.trim(); const date=$('newDate').value||today();
+  if(val===''){ alert('Enter a value'); return; }
+  const num=isNaN(Number(val))?val:Number(val);
+  changes.readings.push({cid,idx:+idx,value:num,date});
+  $('newVal').value='';
+  renderChanges();
+};
+
+// ---- Queue focus ----
+$('queueFocus').onclick=()=>{
+  changes.focus={month:$('cfMonth').value.trim(),focus:$('cfFocus').value.trim(),
+    why:$('cfWhy').value.trim(),pillar:$('cfPillar').value};
+  renderChanges();
+};
+
+$('clearBtn').onclick=()=>{ changes={readings:[],wins:{},focus:null}; buildWinList(); renderChanges(); };
+
+function renderChanges(){
+  const box=$('changeList'); const items=[];
+  changes.readings.forEach(r=>{
+    const c=DATA.categories.find(x=>x.id===r.cid); const m=c.metrics[r.idx];
+    items.push(`<div class="change-item"><b>${m.name}</b>: ${m.value??'—'} → <span class="diff-add">${r.value}</span> <span class="pill">${r.date}</span></div>`);
+  });
+  Object.entries(changes.wins).forEach(([i,v])=>{
+    const w=DATA.wins[i]; if(!!w.achieved===v) return;
+    items.push(`<div class="change-item">Win <b>${w.label}</b>: ${v?'<span class="diff-add">mark achieved</span>':'<span class="diff-old">revert</span>'}</div>`);
+  });
+  if(changes.focus){
+    items.push(`<div class="change-item">Focus → <b>${changes.focus.focus}</b> <span class="pill">${changes.focus.month} · ${changes.focus.pillar}</span></div>`);
+  }
+  box.innerHTML = items.length? items.join('') : '<div class="hint" style="margin:0">No changes queued yet.</div>';
+  $('commitBtn').disabled = items.length===0;
+}
+
+// ---- Apply changes to a copy of DATA ----
+function applyChanges(){
+  const d=JSON.parse(JSON.stringify(DATA));
+  changes.readings.forEach(r=>{
+    const c=d.categories.find(x=>x.id===r.cid); const m=c.metrics[r.idx];
+    if(m.value!=null){ m.history=m.history||[]; m.history.push({value:m.value,date:m.date||today()}); }
+    m.value=r.value; m.date=r.date;
+  });
+  Object.entries(changes.wins).forEach(([i,v])=>{
+    d.wins[i].achieved=v;
+    if(v) d.wins[i].date=today(); else delete d.wins[i].date;
+  });
+  if(changes.focus) d.current_focus=changes.focus;
+  return d;
+}
+
+// ---- Commit ----
+$('commitBtn').onclick=async()=>{
+  const tok=$('tok').value.trim();
+  if(!tok){ setStatus($('commitStatus'),'Token missing.','err'); return; }
+  if(!confirm('Commit these changes to GitHub?')) return;
+  setStatus($('commitStatus'),'Committing…');
+  try{
+    const updated=applyChanges();
+    const body=JSON.stringify(updated,null,2);
+    const content=btoa(unescape(encodeURIComponent(body)));
+    const n=changes.readings.length, w=Object.keys(changes.wins).length;
+    const msg=`Update via console: ${n} reading(s), ${w} win edit(s)${changes.focus?', focus':''}`;
+    const r=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}`,{
+      method:'PUT',
+      headers:{Authorization:`Bearer ${tok}`,Accept:'application/vnd.github+json'},
+      body:JSON.stringify({message:msg,content,sha:SHA,branch:BRANCH})
+    });
+    if(!r.ok){ const e=await r.json().catch(()=>({})); throw new Error(`GitHub ${r.status} ${e.message||''}`); }
+    const j=await r.json(); SHA=j.content.sha; DATA=updated;
+    changes={readings:[],wins:{},focus:null};
+    buildMetricList(); buildWinList(); renderChanges();
+    setStatus($('commitStatus'),'Saved ✓ Dashboard will show it on next refresh (give Pages ~1 min).','ok');
+  }catch(e){ setStatus($('commitStatus'),'Failed: '+e.message,'err'); }
+};
+
+$('newDate').value=today();
+</script>
+</body>
+</html>
