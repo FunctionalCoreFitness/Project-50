@@ -183,6 +183,66 @@
       ]
     },
     {
+      "id": "gait",
+      "name": "Gait & Mobility",
+      "source": "Apple Health (iPhone walking metrics)",
+      "cadence": "Passive daily — watch for asymmetry",
+      "metrics": [
+        {
+          "name": "Walking Asymmetry",
+          "unit": "%",
+          "value": null,
+          "pacer": 3,
+          "goal": 1,
+          "direction": "down",
+          "date": null,
+          "note": "LIMP DETECTOR. % of steps with uneven timing L vs R. Apple flags >3%. Rising trend = you may be favoring a side without noticing.",
+          "warnOver": 3,
+          "warnLabel": "Walking asymmetry elevated"
+        },
+        {
+          "name": "Double Support Time",
+          "unit": "%",
+          "value": null,
+          "pacer": 30,
+          "goal": 25,
+          "direction": "down",
+          "date": null,
+          "note": "% of stride with both feet down. Climbs when guarding an injury or fatigued. Healthy ~20-40%."
+        },
+        {
+          "name": "Walking Speed",
+          "unit": "mph",
+          "value": null,
+          "pacer": 3.0,
+          "goal": 3.3,
+          "direction": "up",
+          "date": null,
+          "note": "A sudden drop can signal you're protecting something."
+        },
+        {
+          "name": "Step Length",
+          "unit": "in",
+          "value": null,
+          "pacer": 28,
+          "goal": 30,
+          "direction": "up",
+          "date": null,
+          "note": "Shortening on one side or overall often precedes a noticed limp."
+        },
+        {
+          "name": "Walking Steadiness",
+          "unit": "score",
+          "value": null,
+          "pacer": null,
+          "goal": null,
+          "direction": "up",
+          "date": null,
+          "note": "Apple balance/stability rating: OK / Low / Very Low. Log OK as 100, Low as 50."
+        }
+      ]
+    },
+    {
       "id": "aerobic",
       "name": "Aerobic Capacity",
       "source": "Field test",
