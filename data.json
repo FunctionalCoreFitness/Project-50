@@ -1931,5 +1931,121 @@
       "Weather",
       "Whiteboard planning"
     ]
+  },
+  "locations": {
+    "intro": "Seven sets, seven aspects of becoming a 50-year athlete. Each location signals a type of content so the series reads as a show, not a feed.",
+    "sets": [
+      {
+        "verb": "Teach",
+        "name": "FCF Studio",
+        "key": "teach",
+        "purpose": "Coaching & educational content",
+        "content": [
+          "Exercise Library",
+          "Independence Through Movement",
+          "Coach's Corner",
+          "Strength demos",
+          "Balance",
+          "Mobility",
+          "Client examples"
+        ],
+        "style": "Bright · Clean · Professional"
+      },
+      {
+        "verb": "Test",
+        "name": "Movement Lab",
+        "key": "test",
+        "purpose": "Assessment & skill development",
+        "content": [
+          "Performance testing",
+          "Mobility assessments",
+          "Pacer test",
+          "Jump testing",
+          "Balance testing",
+          "New movement experiments"
+        ],
+        "style": "Laboratory · Testing · Progress"
+      },
+      {
+        "verb": "Recover",
+        "name": "Recovery Room",
+        "key": "recover",
+        "purpose": "Recovery & health",
+        "content": [
+          "Cold plunge",
+          "Infrared sauna",
+          "Steam sauna",
+          "Red light therapy",
+          "Chilipad",
+          "Normatec",
+          "Power Plate",
+          "Supplements",
+          "Sleep optimization"
+        ],
+        "style": "Calm · Scientific · Personal"
+      },
+      {
+        "verb": "Perform",
+        "name": "Dojo",
+        "key": "perform",
+        "purpose": "Athletic performance",
+        "content": [
+          "BJJ",
+          "Movement drills",
+          "Rolling",
+          "Warm-ups",
+          "Mobility",
+          "Wrestling-inspired movement",
+          "Mindset"
+        ],
+        "style": "Athletic · Gritty · Authentic"
+      },
+      {
+        "verb": "Reflect",
+        "name": "Dashboard Studio",
+        "key": "reflect",
+        "purpose": "Project 50 journal — mission control",
+        "content": [
+          "Apple Health review",
+          "Function Health review",
+          "DEXA review",
+          "Dashboard updates",
+          "Planning",
+          "Reflection",
+          "Goal setting",
+          "Monthly recap"
+        ],
+        "style": "Documentary · Personal · Behind-the-scenes"
+      },
+      {
+        "verb": "Explore",
+        "name": "Trail / Outdoors",
+        "key": "explore",
+        "purpose": "Endurance",
+        "content": [
+          "Hiking",
+          "Trail runs",
+          "Zone 2 sessions",
+          "Race recaps",
+          "Nature reflections",
+          "Recovery walks"
+        ],
+        "style": "Cinematic · Inspirational · Adventure"
+      },
+      {
+        "verb": "Think",
+        "name": "Jeep",
+        "key": "think",
+        "purpose": "Transition scenes",
+        "content": [
+          "Driving thoughts",
+          "Race-day mornings",
+          "Post-workout reflections",
+          "BodySpec reactions",
+          "Life updates"
+        ],
+        "style": "Vlog · Candid · Authentic"
+      }
+    ]
   }
 }

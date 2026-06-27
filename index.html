@@ -206,6 +206,24 @@
   .broll{display:flex;flex-wrap:wrap;gap:6px}
   .broll-tag{font-size:.78rem;background:#f1efe8;color:#5a5f66;padding:4px 10px;border-radius:3px}
 
+  /* locations / sets */
+  .loc-intro{font-size:.92rem;color:#4a5159;line-height:1.5;margin-bottom:16px;max-width:70ch}
+  .loc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+  .loc-card{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--steel);border-radius:4px;padding:16px 18px}
+  .loc-verb{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;line-height:1;letter-spacing:.02em;color:var(--steel)}
+  .loc-name{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1.05rem;letter-spacing:.02em;margin-bottom:2px}
+  .loc-purpose{font-size:.84rem;color:var(--muted);margin-bottom:10px}
+  .loc-content{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
+  .loc-content span{font-size:.74rem;background:var(--hair);color:#5a5f66;padding:3px 8px;border-radius:3px}
+  .loc-style{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+  .loc-teach{border-top-color:#4a7ec7} .loc-teach .loc-verb{color:#4a7ec7}
+  .loc-test{border-top-color:#3f8f5b} .loc-test .loc-verb{color:#3f8f5b}
+  .loc-recover{border-top-color:#3aa6b9} .loc-recover .loc-verb{color:#3aa6b9}
+  .loc-perform{border-top-color:#c0503f} .loc-perform .loc-verb{color:#c0503f}
+  .loc-reflect{border-top-color:#6a4a99} .loc-reflect .loc-verb{color:#6a4a99}
+  .loc-explore{border-top-color:#c89031} .loc-explore .loc-verb{color:#c89031}
+  .loc-think{border-top-color:#7a828c} .loc-think .loc-verb{color:#7a828c}
+
   /* calendar */
   .cal-list{display:flex;flex-direction:column;gap:10px}
   .cal-month{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:16px 18px}
@@ -496,6 +514,7 @@ function render(d){
     d.categories.map(c=>`<a href="#${c.id}">${c.name}</a>`).join('') +
     (d.publishing?`<a href="#publishing">Publishing</a>`:'') +
     (d.calendar?`<a href="#calendar">Calendar</a>`:'') +
+    (d.locations?`<a href="#locations">Sets</a>`:'') +
     (d.wins?`<a href="#wins">Wins</a>`:'') +
     (d.protocol?`<a href="#protocol">Protocol</a>`:'') +
     `<a href="update.html" class="nav-update">Update</a>`;
@@ -720,6 +739,25 @@ function render(d){
       </div>
     </section>` : '';
 
+  // ---- Locations / Sets ----
+  const loc=d.locations;
+  const locHtml = loc ? `
+    <section id="locations">
+      <div class="sec-head"><div class="sec-title">Sets</div>
+        <div class="sec-meta">Seven locations \u00b7 seven verbs</div></div>
+      <div class="loc-intro">${loc.intro}</div>
+      <div class="loc-grid">
+        ${loc.sets.map(s=>`
+          <div class="loc-card loc-${s.key}">
+            <div class="loc-verb">${s.verb}</div>
+            <div class="loc-name">${s.name}</div>
+            <div class="loc-purpose">${s.purpose}</div>
+            <div class="loc-content">${s.content.map(c=>`<span>${c}</span>`).join('')}</div>
+            <div class="loc-style">${s.style}</div>
+          </div>`).join('')}
+      </div>
+    </section>` : '';
+
   // ---- Publishing: weekly template + monthly output ----
   const pub=d.publishing;
   let pubHtml='';
@@ -786,7 +824,7 @@ function render(d){
     </section>` : '';
 
   document.getElementById('main').innerHTML =
-    focusHtml + scoreBlockHtml + gaugeHtml + html + pubHtml + calHtml + winsHtml;
+    focusHtml + scoreBlockHtml + gaugeHtml + html + pubHtml + calHtml + locHtml + winsHtml;
 }
 </script>
 </body>
