@@ -111,6 +111,7 @@
 
   .m-date{margin-top:9px;font-size:.7rem;color:var(--muted);font-family:'Barlow Condensed',sans-serif;letter-spacing:.06em;text-transform:uppercase}
   .m-note{margin-top:9px;font-size:.78rem;color:#5a6068;line-height:1.35;font-style:italic}
+  .m-warn{margin-top:11px;padding:9px 12px;background:rgba(192,80,63,.12);border:1px solid var(--red);border-radius:3px;color:var(--red);font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.02em;line-height:1.35}
   .trend{display:inline-block;margin-top:9px;font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
   .m-target{margin-top:11px;font-family:'Barlow Condensed',sans-serif;font-size:.82rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
   .m-target b{color:var(--ink);font-weight:600}
@@ -295,6 +296,12 @@ function metricCard(m){
   }
   const noteHtml = m.note ? `<div class="m-note">${m.note}</div>` : "";
 
+  // active warning: when a metric tagged with 'warnOver' exceeds that value
+  let warnHtml = "";
+  if(!untracked && m.warnOver!=null && m.value > m.warnOver){
+    warnHtml = `<div class="m-warn">\u26a0 ${m.warnLabel || 'Above threshold'} \u2014 value ${fmt(m.value)} exceeds ${fmt(m.warnOver)}. Check for a developing limp or compensation.</div>`;
+  }
+
   // trend vs most recent history entry
   let trendHtml = "";
   if(!untracked && m.history && m.history.length){
@@ -316,6 +323,7 @@ function metricCard(m){
       ${valHtml}
     </div>
     ${barHtml}
+    ${warnHtml}
     ${targetHtml}
     ${trendHtml}
     ${noteHtml}
