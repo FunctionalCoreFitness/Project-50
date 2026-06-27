@@ -75,59 +75,6 @@
           ]
         },
         {
-          "name": "Bone Mass",
-          "unit": "lb",
-          "value": 8.1,
-          "pacer": 8.1,
-          "goal": 8.1,
-          "direction": "up",
-          "date": "2026-06-26",
-          "history": [
-            {
-              "value": 8.2,
-              "date": "2026-02-01"
-            }
-          ]
-        },
-        {
-          "name": "Left Arm Lean",
-          "unit": "lb",
-          "value": 11.3,
-          "pacer": null,
-          "goal": null,
-          "direction": "up",
-          "date": "2026-06-26",
-          "note": "Watch L/R balance vs right arm."
-        },
-        {
-          "name": "Right Arm Lean",
-          "unit": "lb",
-          "value": 11.1,
-          "pacer": null,
-          "goal": null,
-          "direction": "up",
-          "date": "2026-06-26"
-        },
-        {
-          "name": "Left Leg Lean",
-          "unit": "lb",
-          "value": 27.0,
-          "pacer": null,
-          "goal": null,
-          "direction": "up",
-          "date": "2026-06-26",
-          "note": "1.2 lb behind right leg."
-        },
-        {
-          "name": "Right Leg Lean",
-          "unit": "lb",
-          "value": 28.2,
-          "pacer": null,
-          "goal": null,
-          "direction": "up",
-          "date": "2026-06-26"
-        },
-        {
           "name": "Visceral Fat",
           "unit": "",
           "value": null,
@@ -719,7 +666,7 @@
     {
       "id": "recovery",
       "name": "Recovery",
-      "source": "Apple Health + manual checklist",
+      "source": "Apple Health + science-based protocols",
       "cadence": "Daily / weekly",
       "metrics": [
         {
@@ -750,34 +697,6 @@
           "date": "2026-06-26"
         },
         {
-          "name": "Sauna Sessions",
-          "unit": "/wk",
-          "value": null,
-          "pacer": 3,
-          "goal": 4,
-          "direction": "up",
-          "date": null
-        },
-        {
-          "name": "Cold Plunge",
-          "unit": "/wk",
-          "value": null,
-          "pacer": 3,
-          "goal": 4,
-          "direction": "up",
-          "date": null
-        },
-        {
-          "name": "Mobility Sessions",
-          "unit": "/wk",
-          "value": null,
-          "pacer": 7,
-          "goal": 7,
-          "direction": "up",
-          "date": null,
-          "note": "Currently daily."
-        },
-        {
           "name": "Subjective Recovery",
           "unit": "/10",
           "value": null,
@@ -785,6 +704,56 @@
           "goal": 8,
           "direction": "up",
           "date": null
+        },
+        {
+          "name": "Sauna",
+          "unit": "min/wk",
+          "value": null,
+          "pacer": 57,
+          "goal": 57,
+          "direction": "up",
+          "date": null,
+          "note": "~4 sessions x 15 min. Cardiovascular benefit peaks 4-7x/wk (Finnish cohort)."
+        },
+        {
+          "name": "Cold Plunge",
+          "unit": "min/wk",
+          "value": null,
+          "pacer": 11,
+          "goal": 11,
+          "direction": "up",
+          "date": null,
+          "note": "Soberg Principle: 11 min/wk over 2-3 sessions, ~1-3 min each. More isn't better."
+        },
+        {
+          "name": "Steam Sauna",
+          "unit": "min/wk",
+          "value": null,
+          "pacer": 45,
+          "goal": 45,
+          "direction": "up",
+          "date": null,
+          "note": "Heat exposure dosing similar to dry sauna; combine total heat time."
+        },
+        {
+          "name": "Red Light Therapy",
+          "unit": "sessions/wk",
+          "value": null,
+          "pacer": 4,
+          "goal": 4,
+          "direction": "up",
+          "date": null,
+          "note": "3-5 sessions/wk, 10-20 min each. Rest days between (biphasic dose response)."
+        },
+        {
+          "name": "Wim Hof Breathing",
+          "unit": "sessions/wk",
+          "value": null,
+          "pacer": 7,
+          "goal": 7,
+          "direction": "up",
+          "date": null,
+          "note": "Official method: ~20 min daily, 3-4 rounds. Always seated/lying, never near water."
         }
       ]
     },
