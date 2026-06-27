@@ -1714,5 +1714,175 @@
         "labs"
       ]
     }
-  ]
+  ],
+  "calendar": {
+    "season": "Stay Independent · Jul 2026 – Jun 2027",
+    "months": [
+      {
+        "month": "Jul 2026",
+        "pillar": "Foundation",
+        "episodes": [
+          "Know Your Body — baseline assessments on camera",
+          "Breathing & core activation",
+          "Posture reset"
+        ],
+        "assessments": [
+          "DEXA scan (baseline)",
+          "Apple Health gait baseline",
+          "Strength-endurance test day (push/pull/dips/chin)",
+          "Timed holds (plank, wall-sit, dead-hang)"
+        ]
+      },
+      {
+        "month": "Aug 2026",
+        "pillar": "Foundation",
+        "episodes": [
+          "Finish Independence Through Movement series",
+          "Single-leg balance & control",
+          "Daily mobility flow"
+        ],
+        "assessments": [
+          "Longevity tests (sit-to-stand, balance, grip, HR recovery)",
+          "Movement screen (deep squat, floor rise)"
+        ]
+      },
+      {
+        "month": "Sep 2026",
+        "pillar": "Foundation",
+        "episodes": [
+          "Aerobic base — Zone 2 explained",
+          "Building the engine",
+          "Recovery foundations"
+        ],
+        "assessments": [
+          "Function Health labs (Q3 — recheck lipids, ApoB, Vit D)",
+          "VO2 max check",
+          "Aerobic test (5K time trial)"
+        ]
+      },
+      {
+        "month": "Oct 2026",
+        "pillar": "Strength",
+        "episodes": [
+          "Functional strength — trap bar & bench",
+          "Bulgarian bag strength series",
+          "Loaded carries"
+        ],
+        "assessments": [
+          "DEXA scan (8-wk recheck)",
+          "Max-strength test (est. 1RM: DL, bench, front squat)",
+          "Power test (vertical, broad jump, med ball)"
+        ]
+      },
+      {
+        "month": "Nov 2026",
+        "pillar": "Strength",
+        "episodes": [
+          "Pull-up progression to 10",
+          "Posterior chain — RDL & hinge",
+          "Grip & forearm strength"
+        ],
+        "assessments": [
+          "Strength-endurance retest (track pull-up progress)",
+          "Timed holds retest"
+        ]
+      },
+      {
+        "month": "Dec 2026",
+        "pillar": "Strength",
+        "episodes": [
+          "Year-one review — what changed",
+          "Strength + BJJ carryover",
+          "Holiday training that holds"
+        ],
+        "assessments": [
+          "Function Health labs (Q4 — full panel)",
+          "Apple Health gait re-check"
+        ]
+      },
+      {
+        "month": "Jan 2027",
+        "pillar": "Mobility",
+        "episodes": [
+          "Stick Mobility series launch",
+          "Hip & ankle mobility for runners",
+          "Movement quality reset"
+        ],
+        "assessments": [
+          "DEXA scan (8-wk recheck)",
+          "Movement screen retest",
+          "Longevity tests retest"
+        ]
+      },
+      {
+        "month": "Feb 2027",
+        "pillar": "Mobility",
+        "episodes": [
+          "SMR for grapplers",
+          "Thoracic & shoulder mobility",
+          "Mobility + strength integration"
+        ],
+        "assessments": [
+          "Speed/agility test (shuttle, T-test)",
+          "Gait asymmetry deep-check"
+        ]
+      },
+      {
+        "month": "Mar 2027",
+        "pillar": "Mobility",
+        "episodes": [
+          "First trail 10K — on camera",
+          "Trail running form",
+          "Mobility for trail durability"
+        ],
+        "assessments": [
+          "Function Health labs (Q1)",
+          "VO2 max check",
+          "First trail 10K (timed)"
+        ]
+      },
+      {
+        "month": "Apr 2027",
+        "pillar": "Longevity",
+        "episodes": [
+          "Recovery stack — sauna, cold, red light",
+          "Wim Hof breathwork deep-dive",
+          "HRV & sleep optimization"
+        ],
+        "assessments": [
+          "DEXA scan (8-wk recheck)",
+          "Recovery modality audit (weekly doses)",
+          "Power test retest"
+        ]
+      },
+      {
+        "month": "May 2027",
+        "pillar": "Longevity",
+        "episodes": [
+          "First 20-mile run — the build",
+          "Fueling for distance",
+          "Mental game of endurance"
+        ],
+        "assessments": [
+          "Aerobic test (long-run pace)",
+          "First 20-mile run (logged)",
+          "Full physical retest battery"
+        ]
+      },
+      {
+        "month": "Jun 2027",
+        "pillar": "Longevity",
+        "episodes": [
+          "Two-year mark — full progress review",
+          "The 50K build begins",
+          "What the data taught me"
+        ],
+        "assessments": [
+          "DEXA scan",
+          "Function Health labs (Q2)",
+          "Full Project 50 Score recalculation"
+        ]
+      }
+    ]
+  }
 }

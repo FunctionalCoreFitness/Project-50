@@ -176,6 +176,25 @@
   .win-label{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1rem;letter-spacing:.01em}
   .win-sub{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
 
+  /* calendar */
+  .cal-list{display:flex;flex-direction:column;gap:10px}
+  .cal-month{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:16px 18px}
+  .cal-month.cal-now{border:2px solid var(--steel)}
+  .cal-month-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px}
+  .cal-mname{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:.01em}
+  .cal-nowtag{font-family:'Barlow Condensed',sans-serif;font-size:.7rem;background:var(--steel);color:#fff;padding:2px 8px;border-radius:3px;text-transform:uppercase;letter-spacing:.08em;vertical-align:middle}
+  .cal-pillar{font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:.78rem;padding:4px 12px;border-radius:3px}
+  .pl-foundation{background:#e8eef7;color:#2c5a99} .pl-strength{background:#f7ece4;color:#a85a2c}
+  .pl-mobility{background:#e6f1ec;color:#2c7a55} .pl-longevity{background:#efe9f5;color:#6a4a99}
+  .cal-cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:640px){.cal-cols{grid-template-columns:1fr}}
+  .cal-col-h{font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:.8rem;color:var(--muted);margin-bottom:6px;display:flex;align-items:center;gap:7px}
+  .cal-col ul{list-style:none;margin:0;padding:0}
+  .cal-col li{font-size:.9rem;padding:4px 0 4px 14px;position:relative;line-height:1.35}
+  .cal-col li:before{content:"";position:absolute;left:0;top:11px;width:5px;height:5px;border-radius:50%;background:var(--line)}
+  .dot-film{width:9px;height:9px;border-radius:2px;background:var(--steel);display:inline-block}
+  .dot-test{width:9px;height:9px;border-radius:50%;background:var(--green);display:inline-block}
+
   .gauge-card{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:20px 24px;margin-bottom:8px}
   .gauge-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:14px}
   .gauge-title{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.01em}
@@ -417,7 +436,10 @@ function render(d){
   // nav
   document.getElementById('navrow').innerHTML =
     `<a href="#export">Dashboard</a>` +
+    `<a href="#p50-score">Score</a>` +
     d.categories.map(c=>`<a href="#${c.id}">${c.name}</a>`).join('') +
+    (d.calendar?`<a href="#calendar">Calendar</a>`:'') +
+    (d.wins?`<a href="#wins">Wins</a>`:'') +
     (d.protocol?`<a href="#protocol">Protocol</a>`:'');
 
   // episode export block
@@ -640,8 +662,40 @@ function render(d){
       </div>
     </section>` : '';
 
+  // ---- Calendar: combined content + assessment timeline ----
+  const cal=d.calendar;
+  const pillarClass={"Foundation":"pl-foundation","Strength":"pl-strength","Mobility":"pl-mobility","Longevity":"pl-longevity"};
+  const curMonthStr = new Date().toLocaleString('en-US',{month:'short',year:'numeric'});
+  const calHtml = cal ? `
+    <section id="calendar">
+      <div class="sec-head"><div class="sec-title">Calendar</div>
+        <div class="sec-meta">${cal.season}<br>Tests feed the episodes</div></div>
+      <div class="cal-list">
+        ${cal.months.map(m=>{
+          const isNow = m.month===curMonthStr;
+          return `
+          <div class="cal-month ${isNow?'cal-now':''}">
+            <div class="cal-month-head">
+              <div class="cal-mname">${m.month}${isNow?' <span class="cal-nowtag">This month</span>':''}</div>
+              <div class="cal-pillar ${pillarClass[m.pillar]||''}">${m.pillar}</div>
+            </div>
+            <div class="cal-cols">
+              <div class="cal-col">
+                <div class="cal-col-h"><i class="dot-film"></i>Episodes</div>
+                <ul>${m.episodes.map(e=>`<li>${e}</li>`).join('')}</ul>
+              </div>
+              <div class="cal-col">
+                <div class="cal-col-h"><i class="dot-test"></i>Assessments</div>
+                <ul>${m.assessments.map(a=>`<li>${a}</li>`).join('')}</ul>
+              </div>
+            </div>
+          </div>`;
+        }).join('')}
+      </div>
+    </section>` : '';
+
   document.getElementById('main').innerHTML =
-    focusHtml + scoreBlockHtml + gaugeHtml + html + winsHtml;
+    focusHtml + scoreBlockHtml + gaugeHtml + html + calHtml + winsHtml;
 }
 </script>
 </body>
