@@ -1884,5 +1884,51 @@
         ]
       }
     ]
+  },
+  "publishing": {
+    "cadence": "4 long-form + 12 shorts / month · matches editor retainer",
+    "weekly": [
+      {
+        "day": "Monday",
+        "show": "Long-Form",
+        "type": "long",
+        "desc": "Edited 5-10 min. Exercise Library (or Independence Through Movement until Aug 22). The editor's video."
+      },
+      {
+        "day": "Tuesday",
+        "show": "Clip Short",
+        "type": "short",
+        "desc": "30-60 sec clip from Monday's long-form. Drives viewers to the full video."
+      },
+      {
+        "day": "Wednesday",
+        "show": "Coach's Corner",
+        "type": "short",
+        "desc": "One lesson I'm applying this week — tied to Current Focus. The audience learns what I'm learning."
+      },
+      {
+        "day": "Friday",
+        "show": "Project 50 Update",
+        "type": "short",
+        "desc": "What happened this week. Progress, setback, or something unexpected. Follow the journey."
+      }
+    ],
+    "monthly_long": [
+      "Week 1 — Exercise Library",
+      "Week 2 — Exercise Library",
+      "Week 3 — Exercise Library",
+      "Week 4 — Project 50 Documentary (topic chosen from the month's data)"
+    ],
+    "broll": [
+      "Studio",
+      "Recovery room",
+      "Jeep",
+      "Trails",
+      "Coffee",
+      "Walking",
+      "Gear",
+      "Weather",
+      "Whiteboard planning"
+    ]
   }
 }

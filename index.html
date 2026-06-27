@@ -176,6 +176,23 @@
   .win-label{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1rem;letter-spacing:.01em}
   .win-sub{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
 
+  /* publishing */
+  .pub-week{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:14px}
+  .pub-day{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:14px 16px}
+  .pub-long{border-top:4px solid var(--steel)} .pub-short{border-top:4px solid var(--green)}
+  .pub-dayname{font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:.78rem;color:var(--muted)}
+  .pub-show{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;line-height:1.05;margin:2px 0 6px}
+  .pub-desc{font-size:.84rem;color:#4a5159;line-height:1.4}
+  .pub-tie{margin-top:8px;font-size:.78rem;background:#e8eef7;color:#2c5a99;border-radius:3px;padding:5px 9px;font-weight:500}
+  .pub-sub{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:8px}
+  @media(max-width:640px){.pub-sub{grid-template-columns:1fr}}
+  .pub-block-h{font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:.8rem;color:var(--muted);margin-bottom:6px}
+  .pub-block ul{list-style:none;margin:0;padding:0}
+  .pub-block li{font-size:.88rem;padding:3px 0 3px 14px;position:relative}
+  .pub-block li:before{content:"";position:absolute;left:0;top:10px;width:5px;height:5px;border-radius:50%;background:var(--line)}
+  .broll{display:flex;flex-wrap:wrap;gap:6px}
+  .broll-tag{font-size:.78rem;background:#f1efe8;color:#5a5f66;padding:4px 10px;border-radius:3px}
+
   /* calendar */
   .cal-list{display:flex;flex-direction:column;gap:10px}
   .cal-month{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:16px 18px}
@@ -438,6 +455,7 @@ function render(d){
     `<a href="#export">Dashboard</a>` +
     `<a href="#p50-score">Score</a>` +
     d.categories.map(c=>`<a href="#${c.id}">${c.name}</a>`).join('') +
+    (d.publishing?`<a href="#publishing">Publishing</a>`:'') +
     (d.calendar?`<a href="#calendar">Calendar</a>`:'') +
     (d.wins?`<a href="#wins">Wins</a>`:'') +
     (d.protocol?`<a href="#protocol">Protocol</a>`:'');
@@ -662,6 +680,38 @@ function render(d){
       </div>
     </section>` : '';
 
+  // ---- Publishing: weekly template + monthly output ----
+  const pub=d.publishing;
+  let pubHtml='';
+  if(pub){
+    const dayCard=(w)=>{
+      const focusTie = (w.show==="Coach's Corner" && cf)
+        ? `<div class="pub-tie">This week: ${cf.focus}</div>` : '';
+      return `<div class="pub-day ${w.type==='long'?'pub-long':'pub-short'}">
+        <div class="pub-dayname">${w.day}</div>
+        <div class="pub-show">${w.show}</div>
+        <div class="pub-desc">${w.desc}</div>
+        ${focusTie}
+      </div>`;
+    };
+    pubHtml = `
+    <section id="publishing">
+      <div class="sec-head"><div class="sec-title">Publishing</div>
+        <div class="sec-meta">${pub.cadence}</div></div>
+      <div class="pub-week">${pub.weekly.map(dayCard).join('')}</div>
+      <div class="pub-sub">
+        <div class="pub-block">
+          <div class="pub-block-h">Monthly long-form</div>
+          <ul>${pub.monthly_long.map(x=>`<li>${x}</li>`).join('')}</ul>
+        </div>
+        <div class="pub-block">
+          <div class="pub-block-h">Always collect B-roll</div>
+          <div class="broll">${pub.broll.map(b=>`<span class="broll-tag">${b}</span>`).join('')}</div>
+        </div>
+      </div>
+    </section>`;
+  }
+
   // ---- Calendar: combined content + assessment timeline ----
   const cal=d.calendar;
   const pillarClass={"Foundation":"pl-foundation","Strength":"pl-strength","Mobility":"pl-mobility","Longevity":"pl-longevity"};
@@ -695,7 +745,7 @@ function render(d){
     </section>` : '';
 
   document.getElementById('main').innerHTML =
-    focusHtml + scoreBlockHtml + gaugeHtml + html + calHtml + winsHtml;
+    focusHtml + scoreBlockHtml + gaugeHtml + html + pubHtml + calHtml + winsHtml;
 }
 </script>
 </body>
