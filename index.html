@@ -137,6 +137,22 @@
   .protocol .pnote{margin-top:10px;font-size:.8rem;font-style:italic;color:var(--muted)}
   @media(max-width:600px){.protocol ul{columns:1}}
 
+  /* status meters */
+  .status-meter{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+  .meter-bar{flex:1;height:8px;border-radius:5px;overflow:hidden;display:flex;background:var(--track)}
+  .meter-seg{height:100%}
+  .meter-label{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap}
+  .st-green{color:var(--green)} .st-amber{color:var(--amber)} .st-red{color:var(--red)} .st-none{color:var(--muted)}
+  .status-meter.big .meter-bar{height:14px;border-radius:7px}
+  .status-meter.big .meter-label{font-size:1.05rem}
+
+  .gauge-card{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:20px 24px;margin-bottom:8px}
+  .gauge-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:14px}
+  .gauge-title{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.01em}
+  .gauge-counts{display:flex;gap:16px;font-family:'Barlow Condensed',sans-serif;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+  .gauge-counts b{font-size:1rem}
+  .gc-g b{color:var(--green)} .gc-a b{color:var(--amber)} .gc-r b{color:var(--red)} .gc-n b{color:var(--muted)}
+
   .labs-note{
     background:#fbfaf6;border:1px solid var(--line);border-left:3px solid var(--steel);
     border-radius:3px;padding:13px 16px;margin-bottom:14px;font-size:.9rem;color:#3a4049;
@@ -398,6 +414,45 @@ function render(d){
       </div>
     </section>`;
 
+  // count statuses across a set of metrics for the status meter
+  function sectionStatus(metrics, isLabs){
+    let green=0, amber=0, red=0, untested=0;
+    for(const m of metrics){
+      if(m.value===null||m.value===undefined){ untested++; continue; }
+      if(isLabs){
+        if(m.flag==='out') red++; else green++;
+        continue;
+      }
+      const ev=evaluate(m);
+      if(ev.status==='green') green++;
+      else if(ev.status==='amber') amber++;
+      else if(ev.status==='red') red++;
+      else green++; // flat/tracked-with-no-target counts as ok
+    }
+    const tested=green+amber+red;
+    return {green,amber,red,untested,tested};
+  }
+
+  // build a compact status meter (segmented bar + label)
+  function statusMeter(s, opts={}){
+    const total=s.tested||1;
+    const gPct=s.green/total*100, aPct=s.amber/total*100, rPct=s.red/total*100;
+    let label, lclass;
+    if(s.tested===0){ label='Not yet tested'; lclass='st-none'; }
+    else if(s.red>0){ label=`${s.red} need attention`; lclass='st-red'; }
+    else if(s.amber>0){ label=`${s.amber} near target`; lclass='st-amber'; }
+    else { label='All on track'; lclass='st-green'; }
+    const seg = s.tested===0
+      ? `<div class="meter-seg" style="width:100%;background:var(--track)"></div>`
+      : `<div class="meter-seg" style="width:${gPct}%;background:var(--green)"></div>
+         <div class="meter-seg" style="width:${aPct}%;background:var(--amber)"></div>
+         <div class="meter-seg" style="width:${rPct}%;background:var(--red)"></div>`;
+    return `<div class="status-meter ${opts.big?'big':''}">
+      <div class="meter-bar">${seg}</div>
+      <div class="meter-label ${lclass}">${label}</div>
+    </div>`;
+  }
+
   // category sections
   for(const c of d.categories){
     const isLabs = c.id==='labs';
@@ -423,12 +478,14 @@ function render(d){
       ? metricsToShow.map(metricCard).join('')
       : `<div class="all-clear">Every tracked marker is in healthy range. Goal met.</div>`;
 
+    const sStat = sectionStatus(c.metrics, isLabs);
     html += `
       <section id="${c.id}">
         <div class="sec-head">
           <div class="sec-title">${c.name}</div>
           <div class="sec-meta">${metaHtml}</div>
         </div>
+        ${statusMeter(sStat)}
         ${labsNote}
         <div class="grid">
           ${gridInner}
@@ -459,7 +516,33 @@ function render(d){
     html += `</section>`;
   }
 
-  document.getElementById('main').innerHTML = html;
+  // overall health gauge across all categories
+  let allG=0,allA=0,allR=0,allU=0;
+  for(const c of d.categories){
+    const s=sectionStatus(c.metrics, c.id==='labs');
+    allG+=s.green; allA+=s.amber; allR+=s.red; allU+=s.untested;
+  }
+  const overall={green:allG,amber:allA,red:allR,untested:allU,tested:allG+allA+allR};
+  const overallLabel = overall.red>0
+    ? `${overall.red} marker${overall.red>1?'s':''} need attention`
+    : overall.amber>0 ? `${overall.amber} near target` : 'All systems on track';
+  const gaugeHtml = `
+    <section id="health-gauge">
+      <div class="gauge-card">
+        <div class="gauge-head">
+          <div class="gauge-title">Overall Status</div>
+          <div class="gauge-counts">
+            <span class="gc gc-g"><b>${overall.green}</b> on track</span>
+            <span class="gc gc-a"><b>${overall.amber}</b> near</span>
+            <span class="gc gc-r"><b>${overall.red}</b> attention</span>
+            <span class="gc gc-n"><b>${overall.untested}</b> untested</span>
+          </div>
+        </div>
+        ${statusMeter(overall,{big:true})}
+      </div>
+    </section>`;
+
+  document.getElementById('main').innerHTML = gaugeHtml + html;
 }
 </script>
 </body>

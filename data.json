@@ -191,54 +191,120 @@
         {
           "name": "Walking Asymmetry",
           "unit": "%",
-          "value": null,
+          "value": 19,
           "pacer": 3,
           "goal": 1,
           "direction": "down",
-          "date": null,
-          "note": "LIMP DETECTOR. % of steps with uneven timing L vs R. Apple flags >3%. Rising trend = you may be favoring a side without noticing.",
+          "date": "2026-06-25",
+          "note": "LIMP DETECTOR. Latest spike to 19% (6-mo avg is 10%). One high reading isn't a diagnosis - watch whether it stays elevated. Apple flags >3%.",
           "warnOver": 3,
-          "warnLabel": "Walking asymmetry elevated"
+          "warnLabel": "Walking asymmetry elevated",
+          "history": [
+            {
+              "value": 10,
+              "date": "2026-03-26"
+            }
+          ]
         },
         {
           "name": "Double Support Time",
           "unit": "%",
-          "value": null,
+          "value": 33.4,
           "pacer": 30,
           "goal": 25,
           "direction": "down",
-          "date": null,
-          "note": "% of stride with both feet down. Climbs when guarding an injury or fatigued. Healthy ~20-40%."
+          "date": "2026-06-26",
+          "note": "% of stride both feet down. Healthy 20-40%; you're at 33.4%, upper-normal. Watch for upward drift."
         },
         {
           "name": "Walking Speed",
           "unit": "mph",
-          "value": null,
+          "value": 2.0,
           "pacer": 3.0,
           "goal": 3.3,
           "direction": "up",
-          "date": null,
-          "note": "A sudden drop can signal you're protecting something."
+          "date": "2026-06-26",
+          "note": "iPhone walking pace (not running). 6-mo range 1-4.3 mph."
         },
         {
           "name": "Step Length",
           "unit": "in",
-          "value": null,
+          "value": 22,
           "pacer": 28,
           "goal": 30,
           "direction": "up",
-          "date": null,
-          "note": "Shortening on one side or overall often precedes a noticed limp."
+          "date": "2026-06-26",
+          "note": "Walking step length. 6-mo range 11-47 in."
         },
         {
           "name": "Walking Steadiness",
           "unit": "score",
-          "value": null,
+          "value": 100,
           "pacer": null,
           "goal": null,
           "direction": "up",
-          "date": null,
-          "note": "Apple balance/stability rating: OK / Low / Very Low. Log OK as 100, Low as 50."
+          "date": "2026-06-26",
+          "note": "Apple rating: OK (logged as 100). Stable all 6 months."
+        },
+        {
+          "name": "Walking Asymmetry (6mo avg)",
+          "unit": "%",
+          "value": 10,
+          "pacer": 5,
+          "goal": 3,
+          "direction": "down",
+          "date": "2026-06-26",
+          "note": "6-month average - the stable baseline. Smooths out single-day spikes."
+        },
+        {
+          "name": "Six-Minute Walk",
+          "unit": "m",
+          "value": 488,
+          "pacer": 450,
+          "goal": 500,
+          "direction": "up",
+          "date": "2026-06-26",
+          "note": "Predicted walk distance / exercise capacity. 500m is Apple's estimate ceiling."
+        },
+        {
+          "name": "Ground Contact Time",
+          "unit": "ms",
+          "value": 275,
+          "pacer": 280,
+          "goal": 250,
+          "direction": "down",
+          "date": "2026-05-16",
+          "note": "Running: time each foot is on the ground. Lower = more efficient. Elite ~200ms."
+        },
+        {
+          "name": "Running Stride Length",
+          "unit": "m",
+          "value": 0.9,
+          "pacer": null,
+          "goal": null,
+          "direction": "up",
+          "date": "2026-06-26",
+          "note": "Running stride. Will lengthen as run fitness builds."
+        },
+        {
+          "name": "Vertical Oscillation",
+          "unit": "cm",
+          "value": 8.7,
+          "pacer": 10,
+          "goal": 8,
+          "direction": "down",
+          "date": "2026-06-26",
+          "note": "Running: vertical bounce. Lower = less wasted energy. Good runners 6-9 cm."
+        },
+        {
+          "name": "Stair Speed Down",
+          "unit": "ft/s",
+          "value": 0.67,
+          "pacer": null,
+          "goal": null,
+          "direction": "up",
+          "date": "2026-06-21",
+          "note": "Descending stair speed - mobility/control marker. Watch for drops."
         }
       ]
     },
