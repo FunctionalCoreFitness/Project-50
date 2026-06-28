@@ -199,6 +199,14 @@
   .pub-sub{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:8px}
   @media(max-width:640px){.pub-sub{grid-template-columns:1fr}}
   .pub-note{background:#f1f4f9;border-left:3px solid var(--steel);border-radius:3px;padding:10px 13px;font-size:.82rem;color:#46505e;line-height:1.45;margin-bottom:16px}
+  .pub-model{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:.04em;color:var(--steel);text-align:center;margin:4px 0 14px}
+  .pub-feature{background:var(--navy);color:#eef1f6;border-radius:4px;padding:18px 20px;margin-bottom:16px}
+  .pub-feature-tag{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;color:var(--steel);margin-bottom:4px}
+  .pub-feature-title{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:.01em}
+  .pub-feature-meta{font-size:.82rem;color:#c4ccd9;margin:2px 0 10px}
+  .pub-feature-covers{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
+  .pub-feature-covers span{font-size:.74rem;background:rgba(255,255,255,.1);color:#dce3ee;padding:3px 9px;border-radius:3px}
+  .pub-feature-note{font-size:.82rem;color:#c4ccd9;line-height:1.45;max-width:70ch}
   .pub-block-h{font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:.8rem;color:var(--muted);margin-bottom:6px}
   .pub-block ul{list-style:none;margin:0;padding:0}
   .pub-block li{font-size:.88rem;padding:3px 0 3px 14px;position:relative}
@@ -223,6 +231,14 @@
   .loc-reflect{border-top-color:#6a4a99} .loc-reflect .loc-verb{color:#6a4a99}
   .loc-explore{border-top-color:#c89031} .loc-explore .loc-verb{color:#c89031}
   .loc-think{border-top-color:#7a828c} .loc-think .loc-verb{color:#7a828c}
+  .loc-endure{border-top-color:#9a5b2c} .loc-endure .loc-verb{color:#9a5b2c}
+  .loc-fuel{border-top-color:#5a8f3f} .loc-fuel .loc-verb{color:#5a8f3f}
+  .loc-adventure{border-top-color:#b8472d} .loc-adventure .loc-verb{color:#b8472d}
+  .loc-cardtop{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+  .loc-tier{font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:.64rem;padding:3px 8px;border-radius:3px;white-space:nowrap;margin-top:4px}
+  .tier-anchor{background:#16243a;color:#fff}
+  .tier-regular{background:var(--hair);color:#5a5f66}
+  .tier-event{background:#f3ead9;color:#9a6a1f}
 
   /* calendar */
   .cal-list{display:flex;flex-direction:column;gap:10px}
@@ -744,12 +760,15 @@ function render(d){
   const locHtml = loc ? `
     <section id="locations">
       <div class="sec-head"><div class="sec-title">Sets</div>
-        <div class="sec-meta">Seven locations \u00b7 seven verbs</div></div>
+        <div class="sec-meta">Nine zones \u00b7 nine chapters</div></div>
       <div class="loc-intro">${loc.intro}</div>
       <div class="loc-grid">
         ${loc.sets.map(s=>`
           <div class="loc-card loc-${s.key}">
-            <div class="loc-verb">${s.verb}</div>
+            <div class="loc-cardtop">
+              <div class="loc-verb">${s.verb}</div>
+              ${s.tier?`<span class="loc-tier tier-${s.tier.toLowerCase()}">${s.tier}</span>`:''}
+            </div>
             <div class="loc-name">${s.name}</div>
             <div class="loc-purpose">${s.purpose}</div>
             <div class="loc-content">${s.content.map(c=>`<span>${c}</span>`).join('')}</div>
@@ -777,12 +796,17 @@ function render(d){
       <div class="sec-head"><div class="sec-title">Publishing</div>
         <div class="sec-meta">${pub.cadence}</div></div>
       <div class="pub-week">${pub.weekly.map(dayCard).join('')}</div>
+      ${pub.model?`<div class="pub-model">${pub.model}</div>`:''}
       ${pub.schedule_note?`<div class="pub-note">${pub.schedule_note}</div>`:''}
+      ${pub.monthly_feature?`
+        <div class="pub-feature">
+          <div class="pub-feature-tag">Once a month \u00b7 the Netflix episode</div>
+          <div class="pub-feature-title">\u{1F3AC} ${pub.monthly_feature.title}</div>
+          <div class="pub-feature-meta">${pub.monthly_feature.length} \u00b7 ${pub.monthly_feature.cadence}</div>
+          <div class="pub-feature-covers">${pub.monthly_feature.covers.map(c=>`<span>${c}</span>`).join('')}</div>
+          <div class="pub-feature-note">${pub.monthly_feature.note}</div>
+        </div>`:''}
       <div class="pub-sub">
-        <div class="pub-block">
-          <div class="pub-block-h">Monthly long-form</div>
-          <ul>${pub.monthly_long.map(x=>`<li>${x}</li>`).join('')}</ul>
-        </div>
         <div class="pub-block">
           <div class="pub-block-h">Always collect B-roll</div>
           <div class="broll">${pub.broll.map(b=>`<span class="broll-tag">${b}</span>`).join('')}</div>

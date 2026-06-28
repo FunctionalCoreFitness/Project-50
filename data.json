@@ -1,7 +1,7 @@
 {
   "athlete": {
     "name": "Omar Lima",
-    "birthday": "1978-09-15",
+    "birthday": "1978-10-22",
     "project_start": "2026-06-26",
     "current_phase": "Baseline",
     "current_race_target": "Build a runnable base — first trail 10K"
@@ -1722,9 +1722,10 @@
         "month": "Jul 2026",
         "pillar": "Foundation",
         "episodes": [
-          "Know Your Body — baseline assessments on camera",
-          "Breathing & core activation",
-          "Posture reset"
+          "Encyclopedia — Know Your Body — baseline assessments on camera",
+          "Encyclopedia — Breathing & core activation",
+          "Encyclopedia — Posture reset",
+          "Project 50 Documentary — The Day Everything Changed (why this, why now)  (replaces one Friday)"
         ],
         "assessments": [
           "DEXA scan (baseline)",
@@ -1737,9 +1738,10 @@
         "month": "Aug 2026",
         "pillar": "Foundation",
         "episodes": [
-          "Finish Independence Through Movement series",
-          "Single-leg balance & control",
-          "Daily mobility flow"
+          "Encyclopedia — Finish Independence Through Movement series",
+          "Encyclopedia — Single-leg balance & control",
+          "Encyclopedia — Daily mobility flow",
+          "Project 50 Documentary — BodySpec Baseline (first DEXA on camera)  (replaces one Friday)"
         ],
         "assessments": [
           "Longevity tests (sit-to-stand, balance, grip, HR recovery)",
@@ -1750,9 +1752,10 @@
         "month": "Sep 2026",
         "pillar": "Foundation",
         "episodes": [
-          "Aerobic base — Zone 2 explained",
-          "Building the engine",
-          "Recovery foundations"
+          "Encyclopedia — Aerobic base — Zone 2 explained",
+          "Encyclopedia — Building the engine",
+          "Encyclopedia — Recovery foundations",
+          "Project 50 Documentary — Reading My Blood Work (Function Health reveal)  (replaces one Friday)"
         ],
         "assessments": [
           "Function Health labs (Q3 — recheck lipids, ApoB, Vit D)",
@@ -1764,9 +1767,10 @@
         "month": "Oct 2026",
         "pillar": "Strength",
         "episodes": [
-          "Functional strength — trap bar & bench",
-          "Bulgarian bag strength series",
-          "Loaded carries"
+          "Encyclopedia — Functional strength — trap bar & bench",
+          "Encyclopedia — Bulgarian bag strength series",
+          "Encyclopedia — Loaded carries",
+          "Project 50 Documentary — First Real Strength Numbers  (replaces one Friday)"
         ],
         "assessments": [
           "DEXA scan (8-wk recheck)",
@@ -1778,9 +1782,10 @@
         "month": "Nov 2026",
         "pillar": "Strength",
         "episodes": [
-          "Pull-up progression to 10",
-          "Posterior chain — RDL & hinge",
-          "Grip & forearm strength"
+          "Encyclopedia — Pull-up progression to 10",
+          "Encyclopedia — Posterior chain — RDL & hinge",
+          "Encyclopedia — Grip & forearm strength",
+          "Project 50 Documentary — The Pull-Up Project (chasing 10)  (replaces one Friday)"
         ],
         "assessments": [
           "Strength-endurance retest (track pull-up progress)",
@@ -1791,9 +1796,10 @@
         "month": "Dec 2026",
         "pillar": "Strength",
         "episodes": [
-          "Year-one review — what changed",
-          "Strength + BJJ carryover",
-          "Holiday training that holds"
+          "Encyclopedia — Year-one review — what changed",
+          "Encyclopedia — Strength + BJJ carryover",
+          "Encyclopedia — Holiday training that holds",
+          "Project 50 Documentary — Year One: What the Data Says  (replaces one Friday)"
         ],
         "assessments": [
           "Function Health labs (Q4 — full panel)",
@@ -1804,9 +1810,10 @@
         "month": "Jan 2027",
         "pillar": "Mobility",
         "episodes": [
-          "Stick Mobility series launch",
-          "Hip & ankle mobility for runners",
-          "Movement quality reset"
+          "Encyclopedia — Stick Mobility series launch",
+          "Encyclopedia — Hip & ankle mobility for runners",
+          "Encyclopedia — Movement quality reset",
+          "Project 50 Documentary — Why Mobility Decides the Ultra  (replaces one Friday)"
         ],
         "assessments": [
           "DEXA scan (8-wk recheck)",
@@ -1818,9 +1825,10 @@
         "month": "Feb 2027",
         "pillar": "Mobility",
         "episodes": [
-          "SMR for grapplers",
-          "Thoracic & shoulder mobility",
-          "Mobility + strength integration"
+          "Encyclopedia — SMR for grapplers",
+          "Encyclopedia — Thoracic & shoulder mobility",
+          "Encyclopedia — Mobility + strength integration",
+          "Project 50 Documentary — The Asymmetry Problem (gait deep-dive)  (replaces one Friday)"
         ],
         "assessments": [
           "Speed/agility test (shuttle, T-test)",
@@ -1831,9 +1839,10 @@
         "month": "Mar 2027",
         "pillar": "Mobility",
         "episodes": [
-          "First trail 10K — on camera",
-          "Trail running form",
-          "Mobility for trail durability"
+          "Encyclopedia — First trail 10K — on camera",
+          "Encyclopedia — Trail running form",
+          "Encyclopedia — Mobility for trail durability",
+          "Project 50 Documentary — First Trail Race (the test)  (replaces one Friday)"
         ],
         "assessments": [
           "Function Health labs (Q1)",
@@ -1845,9 +1854,10 @@
         "month": "Apr 2027",
         "pillar": "Longevity",
         "episodes": [
-          "Recovery stack — sauna, cold, red light",
-          "Wim Hof breathwork deep-dive",
-          "HRV & sleep optimization"
+          "Encyclopedia — Recovery stack — sauna, cold, red light",
+          "Encyclopedia — Wim Hof breathwork deep-dive",
+          "Encyclopedia — HRV & sleep optimization",
+          "Project 50 Documentary — Inside My Recovery System  (replaces one Friday)"
         ],
         "assessments": [
           "DEXA scan (8-wk recheck)",
@@ -1859,9 +1869,10 @@
         "month": "May 2027",
         "pillar": "Longevity",
         "episodes": [
-          "First 20-mile run — the build",
-          "Fueling for distance",
-          "Mental game of endurance"
+          "Encyclopedia — First 20-mile run — the build",
+          "Encyclopedia — Fueling for distance",
+          "Encyclopedia — Mental game of endurance",
+          "Project 50 Documentary — 20 Miles: The Longest I've Run  (replaces one Friday)"
         ],
         "assessments": [
           "Aerobic test (long-run pace)",
@@ -1873,9 +1884,10 @@
         "month": "Jun 2027",
         "pillar": "Longevity",
         "episodes": [
-          "Two-year mark — full progress review",
-          "The 50K build begins",
-          "What the data taught me"
+          "Encyclopedia — Two-year mark — full progress review",
+          "Encyclopedia — The 50K build begins",
+          "Encyclopedia — What the data taught me",
+          "Project 50 Documentary — Two Years In: The Halfway Mark  (replaces one Friday)"
         ],
         "assessments": [
           "DEXA scan",
@@ -1883,10 +1895,12 @@
           "Full Project 50 Score recalculation"
         ]
       }
-    ]
+    ],
+    "note": "Each month: 3 Encyclopedia Fridays + 1 Project 50 Documentary Friday = 4 edited long-forms. Plus weekly Coach's Corner, Saturday clip, Sunday Journal."
   },
   "publishing": {
-    "cadence": "4 long-form + 12 shorts / month · anchored to Friday (your strongest day)",
+    "cadence": "1 edited long-form/week + 3 shorts/week · 4 edited videos/month (editor) · anchored to Friday",
+    "model": "Teach. Teach. Teach. Document.",
     "weekly": [
       {
         "day": "Wednesday",
@@ -1896,30 +1910,40 @@
       },
       {
         "day": "Friday",
-        "show": "Long-Form",
+        "show": "Encyclopedia",
         "type": "long",
-        "desc": "Edited 5-10 min, posted Friday AM to ride your biggest weekly spike. Exercise Library or Independence Through Movement. The editor's video."
+        "desc": "One new Exercise Encyclopedia page, edited. Your foundation: builds search, feeds the site + app, gives clients homework, lives forever. Posted Friday AM (your strongest day)."
       },
       {
         "day": "Saturday",
         "show": "Clip Short",
         "type": "short",
-        "desc": "30-60 sec clip from Friday's long-form. Drives weekend viewers to the full video."
+        "desc": "30-60 sec clip from Friday's Encyclopedia video. Drives weekend viewers to the full page."
       },
       {
         "day": "Sunday",
-        "show": "Project 50 Update",
+        "show": "Project 50 Journal",
         "type": "short",
-        "desc": "What happened this week — catches the weekend-warrior audience your analytics flagged on Sundays. Follow the journey."
+        "desc": "Quick weekly update — keeps the audience connected to the story between documentaries. Filmed in Mission Control."
       }
     ],
-    "schedule_note": "Based on 28-day analytics: spikes on Thu/Fri/Sun. Friday confirmed (data + general YouTube pattern). Sunday is a strong hypothesis — verify over the next month before locking. Mon/Tue remain quiet baseline days.",
-    "monthly_long": [
-      "Week 1 — Exercise Library",
-      "Week 2 — Exercise Library",
-      "Week 3 — Exercise Library",
-      "Week 4 — Project 50 Documentary (topic chosen from the month's data)"
-    ],
+    "monthly_feature": {
+      "title": "Project 50 Documentary",
+      "cadence": "Once a month — replaces that week's Friday Encyclopedia upload (keeps editor at 4 long-forms/month, never 5)",
+      "length": "15-20 min premium edit",
+      "covers": [
+        "BodySpec / DEXA",
+        "Function Health labs",
+        "Dashboard review",
+        "Training",
+        "Recovery",
+        "Wins",
+        "Losses",
+        "The month's real story"
+      ],
+      "note": "Built from B-roll collected all month. Your life changes enough in 30 days to justify a documentary — not in 7. This is the 'Netflix episode.'"
+    },
+    "schedule_note": "Locked model. Encyclopedia owns Friday (the business foundation). Project 50 is documented weekly via the Sunday Journal short and released monthly as one premium documentary. Friday confirmed strongest by analytics; Sunday catches weekend-warrior audience.",
     "broll": [
       "Studio",
       "Recovery room",
@@ -1928,123 +1952,167 @@
       "Coffee",
       "Walking",
       "Gear",
-      "Weather",
-      "Whiteboard planning"
+      "Whiteboard planning",
+      "BodySpec",
+      "Function Health",
+      "DEXA",
+      "BJJ",
+      "Meal prep"
     ]
   },
   "locations": {
-    "intro": "Seven sets, seven aspects of becoming a 50-year athlete. Each location signals a type of content so the series reads as a show, not a feed.",
+    "intro": "Nine zones — not rooms, but chapters. Each is a part of the story of becoming a 50-year athlete, from planning (Think) to validation (Test). Tiered by how often you film there.",
     "sets": [
       {
-        "verb": "Teach",
-        "name": "FCF Studio",
-        "key": "teach",
-        "purpose": "Coaching & educational content",
+        "verb": "Think",
+        "name": "Mission Control",
+        "key": "think",
+        "tier": "Anchor",
+        "purpose": "Weekly updates & reflection",
         "content": [
-          "Exercise Library",
-          "Independence Through Movement",
-          "Coach's Corner",
-          "Strength demos",
-          "Balance",
-          "Mobility",
-          "Client examples"
+          "Dashboard review",
+          "BodySpec",
+          "Function Health",
+          "Goals",
+          "Planning",
+          "Calendar",
+          "Reflection"
         ],
-        "style": "Bright · Clean · Professional"
-      },
-      {
-        "verb": "Test",
-        "name": "Movement Lab",
-        "key": "test",
-        "purpose": "Assessment & skill development",
-        "content": [
-          "Performance testing",
-          "Mobility assessments",
-          "Pacer test",
-          "Jump testing",
-          "Balance testing",
-          "New movement experiments"
-        ],
-        "style": "Laboratory · Testing · Progress"
+        "style": "Standing by the dining table, living room behind · Documentary · Personal"
       },
       {
         "verb": "Recover",
         "name": "Recovery Room",
         "key": "recover",
-        "purpose": "Recovery & health",
+        "tier": "Anchor",
+        "purpose": "Why recovery makes the athlete",
         "content": [
-          "Cold plunge",
-          "Infrared sauna",
-          "Steam sauna",
-          "Red light therapy",
           "Chilipad",
+          "Sauna",
+          "Cold plunge",
           "Normatec",
           "Power Plate",
-          "Supplements",
-          "Sleep optimization"
+          "Sleep",
+          "HRV",
+          "Recovery philosophy"
         ],
         "style": "Calm · Scientific · Personal"
       },
       {
-        "verb": "Perform",
-        "name": "Dojo",
+        "verb": "Build",
+        "name": "The Lab",
+        "key": "test",
+        "tier": "Regular",
+        "purpose": "Home performance lab — architect of the body",
+        "content": [
+          "Strength",
+          "Mobility",
+          "Assessments",
+          "Performance testing",
+          "Experimentation",
+          "Monthly benchmarks"
+        ],
+        "style": "Laboratory · Testing · Progress"
+      },
+      {
+        "verb": "Practice",
+        "name": "The Dojo",
         "key": "perform",
-        "purpose": "Athletic performance",
+        "tier": "Anchor",
+        "purpose": "Being the student — mat humility",
         "content": [
           "BJJ",
-          "Movement drills",
-          "Rolling",
-          "Warm-ups",
-          "Mobility",
-          "Wrestling-inspired movement",
-          "Mindset"
+          "Mindset",
+          "Learning",
+          "Technique",
+          "Teaching moments",
+          "Humility",
+          "Post-class reflection"
         ],
         "style": "Athletic · Gritty · Authentic"
       },
       {
-        "verb": "Reflect",
-        "name": "Dashboard Studio",
-        "key": "reflect",
-        "purpose": "Project 50 journal — mission control",
+        "verb": "Coach",
+        "name": "FCF Studio",
+        "key": "teach",
+        "tier": "Anchor",
+        "purpose": "Not about me — about the clients",
         "content": [
-          "Apple Health review",
-          "Function Health review",
-          "DEXA review",
-          "Dashboard updates",
-          "Planning",
-          "Reflection",
-          "Goal setting",
-          "Monthly recap"
+          "Exercise Library",
+          "Independence Series",
+          "Coach's Corner",
+          "Client success stories",
+          "Demonstrations",
+          "Teaching"
         ],
-        "style": "Documentary · Personal · Behind-the-scenes"
+        "style": "Bright · Clean · Professional"
+      },
+      {
+        "verb": "Endure",
+        "name": "Outside Gym",
+        "key": "endure",
+        "tier": "Regular",
+        "purpose": "The hard-work location",
+        "content": [
+          "Sandbags",
+          "Sled",
+          "Carries",
+          "Conditioning",
+          "Heat",
+          "Work capacity",
+          "No excuses"
+        ],
+        "style": "Gritty · Raw · Earned"
+      },
+      {
+        "verb": "Fuel",
+        "name": "Kitchen",
+        "key": "fuel",
+        "tier": "Regular",
+        "purpose": "Nutrition & supplementation",
+        "content": [
+          "Meal prep",
+          "Supplements",
+          "Protein",
+          "Hydration",
+          "Recovery meals",
+          "Grocery discussions"
+        ],
+        "style": "Warm · Practical · Honest"
       },
       {
         "verb": "Explore",
-        "name": "Trail / Outdoors",
+        "name": "Trails",
         "key": "explore",
-        "purpose": "Endurance",
+        "tier": "Event",
+        "purpose": "Podcast while moving",
         "content": [
-          "Hiking",
-          "Trail runs",
-          "Zone 2 sessions",
-          "Race recaps",
-          "Nature reflections",
-          "Recovery walks"
+          "Walks",
+          "Runs",
+          "Rucks",
+          "Thinking",
+          "Philosophy",
+          "Long-form conversations"
         ],
-        "style": "Cinematic · Inspirational · Adventure"
+        "style": "Cinematic · Reflective · Adventure"
       },
       {
-        "verb": "Think",
-        "name": "Jeep",
-        "key": "think",
-        "purpose": "Transition scenes",
+        "verb": "Test",
+        "name": "Adventures",
+        "key": "adventure",
+        "tier": "Event",
+        "purpose": "Where the work gets validated",
         "content": [
-          "Driving thoughts",
-          "Race-day mornings",
-          "Post-workout reflections",
-          "BodySpec reactions",
-          "Life updates"
+          "Ultra races",
+          "Tahoe",
+          "Hiking",
+          "Camping",
+          "Moab",
+          "Tough Mudder",
+          "Spartan",
+          "Travel"
         ],
-        "style": "Vlog · Candid · Authentic"
+        "style": "Cinematic · Epic · Payoff"
       }
     ]
   }
