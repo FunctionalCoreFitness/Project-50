@@ -82,6 +82,8 @@
   .navrow a:hover{color:var(--ink);background:var(--track)}
   .navrow a.nav-update{color:var(--steel);border:1px solid var(--steel);margin-left:6px}
   .navrow a.nav-update:hover{color:#fff;background:var(--steel)}
+  .navrow a.nav-workout{color:var(--green);border:1px solid var(--green);margin-left:6px}
+  .navrow a.nav-workout:hover{color:#fff;background:var(--green)}
 
   /* ---------- Sections ---------- */
   section{padding:34px 0 8px}
@@ -533,6 +535,7 @@ function render(d){
     (d.locations?`<a href="#locations">Sets</a>`:'') +
     (d.wins?`<a href="#wins">Wins</a>`:'') +
     (d.protocol?`<a href="#protocol">Protocol</a>`:'') +
+    `<a href="workout.html" class="nav-workout">Workout</a>` +
     `<a href="update.html" class="nav-update">Update</a>`;
 
   // episode export block
