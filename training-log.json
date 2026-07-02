@@ -1,0 +1,1282 @@
+{
+  "meta": {
+    "block": 1,
+    "block_name": "Foundation Phase",
+    "program": "Project 50 -- 12-Week Program (Block 1 of 8, Year 1 of 2)",
+    "_comment": "EDIT VIA workout.html, not by hand. done=true/false, notes are free text, panel.results[i].value holds the logged number as a string."
+  },
+  "recovery_tools": [
+    {
+      "tool": "Wim Hof Breathwork",
+      "frequency": "Daily",
+      "duration": "15-20 min, 3-4 rounds",
+      "timing": "Anytime; Sun gets the extended session"
+    },
+    {
+      "tool": "Red Light Therapy",
+      "frequency": "3-5x/week",
+      "duration": "10-20 min",
+      "timing": "After strength work (Tue/Fri)"
+    },
+    {
+      "tool": "Infrared Sauna",
+      "frequency": "3-5x/week",
+      "duration": "20-30 min @ 120-140F",
+      "timing": "Sat anchor session, post-teach"
+    },
+    {
+      "tool": "Cold Plunge",
+      "frequency": "2-3x/week",
+      "duration": "2-5 min @ 50-59F",
+      "timing": "Wait 4-6 hrs after strength; safe on Sat/BJJ days"
+    },
+    {
+      "tool": "Steam",
+      "frequency": "3-4x/week",
+      "duration": "15-20 min",
+      "timing": "Sun, after the long aerobic session"
+    },
+    {
+      "tool": "Normatec Boots + Hip Attachment",
+      "frequency": "3-4x/week",
+      "duration": "20-30 min",
+      "timing": "After BJJ (Thu) and long runs (Sun)"
+    },
+    {
+      "tool": "Venom Back/Shoulder Wrap",
+      "frequency": "As needed",
+      "duration": "15 min",
+      "timing": "Post-strength, Sat recovery block"
+    },
+    {
+      "tool": "Venom Lower Back Band",
+      "frequency": "As needed",
+      "duration": "15 min",
+      "timing": "Post-strength or long run, Sat recovery block"
+    },
+    {
+      "tool": "Power Plate",
+      "frequency": "2-3x/week",
+      "duration": "10-15 min recovery mode; 5-10 min pre-train mobility",
+      "timing": "After Friday strength"
+    },
+    {
+      "tool": "Stick Mobility",
+      "frequency": "Mon/Wed/Thu",
+      "duration": "Built into the post-BJJ mobility flow",
+      "timing": "15-20 min flow"
+    },
+    {
+      "tool": "RAD Massage Ball Kit",
+      "frequency": "3-4x/week",
+      "duration": "5-10 min per area",
+      "timing": "Pair with mobility flow days"
+    },
+    {
+      "tool": "NeoCarbon EMS Stim",
+      "frequency": "3x/week",
+      "duration": "20-30 min, recovery mode",
+      "timing": "Target the muscles trained that day"
+    }
+  ],
+  "weeks": [
+    {
+      "week": 1,
+      "type": "baseline",
+      "label": "Week 1 -- Baseline Panel",
+      "panel": {
+        "date": "",
+        "bodyweight_lb": null,
+        "notes": "",
+        "results": [
+          {
+            "label": "Push-ups, max in 1 min",
+            "unit": "reps",
+            "value": ""
+          },
+          {
+            "label": "Goblet squat, max reps in 1 min (note DB weight used)",
+            "unit": "reps / lb",
+            "value": ""
+          },
+          {
+            "label": "Farmer carry, max distance in 60 sec (note load used)",
+            "unit": "distance / lb",
+            "value": ""
+          },
+          {
+            "label": "Plank hold, max time",
+            "unit": "min:sec",
+            "value": ""
+          },
+          {
+            "label": "1-mile run or hike, time",
+            "unit": "min:sec",
+            "value": ""
+          },
+          {
+            "label": "Sit-and-reach",
+            "unit": "cm",
+            "value": ""
+          },
+          {
+            "label": "Ankle dorsiflexion, knee-to-wall (L / R)",
+            "unit": "cm / cm",
+            "value": ""
+          },
+          {
+            "label": "Resting heart rate, morning avg",
+            "unit": "bpm",
+            "value": ""
+          },
+          {
+            "label": "Average sleep, past 7 nights",
+            "unit": "hrs",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "week": 2,
+      "type": "training",
+      "phase": "Foundation Phase",
+      "days": {
+        "Mon": {
+          "day_full": "Monday",
+          "pillar": "Mobility",
+          "plan": [
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s"
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": ""
+        },
+        "Tue": {
+          "day_full": "Tuesday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength A -- Lower / Posterior Chain",
+            "Goblet Squat 3x12",
+            "Bulgarian Split Squat 3x10/leg",
+            "Romanian Deadlift 3x12",
+            "Hip Thrust 3x15",
+            "Standing Calf Raise 3x15",
+            "Pallof Press 3x10/side"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
+          "done": false,
+          "notes": ""
+        },
+        "Wed": {
+          "day_full": "Wednesday",
+          "pillar": "Mobility",
+          "plan": [
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s"
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": ""
+        },
+        "Thu": {
+          "day_full": "Thursday",
+          "pillar": "Foundation",
+          "plan": [
+            "BJJ + Foundation Core",
+            "Core circuit x2: Plank 30s, Bird Dog 10/side, Side Plank 20s/side"
+          ],
+          "recovery": "Wim Hof 15 min + Normatec boots 20-30 min (legs)",
+          "done": false,
+          "notes": ""
+        },
+        "Fri": {
+          "day_full": "Friday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength B -- Upper / Pull",
+            "Pull-up or Lat Pulldown 3x8",
+            "DB Bench Press 3x12",
+            "Single-Arm DB Row 3x12/side",
+            "DB Overhead Press 3x12",
+            "Farmer Carry 3x40m / Dead Bug 3x10/side",
+            "Zone 2 cardio finisher, 20 min"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min + Power Plate 10 min",
+          "done": false,
+          "notes": ""
+        },
+        "Sat": {
+          "day_full": "Saturday",
+          "pillar": "Longevity",
+          "plan": [
+            "Teach + Low-Med Rolling",
+            "Longevity: Sauna 20 min",
+            "Cold plunge 2-3 min",
+            "Red light 10 min"
+          ],
+          "recovery": "Wim Hof 15 min + Sauna 20-30 min + Cold Plunge 2-4 min + Red Light 15 min + Venom wraps 15 min ea",
+          "done": false,
+          "notes": ""
+        },
+        "Sun": {
+          "day_full": "Sunday",
+          "pillar": "Foundation",
+          "plan": [
+            "Long Aerobic -- Ultra Base",
+            "Trail run/hike, 45-60 min, conversational pace",
+            "Wim Hof breathwork, 3 rounds",
+            "Weekly review (Project 50 dashboard)"
+          ],
+          "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
+          "done": false,
+          "notes": ""
+        }
+      }
+    },
+    {
+      "week": 3,
+      "type": "training",
+      "phase": "Foundation Phase",
+      "days": {
+        "Mon": {
+          "day_full": "Monday",
+          "pillar": "Mobility",
+          "plan": [
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s"
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": ""
+        },
+        "Tue": {
+          "day_full": "Tuesday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength A -- Lower / Posterior Chain",
+            "Goblet Squat 3x12",
+            "Bulgarian Split Squat 3x10/leg",
+            "Romanian Deadlift 3x12",
+            "Hip Thrust 3x15",
+            "Standing Calf Raise 3x15",
+            "Pallof Press 3x10/side"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
+          "done": false,
+          "notes": ""
+        },
+        "Wed": {
+          "day_full": "Wednesday",
+          "pillar": "Mobility",
+          "plan": [
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s"
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": ""
+        },
+        "Thu": {
+          "day_full": "Thursday",
+          "pillar": "Foundation",
+          "plan": [
+            "BJJ + Foundation Core",
+            "Core circuit x2: Plank 30s, Bird Dog 10/side, Side Plank 20s/side"
+          ],
+          "recovery": "Wim Hof 15 min + Normatec boots 20-30 min (legs)",
+          "done": false,
+          "notes": ""
+        },
+        "Fri": {
+          "day_full": "Friday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength B -- Upper / Pull",
+            "Pull-up or Lat Pulldown 3x8",
+            "DB Bench Press 3x12",
+            "Single-Arm DB Row 3x12/side",
+            "DB Overhead Press 3x12",
+            "Farmer Carry 3x40m / Dead Bug 3x10/side",
+            "Zone 2 cardio finisher, 20 min"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min + Power Plate 10 min",
+          "done": false,
+          "notes": ""
+        },
+        "Sat": {
+          "day_full": "Saturday",
+          "pillar": "Longevity",
+          "plan": [
+            "Teach + Low-Med Rolling",
+            "Longevity: Sauna 20 min",
+            "Cold plunge 2-3 min",
+            "Red light 10 min"
+          ],
+          "recovery": "Wim Hof 15 min + Sauna 20-30 min + Cold Plunge 2-4 min + Red Light 15 min + Venom wraps 15 min ea",
+          "done": false,
+          "notes": ""
+        },
+        "Sun": {
+          "day_full": "Sunday",
+          "pillar": "Foundation",
+          "plan": [
+            "Long Aerobic -- Ultra Base",
+            "Trail run/hike, 45-60 min, conversational pace",
+            "Wim Hof breathwork, 3 rounds",
+            "Weekly review (Project 50 dashboard)"
+          ],
+          "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
+          "done": false,
+          "notes": ""
+        }
+      }
+    },
+    {
+      "week": 4,
+      "type": "training",
+      "phase": "Foundation Phase",
+      "days": {
+        "Mon": {
+          "day_full": "Monday",
+          "pillar": "Mobility",
+          "plan": [
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s"
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": ""
+        },
+        "Tue": {
+          "day_full": "Tuesday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength A -- Lower / Posterior Chain",
+            "Goblet Squat 3x12",
+            "Bulgarian Split Squat 3x10/leg",
+            "Romanian Deadlift 3x12",
+            "Hip Thrust 3x15",
+            "Standing Calf Raise 3x15",
+            "Pallof Press 3x10/side"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
+          "done": false,
+          "notes": ""
+        },
+        "Wed": {
+          "day_full": "Wednesday",
+          "pillar": "Mobility",
+          "plan": [
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s"
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": ""
+        },
+        "Thu": {
+          "day_full": "Thursday",
+          "pillar": "Foundation",
+          "plan": [
+            "BJJ + Foundation Core",
+            "Core circuit x2: Plank 30s, Bird Dog 10/side, Side Plank 20s/side"
+          ],
+          "recovery": "Wim Hof 15 min + Normatec boots 20-30 min (legs)",
+          "done": false,
+          "notes": ""
+        },
+        "Fri": {
+          "day_full": "Friday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength B -- Upper / Pull",
+            "Pull-up or Lat Pulldown 3x8",
+            "DB Bench Press 3x12",
+            "Single-Arm DB Row 3x12/side",
+            "DB Overhead Press 3x12",
+            "Farmer Carry 3x40m / Dead Bug 3x10/side",
+            "Zone 2 cardio finisher, 20 min"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min + Power Plate 10 min",
+          "done": false,
+          "notes": ""
+        },
+        "Sat": {
+          "day_full": "Saturday",
+          "pillar": "Longevity",
+          "plan": [
+            "Teach + Low-Med Rolling",
+            "Longevity: Sauna 20 min",
+            "Cold plunge 2-3 min",
+            "Red light 10 min"
+          ],
+          "recovery": "Wim Hof 15 min + Sauna 20-30 min + Cold Plunge 2-4 min + Red Light 15 min + Venom wraps 15 min ea",
+          "done": false,
+          "notes": ""
+        },
+        "Sun": {
+          "day_full": "Sunday",
+          "pillar": "Foundation",
+          "plan": [
+            "Long Aerobic -- Ultra Base",
+            "Trail run/hike, 45-60 min, conversational pace",
+            "Wim Hof breathwork, 3 rounds",
+            "Weekly review (Project 50 dashboard)"
+          ],
+          "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
+          "done": false,
+          "notes": ""
+        }
+      }
+    },
+    {
+      "week": 5,
+      "type": "training",
+      "phase": "Foundation Phase",
+      "days": {
+        "Mon": {
+          "day_full": "Monday",
+          "pillar": "Mobility",
+          "plan": [
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s"
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": ""
+        },
+        "Tue": {
+          "day_full": "Tuesday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength A -- Lower / Posterior Chain",
+            "Goblet Squat 3x12",
+            "Bulgarian Split Squat 3x10/leg",
+            "Romanian Deadlift 3x12",
+            "Hip Thrust 3x15",
+            "Standing Calf Raise 3x15",
+            "Pallof Press 3x10/side"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
+          "done": false,
+          "notes": ""
+        },
+        "Wed": {
+          "day_full": "Wednesday",
+          "pillar": "Mobility",
+          "plan": [
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s"
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": ""
+        },
+        "Thu": {
+          "day_full": "Thursday",
+          "pillar": "Foundation",
+          "plan": [
+            "BJJ + Foundation Core",
+            "Core circuit x2: Plank 30s, Bird Dog 10/side, Side Plank 20s/side"
+          ],
+          "recovery": "Wim Hof 15 min + Normatec boots 20-30 min (legs)",
+          "done": false,
+          "notes": ""
+        },
+        "Fri": {
+          "day_full": "Friday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength B -- Upper / Pull",
+            "Pull-up or Lat Pulldown 3x8",
+            "DB Bench Press 3x12",
+            "Single-Arm DB Row 3x12/side",
+            "DB Overhead Press 3x12",
+            "Farmer Carry 3x40m / Dead Bug 3x10/side",
+            "Zone 2 cardio finisher, 20 min"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min + Power Plate 10 min",
+          "done": false,
+          "notes": ""
+        },
+        "Sat": {
+          "day_full": "Saturday",
+          "pillar": "Longevity",
+          "plan": [
+            "Teach + Low-Med Rolling",
+            "Longevity: Sauna 20 min",
+            "Cold plunge 2-3 min",
+            "Red light 10 min"
+          ],
+          "recovery": "Wim Hof 15 min + Sauna 20-30 min + Cold Plunge 2-4 min + Red Light 15 min + Venom wraps 15 min ea",
+          "done": false,
+          "notes": ""
+        },
+        "Sun": {
+          "day_full": "Sunday",
+          "pillar": "Foundation",
+          "plan": [
+            "Long Aerobic -- Ultra Base",
+            "Trail run/hike, 45-60 min, conversational pace",
+            "Wim Hof breathwork, 3 rounds",
+            "Weekly review (Project 50 dashboard)"
+          ],
+          "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
+          "done": false,
+          "notes": ""
+        }
+      }
+    },
+    {
+      "week": 6,
+      "type": "training",
+      "phase": "Build Phase",
+      "days": {
+        "Mon": {
+          "day_full": "Monday",
+          "pillar": "Mobility",
+          "plan": [
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s"
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": ""
+        },
+        "Tue": {
+          "day_full": "Tuesday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength A -- Lower / Posterior Chain",
+            "Trap Bar Deadlift 4x8",
+            "Bulgarian Split Squat 4x8/leg",
+            "Single-Leg RDL 3x10/leg",
+            "Hip Thrust 4x10",
+            "Standing Calf Raise 4x12",
+            "Pallof Press 3x12/side"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
+          "done": false,
+          "notes": ""
+        },
+        "Wed": {
+          "day_full": "Wednesday",
+          "pillar": "Mobility",
+          "plan": [
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s"
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": ""
+        },
+        "Thu": {
+          "day_full": "Thursday",
+          "pillar": "Foundation",
+          "plan": [
+            "BJJ + Foundation Core",
+            "Core circuit x3: Plank 45s, Bird Dog 12/side, Side Plank 30s/side"
+          ],
+          "recovery": "Wim Hof 15 min + Normatec boots 20-30 min (legs)",
+          "done": false,
+          "notes": ""
+        },
+        "Fri": {
+          "day_full": "Friday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength B -- Upper / Pull",
+            "Weighted Pull-up or Pull-up 4x6",
+            "DB Bench Press 4x8",
+            "Single-Arm DB Row 4x8/side",
+            "DB Overhead Press 4x8",
+            "Farmer Carry 4x50m / Dead Bug 3x12/side",
+            "Zone 2 cardio finisher, 30 min"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min + Power Plate 10 min",
+          "done": false,
+          "notes": ""
+        },
+        "Sat": {
+          "day_full": "Saturday",
+          "pillar": "Longevity",
+          "plan": [
+            "Teach + Low-Med Rolling",
+            "Longevity: Sauna 20 min",
+            "Cold plunge 2-3 min",
+            "Red light 10 min"
+          ],
+          "recovery": "Wim Hof 15 min + Sauna 20-30 min + Cold Plunge 2-4 min + Red Light 15 min + Venom wraps 15 min ea",
+          "done": false,
+          "notes": ""
+        },
+        "Sun": {
+          "day_full": "Sunday",
+          "pillar": "Foundation",
+          "plan": [
+            "Long Aerobic -- Ultra Base",
+            "Trail run/hike, 60-75 min, add elevation",
+            "Wim Hof breathwork, 3 rounds",
+            "Weekly review (Project 50 dashboard)"
+          ],
+          "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
+          "done": false,
+          "notes": ""
+        }
+      }
+    },
+    {
+      "week": 7,
+      "type": "training",
+      "phase": "Build Phase",
+      "days": {
+        "Mon": {
+          "day_full": "Monday",
+          "pillar": "Mobility",
+          "plan": [
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s"
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": ""
+        },
+        "Tue": {
+          "day_full": "Tuesday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength A -- Lower / Posterior Chain",
+            "Trap Bar Deadlift 4x8",
+            "Bulgarian Split Squat 4x8/leg",
+            "Single-Leg RDL 3x10/leg",
+            "Hip Thrust 4x10",
+            "Standing Calf Raise 4x12",
+            "Pallof Press 3x12/side"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
+          "done": false,
+          "notes": ""
+        },
+        "Wed": {
+          "day_full": "Wednesday",
+          "pillar": "Mobility",
+          "plan": [
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s"
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": ""
+        },
+        "Thu": {
+          "day_full": "Thursday",
+          "pillar": "Foundation",
+          "plan": [
+            "BJJ + Foundation Core",
+            "Core circuit x3: Plank 45s, Bird Dog 12/side, Side Plank 30s/side"
+          ],
+          "recovery": "Wim Hof 15 min + Normatec boots 20-30 min (legs)",
+          "done": false,
+          "notes": ""
+        },
+        "Fri": {
+          "day_full": "Friday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength B -- Upper / Pull",
+            "Weighted Pull-up or Pull-up 4x6",
+            "DB Bench Press 4x8",
+            "Single-Arm DB Row 4x8/side",
+            "DB Overhead Press 4x8",
+            "Farmer Carry 4x50m / Dead Bug 3x12/side",
+            "Zone 2 cardio finisher, 30 min"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min + Power Plate 10 min",
+          "done": false,
+          "notes": ""
+        },
+        "Sat": {
+          "day_full": "Saturday",
+          "pillar": "Longevity",
+          "plan": [
+            "Teach + Low-Med Rolling",
+            "Longevity: Sauna 20 min",
+            "Cold plunge 2-3 min",
+            "Red light 10 min"
+          ],
+          "recovery": "Wim Hof 15 min + Sauna 20-30 min + Cold Plunge 2-4 min + Red Light 15 min + Venom wraps 15 min ea",
+          "done": false,
+          "notes": ""
+        },
+        "Sun": {
+          "day_full": "Sunday",
+          "pillar": "Foundation",
+          "plan": [
+            "Long Aerobic -- Ultra Base",
+            "Trail run/hike, 60-75 min, add elevation",
+            "Wim Hof breathwork, 3 rounds",
+            "Weekly review (Project 50 dashboard)"
+          ],
+          "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
+          "done": false,
+          "notes": ""
+        }
+      }
+    },
+    {
+      "week": 8,
+      "type": "training",
+      "phase": "Build Phase",
+      "days": {
+        "Mon": {
+          "day_full": "Monday",
+          "pillar": "Mobility",
+          "plan": [
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s"
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": ""
+        },
+        "Tue": {
+          "day_full": "Tuesday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength A -- Lower / Posterior Chain",
+            "Trap Bar Deadlift 4x8",
+            "Bulgarian Split Squat 4x8/leg",
+            "Single-Leg RDL 3x10/leg",
+            "Hip Thrust 4x10",
+            "Standing Calf Raise 4x12",
+            "Pallof Press 3x12/side"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
+          "done": false,
+          "notes": ""
+        },
+        "Wed": {
+          "day_full": "Wednesday",
+          "pillar": "Mobility",
+          "plan": [
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s"
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": ""
+        },
+        "Thu": {
+          "day_full": "Thursday",
+          "pillar": "Foundation",
+          "plan": [
+            "BJJ + Foundation Core",
+            "Core circuit x3: Plank 45s, Bird Dog 12/side, Side Plank 30s/side"
+          ],
+          "recovery": "Wim Hof 15 min + Normatec boots 20-30 min (legs)",
+          "done": false,
+          "notes": ""
+        },
+        "Fri": {
+          "day_full": "Friday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength B -- Upper / Pull",
+            "Weighted Pull-up or Pull-up 4x6",
+            "DB Bench Press 4x8",
+            "Single-Arm DB Row 4x8/side",
+            "DB Overhead Press 4x8",
+            "Farmer Carry 4x50m / Dead Bug 3x12/side",
+            "Zone 2 cardio finisher, 30 min"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min + Power Plate 10 min",
+          "done": false,
+          "notes": ""
+        },
+        "Sat": {
+          "day_full": "Saturday",
+          "pillar": "Longevity",
+          "plan": [
+            "Teach + Low-Med Rolling",
+            "Longevity: Sauna 20 min",
+            "Cold plunge 2-3 min",
+            "Red light 10 min"
+          ],
+          "recovery": "Wim Hof 15 min + Sauna 20-30 min + Cold Plunge 2-4 min + Red Light 15 min + Venom wraps 15 min ea",
+          "done": false,
+          "notes": ""
+        },
+        "Sun": {
+          "day_full": "Sunday",
+          "pillar": "Foundation",
+          "plan": [
+            "Long Aerobic -- Ultra Base",
+            "Trail run/hike, 60-75 min, add elevation",
+            "Wim Hof breathwork, 3 rounds",
+            "Weekly review (Project 50 dashboard)"
+          ],
+          "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
+          "done": false,
+          "notes": ""
+        }
+      }
+    },
+    {
+      "week": 9,
+      "type": "training",
+      "phase": "Build Phase",
+      "days": {
+        "Mon": {
+          "day_full": "Monday",
+          "pillar": "Mobility",
+          "plan": [
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s"
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": ""
+        },
+        "Tue": {
+          "day_full": "Tuesday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength A -- Lower / Posterior Chain",
+            "Trap Bar Deadlift 4x8",
+            "Bulgarian Split Squat 4x8/leg",
+            "Single-Leg RDL 3x10/leg",
+            "Hip Thrust 4x10",
+            "Standing Calf Raise 4x12",
+            "Pallof Press 3x12/side"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
+          "done": false,
+          "notes": ""
+        },
+        "Wed": {
+          "day_full": "Wednesday",
+          "pillar": "Mobility",
+          "plan": [
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s"
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": ""
+        },
+        "Thu": {
+          "day_full": "Thursday",
+          "pillar": "Foundation",
+          "plan": [
+            "BJJ + Foundation Core",
+            "Core circuit x3: Plank 45s, Bird Dog 12/side, Side Plank 30s/side"
+          ],
+          "recovery": "Wim Hof 15 min + Normatec boots 20-30 min (legs)",
+          "done": false,
+          "notes": ""
+        },
+        "Fri": {
+          "day_full": "Friday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength B -- Upper / Pull",
+            "Weighted Pull-up or Pull-up 4x6",
+            "DB Bench Press 4x8",
+            "Single-Arm DB Row 4x8/side",
+            "DB Overhead Press 4x8",
+            "Farmer Carry 4x50m / Dead Bug 3x12/side",
+            "Zone 2 cardio finisher, 30 min"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min + Power Plate 10 min",
+          "done": false,
+          "notes": ""
+        },
+        "Sat": {
+          "day_full": "Saturday",
+          "pillar": "Longevity",
+          "plan": [
+            "Teach + Low-Med Rolling",
+            "Longevity: Sauna 20 min",
+            "Cold plunge 2-3 min",
+            "Red light 10 min"
+          ],
+          "recovery": "Wim Hof 15 min + Sauna 20-30 min + Cold Plunge 2-4 min + Red Light 15 min + Venom wraps 15 min ea",
+          "done": false,
+          "notes": ""
+        },
+        "Sun": {
+          "day_full": "Sunday",
+          "pillar": "Foundation",
+          "plan": [
+            "Long Aerobic -- Ultra Base",
+            "Trail run/hike, 60-75 min, add elevation",
+            "Wim Hof breathwork, 3 rounds",
+            "Weekly review (Project 50 dashboard)"
+          ],
+          "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
+          "done": false,
+          "notes": ""
+        }
+      }
+    },
+    {
+      "week": 10,
+      "type": "training",
+      "phase": "Peak Phase",
+      "days": {
+        "Mon": {
+          "day_full": "Monday",
+          "pillar": "Mobility",
+          "plan": [
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s"
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": ""
+        },
+        "Tue": {
+          "day_full": "Tuesday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength A -- Lower / Posterior Chain",
+            "Trap Bar Deadlift 5x5 (heavy)",
+            "Bulgarian Split Squat 4x6/leg (weighted)",
+            "Single-Leg RDL 4x8/leg",
+            "Hip Thrust 4x8 (heavy)",
+            "Weighted Carry Finisher",
+            "Pallof Press 3x15/side"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
+          "done": false,
+          "notes": ""
+        },
+        "Wed": {
+          "day_full": "Wednesday",
+          "pillar": "Mobility",
+          "plan": [
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s"
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": ""
+        },
+        "Thu": {
+          "day_full": "Thursday",
+          "pillar": "Foundation",
+          "plan": [
+            "BJJ + Foundation Core",
+            "Core circuit x3: Plank 60s, Bird Dog 15/side, Side Plank 40s/side, Hollow Hold 20s"
+          ],
+          "recovery": "Wim Hof 15 min + Normatec boots 20-30 min (legs)",
+          "done": false,
+          "notes": ""
+        },
+        "Fri": {
+          "day_full": "Friday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength B -- Upper / Pull",
+            "Weighted Pull-up 5x4",
+            "DB Bench Press 4x6 (heavy)",
+            "Single-Arm DB Row 4x6/side (heavy)",
+            "DB Overhead Press 4x6",
+            "Heavy Farmer Carry 4x60m / Dead Bug 3x15/side",
+            "Zone 2 cardio finisher, 35 min"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min + Power Plate 10 min",
+          "done": false,
+          "notes": ""
+        },
+        "Sat": {
+          "day_full": "Saturday",
+          "pillar": "Longevity",
+          "plan": [
+            "Teach + Low-Med Rolling",
+            "Longevity: Sauna 20 min",
+            "Cold plunge 2-3 min",
+            "Red light 10 min"
+          ],
+          "recovery": "Wim Hof 15 min + Sauna 20-30 min + Cold Plunge 2-4 min + Red Light 15 min + Venom wraps 15 min ea",
+          "done": false,
+          "notes": ""
+        },
+        "Sun": {
+          "day_full": "Sunday",
+          "pillar": "Foundation",
+          "plan": [
+            "Long Aerobic -- Ultra Base",
+            "Trail run/hike, 75-90 min, weighted pack optional",
+            "Wim Hof breathwork, 3 rounds",
+            "Weekly review (Project 50 dashboard)"
+          ],
+          "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
+          "done": false,
+          "notes": ""
+        }
+      }
+    },
+    {
+      "week": 11,
+      "type": "training",
+      "phase": "Peak Phase",
+      "days": {
+        "Mon": {
+          "day_full": "Monday",
+          "pillar": "Mobility",
+          "plan": [
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s"
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": ""
+        },
+        "Tue": {
+          "day_full": "Tuesday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength A -- Lower / Posterior Chain",
+            "Trap Bar Deadlift 5x5 (heavy)",
+            "Bulgarian Split Squat 4x6/leg (weighted)",
+            "Single-Leg RDL 4x8/leg",
+            "Hip Thrust 4x8 (heavy)",
+            "Weighted Carry Finisher",
+            "Pallof Press 3x15/side"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
+          "done": false,
+          "notes": ""
+        },
+        "Wed": {
+          "day_full": "Wednesday",
+          "pillar": "Mobility",
+          "plan": [
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s"
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": ""
+        },
+        "Thu": {
+          "day_full": "Thursday",
+          "pillar": "Foundation",
+          "plan": [
+            "BJJ + Foundation Core",
+            "Core circuit x3: Plank 60s, Bird Dog 15/side, Side Plank 40s/side, Hollow Hold 20s"
+          ],
+          "recovery": "Wim Hof 15 min + Normatec boots 20-30 min (legs)",
+          "done": false,
+          "notes": ""
+        },
+        "Fri": {
+          "day_full": "Friday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength B -- Upper / Pull",
+            "Weighted Pull-up 5x4",
+            "DB Bench Press 4x6 (heavy)",
+            "Single-Arm DB Row 4x6/side (heavy)",
+            "DB Overhead Press 4x6",
+            "Heavy Farmer Carry 4x60m / Dead Bug 3x15/side",
+            "Zone 2 cardio finisher, 35 min"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min + Power Plate 10 min",
+          "done": false,
+          "notes": ""
+        },
+        "Sat": {
+          "day_full": "Saturday",
+          "pillar": "Longevity",
+          "plan": [
+            "Teach + Low-Med Rolling",
+            "Longevity: Sauna 20 min",
+            "Cold plunge 2-3 min",
+            "Red light 10 min"
+          ],
+          "recovery": "Wim Hof 15 min + Sauna 20-30 min + Cold Plunge 2-4 min + Red Light 15 min + Venom wraps 15 min ea",
+          "done": false,
+          "notes": ""
+        },
+        "Sun": {
+          "day_full": "Sunday",
+          "pillar": "Foundation",
+          "plan": [
+            "Long Aerobic -- Ultra Base",
+            "Trail run/hike, 75-90 min, weighted pack optional",
+            "Wim Hof breathwork, 3 rounds",
+            "Weekly review (Project 50 dashboard)"
+          ],
+          "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
+          "done": false,
+          "notes": ""
+        }
+      }
+    },
+    {
+      "week": 12,
+      "type": "deload_retest",
+      "label": "Week 12 -- Deload + Retest",
+      "deload_days": {
+        "Mon": {
+          "day_full": "Monday",
+          "pillar": "Mobility",
+          "done": false,
+          "notes": ""
+        },
+        "Tue": {
+          "day_full": "Tuesday",
+          "pillar": "Strength",
+          "done": false,
+          "notes": ""
+        },
+        "Wed": {
+          "day_full": "Wednesday",
+          "pillar": "Mobility",
+          "done": false,
+          "notes": ""
+        },
+        "Thu": {
+          "day_full": "Thursday",
+          "pillar": "Foundation",
+          "done": false,
+          "notes": ""
+        },
+        "Fri": {
+          "day_full": "Friday",
+          "pillar": "Strength",
+          "done": false,
+          "notes": ""
+        },
+        "Sat": {
+          "day_full": "Saturday",
+          "pillar": "Longevity",
+          "done": false,
+          "notes": ""
+        },
+        "Sun": {
+          "day_full": "Sunday",
+          "pillar": "Foundation",
+          "done": false,
+          "notes": ""
+        }
+      },
+      "panel": {
+        "date": "",
+        "bodyweight_lb": null,
+        "notes": "",
+        "results": [
+          {
+            "label": "Push-ups, max in 1 min",
+            "unit": "reps",
+            "value": ""
+          },
+          {
+            "label": "Goblet squat, max reps in 1 min (note DB weight used)",
+            "unit": "reps / lb",
+            "value": ""
+          },
+          {
+            "label": "Farmer carry, max distance in 60 sec (note load used)",
+            "unit": "distance / lb",
+            "value": ""
+          },
+          {
+            "label": "Plank hold, max time",
+            "unit": "min:sec",
+            "value": ""
+          },
+          {
+            "label": "1-mile run or hike, time",
+            "unit": "min:sec",
+            "value": ""
+          },
+          {
+            "label": "Sit-and-reach",
+            "unit": "cm",
+            "value": ""
+          },
+          {
+            "label": "Ankle dorsiflexion, knee-to-wall (L / R)",
+            "unit": "cm / cm",
+            "value": ""
+          },
+          {
+            "label": "Resting heart rate, morning avg",
+            "unit": "bpm",
+            "value": ""
+          },
+          {
+            "label": "Average sleep, past 7 nights",
+            "unit": "hrs",
+            "value": ""
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project 50 — Workout Log</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#141a22;--paper:#fafaf7;--card:#ffffff;--line:#e3e1d8;--hair:#eeece4;
+    --muted:#7a828c;--navy:#16243a;--steel:#4a7ec7;--green:#3f8f5b;--amber:#c89031;
+    --red:#c0503f;--track:#edebe3;--mono:'JetBrains Mono',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Barlow',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+  .wrap{max-width:820px;margin:0 auto;padding:0 18px 60px}
+  header{background:var(--navy);color:#eef1f6;padding:24px 0;border-bottom:3px solid var(--steel);margin-bottom:22px}
+  header .wrap{padding-bottom:0}
+  .eyebrow{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.26em;font-size:.7rem;font-weight:600;color:var(--steel)}
+  h1{font-family:'Bebas Neue',sans-serif;font-size:2.6rem;line-height:.95;letter-spacing:.01em;margin:.1em 0}
+  .lead{font-family:'Barlow Condensed',sans-serif;color:#c4ccd9;font-size:1rem}
+  .back{display:inline-block;margin-top:8px;color:var(--steel);text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-size:.9rem;letter-spacing:.04em}
+  section{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:18px 20px;margin-bottom:16px}
+  h2{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:.01em;margin-bottom:4px}
+  .hint{font-size:.85rem;color:var(--muted);margin-bottom:14px;line-height:1.4}
+  label{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:.78rem;color:var(--muted);margin:12px 0 4px}
+  input,select,textarea{width:100%;font-family:var(--mono);font-size:.92rem;padding:10px 12px;border:1px solid var(--line);border-radius:3px;background:#fff;color:var(--ink)}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--steel)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:520px){.row{grid-template-columns:1fr}}
+  button{font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:.92rem;padding:11px 18px;border:none;border-radius:3px;cursor:pointer;background:var(--steel);color:#fff}
+  button.ghost{background:transparent;color:var(--steel);border:1px solid var(--steel)}
+  button:disabled{opacity:.5;cursor:not-allowed}
+  .btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+  .token-warn{background:rgba(192,80,63,.08);border:1px solid var(--red);border-left:3px solid var(--red);border-radius:3px;padding:10px 12px;font-size:.82rem;color:#7a2e23;margin-top:10px;line-height:1.4}
+  .status{display:none;margin-top:10px;padding:8px 12px;border-radius:3px;font-size:.85rem}
+  .status.show{display:block}
+  .status.ok{background:rgba(63,143,91,.1);color:var(--green)}
+  .status.err{background:rgba(192,80,63,.1);color:var(--red)}
+  .pill{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:.75rem;letter-spacing:.04em;background:var(--track);color:var(--muted);padding:2px 8px;border-radius:20px;margin-left:6px}
+  .pill.phase{background:var(--steel);color:#fff}
+  .week-nav{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .week-nav select{flex:1;min-width:160px}
+  .day-card{border:1px solid var(--line);border-left:4px solid var(--steel);border-radius:3px;padding:14px 16px;margin-bottom:12px}
+  .day-card.done{border-left-color:var(--green);background:rgba(63,143,91,.04)}
+  .day-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+  .day-name{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.01em}
+  .day-pillar{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--steel);font-weight:600}
+  .plan-list{font-size:.85rem;color:var(--ink);margin:6px 0 8px;padding-left:0;list-style:none}
+  .plan-list li{padding:2px 0}
+  .plan-list li.title{font-weight:600}
+  .recovery-line{font-size:.78rem;color:var(--muted);font-style:italic;margin-bottom:10px;line-height:1.4}
+  .done-row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+  .done-row input[type=checkbox]{width:auto;accent-color:var(--green)}
+  .done-row span{font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:600}
+  .panel-row{display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px;align-items:end;margin-bottom:10px}
+  @media(max-width:600px){.panel-row{grid-template-columns:1fr}}
+  .panel-label{font-size:.85rem;color:var(--ink);margin-bottom:4px}
+  .panel-unit{font-size:.72rem;color:var(--muted);font-style:italic}
+  .change-item{font-size:.85rem;padding:6px 0;border-bottom:1px solid var(--hair)}
+  .change-item:last-child{border-bottom:none}
+  .diff-add{color:var(--green);font-weight:600}
+  .toolkit-table{width:100%;border-collapse:collapse;font-size:.82rem}
+  .toolkit-table th{text-align:left;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.05em;font-size:.72rem;color:var(--muted);padding:6px 8px;border-bottom:1px solid var(--line)}
+  .toolkit-table td{padding:6px 8px;border-bottom:1px solid var(--hair);vertical-align:top}
+  details summary{cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-weight:600;letter-spacing:.04em;color:var(--steel);margin-bottom:8px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Project 50</div>
+    <h1>Workout Log</h1>
+    <div class="lead">Log today's session — writes straight to GitHub, same as the dashboard console.</div>
+    <a class="back" href="index.html">&larr; Back to dashboard</a>
+  </div>
+</header>
+<div class="wrap">
+
+  <!-- TOKEN -->
+  <section>
+    <h2>1 · Access</h2>
+    <div class="hint">Paste your fine-grained GitHub token (Contents: write, scoped to Project-50 only). It stays in this page's memory and is never saved or sent anywhere except GitHub. Closing the tab clears it. If you already generated one for the update console, the same token works here.</div>
+    <label>GitHub token</label>
+    <input id="tok" type="password" placeholder="github_pat_..." autocomplete="off">
+    <div class="btn-row">
+      <button id="loadBtn">Load training log</button>
+    </div>
+    <div class="token-warn">Generate at GitHub → Settings → Developer settings → Fine-grained tokens. Repository access: only <b>Project-50</b>. Permission: <b>Contents → Read and write</b>. Never paste this token anywhere public.</div>
+    <div id="loadStatus" class="status"></div>
+  </section>
+
+  <!-- WEEK SELECT -->
+  <section id="weekSec" style="opacity:.5;pointer-events:none">
+    <h2>2 · Pick a week</h2>
+    <div class="hint">Weeks 2-11 are training weeks. Week 1 is the baseline panel, Week 12 is deload + retest.</div>
+    <div class="week-nav">
+      <select id="weekSel"></select>
+      <span id="phasePill" class="pill phase"></span>
+    </div>
+  </section>
+
+  <!-- BASELINE / RETEST PANEL (shown for week 1 / 12) -->
+  <section id="panelSec" style="display:none">
+    <h2 id="panelTitle">Test Panel</h2>
+    <div class="hint">Log these once. The same panel is used for Week 1 (baseline) and Week 12 (retest) so the two are directly comparable.</div>
+    <div class="row">
+      <div><label>Date</label><input id="panelDate" type="date"></div>
+      <div><label>Bodyweight (lb)</label><input id="panelBW" type="text" inputmode="decimal"></div>
+    </div>
+    <div id="panelResults" style="margin-top:14px"></div>
+    <label>Notes</label>
+    <textarea id="panelNotes" rows="2"></textarea>
+    <div class="btn-row"><button class="ghost" id="queuePanel">Add to changes</button></div>
+  </section>
+
+  <!-- TRAINING WEEK DAYS -->
+  <section id="daysSec" style="display:none">
+    <h2>Days</h2>
+    <div class="hint">Check off what you completed and log load, reps, duration, or notes. Recovery line shows the tools scheduled for that day.</div>
+    <div id="dayList"></div>
+  </section>
+
+  <!-- RECOVERY TOOLKIT REFERENCE -->
+  <section id="toolkitSec" style="display:none">
+    <details>
+      <summary>Recovery Toolkit reference</summary>
+      <table class="toolkit-table" id="toolkitTable"></table>
+    </details>
+  </section>
+
+  <!-- REVIEW + COMMIT -->
+  <section id="reviewSec" style="opacity:.5;pointer-events:none">
+    <h2>3 · Review &amp; save</h2>
+    <div class="hint">Check the changes below, then commit. This fetches the latest file, applies your edits, and pushes one commit.</div>
+    <div id="changeList"><div class="hint" style="margin:0">No changes queued yet.</div></div>
+    <div class="btn-row">
+      <button id="commitBtn" disabled>Commit to GitHub</button>
+      <button class="ghost" id="clearBtn">Clear changes</button>
+    </div>
+    <div id="commitStatus" class="status"></div>
+  </section>
+
+</div>
+
+<script>
+const OWNER="FunctionalCoreFitness", REPO="Project-50", PATH="training-log.json", BRANCH="main";
+let DATA=null, SHA=null, CURRENT_WEEK=null;
+let changes={days:{}, panel:null};
+
+const $=id=>document.getElementById(id);
+const today=()=>new Date().toISOString().slice(0,10);
+function setStatus(el,msg,cls){ el.className='status show '+(cls||''); el.textContent=msg; }
+function enable(id){ const s=$(id); s.style.opacity='1'; s.style.pointerEvents='auto'; }
+
+// ---- Load current data from GitHub ----
+$('loadBtn').onclick=async()=>{
+  const tok=$('tok').value.trim();
+  if(!tok){ setStatus($('loadStatus'),'Paste your token first.','err'); return; }
+  setStatus($('loadStatus'),'Loading…');
+  try{
+    const r=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}?ref=${BRANCH}`,
+      {headers:{Authorization:`Bearer ${tok}`,Accept:'application/vnd.github+json'}});
+    if(!r.ok) throw new Error(`GitHub ${r.status} — check token scope/permissions`);
+    const j=await r.json();
+    SHA=j.sha;
+    DATA=JSON.parse(decodeURIComponent(escape(atob(j.content))));
+    setStatus($('loadStatus'),'Loaded. Latest training log is ready to edit.','ok');
+    buildWeekSelect(); buildToolkit();
+    enable('weekSec'); enable('reviewSec');
+    $('toolkitSec').style.display='block';
+    $('weekSel').dispatchEvent(new Event('change'));
+  }catch(e){ setStatus($('loadStatus'),'Failed: '+e.message,'err'); }
+};
+
+function buildWeekSelect(){
+  const sel=$('weekSel'); sel.innerHTML='';
+  DATA.weeks.forEach(w=>{
+    const o=document.createElement('option');
+    o.value=w.week;
+    let lbl=`Week ${w.week}`;
+    if(w.type==='baseline') lbl+=' — Baseline Panel';
+    else if(w.type==='deload_retest') lbl+=' — Deload + Retest';
+    else lbl+=` — ${w.phase}`;
+    o.textContent=lbl;
+    sel.appendChild(o);
+  });
+  sel.onchange=()=>renderWeek(+sel.value);
+}
+
+function buildToolkit(){
+  const t=$('toolkitTable');
+  let html='<tr><th>Tool</th><th>Frequency</th><th>Duration</th><th>Timing</th></tr>';
+  (DATA.recovery_tools||[]).forEach(x=>{
+    html+=`<tr><td><b>${x.tool}</b></td><td>${x.frequency}</td><td>${x.duration}</td><td>${x.timing}</td></tr>`;
+  });
+  t.innerHTML=html;
+}
+
+function renderWeek(wk){
+  CURRENT_WEEK=wk;
+  const w=DATA.weeks.find(x=>x.week===wk);
+  $('phasePill').textContent = w.type==='training' ? w.phase : (w.type==='baseline'?'Baseline':'Deload + Retest');
+
+  if(w.type==='training'){
+    $('panelSec').style.display='none';
+    $('daysSec').style.display='block';
+    renderDays(w.days, false);
+  } else if(w.type==='deload_retest'){
+    $('panelSec').style.display='block';
+    $('panelTitle').textContent='Retest Panel — All 4 Pillars';
+    renderPanel(w.panel);
+    $('daysSec').style.display='block';
+    renderDays(w.deload_days, true);
+  } else { // baseline
+    $('panelSec').style.display='block';
+    $('panelTitle').textContent='Baseline Panel — All 4 Pillars';
+    renderPanel(w.panel);
+    $('daysSec').style.display='none';
+  }
+}
+
+function renderDays(daysObj, isDeload){
+  const order=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+  const list=$('dayList'); list.innerHTML='';
+  order.forEach(d=>{
+    const day=daysObj[d];
+    const key=`${CURRENT_WEEK}_${d}`;
+    const pendingDone = key in changes.days ? changes.days[key].done : day.done;
+    const pendingNotes = key in changes.days ? changes.days[key].notes : day.notes;
+
+    const card=document.createElement('div');
+    card.className='day-card'+(pendingDone?' done':'');
+
+    let planHtml='';
+    if(!isDeload){
+      planHtml='<ul class="plan-list">'+day.plan.map((item,i)=>
+        `<li class="${i===0?'title':''}">${item}</li>`).join('')+'</ul>';
+    }
+    const recoveryHtml = day.recovery ? `<div class="recovery-line">Recovery: ${day.recovery}</div>` : '';
+
+    card.innerHTML=`
+      <div class="day-head">
+        <span class="day-name">${day.day_full}</span>
+        <span class="day-pillar">${day.pillar}</span>
+      </div>
+      ${planHtml}
+      ${recoveryHtml}
+      <div class="done-row">
+        <input type="checkbox" id="done_${key}" ${pendingDone?'checked':''}>
+        <span>Completed</span>
+      </div>
+      <label>Load / reps / notes</label>
+      <textarea id="notes_${key}" rows="2">${pendingNotes||''}</textarea>
+      <div class="btn-row"><button class="ghost" data-key="${key}" data-day="${d}">Add to changes</button></div>
+    `;
+    list.appendChild(card);
+  });
+
+  list.querySelectorAll('button[data-key]').forEach(btn=>{
+    btn.onclick=()=>{
+      const key=btn.dataset.key, d=btn.dataset.day;
+      const done=$('done_'+key).checked;
+      const notes=$('notes_'+key).value;
+      changes.days[key]={week:CURRENT_WEEK, day:d, done, notes};
+      renderChanges();
+      renderWeek(CURRENT_WEEK);
+    };
+  });
+}
+
+function renderPanel(panel){
+  $('panelDate').value = panel.date || today();
+  $('panelBW').value = panel.bodyweight_lb ?? '';
+  $('panelNotes').value = panel.notes || '';
+  const box=$('panelResults'); box.innerHTML='';
+  panel.results.forEach((r,i)=>{
+    const row=document.createElement('div'); row.className='panel-row';
+    row.innerHTML=`
+      <div><div class="panel-label">${r.label}</div><div class="panel-unit">${r.unit}</div></div>
+      <div><input type="text" id="pr_${i}" value="${r.value||''}"></div>
+      <div></div>`;
+    box.appendChild(row);
+  });
+}
+
+$('queuePanel').onclick=()=>{
+  const w=DATA.weeks.find(x=>x.week===CURRENT_WEEK);
+  const results = w.panel.results.map((r,i)=>({label:r.label, unit:r.unit, value:$('pr_'+i).value}));
+  changes.panel={week:CURRENT_WEEK, type:w.type, date:$('panelDate').value||today(),
+    bodyweight_lb:$('panelBW').value?Number($('panelBW').value):null,
+    notes:$('panelNotes').value, results};
+  renderChanges();
+};
+
+$('clearBtn').onclick=()=>{ changes={days:{},panel:null}; renderChanges(); renderWeek(CURRENT_WEEK); };
+
+function renderChanges(){
+  const box=$('changeList'); const items=[];
+  Object.values(changes.days).forEach(c=>{
+    items.push(`<div class="change-item">Week ${c.week} <b>${c.day}</b>: ${c.done?'<span class="diff-add">marked done</span>':'not done'}${c.notes?' — "'+c.notes+'"':''}</div>`);
+  });
+  if(changes.panel){
+    items.push(`<div class="change-item">Week ${changes.panel.week} panel <span class="diff-add">logged</span> <span class="pill">${changes.panel.date}</span></div>`);
+  }
+  box.innerHTML = items.length? items.join('') : '<div class="hint" style="margin:0">No changes queued yet.</div>';
+  $('commitBtn').disabled = items.length===0;
+}
+
+function applyChanges(){
+  const d=JSON.parse(JSON.stringify(DATA));
+  Object.values(changes.days).forEach(c=>{
+    const w=d.weeks.find(x=>x.week===c.week);
+    const target = w.type==='deload_retest' ? w.deload_days : w.days;
+    target[c.day].done=c.done;
+    target[c.day].notes=c.notes;
+  });
+  if(changes.panel){
+    const w=d.weeks.find(x=>x.week===changes.panel.week);
+    w.panel={date:changes.panel.date, bodyweight_lb:changes.panel.bodyweight_lb,
+      notes:changes.panel.notes, results:changes.panel.results};
+  }
+  return d;
+}
+
+$('commitBtn').onclick=async()=>{
+  const tok=$('tok').value.trim();
+  if(!tok){ setStatus($('commitStatus'),'Token missing.','err'); return; }
+  if(!confirm('Commit these changes to GitHub?')) return;
+  setStatus($('commitStatus'),'Committing…');
+  try{
+    const updated=applyChanges();
+    const body=JSON.stringify(updated,null,2);
+    const content=btoa(unescape(encodeURIComponent(body)));
+    const nd=Object.keys(changes.days).length, np=changes.panel?1:0;
+    const msg=`Training log update: ${nd} day edit(s)${np?', panel logged':''}`;
+    const r=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}`,{
+      method:'PUT',
+      headers:{Authorization:`Bearer ${tok}`,Accept:'application/vnd.github+json'},
+      body:JSON.stringify({message:msg,content,sha:SHA,branch:BRANCH})
+    });
+    if(!r.ok){ const e=await r.json().catch(()=>({})); throw new Error(`GitHub ${r.status} ${e.message||''}`); }
+    const j=await r.json(); SHA=j.content.sha; DATA=updated;
+    changes={days:{},panel:null};
+    renderChanges(); renderWeek(CURRENT_WEEK);
+    setStatus($('commitStatus'),'Saved ✓ Pages will show it on next refresh (give it ~1 min).','ok');
+  }catch(e){ setStatus($('commitStatus'),'Failed: '+e.message,'err'); }
+};
+</script>
+</body>
+</html>
