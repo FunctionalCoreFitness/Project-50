@@ -54,7 +54,7 @@
           "date": "2026-06-26",
           "history": [
             {
-              "value": 54.0,
+              "value": 54,
               "date": "2026-02-01"
             }
           ]
@@ -79,7 +79,7 @@
           "unit": "lb",
           "value": 1.79,
           "pacer": 1.5,
-          "goal": 1.0,
+          "goal": 1,
           "direction": "down",
           "date": "2026-06-24",
           "history": [
@@ -219,8 +219,8 @@
         {
           "name": "Walking Speed",
           "unit": "mph",
-          "value": 2.0,
-          "pacer": 3.0,
+          "value": 2,
+          "pacer": 3,
           "goal": 3.3,
           "direction": "up",
           "date": "2026-06-26",
@@ -345,47 +345,47 @@
         {
           "name": "Push-ups",
           "unit": "reps",
-          "value": null,
+          "value": "40 reps",
           "pacer": 40,
           "goal": 50,
           "direction": "up",
-          "date": null
+          "date": "2026-07-04"
         },
         {
           "name": "Pull-ups",
           "unit": "reps",
-          "value": null,
+          "value": "9 reps",
           "pacer": 9,
           "goal": 15,
           "direction": "up",
-          "date": null
+          "date": "2026-07-04"
         },
         {
           "name": "Chin-ups",
           "unit": "reps",
-          "value": null,
+          "value": "10 reps",
           "pacer": 10,
           "goal": 16,
           "direction": "up",
-          "date": null
+          "date": "2026-07-04"
         },
         {
           "name": "Dips",
           "unit": "reps",
-          "value": null,
+          "value": "17 reps",
           "pacer": 17,
           "goal": 30,
           "direction": "up",
-          "date": null
+          "date": "2026-07-04"
         },
         {
           "name": "Hanging Knee Raises",
           "unit": "reps",
-          "value": null,
+          "value": "8 reps",
           "pacer": 12,
           "goal": 20,
           "direction": "up",
-          "date": null,
+          "date": "2026-07-04",
           "note": "Or toes-to-bar."
         }
       ]
