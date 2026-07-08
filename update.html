@@ -45,6 +45,12 @@
   .diff-add{color:#7ee0a0} .diff-old{color:#e08a8a;text-decoration:line-through}
   .pill{display:inline-block;font-family:var(--mono);font-size:.7rem;background:var(--hair);padding:2px 8px;border-radius:3px;margin-left:6px;color:var(--muted)}
   .change-item{font-size:.88rem;padding:6px 0;border-bottom:1px solid var(--hair)}
+  .match-row{font-size:.85rem;padding:5px 8px;border-bottom:1px solid var(--hair);display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+  .match-ok{border-left:3px solid var(--green);background:rgba(63,143,91,.05)}
+  .match-warn{border-left:3px solid var(--amber);background:rgba(200,144,49,.06)}
+  .match-bad{border-left:3px solid var(--red);background:rgba(192,80,63,.06)}
+  .match-cat{font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+  .match-note{font-size:.78rem;color:var(--amber)}
 </style>
 </head>
 <body>
@@ -71,17 +77,22 @@
     <div id="loadStatus" class="status"></div>
   </section>
 
-  <!-- LOG READING -->
+  <!-- LOG READINGS (BULK) -->
   <section id="logSec" style="opacity:.5;pointer-events:none">
-    <h2>2 · Log a reading</h2>
-    <div class="hint">Pick a metric, enter the new value and date. The old value moves into history automatically so your trend line grows.</div>
-    <label>Metric</label>
-    <select id="metricSel"><option>— load data first —</option></select>
-    <div class="row">
-      <div><label>New value</label><input id="newVal" type="text" inputmode="decimal" placeholder="e.g. 216.4"></div>
-      <div><label>Date</label><input id="newDate" type="date"></div>
+    <h2>2 · Log readings (bulk)</h2>
+    <div class="hint">Paste one metric per line as <b>Name: value</b> — e.g. <span class="pill">VO2 Max: 34.6</span>. Names are matched loosely (case and spacing don't matter, partial names work). Date defaults to the box below. Then hit Parse to preview matches before queueing.</div>
+    <div class="row" style="margin-bottom:4px">
+      <div><label>Date for all readings</label><input id="bulkDate" type="date"></div>
+      <div><label>&nbsp;</label><button class="ghost" id="fillTemplate" style="width:100%">Insert blank template</button></div>
     </div>
-    <div class="btn-row"><button class="ghost" id="queueReading">Add to changes</button></div>
+    <label>Readings</label>
+    <textarea id="bulkBox" rows="10" placeholder="VO2 Max: 35.1
+Resting HR: 53
+HRV (SDNN): 44
+Sleep Duration: 7.1
+Walking Asymmetry: 16"></textarea>
+    <div class="btn-row"><button class="ghost" id="parseBtn">Parse &amp; preview</button></div>
+    <div id="parseResult" style="margin-top:12px"></div>
   </section>
 
   <!-- WINS -->
@@ -145,22 +156,107 @@ $('loadBtn').onclick=async()=>{
     SHA=j.sha;
     DATA=JSON.parse(decodeURIComponent(escape(atob(j.content))));
     setStatus($('loadStatus'),'Loaded. Latest data is ready to edit.','ok');
-    buildMetricList(); buildWinList(); prefillFocus();
+    buildWinList(); prefillFocus();
     ['logSec','winSec','focusSec','reviewSec'].forEach(enable);
   }catch(e){ setStatus($('loadStatus'),'Failed: '+e.message,'err'); }
 };
 
-function buildMetricList(){
-  const sel=$('metricSel'); sel.innerHTML='';
+function normalize(s){
+  return String(s).toLowerCase()
+    .replace(/[()%\/].*/,'')      // drop anything after ( / %
+    .replace(/[^a-z0-9]+/g,' ')   // non-alnum to space
+    .trim();
+}
+// Flattened index of every metric for matching
+function metricIndex(){
+  const list=[];
   DATA.categories.forEach(c=>{
     c.metrics.forEach((m,i)=>{
-      const o=document.createElement('option');
-      o.value=`${c.id}|${i}`;
-      o.textContent=`${c.name} › ${m.name}${m.value!=null?` (now ${m.value}${m.unit||''})`:' (untested)'}`;
-      sel.appendChild(o);
+      list.push({cid:c.id, cname:c.name, idx:i, name:m.name, unit:m.unit,
+                 value:m.value, norm:normalize(m.name), full:normalize(c.name+' '+m.name)});
     });
   });
+  return list;
 }
+function findMetric(query){
+  const idx=metricIndex();
+  const q=normalize(query);
+  if(!q) return null;
+  // 1. exact normalized name
+  let hit=idx.filter(m=>m.norm===q);
+  if(hit.length===1) return {m:hit[0],conf:'ok'};
+  if(hit.length>1){
+    // multiple exact matches: prefer the one whose full display name is shortest (base metric, not a variant)
+    hit.sort((a,b)=>a.name.length-b.name.length);
+    return {m:hit[0],conf:'ok'};
+  }
+  // 2. query contained in name or name contained in query
+  hit=idx.filter(m=>m.norm.includes(q)||q.includes(m.norm));
+  if(hit.length===1) return {m:hit[0],conf:'ok'};
+  if(hit.length>1){
+    // prefer shortest name (most specific exact-ish)
+    hit.sort((a,b)=>a.norm.length-b.norm.length);
+    return {m:hit[0],conf:'warn',note:`matched "${hit[0].name}" (${hit.length} candidates)`};
+  }
+  // 3. token overlap
+  const qt=q.split(' ').filter(Boolean);
+  let best=null,bestScore=0;
+  idx.forEach(m=>{
+    const mt=new Set(m.norm.split(' '));
+    const score=qt.filter(t=>mt.has(t)).length;
+    if(score>bestScore){bestScore=score;best=m;}
+  });
+  if(best&&bestScore>0) return {m:best,conf:'warn',note:`fuzzy match to "${best.name}"`};
+  return null;
+}
+
+let parsedReadings=[];
+$('parseBtn').onclick=()=>{
+  const lines=$('bulkBox').value.split('\n').map(l=>l.trim()).filter(Boolean);
+  const date=$('bulkDate').value||today();
+  const rows=[]; parsedReadings=[];
+  lines.forEach(line=>{
+    // split on first colon or last space
+    let name, val;
+    const ci=line.indexOf(':');
+    if(ci>=0){ name=line.slice(0,ci).trim(); val=line.slice(ci+1).trim(); }
+    else { const li=line.lastIndexOf(' '); name=line.slice(0,li).trim(); val=line.slice(li+1).trim(); }
+    if(!name||val===''){ rows.push({cls:'match-bad',left:line,right:'could not parse',note:'use Name: value'}); return; }
+    const res=findMetric(name);
+    if(!res){ rows.push({cls:'match-bad',left:name,right:val,note:'no matching metric'}); return; }
+    const num=isNaN(Number(val))?val:Number(val);
+    parsedReadings.push({cid:res.m.cid,idx:res.m.idx,value:num,date});
+    rows.push({cls:res.conf==='ok'?'match-ok':'match-warn',
+      left:`${res.m.cname} › ${res.m.name}`,
+      right:`${res.m.value??'—'} → ${num}`,
+      note:res.note||''});
+  });
+  const box=$('parseResult');
+  if(!rows.length){ box.innerHTML='<div class="hint" style="margin:0">Nothing to parse.</div>'; return; }
+  const okCount=parsedReadings.length, bad=rows.length-okCount;
+  box.innerHTML=rows.map(r=>
+    `<div class="match-row ${r.cls}"><span>${r.left} <span class="match-cat">${r.right}</span>${r.note?`<span class="match-note"> · ${r.note}</span>`:''}</span></div>`
+  ).join('') +
+    `<div class="btn-row"><button class="ghost" id="queueBulk">Add ${okCount} matched reading${okCount!==1?'s':''} to changes</button></div>`+
+    (bad?`<div class="hint" style="margin-top:8px;color:var(--red)">${bad} line(s) didn't match and will be skipped.</div>`:'');
+  const qb=$('queueBulk');
+  if(qb) qb.onclick=()=>{
+    changes.readings.push(...parsedReadings);
+    $('bulkBox').value=''; box.innerHTML='<div class="hint ok" style="margin:0">Added '+okCount+' readings to changes below.</div>';
+    renderChanges();
+  };
+};
+
+$('fillTemplate').onclick=()=>{
+  const names=[];
+  DATA.categories.forEach(c=>{
+    const src=String(c.source||'').toLowerCase();
+    if(src.includes('apple')||src.includes('health')){
+      c.metrics.forEach(m=>{ if(!String(c.name).includes('Labs')) names.push(`${m.name}: `); });
+    }
+  });
+  $('bulkBox').value=names.join('\n');
+};
 function buildWinList(){
   const wl=$('winList'); wl.innerHTML='';
   (DATA.wins||[]).forEach((w,i)=>{
@@ -178,17 +274,6 @@ function prefillFocus(){
   $('cfMonth').value=cf.month||''; $('cfFocus').value=cf.focus||'';
   $('cfWhy').value=cf.why||''; if(cf.pillar) $('cfPillar').value=cf.pillar;
 }
-
-// ---- Queue a reading ----
-$('queueReading').onclick=()=>{
-  const [cid,idx]=$('metricSel').value.split('|');
-  const val=$('newVal').value.trim(); const date=$('newDate').value||today();
-  if(val===''){ alert('Enter a value'); return; }
-  const num=isNaN(Number(val))?val:Number(val);
-  changes.readings.push({cid,idx:+idx,value:num,date});
-  $('newVal').value='';
-  renderChanges();
-};
 
 // ---- Queue focus ----
 $('queueFocus').onclick=()=>{
@@ -252,12 +337,12 @@ $('commitBtn').onclick=async()=>{
     if(!r.ok){ const e=await r.json().catch(()=>({})); throw new Error(`GitHub ${r.status} ${e.message||''}`); }
     const j=await r.json(); SHA=j.content.sha; DATA=updated;
     changes={readings:[],wins:{},focus:null};
-    buildMetricList(); buildWinList(); renderChanges();
+    buildWinList(); renderChanges();
     setStatus($('commitStatus'),'Saved ✓ Dashboard will show it on next refresh (give Pages ~1 min).','ok');
   }catch(e){ setStatus($('commitStatus'),'Failed: '+e.message,'err'); }
 };
 
-$('newDate').value=today();
+$('bulkDate').value=today();
 </script>
 </body>
 </html>
