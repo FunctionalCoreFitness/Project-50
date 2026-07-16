@@ -84,6 +84,42 @@
   .navrow a.nav-update:hover{color:#fff;background:var(--steel)}
   .navrow a.nav-workout{color:var(--green);border:1px solid var(--green);margin-left:6px}
   .navrow a.nav-workout:hover{color:#fff;background:var(--green)}
+  /* Today card */
+  .today-card{background:linear-gradient(160deg,#1b2a4a 0%,#16243a 100%);color:#eef1f6;border:none;padding:20px 22px}
+  .today-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px;border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:10px}
+  .today-eyebrow{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.24em;font-size:.72rem;font-weight:600;color:var(--steel)}
+  .today-date{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:.02em;color:#fff}
+  .today-block{margin-bottom:14px}
+  .today-block:last-child{margin-bottom:0}
+  .today-block-h{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.06em;font-size:.8rem;font-weight:600;color:#aeb9c9;margin-bottom:7px}
+  .today-pillar{color:var(--steel);font-weight:700}
+  .today-plan{list-style:none;padding:0;margin:0}
+  .today-plan li{font-size:.9rem;color:#dce2ec;padding:2px 0 2px 14px;position:relative}
+  .today-plan li:before{content:'·';position:absolute;left:2px;color:var(--steel)}
+  .today-plan li.lead-item{font-weight:600;color:#fff}
+  .today-recovery{font-size:.8rem;color:#9fb0c6;font-style:italic;margin-top:6px;line-height:1.4}
+  .today-cta{display:inline-block;margin-top:10px;font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:.82rem;color:#fff;background:var(--green);padding:7px 14px;border-radius:3px;text-decoration:none}
+  .today-cta:hover{filter:brightness(1.1)}
+  .today-cal{list-style:none;padding:0;margin:0}
+  .today-cal li{font-size:.88rem;color:#dce2ec;padding:2px 0 2px 16px;position:relative}
+  .today-cal li:before{content:'';position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:50%;background:var(--steel)}
+  .today-cal li.test:before{background:var(--amber)}
+  .today-linkinline{text-transform:none;letter-spacing:0;font-weight:400}
+  .today-linkinline a,.today-empty a{color:var(--steel);text-decoration:none}
+  .today-empty{font-size:.88rem;color:#9fb0c6}
+  .today-score-inline{display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.12);padding-top:12px}
+  .today-score{font-family:'Bebas Neue',sans-serif;font-size:2rem;line-height:1}
+  .today-score small{font-size:.8rem;color:#9fb0c6}
+  .today-score.sc-green{color:#7ee0a0}.today-score.sc-amber{color:#f0c674}.today-score.sc-red{color:#e08a8a}.today-score.sc-none{color:#9fb0c6}
+  /* Sticky quick-jump bar (mobile) */
+  .quickbar{position:fixed;bottom:0;left:0;right:0;z-index:50;background:rgba(22,36,58,.97);backdrop-filter:blur(8px);border-top:1px solid rgba(255,255,255,.1);display:none}
+  .quickbar-inner{display:flex;overflow-x:auto;scrollbar-width:none;gap:2px;padding:6px 8px;max-width:760px;margin:0 auto}
+  .quickbar-inner::-webkit-scrollbar{display:none}
+  .quickbar a{flex:0 0 auto;font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:.72rem;color:#aeb9c9;text-decoration:none;padding:8px 12px;border-radius:4px;white-space:nowrap}
+  .quickbar a:active,.quickbar a.qb-accent{color:#fff}
+  .quickbar a.qb-accent{background:var(--green)}
+  .quickbar a.qb-update{background:var(--steel);color:#fff}
+  @media(max-width:820px){.quickbar{display:block} body{padding-bottom:56px}}
 
   /* ---------- Sections ---------- */
   section{padding:34px 0 8px}
@@ -320,6 +356,7 @@
 <main class="wrap" id="main"><p style="padding:40px 0;color:var(--muted)">Loading dashboard…</p></main>
 
 <footer><div class="wrap">Functional Core Fitness · Coach Omar Lima · Edit data.json to log progress</div></footer>
+<div class="quickbar"><div class="quickbar-inner" id="quickbar"></div></div>
 
 <script>
 const DAY = 86400000;
@@ -488,9 +525,11 @@ function metricCard(m){
   </div>`;
 }
 
-fetch('data.json?v='+Date.now())
-  .then(r=>{ if(!r.ok) throw new Error(r.status); return r.json(); })
-  .then(render)
+Promise.all([
+  fetch('data.json?v='+Date.now()).then(r=>{ if(!r.ok) throw new Error('data.json '+r.status); return r.json(); }),
+  fetch('training-log.json?v='+Date.now()).then(r=> r.ok ? r.json() : null).catch(()=>null)
+])
+  .then(([d, log])=>{ window.__LOG__=log; render(d); })
   .catch(err=>{
     document.getElementById('main').innerHTML =
       `<p style="padding:40px 0;color:var(--red)">Couldn't load data.json (${err.message}). Make sure it's in the same folder and you're serving over http, not opening the file directly.</p>`;
@@ -537,6 +576,14 @@ function render(d){
     (d.protocol?`<a href="#protocol">Protocol</a>`:'') +
     `<a href="workout.html" class="nav-workout">Workout</a>` +
     `<a href="update.html" class="nav-update">Update</a>`;
+
+  // sticky quick-jump bar (mobile) — the high-frequency destinations
+  document.getElementById('quickbar').innerHTML =
+    `<a href="#today" class="qb-accent">Today</a>` +
+    `<a href="#calendar">Calendar</a>` +
+    `<a href="#p50-score">Score</a>` +
+    `<a href="workout.html">Log</a>` +
+    `<a href="update.html" class="qb-update">Update</a>`;
 
   // episode export block
   const exItems=[
@@ -850,8 +897,91 @@ function render(d){
       </div>
     </section>` : '';
 
+  // ===== TODAY CARD (plan → next calendar → score) =====
+  const todayHtml = buildTodayCard(d, window.__LOG__, project50, scoreClass);
+
   document.getElementById('main').innerHTML =
-    focusHtml + scoreBlockHtml + gaugeHtml + html + pubHtml + calHtml + locHtml + winsHtml;
+    todayHtml + focusHtml + scoreBlockHtml + gaugeHtml + html + pubHtml + calHtml + locHtml + winsHtml;
+}
+
+// ---- Today card builder ----
+function buildTodayCard(d, log, project50, scoreClass){
+  const now=new Date();
+  const dowFull=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][now.getDay()];
+  const dowKey=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][now.getDay()];
+  const dateStr=now.toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric'});
+
+  // --- today's plan from training-log ---
+  let planBlock='';
+  if(log && Array.isArray(log.weeks)){
+    // determine current program week from project_start
+    const start = d.athlete && (d.athlete.program_start||d.athlete.project_start);
+    let wkNum=null;
+    if(start){
+      const sd=new Date(start+'T00:00:00');
+      const days=Math.floor((now - sd)/86400000);
+      wkNum = Math.floor(days/7)+1;
+    }
+    // clamp to available training weeks (2..11 have day plans; else nearest)
+    const trainingWeeks = log.weeks.filter(w=>w.type==='training');
+    let wk = trainingWeeks.find(w=>w.week===wkNum);
+    if(!wk){
+      if(wkNum!==null && wkNum<2) wk=trainingWeeks[0];
+      else if(wkNum!==null && wkNum>11) wk=trainingWeeks[trainingWeeks.length-1];
+      else wk=trainingWeeks[0];
+    }
+    if(wk && wk.days && wk.days[dowKey]){
+      const day=wk.days[dowKey];
+      const items=(day.plan||[]).map((p,i)=>`<li${i===0?' class="lead-item"':''}>${p}</li>`).join('');
+      planBlock=`
+        <div class="today-block">
+          <div class="today-block-h"><span class="today-pillar">${day.pillar||''}</span> Week ${wk.week} · ${day.day_full||dowFull}</div>
+          <ul class="today-plan">${items}</ul>
+          ${day.recovery?`<div class="today-recovery">Recovery: ${day.recovery}</div>`:''}
+          <a class="today-cta" href="workout.html">Log this session →</a>
+        </div>`;
+    }
+  }
+  if(!planBlock){
+    planBlock=`<div class="today-block"><div class="today-block-h">Today's plan</div>
+      <div class="today-empty">No plan mapped for today. <a href="workout.html">Open the workout log →</a></div></div>`;
+  }
+
+  // --- next calendar item ---
+  let calBlock='';
+  if(d.calendar && Array.isArray(d.calendar.months)){
+    const monthNames=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    const curTag=`${monthNames[now.getMonth()]} ${now.getFullYear()}`;
+    let cm=d.calendar.months.find(m=>m.month===curTag) || d.calendar.months[0];
+    if(cm){
+      const eps=(cm.episodes||[]).slice(0,2).map(e=>`<li>${e}</li>`).join('');
+      const tests=(cm.assessments||[]).slice(0,1).map(a=>`<li class="test">${a}</li>`).join('');
+      calBlock=`
+        <div class="today-block">
+          <div class="today-block-h">${cm.month} · ${cm.pillar||''} <span class="today-linkinline"><a href="#calendar">full calendar →</a></span></div>
+          <ul class="today-cal">${eps}${tests}</ul>
+        </div>`;
+    }
+  }
+
+  // --- score glance ---
+  const sc = project50===null?'—':project50;
+  const scoreBlock=`
+    <div class="today-block today-score-inline">
+      <div class="today-block-h">Project 50 Score <span class="today-linkinline"><a href="#p50-score">breakdown →</a></span></div>
+      <div class="today-score ${scoreClass(project50)}">${sc}<small>/100</small></div>
+    </div>`;
+
+  return `
+    <section id="today" class="today-card">
+      <div class="today-head">
+        <div class="today-eyebrow">Today</div>
+        <div class="today-date">${dateStr}</div>
+      </div>
+      ${planBlock}
+      ${calBlock}
+      ${scoreBlock}
+    </section>`;
 }
 </script>
 </body>
