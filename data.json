@@ -399,56 +399,56 @@
         {
           "name": "Plank",
           "unit": "sec",
-          "value": null,
+          "value": 90,
           "pacer": 90,
           "goal": 150,
           "direction": "up",
-          "date": null
+          "date": "2026-07-18"
         },
         {
           "name": "Side Plank L",
           "unit": "sec",
-          "value": null,
+          "value": 61.54,
           "pacer": 60,
           "goal": 90,
           "direction": "up",
-          "date": null
+          "date": "2026-07-18"
         },
         {
           "name": "Side Plank R",
           "unit": "sec",
-          "value": null,
+          "value": 61.13,
           "pacer": 60,
           "goal": 90,
           "direction": "up",
-          "date": null
+          "date": "2026-07-18"
         },
         {
           "name": "Wall Sit",
           "unit": "sec",
-          "value": null,
+          "value": 61.64,
           "pacer": 90,
           "goal": 150,
           "direction": "up",
-          "date": null
+          "date": "2026-07-18"
         },
         {
           "name": "Dead Hang",
           "unit": "sec",
-          "value": null,
+          "value": "75.sec",
           "pacer": 75,
           "goal": 120,
           "direction": "up",
-          "date": null
+          "date": "2026-07-18"
         },
         {
           "name": "Farmer Carry 70s",
           "unit": "sec",
-          "value": null,
+          "value": "sec",
           "pacer": 45,
           "goal": 75,
           "direction": "up",
-          "date": null,
+          "date": "2026-07-18",
           "note": "Fixed weight, max time (or log distance)."
         }
       ]
