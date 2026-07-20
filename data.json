@@ -99,9 +99,9 @@
       "cadence": "Weekly + 90-day review",
       "metrics": [
         {
-          "name": "VO2 Max",
+         "name": "VO2 Max",
           "unit": "mL/kg/min",
-          "value": "34.6 mL/kg/min",
+          "value": 33.7,
           "pacer": 38,
           "goal": 50,
           "direction": "up",
@@ -116,7 +116,7 @@
         {
           "name": "Resting HR",
           "unit": "bpm",
-          "value": "54.7 bpm",
+          "value": 57,
           "pacer": 53,
           "goal": 49,
           "direction": "down",
@@ -131,7 +131,7 @@
         {
           "name": "HRV (SDNN)",
           "unit": "ms",
-          "value": "42.3 ms",
+          "value": 51,
           "pacer": 45,
           "goal": 60,
           "direction": "up",
@@ -147,7 +147,7 @@
         {
           "name": "Walking HR",
           "unit": "bpm",
-          "value": "82 bpm",
+          "value": 84,
           "pacer": 80,
           "goal": 75,
           "direction": "down",
@@ -162,7 +162,7 @@
         {
           "name": "Respiratory Rate",
           "unit": "/min",
-          "value": "13.6 /min",
+          "value": 11.5,
           "pacer": 14,
           "goal": 14,
           "direction": "down",
@@ -177,7 +177,7 @@
         {
           "name": "Blood Oxygen",
           "unit": "%",
-          "value": "95%",
+          "value": 97,
           "pacer": 95,
           "goal": 96,
           "direction": "up",
@@ -192,7 +192,7 @@
         {
           "name": "Steps",
           "unit": "/day",
-          "value": "9,400/day",
+          "value": 9897,
           "pacer": 10000,
           "goal": 11000,
           "direction": "up",
@@ -207,7 +207,7 @@
         {
           "name": "Exercise",
           "unit": "min/wk",
-          "value": "473 min/wk",
+          "value": 49,
           "pacer": 420,
           "goal": 420,
           "direction": "up",
@@ -222,7 +222,7 @@
         {
           "name": "Active Calories",
           "unit": "kcal/wk",
-          "value": "6,433 kcal/wk",
+          "value": 828,
           "pacer": null,
           "goal": null,
           "direction": "up",
