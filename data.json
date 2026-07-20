@@ -337,7 +337,7 @@
       ]
     },
     {
-      "id": "strength-endurance",
+     "id": "strength-endurance",
       "name": "Strength Endurance",
       "source": "Max reps to technical failure",
       "cadence": "Every 3–6 months",
@@ -345,7 +345,7 @@
         {
           "name": "Push-ups",
           "unit": "reps",
-          "value": "40 reps",
+          "value": 40,
           "pacer": 40,
           "goal": 50,
           "direction": "up",
@@ -354,7 +354,7 @@
         {
           "name": "Pull-ups",
           "unit": "reps",
-          "value": "9 reps",
+          "value": 9,
           "pacer": 9,
           "goal": 15,
           "direction": "up",
@@ -363,7 +363,7 @@
         {
           "name": "Chin-ups",
           "unit": "reps",
-          "value": "10 reps",
+          "value": 10,
           "pacer": 10,
           "goal": 16,
           "direction": "up",
@@ -372,7 +372,7 @@
         {
           "name": "Dips",
           "unit": "reps",
-          "value": "17 reps",
+          "value": 17,
           "pacer": 17,
           "goal": 30,
           "direction": "up",
@@ -381,7 +381,7 @@
         {
           "name": "Hanging Knee Raises",
           "unit": "reps",
-          "value": "8 reps",
+          "value": 8,
           "pacer": 12,
           "goal": 20,
           "direction": "up",
