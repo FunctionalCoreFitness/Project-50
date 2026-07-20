@@ -338,6 +338,24 @@
     .ex-grid{grid-template-columns:repeat(2,1fr)}
   }
   @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+  /* ---------- Routine modal ---------- */
+  .today-recovery-link{color:#cfe0f5;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:2px;cursor:pointer}
+  .today-recovery-link:hover{color:#fff}
+  .routine-overlay{display:none;position:fixed;inset:0;background:rgba(15,20,28,.72);z-index:100;padding:24px 16px;overflow-y:auto}
+  .routine-overlay.open{display:block}
+  .routine-modal{max-width:640px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:4px;padding:22px 24px 26px;position:relative}
+  .routine-modal-close{position:absolute;top:14px;right:16px;background:none;border:none;font-size:1.4rem;line-height:1;color:var(--muted);cursor:pointer;padding:2px 6px}
+  .routine-modal-close:hover{color:var(--ink)}
+  .routine-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px;border-bottom:2px solid var(--navy);padding-bottom:5px;margin-bottom:2px}
+  .routine-name{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:.01em;color:var(--navy)}
+  .routine-meta{font-family:'Barlow Condensed',sans-serif;font-size:.8rem;color:var(--steel);font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+  .routine-when{font-size:.84rem;color:var(--muted);font-style:italic;margin:6px 0 12px;line-height:1.4}
+  .routine-table{width:100%;border-collapse:collapse;font-size:.85rem}
+  .routine-table th{text-align:left;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.05em;font-size:.7rem;color:var(--muted);padding:5px 8px;border-bottom:1px solid var(--line)}
+  .routine-table td{padding:7px 8px;border-bottom:1px solid var(--hair);vertical-align:top}
+  .routine-table td:first-child{font-family:var(--mono);font-size:.78rem;color:var(--steel);width:26px}
+  .routine-table .move{font-weight:600;color:var(--ink)}
+  .routine-table .dur{font-family:var(--mono);font-size:.78rem;white-space:nowrap;color:var(--navy)}
 </style>
 </head>
 <body>
@@ -360,6 +378,114 @@
 
 <script>
 const DAY = 86400000;
+
+const ROUTINES=[
+  {
+    key:"Power Plate",
+    name:"Power Plate", meta:"~12 min", when:"Post-strength recovery — Friday. Keep the muscle relaxed and let the vibration do the work; you're not holding tension. Stop if you feel numbness or tingling.",
+    cols:["Position","What to do","Duration","Setting"],
+    moves:[
+      ["Quad / IT band","Kneel with one thigh on the plate, forearms on the floor, roll the thigh slowly along the plate","60s / leg","30 Hz · Low"],
+      ["Calf","Seated on floor, one calf resting on the plate, hands supporting hips, shift slightly to find tight spots","60s / leg","30 Hz · Low"],
+      ["Glute","Sit on the plate, cross one ankle over the opposite knee, lean into the glute","60s / side","35 Hz · Low"],
+      ["Hamstring","Seated on floor, hamstrings on the plate edge, lean back on your hands","90s","30 Hz · Low"],
+      ["Standing decompression","Stand tall on the plate, soft knees, arms relaxed, breathe slow","90s","40 Hz · Med"],
+    ]
+  },
+  {
+    key:"Stick Mobility",
+    name:"Stick Mobility Flow", meta:"~15 min", when:"Post-BJJ — Mon / Wed. Create tension against the stick (isometric pull or push) to unlock deeper range; that's what separates it from a plain stretch.",
+    cols:["Movement","What to do","Reps / Hold"],
+    moves:[
+      ["Overhead pull-apart","Stick overhead with an active outward pull, open the chest","8 slow reps"],
+      ["Shoulder pass-through","Wide grip, take the stick from front to behind you with control","6 reps"],
+      ["Hip 90/90 with stick","Stick vertical for support, rotate between 90/90 sides","5 / side"],
+      ["Deep squat pry","Stick planted in front, pull yourself down into a squat, pry knees out","60s hold"],
+      ["Cossack shift","Stick for support, shift side to side in a wide stance","5 / side"],
+      ["T-spine rotation","Half-kneel, stick behind the shoulders, rotate open","6 / side"],
+    ]
+  },
+  {
+    key:"RAD",
+    name:"RAD Massage Balls", meta:"5–10 min", when:"Pair with mobility-flow days (Mon / Wed / Thu). Use the Supernova for large muscles, the Battlestar (roller) for long lines like calves and forearms, and the smaller balls for pinpoint spots. Breathe into tender areas; don't grind through sharp pain.",
+    cols:["Target","Tool + what to do","Duration"],
+    moves:[
+      ["Foot / plantar","Supernova or small ball underfoot, roll heel-to-toe, pause on tight knots","45s / foot"],
+      ["Calves","Battlestar roller under calf, slow passes, rotate leg in and out","60s / leg"],
+      ["Glutes / piriformis","Sit on Supernova, cross ankle over knee, hunt for the tight spot and hold","60s / side"],
+      ["T-spine","Lie on two balls either side of the spine, arms crossed, slow extensions","60s"],
+      ["Lats","Side-lying, Supernova under the armpit/lat, small rolls","45s / side"],
+      ["Forearms","Battlestar on a table, roll forearm across it (BJJ grip recovery)","45s / arm"],
+    ]
+  },
+  {
+    key:"Normatec",
+    name:"Normatec Boots", meta:"20–30 min", when:"After BJJ (Thu) and long runs (Sun). Legs plus the hip attachment. Lie down, elevate slightly, let it run a full cycle. Great time to stack with Wim Hof breathing.",
+    cols:["Setup","What to do","Duration","Setting"],
+    moves:[
+      ["Full leg + hip","Zip into both boots and the hip attachment, lie down flat, elevate feet slightly on a pillow","20–30 min","Level 4–6"],
+      ["Breathing pairing","Run Wim Hof rounds during the cycle — hands free, nothing else to do","first 10 min","—"],
+      ["Pressure","Start mid-level; increase only if it stays comfortable, never to the point of numbness","whole session","adjust to feel"],
+    ]
+  },
+  {
+    key:"Venom",
+    name:"Venom Wraps", meta:"~15 min each", when:"Heat + vibration for post-strength or post-long-run tightness — Saturday recovery block. Back/shoulder wrap and lower-back band. Warm up first (heat), then let vibration work.",
+    cols:["Wrap","Placement + what to do","Duration","Mode"],
+    moves:[
+      ["Back / shoulder","Secure over the upper back and shoulder, sit or lie back, relax the area fully","15 min","Heat → Vibration"],
+      ["Lower-back band","Wrap around the lower back / waist, snug but not tight, stay still","15 min","Heat → Vibration"],
+      ["Sequence","Let heat build for the first few minutes, then add vibration for the remainder","per wrap","warm first"],
+    ]
+  },
+  {
+    key:"NeoCarbon",
+    name:"NeoCarbon EMS", meta:"20–30 min", when:"3×/week, recovery mode. Target the muscles you trained that day (legs Tue, upper Fri). Place pads on the muscle belly, not on joints or the spine. Recovery mode = low, comfortable pulsing, not a hard contraction.",
+    cols:["Target day","Pad placement","Duration","Mode"],
+    moves:[
+      ["Legs (Tue)","Quads and/or calves — pads on the muscle belly, red remote","20–30 min","Recovery / low"],
+      ["Upper (Fri)","Upper back or shoulders — avoid the spine and the front of the neck","20–30 min","Recovery / low"],
+      ["Intensity","Turn up only to a comfortable tingling pulse; back off if it locks the muscle hard","whole session","adjust to feel"],
+    ]
+  },
+];
+const DUR_COLS=["Duration","Reps / Hold","Setting","Mode"];
+
+function linkifyRecovery(text){
+  if(!text) return text;
+  return text.split(' + ').map(seg=>{
+    const hit = ROUTINES.find(r=>seg.indexOf(r.key)!==-1);
+    if(hit){
+      return seg.replace(hit.key, `<span class="today-recovery-link" onclick="openRoutine('${hit.key}')">${hit.key}</span>`);
+    }
+    return seg;
+  }).join(' + ');
+}
+
+function openRoutine(key){
+  const r = ROUTINES.find(x=>x.key===key);
+  if(!r) return;
+  const head=`<div class="routine-head"><span class="routine-name">${r.name}</span><span class="routine-meta">${r.meta}</span></div>`;
+  const when=`<div class="routine-when">${r.when}</div>`;
+  const th=r.cols.map(c=>`<th>${c}</th>`).join('');
+  const rows=r.moves.map((m,i)=>{
+    let tds=`<td>${i+1}</td>`;
+    m.forEach((cell,ci)=>{
+      const colName=r.cols[ci];
+      if(ci===0) tds+=`<td class="move">${cell}</td>`;
+      else if(DUR_COLS.includes(colName)) tds+=`<td class="dur">${cell}</td>`;
+      else tds+=`<td>${cell}</td>`;
+    });
+    return `<tr>${tds}</tr>`;
+  }).join('');
+  const table=`<table class="routine-table"><tr><th></th>${th}</tr>${rows}</table>`;
+  document.getElementById('routineModal').innerHTML =
+    `<button class="routine-modal-close" onclick="closeRoutine()">&times;</button>${head}${when}${table}`;
+  document.getElementById('routineOverlay').classList.add('open');
+}
+function closeRoutine(){
+  document.getElementById('routineOverlay').classList.remove('open');
+}
 
 function fmt(v){
   if(v===null||v===undefined) return null;
@@ -937,7 +1063,7 @@ function buildTodayCard(d, log, project50, scoreClass){
         <div class="today-block">
           <div class="today-block-h"><span class="today-pillar">${day.pillar||''}</span> Week ${wk.week} · ${day.day_full||dowFull}</div>
           <ul class="today-plan">${items}</ul>
-          ${day.recovery?`<div class="today-recovery">Recovery: ${day.recovery}</div>`:''}
+          ${day.recovery?`<div class="today-recovery">Recovery: ${linkifyRecovery(day.recovery)}</div>`:''}
           <a class="today-cta" href="workout.html">Log this session →</a>
         </div>`;
     }
@@ -984,5 +1110,8 @@ function buildTodayCard(d, log, project50, scoreClass){
     </section>`;
 }
 </script>
+<div class="routine-overlay" id="routineOverlay" onclick="if(event.target===this)closeRoutine()">
+  <div class="routine-modal" id="routineModal"></div>
+</div>
 </body>
 </html>
