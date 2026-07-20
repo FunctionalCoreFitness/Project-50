@@ -101,84 +101,138 @@
         {
           "name": "VO2 Max",
           "unit": "mL/kg/min",
-          "value": 34.6,
+          "value": "34.6 mL/kg/min",
           "pacer": 38,
           "goal": 50,
           "direction": "up",
-          "date": "2026-06-26"
+          "date": "2026-07-20",
+          "history": [
+            {
+              "value": 34.6,
+              "date": "2026-06-26"
+            }
+          ]
         },
         {
           "name": "Resting HR",
           "unit": "bpm",
-          "value": 54.7,
+          "value": "54.7 bpm",
           "pacer": 53,
           "goal": 49,
           "direction": "down",
-          "date": "2026-06-26"
+          "date": "2026-07-20",
+          "history": [
+            {
+              "value": 54.7,
+              "date": "2026-06-26"
+            }
+          ]
         },
         {
           "name": "HRV (SDNN)",
           "unit": "ms",
-          "value": 42.3,
+          "value": "42.3 ms",
           "pacer": 45,
           "goal": 60,
           "direction": "up",
-          "date": "2026-06-26",
-          "note": "90-day avg. Recent daily readings ~52 ms."
+          "date": "2026-07-20",
+          "note": "90-day avg. Recent daily readings ~52 ms.",
+          "history": [
+            {
+              "value": 42.3,
+              "date": "2026-06-26"
+            }
+          ]
         },
         {
           "name": "Walking HR",
           "unit": "bpm",
-          "value": 82,
+          "value": "82 bpm",
           "pacer": 80,
           "goal": 75,
           "direction": "down",
-          "date": "2026-06-26"
+          "date": "2026-07-20",
+          "history": [
+            {
+              "value": 82,
+              "date": "2026-06-26"
+            }
+          ]
         },
         {
           "name": "Respiratory Rate",
           "unit": "/min",
-          "value": 13.6,
+          "value": "13.6 /min",
           "pacer": 14,
           "goal": 14,
           "direction": "down",
-          "date": "2026-06-26"
+          "date": "2026-07-20",
+          "history": [
+            {
+              "value": 13.6,
+              "date": "2026-06-26"
+            }
+          ]
         },
         {
           "name": "Blood Oxygen",
           "unit": "%",
-          "value": 95,
+          "value": "95%",
           "pacer": 95,
           "goal": 96,
           "direction": "up",
-          "date": "2026-06-26"
+          "date": "2026-07-20",
+          "history": [
+            {
+              "value": 95,
+              "date": "2026-06-26"
+            }
+          ]
         },
         {
           "name": "Steps",
           "unit": "/day",
-          "value": 9400,
+          "value": "9,400/day",
           "pacer": 10000,
           "goal": 11000,
           "direction": "up",
-          "date": "2026-06-26"
+          "date": "2026-07-20",
+          "history": [
+            {
+              "value": 9400,
+              "date": "2026-06-26"
+            }
+          ]
         },
         {
           "name": "Exercise",
           "unit": "min/wk",
-          "value": 473,
+          "value": "473 min/wk",
           "pacer": 420,
           "goal": 420,
           "direction": "up",
-          "date": "2026-06-26"
+          "date": "2026-07-20",
+          "history": [
+            {
+              "value": 473,
+              "date": "2026-06-26"
+            }
+          ]
         },
         {
           "name": "Active Calories",
           "unit": "kcal/wk",
-          "value": 6433,
+          "value": "6,433 kcal/wk",
           "pacer": null,
           "goal": null,
           "direction": "up",
-          "date": "2026-06-26"
+          "date": "2026-07-20",
+          "history": [
+            {
+              "value": 6433,
+              "date": "2026-06-26"
+            }
+          ]
         }
       ]
     },
