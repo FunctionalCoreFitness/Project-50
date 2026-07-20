@@ -433,9 +433,9 @@
           "date": "2026-07-18"
         },
         {
-          "name": "Dead Hang",
+         "name": "Dead Hang",
           "unit": "sec",
-          "value": "75.sec",
+          "value": 75,
           "pacer": 75,
           "goal": 120,
           "direction": "up",
@@ -444,7 +444,7 @@
         {
           "name": "Farmer Carry 70s",
           "unit": "sec",
-          "value": "sec",
+          "value": 85,
           "pacer": 45,
           "goal": 75,
           "direction": "up",
