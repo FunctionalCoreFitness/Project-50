@@ -1951,7 +1951,14 @@
           "Trail / walking footage for the ultra thread",
           "Detail cutaways: hands, forearms, sweat, breathing, shoe-lacing",
           "Dashboard / log on screen — numbers going in"
-        ]
+        ],
+        "pub_monthly": {
+          "coaches_corner": "Getting up off the floor — why it predicts independence",
+          "sunday": {
+            "show": "Journal / Floor Skills (alternating)",
+            "desc": "Alternates weekly: Project 50 Journal (story heartbeat between docs) and a Floor Skills short (shrimp, back-roll, technical stand-up) — the Independence Through Movement follow-on."
+          }
+        }
       },
       {
         "month": "Sep 2026",

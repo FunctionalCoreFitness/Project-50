@@ -968,14 +968,29 @@ function render(d){
   const pub=d.publishing;
   let pubHtml='';
   if(pub){
+    // Month-aware overrides: pull this month's Coach's Corner topic + Sunday content from the calendar
+    let pubM=null;
+    if(d.calendar && Array.isArray(d.calendar.months)){
+      const nowTag=new Date().toLocaleString('en-US',{month:'short',year:'numeric'});
+      pubM=(d.calendar.months.find(m=>m.month===nowTag)||{}).pub_monthly||null;
+    }
     const dayCard=(w)=>{
-      const focusTie = (w.show==="Coach's Corner" && cf)
-        ? `<div class="pub-tie">This week: ${cf.focus}</div>` : '';
+      let show=w.show, desc=w.desc, tie='';
+      // Coach's Corner: monthly topic overrides the Current-Focus tie
+      if(w.show==="Coach's Corner"){
+        if(pubM && pubM.coaches_corner){ tie=`<div class="pub-tie">This month: ${pubM.coaches_corner}</div>`; }
+        else if(cf){ tie=`<div class="pub-tie">This week: ${cf.focus}</div>`; }
+      }
+      // Sunday: monthly override of show name + description (e.g. Journal ↔ Floor Skills)
+      if(w.day==="Sunday" && pubM && pubM.sunday){
+        if(pubM.sunday.show) show=pubM.sunday.show;
+        if(pubM.sunday.desc) desc=pubM.sunday.desc;
+      }
       return `<div class="pub-day ${w.type==='long'?'pub-long':'pub-short'}">
         <div class="pub-dayname">${w.day}</div>
-        <div class="pub-show">${w.show}</div>
-        <div class="pub-desc">${w.desc}</div>
-        ${focusTie}
+        <div class="pub-show">${show}</div>
+        <div class="pub-desc">${desc}</div>
+        ${tie}
       </div>`;
     };
     pubHtml = `
