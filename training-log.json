@@ -465,7 +465,7 @@
             "Deep squat hold 90s"
           ],
           "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
-          "done": false,
+          "done": true,
           "notes": ""
         },
         "Tue": {
@@ -481,7 +481,7 @@
             "Pallof Press 3x10/side"
           ],
           "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
-          "done": false,
+          "done": true,
           "notes": ""
         },
         "Wed": {
@@ -495,7 +495,7 @@
             "Deep squat hold 90s"
           ],
           "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
-          "done": false,
+          "done": true,
           "notes": ""
         },
         "Thu": {
@@ -506,7 +506,7 @@
             "Core circuit x2: Plank 30s, Bird Dog 10/side, Side Plank 20s/side"
           ],
           "recovery": "Wim Hof 15 min + Normatec boots 20-30 min (legs)",
-          "done": false,
+          "done": true,
           "notes": ""
         },
         "Fri": {
@@ -522,7 +522,7 @@
             "Zone 2 cardio finisher, 20 min"
           ],
           "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min + Power Plate 10 min",
-          "done": false,
+          "done": true,
           "notes": ""
         },
         "Sat": {
@@ -535,7 +535,7 @@
             "Red light 10 min"
           ],
           "recovery": "Wim Hof 15 min + Sauna 20-30 min + Cold Plunge 2-4 min + Red Light 15 min + Venom wraps 15 min ea",
-          "done": false,
+          "done": true,
           "notes": ""
         },
         "Sun": {
@@ -548,8 +548,8 @@
             "Weekly review (Project 50 dashboard)"
           ],
           "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
-          "done": false,
-          "notes": ""
+          "done": true,
+          "notes": "Did the bike 1/2 hour- too hot outside "
         }
       }
     },
