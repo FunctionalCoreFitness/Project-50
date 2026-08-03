@@ -337,6 +337,30 @@
   .cb-sub{font-size:.84rem;color:var(--muted);line-height:1.4;margin:8px 0 6px}
   .cb-tier{margin-top:12px}
   .cb-tier-h{font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:.78rem;color:var(--steel);margin-bottom:2px}
+  /* race ladder */
+  .race-rules{margin-bottom:14px}
+  .race-rule{font-size:.8rem;color:var(--muted);padding:3px 0 3px 16px;position:relative;line-height:1.4}
+  .race-rule:before{content:"\203A";position:absolute;left:2px;color:var(--steel);font-weight:700}
+  .race-rung{background:var(--card);border:1px solid var(--line);border-radius:4px;margin-bottom:8px;border-left:3px solid var(--line)}
+  .race-rung.race-capstone{border-left-color:var(--amber);border-color:var(--amber)}
+  .race-rung.race-done{opacity:.62}
+  .race-rung summary{display:flex;align-items:center;gap:10px;padding:13px 16px;cursor:pointer;list-style:none;flex-wrap:wrap}
+  .race-rung summary::-webkit-details-marker{display:none}
+  .race-check{flex:0 0 auto;width:22px;height:22px;border:1.5px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;color:#fff;background:#fff;transition:.12s}
+  .race-done .race-check{background:var(--green);border-color:var(--green)}
+  .race-num{flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1rem}
+  .race-capstone .race-num{background:var(--amber)}
+  .race-dist{font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:.01em;flex:1 1 auto}
+  .race-window{font-family:var(--mono);font-size:.72rem;color:var(--muted);background:var(--hair);padding:2px 8px;border-radius:3px}
+  .race-rung summary:after{content:"+";color:var(--muted);font-family:var(--mono);font-size:1.1rem}
+  .race-rung[open] summary:after{content:"\2013"}
+  .race-body{padding:2px 16px 15px 48px;border-top:1px solid var(--hair)}
+  .race-purpose{font-size:.9rem;color:#3a4049;margin:10px 0;line-height:1.45}
+  .race-row{font-size:.85rem;color:var(--muted);line-height:1.5;margin:6px 0}
+  .race-lbl{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:.72rem;color:var(--steel);margin-right:8px}
+  .race-signup{background:rgba(200,144,49,.08);border-radius:3px;padding:8px 10px;color:#7a5a1e}
+  .race-signup .race-lbl{color:var(--amber)}
+  .race-bridge{font-size:.82rem;font-style:italic;color:var(--muted);margin-top:12px;padding:10px 12px;border:1px dashed var(--line);border-radius:4px;line-height:1.45}
 
   .gauge-card{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:20px 24px;margin-bottom:8px}
   .gauge-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:14px}
@@ -739,6 +763,7 @@ function render(d){
     (d.publishing?`<a href="#publishing">Publishing</a>`:'') +
     (d.calendar?`<a href="#calendar">Calendar</a>`:'') +
     (d.content_bank?`<a href="#contentbank">Content Bank</a>`:'') +
+    (d.race_ladder?`<a href="#raceladder">Race Ladder</a>`:'') +
     (d.locations?`<a href="#locations">Sets</a>`:'') +
     (d.wins?`<a href="#wins">Wins</a>`:'') +
     (d.protocol?`<a href="#protocol">Protocol</a>`:'') +
@@ -1145,10 +1170,41 @@ function render(d){
       ${seriesBlocks}${bankBlocks}
     </section>`;
   }
+
+  // ===== RACE LADDER (progression to Moab 100) =====
+  const rl=d.race_ladder;
+  let rlHtml='';
+  if(rl){
+    const rKey=(n)=>`p50race::${n}`;
+    const rungs=(rl.rungs||[]).map(r=>{
+      const done=localStorage.getItem(rKey(r.n))==='1';
+      return `<details class="race-rung ${r.capstone?'race-capstone':''} ${done?'race-done':''}">
+        <summary>
+          <span class="race-check" data-race="${r.n}" role="button">${done?'\u2713':''}</span>
+          <span class="race-num">${r.capstone?'\u{1F3AF}':r.n}</span>
+          <span class="race-dist">${r.dist}</span>
+          <span class="race-window">${r.window}</span>
+        </summary>
+        <div class="race-body">
+          <div class="race-purpose">${r.purpose}</div>
+          <div class="race-row"><span class="race-lbl">Candidates</span>${r.candidates}</div>
+          <div class="race-row race-signup"><span class="race-lbl">Sign up</span>${r.signup}</div>
+        </div>
+      </details>`;
+    }).join('');
+    rlHtml=`
+    <section id="raceladder">
+      <div class="sec-head"><div class="sec-title">Race Ladder</div>
+        <div class="sec-meta">${rl.goal}<br>Tap \u2713 when raced</div></div>
+      <div class="race-rules">${(rl.rules||[]).map(x=>`<div class="race-rule">${x}</div>`).join('')}</div>
+      ${rungs}
+      ${rl.bridge?`<div class="race-bridge">${rl.bridge}</div>`:''}
+    </section>`;
+  }
   const todayHtml = buildTodayCard(d, window.__LOG__, project50, scoreClass);
 
   document.getElementById('main').innerHTML =
-    todayHtml + focusHtml + scoreBlockHtml + gaugeHtml + html + pubHtml + calHtml + cbHtml + locHtml + winsHtml;
+    todayHtml + focusHtml + scoreBlockHtml + gaugeHtml + html + pubHtml + calHtml + cbHtml + rlHtml + locHtml + winsHtml;
 
   // ---- Checkable to-do / B-roll items (per-device, localStorage) ----
   const mainEl=document.getElementById('main');
@@ -1156,6 +1212,17 @@ function render(d){
     // supplement expand/collapse
     const supp=e.target.closest('.supp-toggle');
     if(supp){ supp.closest('.supp-item').classList.toggle('open'); return; }
+    // race ladder checkmark (inside summary — prevent the details toggle)
+    const rc=e.target.closest('.race-check');
+    if(rc){
+      e.preventDefault(); e.stopPropagation();
+      const n=rc.dataset.race, key=`p50race::${n}`;
+      const rung=rc.closest('.race-rung');
+      const nowDone=rung.classList.toggle('race-done');
+      rc.textContent=nowDone?'\u2713':'';
+      if(nowDone) localStorage.setItem(key,'1'); else localStorage.removeItem(key);
+      return;
+    }
     const li=e.target.closest('li.ck-item');
     if(!li) return;
     const key=li.dataset.ckey;

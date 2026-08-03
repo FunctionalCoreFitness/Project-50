@@ -2432,5 +2432,66 @@
         ]
       }
     ]
+  },
+  "race_ladder": {
+    "goal": "5 miles → Canyonlands 100, Moab — Oct 2028",
+    "rules": [
+      "Never more than double your longest race distance in one jump",
+      "Run at least 100K (racing or training) before the 100-mile start line"
+    ],
+    "rungs": [
+      {
+        "n": 1,
+        "dist": "Trail Half-Marathon",
+        "window": "Late fall 2026 (Nov–Dec)",
+        "year": "2026",
+        "candidates": "Mt. Tam Trail Run (Stinson, early Nov) or Almaden Quicksilver Half (San Jose)",
+        "purpose": "First race back — re-blood the racing instinct, milestone long run.",
+        "signup": "Register ~2–3 months out. These rarely sell out, but early entry locks price and shirt size.",
+        "done": false
+      },
+      {
+        "n": 2,
+        "dist": "50K — first ultra",
+        "window": "Spring 2027",
+        "year": "2027",
+        "candidates": "Skyline 50K (Castro Valley), Lake Chabot 50K, or a Coastal Trail Runs Marin 50K",
+        "purpose": "Officially an ultramarathoner. Big documentary beat.",
+        "signup": "Register 3–4 months out. Mid-size NorCal 50Ks fill steadily — don't wait to race week.",
+        "done": false
+      },
+      {
+        "n": 3,
+        "dist": "50-Mile",
+        "window": "Fall 2027",
+        "year": "2027",
+        "candidates": "A NorCal 50-miler with real climb (Inside Trail / Coastal events)",
+        "purpose": "Year-one racing capstone — first true long-day effort.",
+        "signup": "Register 4–6 months out. 50-milers have caps and can fill; earlier is safer.",
+        "done": false
+      },
+      {
+        "n": 4,
+        "dist": "100K — dress rehearsal",
+        "window": "Spring / early summer 2028",
+        "year": "2028",
+        "candidates": "Ideally altitude or technical terrain to prep for Moab",
+        "purpose": "The rung that proves you can go the distance. Final big test before the 100.",
+        "signup": "Register 6+ months out (late 2027). 100Ks are smaller-field and fill early — book once 2028 dates post.",
+        "done": false
+      },
+      {
+        "n": 5,
+        "dist": "Canyonlands 100 — Moab, UT",
+        "window": "Mid-October 2028",
+        "year": "2028",
+        "capstone": true,
+        "candidates": "Mad Moose Events · Run Moab Series · 100-mile",
+        "purpose": "THE capstone. As close to your 50th (Oct 22) as the race calendar allows.",
+        "signup": "Register the moment 2028 registration opens — typically ~9–12 months prior (watch late 2027). Moab 100s draw a national field and can fill; do not wait.",
+        "done": false
+      }
+    ],
+    "bridge": "Optional 2028 training trip to Moab — run the actual red-rock terrain, acclimatize to altitude + sand. Documentary gold."
   }
 }
