@@ -361,6 +361,12 @@
   .race-signup{background:rgba(200,144,49,.08);border-radius:3px;padding:8px 10px;color:#7a5a1e}
   .race-signup .race-lbl{color:var(--amber)}
   .race-bridge{font-size:.82rem;font-style:italic;color:var(--muted);margin-top:12px;padding:10px 12px;border:1px dashed var(--line);border-radius:4px;line-height:1.45}
+  .race-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .race-links a{font-family:'Barlow Condensed',sans-serif;font-size:.82rem;letter-spacing:.02em;color:var(--steel);text-decoration:none;border:1px solid var(--steel);border-radius:3px;padding:4px 10px}
+  .race-links a:hover{background:var(--steel);color:#fff}
+  .cal-race{margin-top:12px;background:rgba(200,144,49,.09);border-left:3px solid var(--amber);border-radius:3px;padding:9px 12px}
+  .cal-race-h{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.92rem;color:#8a5f14;letter-spacing:.02em}
+  .cal-race-r{font-size:.8rem;color:var(--muted);margin-top:3px;line-height:1.4}
 
   .gauge-card{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:20px 24px;margin-bottom:8px}
   .gauge-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:14px}
@@ -1123,6 +1129,7 @@ function render(d){
               <summary><i class="dot-broll"></i>B-roll shot list <span class="cal-broll-count ck-count" data-count-type="broll" data-count-month="${m.month}">${bDone}/${m.broll.length}</span></summary>
               <ul class="ck-list">${m.broll.map((b,i)=>ckItem(b,'broll',i)).join('')}</ul>
             </details>` : ''}
+            ${m.race ? `<div class="cal-race"><div class="cal-race-h">${m.race.race}</div><div class="cal-race-r">${m.race.reg}</div></div>` : ''}
           </div>`;
         }).join('')}
       </div>
@@ -1189,6 +1196,7 @@ function render(d){
           <div class="race-purpose">${r.purpose}</div>
           <div class="race-row"><span class="race-lbl">Candidates</span>${r.candidates}</div>
           <div class="race-row race-signup"><span class="race-lbl">Sign up</span>${r.signup}</div>
+          ${(r.links&&r.links.length)?`<div class="race-links">${r.links.map(l=>`<a href="${l.url}" target="_blank" rel="noopener">${l.label} \u2197</a>`).join('')}</div>`:''}
         </div>
       </details>`;
     }).join('');

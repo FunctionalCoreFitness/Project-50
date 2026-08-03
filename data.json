@@ -2026,7 +2026,11 @@
         "assessments": [
           "Strength-endurance retest (track pull-up progress)",
           "Timed holds retest"
-        ]
+        ],
+        "race": {
+          "race": "🏃 RACE: Trail Half-Marathon — first race back",
+          "reg": "Register now (~2–3 mo out). Mt. Tam Trail Run or Almaden Quicksilver Half."
+        }
       },
       {
         "month": "Dec 2026",
@@ -2069,7 +2073,11 @@
         "assessments": [
           "Speed/agility test (shuttle, T-test)",
           "Gait asymmetry deep-check"
-        ]
+        ],
+        "race": {
+          "race": "🗓 REGISTER: 50K (spring 2027) — sign-up window",
+          "reg": "Book your first 50K 3–4 months out. Skyline 50K / Lake Chabot / Coastal Marin."
+        }
       },
       {
         "month": "Mar 2027",
@@ -2448,7 +2456,17 @@
         "candidates": "Mt. Tam Trail Run (Stinson, early Nov) or Almaden Quicksilver Half (San Jose)",
         "purpose": "First race back — re-blood the racing instinct, milestone long run.",
         "signup": "Register ~2–3 months out. These rarely sell out, but early entry locks price and shirt size.",
-        "done": false
+        "done": false,
+        "links": [
+          {
+            "label": "Inside Trail Racing",
+            "url": "https://insidetrail.com/calendar/"
+          },
+          {
+            "label": "Coastal Trail Runs",
+            "url": "https://ultrasignup.com/groups.aspx?gid=69"
+          }
+        ]
       },
       {
         "n": 2,
@@ -2458,7 +2476,17 @@
         "candidates": "Skyline 50K (Castro Valley), Lake Chabot 50K, or a Coastal Trail Runs Marin 50K",
         "purpose": "Officially an ultramarathoner. Big documentary beat.",
         "signup": "Register 3–4 months out. Mid-size NorCal 50Ks fill steadily — don't wait to race week.",
-        "done": false
+        "done": false,
+        "links": [
+          {
+            "label": "Inside Trail (NorCal 50Ks)",
+            "url": "https://ultrasignup.com/groups.aspx?gid=44"
+          },
+          {
+            "label": "Coastal Trail Runs",
+            "url": "https://ultrasignup.com/groups.aspx?gid=69"
+          }
+        ]
       },
       {
         "n": 3,
@@ -2468,7 +2496,17 @@
         "candidates": "A NorCal 50-miler with real climb (Inside Trail / Coastal events)",
         "purpose": "Year-one racing capstone — first true long-day effort.",
         "signup": "Register 4–6 months out. 50-milers have caps and can fill; earlier is safer.",
-        "done": false
+        "done": false,
+        "links": [
+          {
+            "label": "Inside Trail Racing",
+            "url": "https://ultrasignup.com/groups.aspx?gid=44"
+          },
+          {
+            "label": "Dead Horse 50 (Moab option)",
+            "url": "https://www.madmooseevents.com/dead-horse-ultra"
+          }
+        ]
       },
       {
         "n": 4,
@@ -2478,7 +2516,13 @@
         "candidates": "Ideally altitude or technical terrain to prep for Moab",
         "purpose": "The rung that proves you can go the distance. Final big test before the 100.",
         "signup": "Register 6+ months out (late 2027). 100Ks are smaller-field and fill early — book once 2028 dates post.",
-        "done": false
+        "done": false,
+        "links": [
+          {
+            "label": "UltraSignup (search 100K)",
+            "url": "https://ultrasignup.com/"
+          }
+        ]
       },
       {
         "n": 5,
@@ -2489,7 +2533,17 @@
         "candidates": "Mad Moose Events · Run Moab Series · 100-mile",
         "purpose": "THE capstone. As close to your 50th (Oct 22) as the race calendar allows.",
         "signup": "Register the moment 2028 registration opens — typically ~9–12 months prior (watch late 2027). Moab 100s draw a national field and can fill; do not wait.",
-        "done": false
+        "done": false,
+        "links": [
+          {
+            "label": "Run Moab - Mad Moose",
+            "url": "https://www.madmooseevents.com/runmoab"
+          },
+          {
+            "label": "Canyonlands Ultra",
+            "url": "https://www.madmooseevents.com/canyonlands-ultra"
+          }
+        ]
       }
     ],
     "bridge": "Optional 2028 training trip to Moab — run the actual red-rock terrain, acclimatize to altitude + sand. Documentary gold."
