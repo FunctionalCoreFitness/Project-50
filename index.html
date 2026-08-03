@@ -318,6 +318,15 @@
   li.ck-item.ck-done .ck-box{background:var(--green);border-color:var(--green)}
   li.ck-item.ck-done .ck-txt{opacity:.4;text-decoration:line-through}
   .ck-count{font-family:var(--mono);font-size:.68rem;background:var(--hair);color:var(--muted);padding:1px 7px;border-radius:3px;margin-left:6px}
+  /* content bank */
+  .cb-block{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:14px 18px;margin-bottom:10px}
+  .cb-block summary{font-family:'Bebas Neue',sans-serif;font-size:1.35rem;letter-spacing:.01em;cursor:pointer;display:flex;align-items:center;gap:9px;list-style:none}
+  .cb-block summary::-webkit-details-marker{display:none}
+  .cb-block summary:after{content:"+";margin-left:auto;font-size:1.2rem;color:var(--muted);font-family:var(--mono)}
+  .cb-block[open] summary:after{content:"\2013"}
+  .cb-sub{font-size:.84rem;color:var(--muted);line-height:1.4;margin:8px 0 6px}
+  .cb-tier{margin-top:12px}
+  .cb-tier-h{font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:.78rem;color:var(--steel);margin-bottom:2px}
 
   .gauge-card{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:20px 24px;margin-bottom:8px}
   .gauge-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:14px}
@@ -719,6 +728,7 @@ function render(d){
     d.categories.map(c=>`<a href="#${c.id}">${c.name}</a>`).join('') +
     (d.publishing?`<a href="#publishing">Publishing</a>`:'') +
     (d.calendar?`<a href="#calendar">Calendar</a>`:'') +
+    (d.content_bank?`<a href="#contentbank">Content Bank</a>`:'') +
     (d.locations?`<a href="#locations">Sets</a>`:'') +
     (d.wins?`<a href="#wins">Wins</a>`:'') +
     (d.protocol?`<a href="#protocol">Protocol</a>`:'') +
@@ -1075,11 +1085,52 @@ function render(d){
       </div>
     </section>` : '';
 
-  // ===== TODAY CARD (plan → next calendar → score) =====
+  // ===== CONTENT BANK (series curriculum + topic banks, checkable) =====
+  const cb=d.content_bank;
+  let cbHtml='';
+  if(cb){
+    const cbKey=(scope,i)=>`p50cb::${scope}::${i}`;
+    const cbItem=(txt,scope,i)=>{
+      const done=localStorage.getItem(cbKey(scope,i))==='1';
+      return `<li class="ck-item ${done?'ck-done':''}" data-ckey="${cbKey(scope,i)}">
+        <span class="ck-box">${done?'\u2713':''}</span><span class="ck-txt">${txt}</span></li>`;
+    };
+    // series: flat index across all tiers so keys stay stable
+    const seriesBlocks=(cb.series||[]).map(s=>{
+      let idx=0, done=0, total=0;
+      const scope='series::'+s.title;
+      const tiersHtml=(s.tiers||[]).map(t=>{
+        const rows=t.items.map(it=>{ const html=cbItem(it,scope,idx); if(localStorage.getItem(cbKey(scope,idx))==='1')done++; total++; idx++; return html; }).join('');
+        return `<div class="cb-tier"><div class="cb-tier-h">${t.tier}</div><ul class="ck-list">${rows}</ul></div>`;
+      }).join('');
+      return `<details class="cb-block" open>
+        <summary><i class="dot-film"></i>${s.title} <span class="ck-count" data-cb-scope="${scope}">${done}/${total}</span></summary>
+        <div class="cb-sub">${s.subtitle||''}</div>
+        ${tiersHtml}
+      </details>`;
+    }).join('');
+    // banks: simple checkable lists
+    const bankBlocks=(cb.banks||[]).map(b=>{
+      const scope='bank::'+b.title;
+      let done=0;
+      const rows=b.items.map((it,i)=>{ if(localStorage.getItem(cbKey(scope,i))==='1')done++; return cbItem(it,scope,i); }).join('');
+      return `<details class="cb-block">
+        <summary><i class="dot-broll"></i>${b.title} <span class="ck-count" data-cb-scope="${scope}">${done}/${b.items.length}</span></summary>
+        <div class="cb-sub">${b.subtitle||''}</div>
+        <ul class="ck-list">${rows}</ul>
+      </details>`;
+    }).join('');
+    cbHtml=`
+    <section id="contentbank">
+      <div class="sec-head"><div class="sec-title">Content Bank</div>
+        <div class="sec-meta">Series curriculum + topic pools<br>Tap to mark filmed</div></div>
+      ${seriesBlocks}${bankBlocks}
+    </section>`;
+  }
   const todayHtml = buildTodayCard(d, window.__LOG__, project50, scoreClass);
 
   document.getElementById('main').innerHTML =
-    todayHtml + focusHtml + scoreBlockHtml + gaugeHtml + html + pubHtml + calHtml + locHtml + winsHtml;
+    todayHtml + focusHtml + scoreBlockHtml + gaugeHtml + html + pubHtml + calHtml + cbHtml + locHtml + winsHtml;
 
   // ---- Checkable to-do / B-roll items (per-device, localStorage) ----
   const mainEl=document.getElementById('main');
@@ -1090,14 +1141,18 @@ function render(d){
     const nowDone = li.classList.toggle('ck-done');
     li.querySelector('.ck-box').textContent = nowDone ? '\u2713' : '';
     if(nowDone) localStorage.setItem(key,'1'); else localStorage.removeItem(key);
-    // update the matching counter
+    // update the matching counter (works for calendar cols, broll, and content-bank blocks)
     const list=li.closest('.ck-list');
     if(list){
-      const total=list.querySelectorAll('li.ck-item').length;
-      const done=list.querySelectorAll('li.ck-item.ck-done').length;
-      const container=li.closest('.cal-col, .cal-broll');
-      const counter=container && container.querySelector('.ck-count');
-      if(counter) counter.textContent=`${done}/${total}`;
+      const container=li.closest('.cal-col, .cal-broll, .cb-block');
+      if(container){
+        // content-bank series may have multiple ck-lists under one block; count them all
+        const allItems=container.querySelectorAll('li.ck-item');
+        const total=allItems.length;
+        const done=container.querySelectorAll('li.ck-item.ck-done').length;
+        const counter=container.querySelector('.ck-count');
+        if(counter) counter.textContent=`${done}/${total}`;
+      }
     }
   });
 }

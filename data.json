@@ -2327,5 +2327,86 @@
         "style": "Cinematic · Epic · Payoff"
       }
     ]
+  },
+  "content_bank": {
+    "series": [
+      {
+        "title": "Ground Control",
+        "subtitle": "Floor movement & fall-safety — Independence Through Movement follow-on. Frame every one as getting up safely; BJJ is the credibility, not the headline.",
+        "type": "series",
+        "tiers": [
+          {
+            "tier": "Tier 1 — Getting Down & Up Safely",
+            "items": [
+              "Get down to the floor safely (controlled descent)",
+              "Technical stand-up (up without both hands, stay protected)",
+              "Back fall breakfall (chin tuck, slap, exhale)",
+              "Side fall (left and right)"
+            ]
+          },
+          {
+            "tier": "Tier 2 — Ground Orientation",
+            "items": [
+              "Shrimping / hip escape (creating space)",
+              "Bridging (glute-driven hip bridge)",
+              "Bridge-and-shrimp combo (how they chain)",
+              "Scooting (head-first and foot-first on your back)"
+            ]
+          },
+          {
+            "tier": "Tier 3 — Rolling & Rotation",
+            "items": [
+              "Back roll (over the shoulder, not the neck)",
+              "Forward roll (controlled shoulder roll)",
+              "Rolling to a stand (roll into technical stand-up)"
+            ]
+          },
+          {
+            "tier": "Tier 4 — Transitions & Application",
+            "items": [
+              "Turning over (back-to-front / simplified granby)",
+              "Getting to hands-and-knees from your back",
+              "Full sequence: fall → recover → shrimp → stand"
+            ]
+          }
+        ]
+      }
+    ],
+    "banks": [
+      {
+        "title": "Coach's Corner ideas",
+        "subtitle": "Wednesday. One lesson you're applying this week — keep it real-time, tied to Current Focus.",
+        "type": "bank",
+        "items": [
+          "Getting up off the floor — why it predicts independence",
+          "Why I test before I train (the case for baselines)",
+          "What a DEXA scan actually tells you (and what it doesn't)",
+          "Sleep continuity — the recovery lever most people ignore",
+          "Zone 2 explained without the jargon",
+          "Why I don't cold plunge on strength days",
+          "Grip strength as a longevity marker",
+          "The one mobility drill I'd keep if I could only do one",
+          "Training around a diagnosis (thyroid — when ready)",
+          "Why 'functional' isn't a buzzword"
+        ]
+      },
+      {
+        "title": "Project 50 Update ideas",
+        "subtitle": "Sunday Journal. 60–90 sec, filmed in Mission Control or on the trail — connection, not polish.",
+        "type": "bank",
+        "items": [
+          "This week's win / this week's struggle",
+          "A number that moved (from the dashboard)",
+          "Something that surprised me in training",
+          "A recovery tool I'm dialing in",
+          "Countdown context — X days to 50, here's where I am",
+          "Behind-the-scenes from filming the documentary",
+          "A question from the comments, answered",
+          "What I'm testing this week",
+          "A trail / long-run reflection (film outside)",
+          "Honest check-in: am I on track for the 100-miler?"
+        ]
+      }
+    ]
   }
 }
