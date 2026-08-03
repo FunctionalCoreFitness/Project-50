@@ -307,6 +307,17 @@
   @media(max-width:640px){.cal-broll ul{columns:1}}
   .cal-broll li{font-size:.86rem;padding:4px 0 4px 14px;position:relative;line-height:1.35;break-inside:avoid}
   .cal-broll li:before{content:"";position:absolute;left:0;top:10px;width:5px;height:5px;border-radius:2px;background:var(--amber);opacity:.6}
+  /* checkable items */
+  .ck-list{list-style:none;margin:0;padding:0}
+  .cal-broll .ck-list{columns:2;column-gap:18px}
+  @media(max-width:640px){.cal-broll .ck-list{columns:1}}
+  li.ck-item{display:flex;align-items:flex-start;gap:9px;padding:5px 0;cursor:pointer;line-height:1.35;break-inside:avoid;-webkit-tap-highlight-color:transparent;user-select:none}
+  li.ck-item:before{display:none}
+  .ck-box{flex:0 0 auto;width:17px;height:17px;margin-top:1px;border:1.5px solid var(--line);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:.72rem;color:#fff;background:#fff;transition:.12s}
+  .ck-txt{font-size:.88rem}
+  li.ck-item.ck-done .ck-box{background:var(--green);border-color:var(--green)}
+  li.ck-item.ck-done .ck-txt{opacity:.4;text-decoration:line-through}
+  .ck-count{font-family:var(--mono);font-size:.68rem;background:var(--hair);color:var(--muted);padding:1px 7px;border-radius:3px;margin-left:6px}
 
   .gauge-card{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:20px 24px;margin-bottom:8px}
   .gauge-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:14px}
@@ -1028,6 +1039,16 @@ function render(d){
       <div class="cal-list">
         ${cal.months.map(m=>{
           const isNow = m.month===curMonthStr;
+          // checkable item: stable key = month|type|index, state from localStorage
+          const ckey=(type,i)=>`p50check::${m.month}::${type}::${i}`;
+          const ckItem=(txt,type,i)=>{
+            const done = localStorage.getItem(ckey(type,i))==='1';
+            return `<li class="ck-item ${done?'ck-done':''}" data-ckey="${ckey(type,i)}">
+              <span class="ck-box">${done?'\u2713':''}</span><span class="ck-txt">${txt}</span></li>`;
+          };
+          const countDone=(type,arr)=>arr.reduce((n,_,i)=>n+(localStorage.getItem(ckey(type,i))==='1'?1:0),0);
+          const aDone=countDone('assess',m.assessments||[]);
+          const bDone=m.broll?countDone('broll',m.broll):0;
           return `
           <div class="cal-month ${isNow?'cal-now':''}">
             <div class="cal-month-head">
@@ -1040,14 +1061,14 @@ function render(d){
                 <ul>${m.episodes.map(e=>`<li>${e}</li>`).join('')}</ul>
               </div>
               <div class="cal-col">
-                <div class="cal-col-h"><i class="dot-test"></i>Assessments</div>
-                <ul>${m.assessments.map(a=>`<li>${a}</li>`).join('')}</ul>
+                <div class="cal-col-h"><i class="dot-test"></i>Assessments <span class="ck-count" data-count-type="assess" data-count-month="${m.month}">${aDone}/${(m.assessments||[]).length}</span></div>
+                <ul class="ck-list">${(m.assessments||[]).map((a,i)=>ckItem(a,'assess',i)).join('')}</ul>
               </div>
             </div>
             ${(m.broll && m.broll.length) ? `
             <details class="cal-broll">
-              <summary><i class="dot-broll"></i>B-roll shot list <span class="cal-broll-count">${m.broll.length}</span></summary>
-              <ul>${m.broll.map(b=>`<li>${b}</li>`).join('')}</ul>
+              <summary><i class="dot-broll"></i>B-roll shot list <span class="cal-broll-count ck-count" data-count-type="broll" data-count-month="${m.month}">${bDone}/${m.broll.length}</span></summary>
+              <ul class="ck-list">${m.broll.map((b,i)=>ckItem(b,'broll',i)).join('')}</ul>
             </details>` : ''}
           </div>`;
         }).join('')}
@@ -1059,6 +1080,26 @@ function render(d){
 
   document.getElementById('main').innerHTML =
     todayHtml + focusHtml + scoreBlockHtml + gaugeHtml + html + pubHtml + calHtml + locHtml + winsHtml;
+
+  // ---- Checkable to-do / B-roll items (per-device, localStorage) ----
+  const mainEl=document.getElementById('main');
+  mainEl.addEventListener('click', (e)=>{
+    const li=e.target.closest('li.ck-item');
+    if(!li) return;
+    const key=li.dataset.ckey;
+    const nowDone = li.classList.toggle('ck-done');
+    li.querySelector('.ck-box').textContent = nowDone ? '\u2713' : '';
+    if(nowDone) localStorage.setItem(key,'1'); else localStorage.removeItem(key);
+    // update the matching counter
+    const list=li.closest('.ck-list');
+    if(list){
+      const total=list.querySelectorAll('li.ck-item').length;
+      const done=list.querySelectorAll('li.ck-item.ck-done').length;
+      const container=li.closest('.cal-col, .cal-broll');
+      const counter=container && container.querySelector('.ck-count');
+      if(counter) counter.textContent=`${done}/${total}`;
+    }
+  });
 }
 
 // ---- Today card builder ----
