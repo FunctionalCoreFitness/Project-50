@@ -296,6 +296,17 @@
   .cal-col li:before{content:"";position:absolute;left:0;top:11px;width:5px;height:5px;border-radius:50%;background:var(--line)}
   .dot-film{width:9px;height:9px;border-radius:2px;background:var(--steel);display:inline-block}
   .dot-test{width:9px;height:9px;border-radius:50%;background:var(--green);display:inline-block}
+  .dot-broll{width:9px;height:9px;border-radius:2px;background:var(--amber);display:inline-block}
+  .cal-broll{margin-top:14px;border-top:1px solid var(--hair);padding-top:10px}
+  .cal-broll summary{font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:.8rem;color:var(--muted);cursor:pointer;display:flex;align-items:center;gap:7px;list-style:none}
+  .cal-broll summary::-webkit-details-marker{display:none}
+  .cal-broll summary:after{content:"+";margin-left:auto;font-size:1.1rem;color:var(--muted)}
+  .cal-broll[open] summary:after{content:"\2013"}
+  .cal-broll-count{font-family:var(--mono);font-size:.68rem;background:var(--hair);color:var(--muted);padding:1px 7px;border-radius:3px}
+  .cal-broll ul{list-style:none;margin:10px 0 0;padding:0;columns:2;column-gap:18px}
+  @media(max-width:640px){.cal-broll ul{columns:1}}
+  .cal-broll li{font-size:.86rem;padding:4px 0 4px 14px;position:relative;line-height:1.35;break-inside:avoid}
+  .cal-broll li:before{content:"";position:absolute;left:0;top:10px;width:5px;height:5px;border-radius:2px;background:var(--amber);opacity:.6}
 
   .gauge-card{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:20px 24px;margin-bottom:8px}
   .gauge-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:14px}
@@ -1018,6 +1029,11 @@ function render(d){
                 <ul>${m.assessments.map(a=>`<li>${a}</li>`).join('')}</ul>
               </div>
             </div>
+            ${(m.broll && m.broll.length) ? `
+            <details class="cal-broll">
+              <summary><i class="dot-broll"></i>B-roll shot list <span class="cal-broll-count">${m.broll.length}</span></summary>
+              <ul>${m.broll.map(b=>`<li>${b}</li>`).join('')}</ul>
+            </details>` : ''}
           </div>`;
         }).join('')}
       </div>
