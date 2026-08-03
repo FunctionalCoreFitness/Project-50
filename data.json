@@ -1701,14 +1701,38 @@
       {
         "title": "Supplement Stack",
         "items": [
-          "A-2 Thyroid Peptide Bioregulator",
-          "Vitamin D",
-          "Curcumin",
-          "Berberine",
-          "Omega-3",
-          "Zinc Picolinate",
-          "Magnesium",
-          "Methyl Guard"
+          {
+            "name": "A-2 Thyroid Peptide Bioregulator",
+            "purpose": "Thyroid support tied to the Dec diagnosis — peptide bioregulator aimed at helping normal thyroid function as part of ongoing management."
+          },
+          {
+            "name": "Vitamin D",
+            "purpose": "Flagged still-low on the latest panel. Supports immune function, bone density, and hormone production — keep supplementing until levels come up."
+          },
+          {
+            "name": "Curcumin",
+            "purpose": "Anti-inflammatory. Helps manage training-load inflammation and supports joint recovery across BJJ, strength, and long aerobic days."
+          },
+          {
+            "name": "Berberine",
+            "purpose": "Metabolic / glucose support — helps blood-sugar regulation and works alongside the nutrition changes since December."
+          },
+          {
+            "name": "Omega-3",
+            "purpose": "Directly counters the high omega 6:3 ratio on the panel. Anti-inflammatory and cardiovascular support — the lever to raise omega-3 while lowering omega-6."
+          },
+          {
+            "name": "Zinc Picolinate",
+            "purpose": "Immune, hormonal, and recovery support. Well-absorbed form; supports testosterone and tissue repair under heavy training."
+          },
+          {
+            "name": "Magnesium",
+            "purpose": "Flagged on the RBC panel. Supports sleep quality, muscle function, and recovery — foundational for a high-volume training block."
+          },
+          {
+            "name": "Methyl Guard",
+            "purpose": "Methylation / B-vitamin support. Panel showed high-normal methylation markers — supports healthy homocysteine and B-vitamin metabolism."
+          }
         ],
         "note": "Selenium and NAD+ removed per latest review."
       },

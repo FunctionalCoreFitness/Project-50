@@ -186,6 +186,16 @@
   .protocol li::before{content:"\2014  ";color:var(--steel)}
   .protocol .pnote{margin-top:10px;font-size:.8rem;font-style:italic;color:var(--muted)}
   @media(max-width:600px){.protocol ul{columns:1}}
+  /* expandable supplement items */
+  .protocol ul.supp-list{columns:1}
+  .protocol .supp-item{padding:0;margin:2px 0}
+  .protocol .supp-item::before{content:""}
+  .supp-toggle{width:100%;text-align:left;background:none;border:none;font-family:inherit;font-size:.92rem;color:#3a4049;padding:7px 0 7px 20px;cursor:pointer;position:relative;font-weight:600}
+  .supp-toggle::before{content:"\2014";color:var(--steel);position:absolute;left:0}
+  .supp-toggle::after{content:"+";position:absolute;right:2px;color:var(--muted);font-family:var(--mono)}
+  .supp-item.open .supp-toggle::after{content:"\2013"}
+  .supp-desc{display:none;font-size:.85rem;color:var(--muted);line-height:1.45;padding:0 4px 10px 20px}
+  .supp-item.open .supp-desc{display:block}
 
   /* status meters */
   .status-meter{display:flex;align-items:center;gap:12px;margin-bottom:16px}
@@ -857,11 +867,19 @@ function render(d){
       html += `<div class="labs-note"><b>Thyroid history:</b> ${d.protocol.thyroid_history}</div>`;
     }
     for(const g of d.protocol.groups){
+      const hasDesc = g.items.some(i=>typeof i==='object' && i.purpose);
+      const itemsHtml = g.items.map(i=>{
+        if(typeof i==='object' && i.purpose){
+          return `<li class="supp-item"><button class="supp-toggle" type="button">${i.name}</button><div class="supp-desc">${i.purpose}</div></li>`;
+        }
+        const label = (typeof i==='object') ? i.name : i;
+        return `<li>${label}</li>`;
+      }).join('');
       html += `
         <details>
           <summary>${g.title}</summary>
           <div class="body">
-            <ul>${g.items.map(i=>`<li>${i}</li>`).join('')}</ul>
+            <ul class="${hasDesc?'supp-list':''}">${itemsHtml}</ul>
             ${g.note?`<div class="pnote">${g.note}</div>`:''}
           </div>
         </details>`;
@@ -1135,6 +1153,9 @@ function render(d){
   // ---- Checkable to-do / B-roll items (per-device, localStorage) ----
   const mainEl=document.getElementById('main');
   mainEl.addEventListener('click', (e)=>{
+    // supplement expand/collapse
+    const supp=e.target.closest('.supp-toggle');
+    if(supp){ supp.closest('.supp-item').classList.toggle('open'); return; }
     const li=e.target.closest('li.ck-item');
     if(!li) return;
     const key=li.dataset.ckey;
