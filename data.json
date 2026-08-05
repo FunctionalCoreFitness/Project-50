@@ -17,78 +17,118 @@
         {
           "name": "Weight",
           "unit": "lb",
-          "value": 217.5,
+          "value": 218.9,
           "pacer": 213,
           "goal": 207,
           "direction": "down",
-          "date": "2026-06-26",
+          "date": "2026-08-05",
           "history": [
             {
               "value": 212.3,
               "date": "2026-02-01"
+            },
+            {
+              "value": 217.5,
+              "date": "2026-06-26"
             }
           ]
         },
         {
           "name": "DEXA Body Fat",
           "unit": "%",
-          "value": 24.7,
+          "value": 25.4,
           "pacer": 22,
           "goal": 19,
           "direction": "down",
-          "date": "2026-06-26",
+          "date": "2026-08-05",
           "history": [
             {
               "value": 25.4,
               "date": "2026-02-01"
+            },
+            {
+              "value": 24.7,
+              "date": "2026-06-26"
             }
           ]
         },
         {
           "name": "Fat Mass",
           "unit": "lb",
-          "value": 53.8,
+          "value": 55.6,
           "pacer": 47,
           "goal": 40,
           "direction": "down",
-          "date": "2026-06-26",
+          "date": "2026-08-05",
           "history": [
             {
               "value": 54,
               "date": "2026-02-01"
+            },
+            {
+              "value": 53.8,
+              "date": "2026-06-26"
             }
           ]
         },
         {
           "name": "Lean Mass",
           "unit": "lb",
-          "value": 155.6,
+          "value": 155.2,
           "pacer": 158,
           "goal": 162,
           "direction": "up",
-          "date": "2026-06-26",
+          "date": "2026-08-05",
           "history": [
             {
               "value": 150.1,
               "date": "2026-02-01"
+            },
+            {
+              "value": 155.6,
+              "date": "2026-06-26"
             }
           ]
         },
         {
           "name": "Visceral Fat",
           "unit": "lb",
-          "value": 1.79,
+          "value": 1.95,
           "pacer": 1.5,
           "goal": 1,
           "direction": "down",
-          "date": "2026-06-24",
+          "date": "2026-08-05",
           "history": [
             {
               "value": 1.58,
               "date": "2026-03-09"
+            },
+            {
+              "value": 1.79,
+              "date": "2026-06-24"
             }
           ],
           "note": "DEXA visceral fat. Lower is better for metabolic health."
+        },
+        {
+          "name": "Bone Density (Z-score)",
+          "unit": "",
+          "value": 2.3,
+          "pacer": 0.0,
+          "goal": 2.0,
+          "direction": "up",
+          "date": "2026-08-05",
+          "note": "Total BMD 1.431 g/cm². Z 2.3 = 97–99th percentile — elite. The 'aging strong' headline."
+        },
+        {
+          "name": "A/G Ratio",
+          "unit": "",
+          "value": 1.17,
+          "pacer": 1.0,
+          "goal": 1.0,
+          "direction": "down",
+          "date": "2026-08-05",
+          "note": "Android/Gynoid fat. Target < 1.0. Tracks central/visceral fat — the nutrition lever."
         }
       ]
     },
@@ -2547,5 +2587,33 @@
       }
     ],
     "bridge": "Optional 2028 training trip to Moab — run the actual red-rock terrain, acclimatize to altitude + sand. Documentary gold."
+  },
+  "mileage": {
+    "phase": "Base Building — Trail Half prep",
+    "phase_window": "Aug → Nov 2026",
+    "current_weekly": "12–15 mi/wk",
+    "target_weekly": "25–30 mi/wk by October",
+    "long_run_now": "5–6 mi",
+    "long_run_target": "10–13 mi by late Oct",
+    "rule": "Build the long run ~1 mi every 1–2 wks. Never +10% total volume wk-over-wk. Every 4th week cut back ~30%.",
+    "week_structure": [
+      {
+        "day": "Tue",
+        "run": "Easy short (3–5 mi, Zone 2)",
+        "note": "Legs-friendly around Strength A. Keep it easy."
+      },
+      {
+        "day": "Wed",
+        "run": "Moderate / tempo or hills",
+        "note": "Run before BJJ, or roll lighter that night. Your quality midweek run."
+      },
+      {
+        "day": "Sun",
+        "run": "Long run — trail, easy pace",
+        "note": "The most important run. Grows over time. Roll lighter Thu/Sat the week it jumps."
+      }
+    ],
+    "bjj_lever": "Tie roll intensity to the running week: drill-only or light rolling around your long-run and quality days.",
+    "ladder_note": "3 days carries you through the half and 50K. Add a 4th easy day in 2027 when 50-mile / 100 volume demands it."
   }
 }
