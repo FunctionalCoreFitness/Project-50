@@ -361,6 +361,22 @@
   .race-signup{background:rgba(200,144,49,.08);border-radius:3px;padding:8px 10px;color:#7a5a1e}
   .race-signup .race-lbl{color:var(--amber)}
   .race-bridge{font-size:.82rem;font-style:italic;color:var(--muted);margin-top:12px;padding:10px 12px;border:1px dashed var(--line);border-radius:4px;line-height:1.45}
+  /* mileage targets */
+  .mi-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
+  @media(max-width:600px){.mi-stats{grid-template-columns:repeat(2,1fr)}}
+  .mi-stat{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:10px 12px}
+  .mi-k{font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:.68rem;color:var(--muted)}
+  .mi-v{font-family:'Bebas Neue',sans-serif;font-size:1.35rem;color:var(--navy);letter-spacing:.01em;margin-top:2px}
+  .mi-rule{background:rgba(74,126,199,.08);border-left:3px solid var(--steel);border-radius:3px;padding:9px 12px;font-size:.85rem;color:#2f4a6b;line-height:1.45;margin-bottom:14px}
+  .mi-week{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  @media(max-width:600px){.mi-week{grid-template-columns:1fr}}
+  .mi-day{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:12px}
+  .mi-dayname{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:var(--steel)}
+  .mi-run{font-size:.9rem;font-weight:600;color:#3a4049;margin:3px 0}
+  .mi-note{font-size:.8rem;color:var(--muted);line-height:1.4}
+  .mi-lever{font-size:.84rem;color:#3a4049;margin-top:12px;padding:8px 12px;background:var(--hair);border-radius:3px;line-height:1.45}
+  .mi-lever b{color:var(--navy)}
+  .mi-ladder{font-size:.8rem;font-style:italic;color:var(--muted);margin-top:10px;line-height:1.45}
   .race-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
   .race-links a{font-family:'Barlow Condensed',sans-serif;font-size:.82rem;letter-spacing:.02em;color:var(--steel);text-decoration:none;border:1px solid var(--steel);border-radius:3px;padding:4px 10px}
   .race-links a:hover{background:var(--steel);color:#fff}
@@ -770,6 +786,7 @@ function render(d){
     (d.calendar?`<a href="#calendar">Calendar</a>`:'') +
     (d.content_bank?`<a href="#contentbank">Content Bank</a>`:'') +
     (d.race_ladder?`<a href="#raceladder">Race Ladder</a>`:'') +
+    (d.mileage?`<a href="#mileage">Mileage</a>`:'') +
     (d.locations?`<a href="#locations">Sets</a>`:'') +
     (d.wins?`<a href="#wins">Wins</a>`:'') +
     (d.protocol?`<a href="#protocol">Protocol</a>`:'') +
@@ -1209,10 +1226,37 @@ function render(d){
       ${rl.bridge?`<div class="race-bridge">${rl.bridge}</div>`:''}
     </section>`;
   }
+
+  // ===== MILEAGE TARGETS (current-phase running guidance) =====
+  const mi=d.mileage;
+  let miHtml='';
+  if(mi){
+    const wk=(mi.week_structure||[]).map(w=>`
+      <div class="mi-day">
+        <div class="mi-dayname">${w.day}</div>
+        <div class="mi-run">${w.run}</div>
+        <div class="mi-note">${w.note}</div>
+      </div>`).join('');
+    miHtml=`
+    <section id="mileage">
+      <div class="sec-head"><div class="sec-title">Mileage Targets</div>
+        <div class="sec-meta">${mi.phase}<br>${mi.phase_window}</div></div>
+      <div class="mi-stats">
+        <div class="mi-stat"><div class="mi-k">Weekly now</div><div class="mi-v">${mi.current_weekly}</div></div>
+        <div class="mi-stat"><div class="mi-k">Weekly target</div><div class="mi-v">${mi.target_weekly}</div></div>
+        <div class="mi-stat"><div class="mi-k">Long run now</div><div class="mi-v">${mi.long_run_now}</div></div>
+        <div class="mi-stat"><div class="mi-k">Long run target</div><div class="mi-v">${mi.long_run_target}</div></div>
+      </div>
+      <div class="mi-rule">${mi.rule}</div>
+      <div class="mi-week">${wk}</div>
+      ${mi.bjj_lever?`<div class="mi-lever"><b>BJJ lever:</b> ${mi.bjj_lever}</div>`:''}
+      ${mi.ladder_note?`<div class="mi-ladder">${mi.ladder_note}</div>`:''}
+    </section>`;
+  }
   const todayHtml = buildTodayCard(d, window.__LOG__, project50, scoreClass);
 
   document.getElementById('main').innerHTML =
-    todayHtml + focusHtml + scoreBlockHtml + gaugeHtml + html + pubHtml + calHtml + cbHtml + rlHtml + locHtml + winsHtml;
+    todayHtml + focusHtml + scoreBlockHtml + gaugeHtml + html + pubHtml + calHtml + cbHtml + rlHtml + miHtml + locHtml + winsHtml;
 
   // ---- Checkable to-do / B-roll items (per-device, localStorage) ----
   const mainEl=document.getElementById('main');

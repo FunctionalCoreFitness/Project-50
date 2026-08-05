@@ -160,6 +160,7 @@
           "day_full": "Tuesday",
           "pillar": "Strength",
           "plan": [
+            "RUN: Easy 3 mi, Zone 2 (conversational) — keep it truly easy around strength",
             "Strength A -- Lower / Posterior Chain",
             "Goblet Squat 3x12",
             "Bulgarian Split Squat 3x10/leg",
@@ -170,12 +171,14 @@
           ],
           "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
           "done": false,
-          "notes": ""
+          "notes": "",
+          "mileage": 3
         },
         "Wed": {
           "day_full": "Wednesday",
           "pillar": "Mobility",
           "plan": [
+            "RUN: Moderate 4 mi — relaxed tempo or rolling hills. Run before BJJ, or roll lighter tonight",
             "BJJ + Mobility Flow (15-20 min)",
             "Hip 90/90 hold 90s/side",
             "T-spine open book 10/side",
@@ -184,7 +187,8 @@
           ],
           "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
           "done": false,
-          "notes": ""
+          "notes": "",
+          "mileage": 4
         },
         "Thu": {
           "day_full": "Thursday",
@@ -230,16 +234,18 @@
           "day_full": "Sunday",
           "pillar": "Foundation",
           "plan": [
-            "Long Aerobic -- Ultra Base",
-            "Trail run/hike, 45-60 min, conversational pace",
+            "RUN: Long 5 mi, trail, easy conversational pace",
             "Wim Hof breathwork, 3 rounds",
             "Weekly review (Project 50 dashboard)"
           ],
           "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
           "done": false,
-          "notes": ""
+          "notes": "",
+          "mileage": 5
         }
-      }
+      },
+      "weekly_mileage": 12,
+      "mileage_note": "Week 2: 12 mi total (3 + 4 + 5)"
     },
     {
       "week": 3,
@@ -264,6 +270,7 @@
           "day_full": "Tuesday",
           "pillar": "Strength",
           "plan": [
+            "RUN: Easy 3 mi, Zone 2 (conversational) — keep it truly easy around strength",
             "Strength A -- Lower / Posterior Chain",
             "Goblet Squat 3x12",
             "Bulgarian Split Squat 3x10/leg",
@@ -274,12 +281,14 @@
           ],
           "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
           "done": false,
-          "notes": ""
+          "notes": "",
+          "mileage": 3
         },
         "Wed": {
           "day_full": "Wednesday",
           "pillar": "Mobility",
           "plan": [
+            "RUN: Moderate 4 mi — relaxed tempo or rolling hills. Run before BJJ, or roll lighter tonight",
             "BJJ + Mobility Flow (15-20 min)",
             "Hip 90/90 hold 90s/side",
             "T-spine open book 10/side",
@@ -288,7 +297,8 @@
           ],
           "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
           "done": false,
-          "notes": ""
+          "notes": "",
+          "mileage": 4
         },
         "Thu": {
           "day_full": "Thursday",
@@ -334,16 +344,18 @@
           "day_full": "Sunday",
           "pillar": "Foundation",
           "plan": [
-            "Long Aerobic -- Ultra Base",
-            "Trail run/hike, 45-60 min, conversational pace",
+            "RUN: Long 6 mi, trail, easy conversational pace",
             "Wim Hof breathwork, 3 rounds",
             "Weekly review (Project 50 dashboard)"
           ],
           "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
           "done": false,
-          "notes": ""
+          "notes": "",
+          "mileage": 6
         }
-      }
+      },
+      "weekly_mileage": 13,
+      "mileage_note": "Week 3: 13 mi total (3 + 4 + 6)"
     },
     {
       "week": 4,
@@ -368,6 +380,7 @@
           "day_full": "Tuesday",
           "pillar": "Strength",
           "plan": [
+            "RUN: Easy 3 mi, Zone 2 (conversational) — keep it truly easy around strength",
             "Strength A -- Lower / Posterior Chain",
             "Goblet Squat 3x12",
             "Bulgarian Split Squat 3x10/leg",
@@ -378,12 +391,14 @@
           ],
           "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
           "done": false,
-          "notes": ""
+          "notes": "",
+          "mileage": 3
         },
         "Wed": {
           "day_full": "Wednesday",
           "pillar": "Mobility",
           "plan": [
+            "RUN: Moderate 5 mi — relaxed tempo or rolling hills. Run before BJJ, or roll lighter tonight",
             "BJJ + Mobility Flow (15-20 min)",
             "Hip 90/90 hold 90s/side",
             "T-spine open book 10/side",
@@ -392,7 +407,8 @@
           ],
           "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
           "done": false,
-          "notes": ""
+          "notes": "",
+          "mileage": 5
         },
         "Thu": {
           "day_full": "Thursday",
@@ -438,16 +454,18 @@
           "day_full": "Sunday",
           "pillar": "Foundation",
           "plan": [
-            "Long Aerobic -- Ultra Base",
-            "Trail run/hike, 45-60 min, conversational pace",
+            "RUN: Long 6 mi, trail, easy conversational pace",
             "Wim Hof breathwork, 3 rounds",
             "Weekly review (Project 50 dashboard)"
           ],
           "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
           "done": false,
-          "notes": ""
+          "notes": "",
+          "mileage": 6
         }
-      }
+      },
+      "weekly_mileage": 14,
+      "mileage_note": "Week 4: 14 mi total (3 + 5 + 6)"
     },
     {
       "week": 5,
@@ -472,6 +490,7 @@
           "day_full": "Tuesday",
           "pillar": "Strength",
           "plan": [
+            "RUN: Easy 3 mi, Zone 2 (conversational) — keep it truly easy around strength",
             "Strength A -- Lower / Posterior Chain",
             "Goblet Squat 3x12",
             "Bulgarian Split Squat 3x10/leg",
@@ -482,12 +501,14 @@
           ],
           "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
           "done": true,
-          "notes": ""
+          "notes": "",
+          "mileage": 3
         },
         "Wed": {
           "day_full": "Wednesday",
           "pillar": "Mobility",
           "plan": [
+            "RUN: Moderate 4 mi — relaxed tempo or rolling hills. Run before BJJ, or roll lighter tonight",
             "BJJ + Mobility Flow (15-20 min)",
             "Hip 90/90 hold 90s/side",
             "T-spine open book 10/side",
@@ -496,7 +517,8 @@
           ],
           "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
           "done": true,
-          "notes": ""
+          "notes": "",
+          "mileage": 4
         },
         "Thu": {
           "day_full": "Thursday",
@@ -542,16 +564,18 @@
           "day_full": "Sunday",
           "pillar": "Foundation",
           "plan": [
-            "Long Aerobic -- Ultra Base",
-            "Trail run/hike, 45-60 min, conversational pace",
+            "RUN: Long 6 mi, trail, easy conversational pace (cutback week)",
             "Wim Hof breathwork, 3 rounds",
             "Weekly review (Project 50 dashboard)"
           ],
           "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
           "done": true,
-          "notes": "Did the bike 1/2 hour- too hot outside "
+          "notes": "Did the bike 1/2 hour- too hot outside ",
+          "mileage": 6
         }
-      }
+      },
+      "weekly_mileage": 13,
+      "mileage_note": "Week 5: 13 mi total (3 + 4 + 6) — cut"
     },
     {
       "week": 6,
@@ -576,6 +600,7 @@
           "day_full": "Tuesday",
           "pillar": "Strength",
           "plan": [
+            "RUN: Easy 4 mi, Zone 2 (conversational) — keep it truly easy around strength",
             "Strength A -- Lower / Posterior Chain",
             "Trap Bar Deadlift 4x8",
             "Bulgarian Split Squat 4x8/leg",
@@ -586,12 +611,14 @@
           ],
           "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
           "done": true,
-          "notes": "Grey KB double \nYellow kb single"
+          "notes": "Grey KB double \nYellow kb single",
+          "mileage": 4
         },
         "Wed": {
           "day_full": "Wednesday",
           "pillar": "Mobility",
           "plan": [
+            "RUN: Moderate 5 mi — relaxed tempo or rolling hills. Run before BJJ, or roll lighter tonight",
             "BJJ + Mobility Flow (15-20 min)",
             "Hip 90/90 hold 90s/side",
             "T-spine open book 10/side",
@@ -600,7 +627,8 @@
           ],
           "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
           "done": false,
-          "notes": ""
+          "notes": "",
+          "mileage": 5
         },
         "Thu": {
           "day_full": "Thursday",
@@ -646,16 +674,18 @@
           "day_full": "Sunday",
           "pillar": "Foundation",
           "plan": [
-            "Long Aerobic -- Ultra Base",
-            "Trail run/hike, 60-75 min, add elevation",
+            "RUN: Long 7 mi, trail, easy conversational pace",
             "Wim Hof breathwork, 3 rounds",
             "Weekly review (Project 50 dashboard)"
           ],
           "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
           "done": false,
-          "notes": ""
+          "notes": "",
+          "mileage": 7
         }
-      }
+      },
+      "weekly_mileage": 16,
+      "mileage_note": "Week 6: 16 mi total (4 + 5 + 7)"
     },
     {
       "week": 7,
@@ -680,6 +710,7 @@
           "day_full": "Tuesday",
           "pillar": "Strength",
           "plan": [
+            "RUN: Easy 4 mi, Zone 2 (conversational) — keep it truly easy around strength",
             "Strength A -- Lower / Posterior Chain",
             "Trap Bar Deadlift 4x8",
             "Bulgarian Split Squat 4x8/leg",
@@ -690,12 +721,14 @@
           ],
           "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
           "done": false,
-          "notes": ""
+          "notes": "",
+          "mileage": 4
         },
         "Wed": {
           "day_full": "Wednesday",
           "pillar": "Mobility",
           "plan": [
+            "RUN: Moderate 5 mi — relaxed tempo or rolling hills. Run before BJJ, or roll lighter tonight",
             "BJJ + Mobility Flow (15-20 min)",
             "Hip 90/90 hold 90s/side",
             "T-spine open book 10/side",
@@ -704,7 +737,8 @@
           ],
           "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
           "done": false,
-          "notes": ""
+          "notes": "",
+          "mileage": 5
         },
         "Thu": {
           "day_full": "Thursday",
@@ -750,16 +784,18 @@
           "day_full": "Sunday",
           "pillar": "Foundation",
           "plan": [
-            "Long Aerobic -- Ultra Base",
-            "Trail run/hike, 60-75 min, add elevation",
+            "RUN: Long 8 mi, trail, easy conversational pace",
             "Wim Hof breathwork, 3 rounds",
             "Weekly review (Project 50 dashboard)"
           ],
           "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
           "done": false,
-          "notes": ""
+          "notes": "",
+          "mileage": 8
         }
-      }
+      },
+      "weekly_mileage": 17,
+      "mileage_note": "Week 7: 17 mi total (4 + 5 + 8)"
     },
     {
       "week": 8,
@@ -784,6 +820,7 @@
           "day_full": "Tuesday",
           "pillar": "Strength",
           "plan": [
+            "RUN: Easy 4 mi, Zone 2 (conversational) — keep it truly easy around strength",
             "Strength A -- Lower / Posterior Chain",
             "Trap Bar Deadlift 4x8",
             "Bulgarian Split Squat 4x8/leg",
@@ -794,12 +831,14 @@
           ],
           "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
           "done": false,
-          "notes": ""
+          "notes": "",
+          "mileage": 4
         },
         "Wed": {
           "day_full": "Wednesday",
           "pillar": "Mobility",
           "plan": [
+            "RUN: Moderate 6 mi — relaxed tempo or rolling hills. Run before BJJ, or roll lighter tonight",
             "BJJ + Mobility Flow (15-20 min)",
             "Hip 90/90 hold 90s/side",
             "T-spine open book 10/side",
@@ -808,7 +847,8 @@
           ],
           "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
           "done": false,
-          "notes": ""
+          "notes": "",
+          "mileage": 6
         },
         "Thu": {
           "day_full": "Thursday",
@@ -854,16 +894,18 @@
           "day_full": "Sunday",
           "pillar": "Foundation",
           "plan": [
-            "Long Aerobic -- Ultra Base",
-            "Trail run/hike, 60-75 min, add elevation",
+            "RUN: Long 9 mi, trail, easy conversational pace",
             "Wim Hof breathwork, 3 rounds",
             "Weekly review (Project 50 dashboard)"
           ],
           "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
           "done": false,
-          "notes": ""
+          "notes": "",
+          "mileage": 9
         }
-      }
+      },
+      "weekly_mileage": 19,
+      "mileage_note": "Week 8: 19 mi total (4 + 6 + 9)"
     },
     {
       "week": 9,
@@ -888,6 +930,7 @@
           "day_full": "Tuesday",
           "pillar": "Strength",
           "plan": [
+            "RUN: Easy 4 mi, Zone 2 (conversational) — keep it truly easy around strength",
             "Strength A -- Lower / Posterior Chain",
             "Trap Bar Deadlift 4x8",
             "Bulgarian Split Squat 4x8/leg",
@@ -898,12 +941,14 @@
           ],
           "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
           "done": false,
-          "notes": ""
+          "notes": "",
+          "mileage": 4
         },
         "Wed": {
           "day_full": "Wednesday",
           "pillar": "Mobility",
           "plan": [
+            "RUN: Moderate 5 mi — relaxed tempo or rolling hills. Run before BJJ, or roll lighter tonight",
             "BJJ + Mobility Flow (15-20 min)",
             "Hip 90/90 hold 90s/side",
             "T-spine open book 10/side",
@@ -912,7 +957,8 @@
           ],
           "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
           "done": false,
-          "notes": ""
+          "notes": "",
+          "mileage": 5
         },
         "Thu": {
           "day_full": "Thursday",
@@ -958,16 +1004,18 @@
           "day_full": "Sunday",
           "pillar": "Foundation",
           "plan": [
-            "Long Aerobic -- Ultra Base",
-            "Trail run/hike, 60-75 min, add elevation",
+            "RUN: Long 8 mi, trail, easy conversational pace (cutback week)",
             "Wim Hof breathwork, 3 rounds",
             "Weekly review (Project 50 dashboard)"
           ],
           "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
           "done": false,
-          "notes": ""
+          "notes": "",
+          "mileage": 8
         }
-      }
+      },
+      "weekly_mileage": 17,
+      "mileage_note": "Week 9: 17 mi total (4 + 5 + 8) — cut"
     },
     {
       "week": 10,
@@ -992,6 +1040,7 @@
           "day_full": "Tuesday",
           "pillar": "Strength",
           "plan": [
+            "RUN: Easy 4 mi, Zone 2 (conversational) — keep it truly easy around strength",
             "Strength A -- Lower / Posterior Chain",
             "Trap Bar Deadlift 5x5 (heavy)",
             "Bulgarian Split Squat 4x6/leg (weighted)",
@@ -1002,12 +1051,14 @@
           ],
           "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
           "done": false,
-          "notes": ""
+          "notes": "",
+          "mileage": 4
         },
         "Wed": {
           "day_full": "Wednesday",
           "pillar": "Mobility",
           "plan": [
+            "RUN: Moderate 6 mi — relaxed tempo or rolling hills. Run before BJJ, or roll lighter tonight",
             "BJJ + Mobility Flow (15-20 min)",
             "Hip 90/90 hold 90s/side",
             "T-spine open book 10/side",
@@ -1016,7 +1067,8 @@
           ],
           "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
           "done": false,
-          "notes": ""
+          "notes": "",
+          "mileage": 6
         },
         "Thu": {
           "day_full": "Thursday",
@@ -1062,16 +1114,18 @@
           "day_full": "Sunday",
           "pillar": "Foundation",
           "plan": [
-            "Long Aerobic -- Ultra Base",
-            "Trail run/hike, 75-90 min, weighted pack optional",
+            "RUN: Long 11 mi, trail, easy conversational pace",
             "Wim Hof breathwork, 3 rounds",
             "Weekly review (Project 50 dashboard)"
           ],
           "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
           "done": false,
-          "notes": ""
+          "notes": "",
+          "mileage": 11
         }
-      }
+      },
+      "weekly_mileage": 21,
+      "mileage_note": "Week 10: 21 mi total (4 + 6 + 11)"
     },
     {
       "week": 11,
@@ -1096,6 +1150,7 @@
           "day_full": "Tuesday",
           "pillar": "Strength",
           "plan": [
+            "RUN: Easy 4 mi, Zone 2 (conversational) — keep it truly easy around strength",
             "Strength A -- Lower / Posterior Chain",
             "Trap Bar Deadlift 5x5 (heavy)",
             "Bulgarian Split Squat 4x6/leg (weighted)",
@@ -1106,12 +1161,14 @@
           ],
           "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
           "done": false,
-          "notes": ""
+          "notes": "",
+          "mileage": 4
         },
         "Wed": {
           "day_full": "Wednesday",
           "pillar": "Mobility",
           "plan": [
+            "RUN: Moderate 6 mi — relaxed tempo or rolling hills. Run before BJJ, or roll lighter tonight",
             "BJJ + Mobility Flow (15-20 min)",
             "Hip 90/90 hold 90s/side",
             "T-spine open book 10/side",
@@ -1120,7 +1177,8 @@
           ],
           "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
           "done": false,
-          "notes": ""
+          "notes": "",
+          "mileage": 6
         },
         "Thu": {
           "day_full": "Thursday",
@@ -1166,16 +1224,18 @@
           "day_full": "Sunday",
           "pillar": "Foundation",
           "plan": [
-            "Long Aerobic -- Ultra Base",
-            "Trail run/hike, 75-90 min, weighted pack optional",
+            "RUN: Long 12 mi, trail, easy conversational pace (PEAK — last big week before race)",
             "Wim Hof breathwork, 3 rounds",
             "Weekly review (Project 50 dashboard)"
           ],
           "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
           "done": false,
-          "notes": ""
+          "notes": "",
+          "mileage": 12
         }
-      }
+      },
+      "weekly_mileage": 22,
+      "mileage_note": "Week 11: 22 mi total (4 + 6 + 12) — peak"
     },
     {
       "week": 12,
