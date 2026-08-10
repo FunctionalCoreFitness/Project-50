@@ -626,7 +626,7 @@
             "Deep squat hold 90s"
           ],
           "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
-          "done": true,
+          "done": false,
           "notes": "",
           "mileage": 5
         },
@@ -638,7 +638,7 @@
             "Core circuit x3: Plank 45s, Bird Dog 12/side, Side Plank 30s/side"
           ],
           "recovery": "Wim Hof 15 min + Normatec boots 20-30 min (legs)",
-          "done": true,
+          "done": false,
           "notes": ""
         },
         "Fri": {
@@ -654,8 +654,8 @@
             "Zone 2 cardio finisher, 30 min"
           ],
           "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min + Power Plate 10 min",
-          "done": true,
-          "notes": " Lack KB"
+          "done": false,
+          "notes": ""
         },
         "Sat": {
           "day_full": "Saturday",
@@ -667,7 +667,7 @@
             "Red light 10 min"
           ],
           "recovery": "Wim Hof 15 min + Sauna 20-30 min + Cold Plunge 2-4 min + Red Light 15 min + Venom wraps 15 min ea",
-          "done": true,
+          "done": false,
           "notes": ""
         },
         "Sun": {

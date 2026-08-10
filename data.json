@@ -884,23 +884,23 @@
           "date": null
         },
         {
-          "name": "Grip Strength L",
+          "name": "Grip Strength L *",
           "unit": "lb",
-          "value": null,
-          "pacer": null,
-          "goal": null,
+          "value": 53.2,
+          "pacer": 53,
+          "goal": 58,
           "direction": "up",
-          "date": null,
-          "note": "Dynamometer. Set baseline first."
+          "date": "2026-08-05",
+          "note": "* Post-surgical arm — goal is symmetry with R. Gap now 2.7 kg; watch it close over 2 yrs."
         },
         {
           "name": "Grip Strength R",
           "unit": "lb",
-          "value": null,
-          "pacer": null,
-          "goal": null,
+          "value": 55.9,
+          "pacer": 55,
+          "goal": 60,
           "direction": "up",
-          "date": null
+          "date": "2026-08-05"
         },
         {
           "name": "HR Recovery (1 min)",
@@ -923,29 +923,29 @@
         {
           "name": "Deep Squat Hold",
           "unit": "min",
-          "value": null,
+          "value": 5.17,
           "pacer": 2.5,
           "goal": 5,
           "direction": "up",
-          "date": null
+          "date": "2026-08-05"
         },
         {
           "name": "Floor Rise (no hands)",
           "unit": "sec",
-          "value": null,
+          "value": 2,
           "pacer": 8,
           "goal": 5,
           "direction": "down",
-          "date": null
+          "date": "2026-08-05"
         },
         {
           "name": "Sit Cross-legged",
           "unit": "min",
-          "value": null,
+          "value": 10.17,
           "pacer": 3.5,
           "goal": 10,
           "direction": "up",
-          "date": null
+          "date": "2026-08-05"
         }
       ]
     },
