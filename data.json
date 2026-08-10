@@ -885,7 +885,7 @@
         },
         {
           "name": "Grip Strength L *",
-          "unit": "lb",
+          "unit": "kg",
           "value": 53.2,
           "pacer": 53,
           "goal": 58,
@@ -895,7 +895,7 @@
         },
         {
           "name": "Grip Strength R",
-          "unit": "lb",
+          "unit": "kg",
           "value": 55.9,
           "pacer": 55,
           "goal": 60,
