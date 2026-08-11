@@ -879,20 +879,26 @@
         {
           "name": "Sit-to-Stand (30s)",
           "unit": "reps",
-          "value": null,
+          "value": 25,
           "pacer": 20,
           "goal": 25,
           "direction": "up",
-          "date": null
+          "date": "2026-08-11"
         },
         {
           "name": "Single-Leg Balance, Eyes Open (L)",
           "unit": "sec",
-          "value": null,
+          "value": 100,
           "pacer": 52,
           "goal": 90,
           "direction": "up",
-          "date": null
+          "date": "2026-08-11",
+          "history": [
+            {
+              "value": 100,
+              "date": "2026-08-11"
+            }
+          ]
         },
         {
           "name": "Single-Leg Balance, Eyes Open (R)",
@@ -906,11 +912,17 @@
         {
           "name": "Single-Leg Balance, Eyes Closed (L)",
           "unit": "sec",
-          "value": null,
+          "value": 21,
           "pacer": 15,
           "goal": 30,
           "direction": "up",
-          "date": null
+          "date": "2026-08-11",
+          "history": [
+            {
+              "value": 18,
+              "date": "2026-08-11"
+            }
+          ]
         },
         {
           "name": "Single-Leg Balance, Eyes Closed (R)",
