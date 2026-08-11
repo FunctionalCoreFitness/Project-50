@@ -219,6 +219,10 @@
   .score-overall small{font-size:1rem;color:var(--muted)}
   .score-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:18px}
   .score-card{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--track);border-radius:4px;padding:14px 16px;text-align:center}
+  .score-card-link{display:block;text-decoration:none;color:inherit;cursor:pointer;transition:transform .1s ease,box-shadow .1s ease}
+  .score-card-link:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(20,26,34,.1)}
+  .score-card-link:active{transform:translateY(0)}
+  .score-card-link:after{content:"\2192";display:block;font-family:var(--mono);font-size:.7rem;color:var(--muted);margin-top:6px;opacity:.5}
   .score-val{font-family:'Bebas Neue',sans-serif;font-size:2.6rem;line-height:1}
   .score-name{font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-size:.92rem;margin-top:4px}
   .score-sub{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
@@ -983,12 +987,13 @@ function render(d){
   for(const grp of (d.score_groups||[])){
     const {score,tested}=scoreFor(grp.categories);
     if(score!==null){ scoreSum+=score; scoreCount++; }
+    const target=(grp.categories&&grp.categories[0])?grp.categories[0]:'';
     scoreCardsHtml += `
-      <div class="score-card ${scoreClass(score)}">
+      <a class="score-card score-card-link ${scoreClass(score)}" href="#${target}">
         <div class="score-val">${score===null?'\u2014':score}</div>
         <div class="score-name">${grp.name}</div>
         <div class="score-sub">${tested===0?'not yet tested':`${tested} tracked`}</div>
-      </div>`;
+      </a>`;
   }
   const project50 = scoreCount? Math.round(scoreSum/scoreCount) : null;
   const scoreBlockHtml = `
