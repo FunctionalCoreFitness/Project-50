@@ -963,12 +963,12 @@
         {
           "name": "HR Recovery (1 min)",
           "unit": "bpm drop",
-          "value": null,
+          "value": 51,
           "pacer": 25,
-          "goal": 40,
+          "goal": 60,
           "direction": "up",
-          "date": null,
-          "note": "Drop 1 min after standardized cardio effort."
+          "date": "2026-08-11",
+          "note": "51 bpm drop in 60s (SweetBeat HRV). Excellent band. Goal 60 = Superb tier. Peak HR ~157."
         }
       ]
     },
