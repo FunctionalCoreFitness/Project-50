@@ -4,7 +4,7 @@
     "birthday": "1978-10-22",
     "project_start": "2026-06-26",
     "current_phase": "Baseline",
-    "current_race_target": "Build a runnable base — first trail 10K"
+    "current_race_target": "Build a runnable base \u2014 first trail 10K"
   },
   "_comment": "EDIT THIS FILE TO LOG PROGRESS. For each metric, update 'value' and 'date'. Numbers have NO quotes (32); dates HAVE quotes (\"2026-06-26\"); keep the comma at the end of each line. To record history, add to the 'history' array: {\"value\": 212.3, \"date\": \"2026-02-01\"}. Status auto-computes: green = at/above pacer, yellow = within 10%, red = >10% below. Lab and protocol-only fields are tracked for trend, not scored.",
   "categories": [
@@ -118,7 +118,7 @@
           "goal": 2,
           "direction": "up",
           "date": "2026-08-05",
-          "note": "Total BMD 1.431 g/cm². Z 2.3 = 97–99th percentile — elite. The 'aging strong' headline."
+          "note": "Total BMD 1.431 g/cm\u00b2. Z 2.3 = 97\u201399th percentile \u2014 elite. The 'aging strong' headline."
         },
         {
           "name": "A/G Ratio",
@@ -128,7 +128,7 @@
           "goal": 1,
           "direction": "down",
           "date": "2026-08-11",
-          "note": "Android/Gynoid fat. Target < 1.0. Tracks central/visceral fat — the nutrition lever.",
+          "note": "Android/Gynoid fat. Target < 1.0. Tracks central/visceral fat \u2014 the nutrition lever.",
           "history": [
             {
               "value": 1.17,
@@ -350,7 +350,7 @@
       "id": "gait",
       "name": "Gait & Mobility",
       "source": "Apple Health (iPhone walking metrics)",
-      "cadence": "Passive daily — watch for asymmetry",
+      "cadence": "Passive daily \u2014 watch for asymmetry",
       "metrics": [
         {
           "name": "Walking Asymmetry",
@@ -602,7 +602,7 @@
       "id": "strength-endurance",
       "name": "Strength Endurance",
       "source": "Max reps to technical failure",
-      "cadence": "Every 3–6 months",
+      "cadence": "Every 3\u20136 months",
       "metrics": [
         {
           "name": "Push-ups",
@@ -656,7 +656,7 @@
       "id": "timed",
       "name": "Timed Tests",
       "source": "Max hold / time",
-      "cadence": "Every 3–6 months",
+      "cadence": "Every 3\u20136 months",
       "metrics": [
         {
           "name": "Plank",
@@ -718,7 +718,7 @@
     {
       "id": "max-strength",
       "name": "Max Strength",
-      "source": "Estimated 1RM from 3–5 rep test",
+      "source": "Estimated 1RM from 3\u20135 rep test",
       "cadence": "Every 6 months",
       "metrics": [
         {
@@ -949,7 +949,7 @@
           "goal": 58,
           "direction": "up",
           "date": "2026-08-05",
-          "note": "* Post-surgical arm — goal is symmetry with R. Gap now 2.7 kg; watch it close over 2 yrs."
+          "note": "* Post-surgical arm \u2014 goal is symmetry with R. Gap now 2.7 kg; watch it close over 2 yrs."
         },
         {
           "name": "Grip Strength R",
@@ -1187,16 +1187,20 @@
         {
           "name": "ALT",
           "unit": "U/L",
-          "value": 57,
+          "value": 46,
           "pacer": 40,
           "goal": 30,
           "direction": "down",
-          "date": "2026-05-15",
+          "date": "2026-08-13",
           "note": "Above range but improving (was 68 in Feb).",
           "history": [
             {
               "value": 68,
               "date": "2026-02-01"
+            },
+            {
+              "value": 57,
+              "date": "2026-05-15"
             }
           ],
           "flag": "out"
@@ -1204,16 +1208,20 @@
         {
           "name": "Fasting Glucose",
           "unit": "mg/dL",
-          "value": 83,
+          "value": 84,
           "pacer": 99,
           "goal": 90,
           "direction": "down",
-          "date": "2026-05-15",
+          "date": "2026-08-13",
           "note": "Back in range (was 114 in Feb).",
           "history": [
             {
               "value": 114,
               "date": "2026-02-01"
+            },
+            {
+              "value": 83,
+              "date": "2026-05-15"
             }
           ],
           "flag": "in"
@@ -1221,15 +1229,19 @@
         {
           "name": "eGFR",
           "unit": "mL/min",
-          "value": 96,
+          "value": 98,
           "pacer": 90,
           "goal": 90,
           "direction": "up",
-          "date": "2026-05-15",
+          "date": "2026-08-13",
           "history": [
             {
               "value": 80,
               "date": "2026-02-01"
+            },
+            {
+              "value": 96,
+              "date": "2026-05-15"
             }
           ],
           "flag": "in"
@@ -1237,16 +1249,20 @@
         {
           "name": "Vitamin D",
           "unit": "ng/mL",
-          "value": 27,
+          "value": 23,
           "pacer": 40,
           "goal": 50,
           "direction": "up",
-          "date": "2026-05-15",
+          "date": "2026-08-13",
           "note": "Still low. Keep supplementing.",
           "history": [
             {
               "value": 27,
               "date": "2026-02-01"
+            },
+            {
+              "value": 27,
+              "date": "2026-05-15"
             }
           ],
           "flag": "out"
@@ -1258,8 +1274,14 @@
           "pacer": null,
           "goal": null,
           "direction": "neutral",
-          "date": "2026-05-15",
-          "flag": "in"
+          "date": "2026-08-13",
+          "flag": "in",
+          "history": [
+            {
+              "value": 1.28,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "Free T4",
@@ -1268,8 +1290,14 @@
           "pacer": null,
           "goal": null,
           "direction": "neutral",
-          "date": "2026-05-15",
-          "flag": "in"
+          "date": "2026-08-13",
+          "flag": "in",
+          "history": [
+            {
+              "value": 1.3,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "Free T3",
@@ -1278,8 +1306,14 @@
           "pacer": null,
           "goal": null,
           "direction": "neutral",
-          "date": "2026-05-15",
-          "flag": "in"
+          "date": "2026-08-13",
+          "flag": "in",
+          "history": [
+            {
+              "value": 3.9,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "TPO Antibodies",
@@ -1288,8 +1322,14 @@
           "pacer": null,
           "goal": null,
           "direction": "down",
-          "date": "2026-05-15",
-          "flag": "in"
+          "date": "2026-08-13",
+          "flag": "in",
+          "history": [
+            {
+              "value": 1,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "Reverse T3",
@@ -1304,13 +1344,19 @@
         {
           "name": "Thyroglobulin Ab",
           "unit": "IU/mL",
-          "value": 35,
+          "value": 45,
           "pacer": null,
           "goal": null,
           "direction": "down",
-          "date": "2026-05-15",
+          "date": "2026-08-13",
           "note": "Above range. Matches known mildly elevated TgAb.",
-          "flag": "out"
+          "flag": "out",
+          "history": [
+            {
+              "value": 35,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "hs-CRP",
@@ -1319,18 +1365,30 @@
           "pacer": 1,
           "goal": 0.5,
           "direction": "down",
-          "date": "2026-05-15",
-          "flag": "in"
+          "date": "2026-08-13",
+          "flag": "in",
+          "history": [
+            {
+              "value": 0.8,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "ApoB",
           "unit": "mg/dL",
-          "value": 178,
+          "value": 175,
           "pacer": 90,
           "goal": 70,
           "direction": "down",
-          "date": "2026-05-15",
-          "flag": "out"
+          "date": "2026-08-13",
+          "flag": "out",
+          "history": [
+            {
+              "value": 178,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "ApoA1",
@@ -1345,32 +1403,50 @@
         {
           "name": "LDL",
           "unit": "mg/dL",
-          "value": 223,
+          "value": 199,
           "pacer": 100,
           "goal": 80,
           "direction": "down",
-          "date": "2026-05-15",
-          "flag": "out"
+          "date": "2026-08-13",
+          "flag": "out",
+          "history": [
+            {
+              "value": 223,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "HDL",
           "unit": "mg/dL",
-          "value": 45,
+          "value": 44,
           "pacer": 50,
           "goal": 60,
           "direction": "up",
-          "date": "2026-05-15",
-          "flag": "in"
+          "date": "2026-08-13",
+          "flag": "in",
+          "history": [
+            {
+              "value": 45,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "Triglycerides",
           "unit": "mg/dL",
-          "value": 271,
+          "value": 321,
           "pacer": 100,
           "goal": 80,
           "direction": "down",
-          "date": "2026-05-15",
-          "flag": "out"
+          "date": "2026-08-13",
+          "flag": "out",
+          "history": [
+            {
+              "value": 271,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "Lp(a)",
@@ -1379,8 +1455,14 @@
           "pacer": 75,
           "goal": 30,
           "direction": "down",
-          "date": "2026-05-15",
-          "flag": "in"
+          "date": "2026-08-13",
+          "flag": "in",
+          "history": [
+            {
+              "value": 10,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "Insulin",
@@ -1389,8 +1471,14 @@
           "pacer": 8,
           "goal": 5,
           "direction": "down",
-          "date": "2026-05-15",
-          "flag": "in"
+          "date": "2026-08-13",
+          "flag": "in",
+          "history": [
+            {
+              "value": 5,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "HbA1c",
@@ -1399,17 +1487,23 @@
           "pacer": 5.4,
           "goal": 5.2,
           "direction": "down",
-          "date": "2026-05-15",
-          "flag": "in"
+          "date": "2026-08-13",
+          "flag": "in",
+          "history": [
+            {
+              "value": 5.6,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "AST",
           "unit": "U/L",
-          "value": null,
+          "value": 21,
           "pacer": 40,
           "goal": 30,
           "direction": "down",
-          "date": null,
+          "date": "2026-08-13",
           "flag": "in"
         },
         {
@@ -1419,59 +1513,95 @@
           "pacer": null,
           "goal": null,
           "direction": "down",
-          "date": "2026-05-15",
-          "flag": "in"
+          "date": "2026-08-13",
+          "flag": "in",
+          "history": [
+            {
+              "value": 20,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "Creatinine",
           "unit": "mg/dL",
-          "value": 0.98,
+          "value": 0.96,
           "pacer": null,
           "goal": null,
           "direction": "neutral",
-          "date": "2026-05-15",
-          "flag": "in"
+          "date": "2026-08-13",
+          "flag": "in",
+          "history": [
+            {
+              "value": 0.98,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "BUN",
           "unit": "mg/dL",
-          "value": 29,
+          "value": 19,
           "pacer": null,
           "goal": null,
           "direction": "neutral",
-          "date": "2026-05-15",
+          "date": "2026-08-13",
           "note": "Above range. Often diet/hydration related.",
-          "flag": "out"
+          "flag": "out",
+          "history": [
+            {
+              "value": 29,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "Sodium",
           "unit": "mmol/L",
-          "value": 141,
+          "value": 139,
           "pacer": null,
           "goal": null,
           "direction": "neutral",
-          "date": "2026-05-15",
-          "flag": "in"
+          "date": "2026-08-13",
+          "flag": "in",
+          "history": [
+            {
+              "value": 141,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "Potassium",
           "unit": "mmol/L",
-          "value": 4.4,
+          "value": 4.3,
           "pacer": null,
           "goal": null,
           "direction": "neutral",
-          "date": "2026-05-15",
-          "flag": "in"
+          "date": "2026-08-13",
+          "flag": "in",
+          "history": [
+            {
+              "value": 4.4,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "Calcium",
           "unit": "mg/dL",
-          "value": 9.7,
+          "value": 9.6,
           "pacer": null,
           "goal": null,
           "direction": "neutral",
-          "date": "2026-05-15",
-          "flag": "in"
+          "date": "2026-08-13",
+          "flag": "in",
+          "history": [
+            {
+              "value": 9.7,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "Magnesium",
@@ -1480,9 +1610,15 @@
           "pacer": null,
           "goal": null,
           "direction": "neutral",
-          "date": "2026-05-15",
+          "date": "2026-08-13",
           "note": "RBC magnesium.",
-          "flag": "in"
+          "flag": "in",
+          "history": [
+            {
+              "value": 6.2,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "B12",
@@ -1511,8 +1647,14 @@
           "pacer": null,
           "goal": null,
           "direction": "up",
-          "date": "2026-05-15",
-          "flag": "in"
+          "date": "2026-08-13",
+          "flag": "in",
+          "history": [
+            {
+              "value": 748,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "Testosterone Free",
@@ -1521,8 +1663,14 @@
           "pacer": null,
           "goal": null,
           "direction": "up",
-          "date": "2026-05-15",
-          "flag": "in"
+          "date": "2026-08-13",
+          "flag": "in",
+          "history": [
+            {
+              "value": 83.9,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "SHBG",
@@ -1531,9 +1679,15 @@
           "pacer": null,
           "goal": null,
           "direction": "neutral",
-          "date": "2026-05-15",
+          "date": "2026-08-13",
           "note": "Slightly above range.",
-          "flag": "out"
+          "flag": "out",
+          "history": [
+            {
+              "value": 51,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "DHEA-S",
@@ -1542,8 +1696,14 @@
           "pacer": null,
           "goal": null,
           "direction": "neutral",
-          "date": "2026-05-15",
-          "flag": "in"
+          "date": "2026-08-13",
+          "flag": "in",
+          "history": [
+            {
+              "value": 197,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "Cortisol",
@@ -1552,8 +1712,14 @@
           "pacer": null,
           "goal": null,
           "direction": "neutral",
-          "date": "2026-05-15",
-          "flag": "in"
+          "date": "2026-08-13",
+          "flag": "in",
+          "history": [
+            {
+              "value": 12.4,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "CBC",
@@ -1568,57 +1734,87 @@
         {
           "name": "Total Cholesterol",
           "unit": "mg/dL",
-          "value": 316,
+          "value": 297,
           "pacer": 200,
           "goal": 180,
           "direction": "down",
-          "date": "2026-05-15",
+          "date": "2026-08-13",
           "note": "Above range.",
-          "flag": "out"
+          "flag": "out",
+          "history": [
+            {
+              "value": 316,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "Non-HDL Cholesterol",
           "unit": "mg/dL",
-          "value": 271,
+          "value": 253,
           "pacer": 130,
           "goal": 110,
           "direction": "down",
-          "date": "2026-05-15",
+          "date": "2026-08-13",
           "note": "Above range. Tracks atherogenic load.",
-          "flag": "out"
+          "flag": "out",
+          "history": [
+            {
+              "value": 271,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "Total Chol / HDL Ratio",
           "unit": "ratio",
-          "value": 7,
+          "value": 6.8,
           "pacer": 3.5,
           "goal": 3,
           "direction": "down",
-          "date": "2026-05-15",
+          "date": "2026-08-13",
           "note": "Above range.",
-          "flag": "out"
+          "flag": "out",
+          "history": [
+            {
+              "value": 7,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "LDL Particle Number",
           "unit": "nmol/L",
-          "value": 2440,
+          "value": 2761,
           "pacer": 1000,
           "goal": 800,
           "direction": "down",
-          "date": "2026-05-15",
+          "date": "2026-08-13",
           "note": "Above range.",
-          "flag": "out"
+          "flag": "out",
+          "history": [
+            {
+              "value": 2440,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "LDL Small",
           "unit": "nmol/L",
-          "value": 374,
+          "value": 509,
           "pacer": 142,
           "goal": 100,
           "direction": "down",
-          "date": "2026-05-15",
+          "date": "2026-08-13",
           "note": "Above range. Small dense LDL.",
-          "flag": "out"
+          "flag": "out",
+          "history": [
+            {
+              "value": 374,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "LDL Pattern",
@@ -1638,9 +1834,15 @@
           "pacer": null,
           "goal": null,
           "direction": "down",
-          "date": "2026-05-15",
+          "date": "2026-08-13",
           "note": "Younger than chronological age. Excellent.",
-          "flag": "in"
+          "flag": "in",
+          "history": [
+            {
+              "value": 37.6,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "Uric Acid",
@@ -1649,8 +1851,14 @@
           "pacer": 6,
           "goal": 5,
           "direction": "down",
-          "date": "2026-05-15",
-          "flag": "in"
+          "date": "2026-08-13",
+          "flag": "in",
+          "history": [
+            {
+              "value": 5.8,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "Leptin",
@@ -1659,8 +1867,14 @@
           "pacer": null,
           "goal": null,
           "direction": "neutral",
-          "date": "2026-05-15",
-          "flag": "in"
+          "date": "2026-08-13",
+          "flag": "in",
+          "history": [
+            {
+              "value": 2,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "Ferritin",
@@ -1669,8 +1883,14 @@
           "pacer": null,
           "goal": null,
           "direction": "neutral",
-          "date": "2026-05-15",
-          "flag": "in"
+          "date": "2026-08-13",
+          "flag": "in",
+          "history": [
+            {
+              "value": 169,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "Iron",
@@ -1679,8 +1899,14 @@
           "pacer": null,
           "goal": null,
           "direction": "neutral",
-          "date": "2026-05-15",
-          "flag": "in"
+          "date": "2026-08-13",
+          "flag": "in",
+          "history": [
+            {
+              "value": 91,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "Homocysteine",
@@ -1689,9 +1915,15 @@
           "pacer": 10,
           "goal": 8,
           "direction": "down",
-          "date": "2026-05-15",
+          "date": "2026-08-13",
           "note": "High-normal. B-vitamins/methylation support.",
-          "flag": "in"
+          "flag": "in",
+          "history": [
+            {
+              "value": 12.4,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "Zinc",
@@ -1700,8 +1932,14 @@
           "pacer": null,
           "goal": null,
           "direction": "up",
-          "date": "2026-05-15",
-          "flag": "in"
+          "date": "2026-08-13",
+          "flag": "in",
+          "history": [
+            {
+              "value": 67,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "B12 (MMA)",
@@ -1710,9 +1948,15 @@
           "pacer": null,
           "goal": null,
           "direction": "neutral",
-          "date": "2026-05-15",
-          "note": "Methylmalonic acid — B12 functional marker, in range.",
-          "flag": "in"
+          "date": "2026-08-13",
+          "note": "Methylmalonic acid \u2014 B12 functional marker, in range.",
+          "flag": "in",
+          "history": [
+            {
+              "value": 124,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "Omega 6:3 Ratio",
@@ -1721,9 +1965,15 @@
           "pacer": 4,
           "goal": 3,
           "direction": "down",
-          "date": "2026-05-15",
+          "date": "2026-08-13",
           "note": "High. Lower omega-6, raise omega-3.",
-          "flag": "out"
+          "flag": "out",
+          "history": [
+            {
+              "value": 13.7,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "LH",
@@ -1732,8 +1982,14 @@
           "pacer": null,
           "goal": null,
           "direction": "neutral",
-          "date": "2026-05-15",
-          "flag": "in"
+          "date": "2026-08-13",
+          "flag": "in",
+          "history": [
+            {
+              "value": 4.2,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "FSH",
@@ -1742,8 +1998,14 @@
           "pacer": null,
           "goal": null,
           "direction": "neutral",
-          "date": "2026-05-15",
-          "flag": "in"
+          "date": "2026-08-13",
+          "flag": "in",
+          "history": [
+            {
+              "value": 7.4,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "Prolactin",
@@ -1752,8 +2014,14 @@
           "pacer": null,
           "goal": null,
           "direction": "neutral",
-          "date": "2026-05-15",
-          "flag": "in"
+          "date": "2026-08-13",
+          "flag": "in",
+          "history": [
+            {
+              "value": 9.2,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "Estradiol (E2)",
@@ -1762,9 +2030,15 @@
           "pacer": null,
           "goal": null,
           "direction": "neutral",
-          "date": "2026-05-15",
+          "date": "2026-08-13",
           "note": "Reported <30.",
-          "flag": "in"
+          "flag": "in",
+          "history": [
+            {
+              "value": 30,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "PSA Total",
@@ -1773,8 +2047,14 @@
           "pacer": 2,
           "goal": 1,
           "direction": "down",
-          "date": "2026-05-15",
-          "flag": "in"
+          "date": "2026-08-13",
+          "flag": "in",
+          "history": [
+            {
+              "value": 0.8,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "PSA Free",
@@ -1783,18 +2063,314 @@
           "pacer": null,
           "goal": null,
           "direction": "neutral",
-          "date": "2026-05-15",
-          "flag": "in"
+          "date": "2026-08-13",
+          "flag": "in",
+          "history": [
+            {
+              "value": 0.2,
+              "date": "2026-05-15"
+            }
+          ]
         },
         {
           "name": "HDL Large",
           "unit": "nmol/L",
-          "value": 7972,
+          "value": 8151,
           "pacer": null,
           "goal": null,
           "direction": "up",
-          "date": "2026-05-15",
-          "flag": "in"
+          "date": "2026-08-13",
+          "flag": "in",
+          "history": [
+            {
+              "value": 7972,
+              "date": "2026-05-15"
+            }
+          ]
+        },
+        {
+          "name": "LDL Medium",
+          "unit": "nmol/L",
+          "value": 297,
+          "pacer": null,
+          "goal": null,
+          "direction": "down",
+          "date": "2026-08-13",
+          "history": []
+        },
+        {
+          "name": "LDL Peak Size",
+          "unit": "Angstrom",
+          "value": 222.3,
+          "pacer": 223,
+          "goal": 226,
+          "direction": "up",
+          "date": "2026-08-13",
+          "history": [],
+          "note": "Below 223 = small dense Pattern B territory"
+        },
+        {
+          "name": "Omega-3 Index (OmegaCheck)",
+          "unit": "% by wt",
+          "value": 3.4,
+          "pacer": 5.4,
+          "goal": 8,
+          "direction": "up",
+          "date": "2026-08-13",
+          "history": [],
+          "note": "Biggest easy win on the panel"
+        },
+        {
+          "name": "Omega-3 EPA",
+          "unit": "% by wt",
+          "value": 0.4,
+          "pacer": null,
+          "goal": null,
+          "direction": "up",
+          "date": "2026-08-13",
+          "history": []
+        },
+        {
+          "name": "Omega-3 DHA",
+          "unit": "% by wt",
+          "value": 1.9,
+          "pacer": null,
+          "goal": null,
+          "direction": "up",
+          "date": "2026-08-13",
+          "history": []
+        },
+        {
+          "name": "AA / EPA Ratio",
+          "unit": "ratio",
+          "value": 31.6,
+          "pacer": 10,
+          "goal": 5,
+          "direction": "down",
+          "date": "2026-08-13",
+          "history": []
+        },
+        {
+          "name": "BUN / Creatinine Ratio",
+          "unit": "ratio",
+          "value": 30,
+          "pacer": 20,
+          "goal": 16,
+          "direction": "down",
+          "date": "2026-08-13",
+          "history": [],
+          "note": "Often hydration + protein load in heavy trainers"
+        },
+        {
+          "name": "Alkaline Phosphatase",
+          "unit": "U/L",
+          "value": 96,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-08-13",
+          "history": []
+        },
+        {
+          "name": "Albumin",
+          "unit": "g/dL",
+          "value": 4.7,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-08-13",
+          "history": []
+        },
+        {
+          "name": "Globulin",
+          "unit": "g/dL",
+          "value": 2.8,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-08-13",
+          "history": []
+        },
+        {
+          "name": "Albumin / Globulin Ratio",
+          "unit": "ratio",
+          "value": 1.7,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-08-13",
+          "history": []
+        },
+        {
+          "name": "Total Protein",
+          "unit": "g/dL",
+          "value": 7.5,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-08-13",
+          "history": []
+        },
+        {
+          "name": "Total Bilirubin",
+          "unit": "mg/dL",
+          "value": 1.2,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-08-13",
+          "history": []
+        },
+        {
+          "name": "Chloride",
+          "unit": "mmol/L",
+          "value": 101,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-08-13",
+          "history": []
+        },
+        {
+          "name": "CO2 (Bicarbonate)",
+          "unit": "mmol/L",
+          "value": 29,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-08-13",
+          "history": []
+        },
+        {
+          "name": "Amylase",
+          "unit": "U/L",
+          "value": 55,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-08-13",
+          "history": []
+        },
+        {
+          "name": "Lipase",
+          "unit": "U/L",
+          "value": 40,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-08-13",
+          "history": []
+        },
+        {
+          "name": "Hemoglobin",
+          "unit": "g/dL",
+          "value": 15.1,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-08-13",
+          "history": []
+        },
+        {
+          "name": "Hematocrit",
+          "unit": "%",
+          "value": 44.8,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-08-13",
+          "history": []
+        },
+        {
+          "name": "RBC Count",
+          "unit": "Million/uL",
+          "value": 5.19,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-08-13",
+          "history": []
+        },
+        {
+          "name": "RDW",
+          "unit": "%",
+          "value": 13.2,
+          "pacer": null,
+          "goal": null,
+          "direction": "down",
+          "date": "2026-08-13",
+          "history": []
+        },
+        {
+          "name": "Platelet Count",
+          "unit": "Thousand/uL",
+          "value": 240,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-08-13",
+          "history": []
+        },
+        {
+          "name": "WBC Count",
+          "unit": "Thousand/uL",
+          "value": 4.3,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-08-13",
+          "history": []
+        },
+        {
+          "name": "Neutrophils",
+          "unit": "cells/uL",
+          "value": 2279,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-08-13",
+          "history": []
+        },
+        {
+          "name": "Lymphocytes",
+          "unit": "cells/uL",
+          "value": 1595,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-08-13",
+          "history": []
+        },
+        {
+          "name": "Iron % Saturation",
+          "unit": "%",
+          "value": 24,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-08-13",
+          "history": []
+        },
+        {
+          "name": "Iron Binding Capacity (TIBC)",
+          "unit": "mcg/dL",
+          "value": 384,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-08-13",
+          "history": []
+        },
+        {
+          "name": "PSA % Free",
+          "unit": "%",
+          "value": 25,
+          "pacer": null,
+          "goal": null,
+          "direction": "neutral",
+          "date": "2026-08-13",
+          "history": [],
+          "note": "Not meaningful at total PSA 0.8"
         }
       ]
     }
@@ -1807,11 +2383,11 @@
         "items": [
           {
             "name": "A-2 Thyroid Peptide Bioregulator",
-            "purpose": "Thyroid support tied to the Dec diagnosis — peptide bioregulator aimed at helping normal thyroid function as part of ongoing management."
+            "purpose": "Thyroid support tied to the Dec diagnosis \u2014 peptide bioregulator aimed at helping normal thyroid function as part of ongoing management."
           },
           {
             "name": "Vitamin D",
-            "purpose": "Flagged still-low on the latest panel. Supports immune function, bone density, and hormone production — keep supplementing until levels come up."
+            "purpose": "Flagged still-low on the latest panel. Supports immune function, bone density, and hormone production \u2014 keep supplementing until levels come up."
           },
           {
             "name": "Curcumin",
@@ -1819,11 +2395,11 @@
           },
           {
             "name": "Berberine",
-            "purpose": "Metabolic / glucose support — helps blood-sugar regulation and works alongside the nutrition changes since December."
+            "purpose": "Metabolic / glucose support \u2014 helps blood-sugar regulation and works alongside the nutrition changes since December."
           },
           {
             "name": "Omega-3",
-            "purpose": "Directly counters the high omega 6:3 ratio on the panel. Anti-inflammatory and cardiovascular support — the lever to raise omega-3 while lowering omega-6."
+            "purpose": "Directly counters the high omega 6:3 ratio on the panel. Anti-inflammatory and cardiovascular support \u2014 the lever to raise omega-3 while lowering omega-6."
           },
           {
             "name": "Zinc Picolinate",
@@ -1831,11 +2407,11 @@
           },
           {
             "name": "Magnesium",
-            "purpose": "Flagged on the RBC panel. Supports sleep quality, muscle function, and recovery — foundational for a high-volume training block."
+            "purpose": "Flagged on the RBC panel. Supports sleep quality, muscle function, and recovery \u2014 foundational for a high-volume training block."
           },
           {
             "name": "Methyl Guard",
-            "purpose": "Methylation / B-vitamin support. Panel showed high-normal methylation markers — supports healthy homocysteine and B-vitamin metabolism."
+            "purpose": "Methylation / B-vitamin support. Panel showed high-normal methylation markers \u2014 supports healthy homocysteine and B-vitamin metabolism."
           }
         ],
         "note": "Selenium and NAD+ removed per latest review."
@@ -2028,16 +2604,16 @@
     }
   ],
   "calendar": {
-    "season": "Stay Independent · Jul 2026 – Jun 2027",
+    "season": "Stay Independent \u00b7 Jul 2026 \u2013 Jun 2027",
     "months": [
       {
         "month": "Jul 2026",
         "pillar": "Foundation",
         "episodes": [
-          "Encyclopedia — Know Your Body — baseline assessments on camera",
-          "Encyclopedia — Breathing & core activation",
-          "Encyclopedia — Posture reset",
-          "Project 50 Documentary — The Day Everything Changed (why this, why now)  (replaces one Friday)"
+          "Encyclopedia \u2014 Know Your Body \u2014 baseline assessments on camera",
+          "Encyclopedia \u2014 Breathing & core activation",
+          "Encyclopedia \u2014 Posture reset",
+          "Project 50 Documentary \u2014 The Day Everything Changed (why this, why now)  (replaces one Friday)"
         ],
         "assessments": [
           "DEXA scan (baseline)",
@@ -2050,41 +2626,41 @@
         "month": "Aug 2026",
         "pillar": "Foundation",
         "episodes": [
-          "Encyclopedia — Finish Independence Through Movement series",
-          "Encyclopedia — Single-leg balance & control",
-          "Encyclopedia — Daily mobility flow",
-          "Project 50 Documentary — The Numbers (DEXA baseline reveal — report in hand)  (replaces one Friday)"
+          "Encyclopedia \u2014 Finish Independence Through Movement series",
+          "Encyclopedia \u2014 Single-leg balance & control",
+          "Encyclopedia \u2014 Daily mobility flow",
+          "Project 50 Documentary \u2014 The Numbers (DEXA baseline reveal \u2014 report in hand)  (replaces one Friday)"
         ],
         "assessments": [
           "Longevity tests (sit-to-stand, balance, grip, HR recovery)",
           "Movement screen (deep squat, floor rise)"
         ],
         "broll": [
-          "BodySpec report flat-lay — slow pan across pages",
+          "BodySpec report flat-lay \u2014 slow pan across pages",
           "Hands flipping through the report",
           "Screen-record / close-up of body-comp charts + regional breakdown",
           "You studying the report, reacting",
           "Reused scan-day footage (walk-in, table, machine) to intercut",
           "Tight shots: body-fat %, VAT, bone-density figures on screen",
-          "Whiteboard — writing/circling the key number you're tracking",
-          "Sit-to-stand test — wide + close on mechanics",
-          "Single-leg balance / grip test — effort, timer running",
-          "HR recovery — checking watch, breathing down",
-          "Deep squat hold — side profile showing depth",
-          "Floor rise (getting up off the ground) — the 'Stay Independent' shot",
+          "Whiteboard \u2014 writing/circling the key number you're tracking",
+          "Sit-to-stand test \u2014 wide + close on mechanics",
+          "Single-leg balance / grip test \u2014 effort, timer running",
+          "HR recovery \u2014 checking watch, breathing down",
+          "Deep squat hold \u2014 side profile showing depth",
+          "Floor rise (getting up off the ground) \u2014 the 'Stay Independent' shot",
           "Logging numbers on clipboard / phone",
           "Assessment gear: grip dynamometer, stopwatch, watch face",
-          "Studio wides — empty and mid-session",
+          "Studio wides \u2014 empty and mid-session",
           "Recovery room: Normatec, sauna, cold plunge, red light",
           "Trail / walking footage for the ultra thread",
           "Detail cutaways: hands, forearms, sweat, breathing, shoe-lacing",
-          "Dashboard / log on screen — numbers going in"
+          "Dashboard / log on screen \u2014 numbers going in"
         ],
         "pub_monthly": {
-          "coaches_corner": "Getting up off the floor — why it predicts independence",
+          "coaches_corner": "Getting up off the floor \u2014 why it predicts independence",
           "sunday": {
             "show": "Journal / Floor Skills (alternating)",
-            "desc": "Alternates weekly: Project 50 Journal (story heartbeat between docs) and a Floor Skills short (shrimp, back-roll, technical stand-up) — the Independence Through Movement follow-on."
+            "desc": "Alternates weekly: Project 50 Journal (story heartbeat between docs) and a Floor Skills short (shrimp, back-roll, technical stand-up) \u2014 the Independence Through Movement follow-on."
           }
         }
       },
@@ -2092,13 +2668,13 @@
         "month": "Sep 2026",
         "pillar": "Foundation",
         "episodes": [
-          "Encyclopedia — Aerobic base — Zone 2 explained",
-          "Encyclopedia — Building the engine",
-          "Encyclopedia — Recovery foundations",
-          "Project 50 Documentary — What Changed (Dec thyroid diagnosis → 3-mo → 6-mo check-up, Function Health, nutrition shift)  (replaces one Friday)"
+          "Encyclopedia \u2014 Aerobic base \u2014 Zone 2 explained",
+          "Encyclopedia \u2014 Building the engine",
+          "Encyclopedia \u2014 Recovery foundations",
+          "Project 50 Documentary \u2014 What Changed (Dec thyroid diagnosis \u2192 3-mo \u2192 6-mo check-up, Function Health, nutrition shift)  (replaces one Friday)"
         ],
         "assessments": [
-          "Function Health labs (Q3 — recheck lipids, ApoB, Vit D)",
+          "Function Health labs (Q3 \u2014 recheck lipids, ApoB, Vit D)",
           "VO2 max check",
           "Aerobic test (5K time trial)"
         ]
@@ -2107,10 +2683,10 @@
         "month": "Oct 2026",
         "pillar": "Strength",
         "episodes": [
-          "Encyclopedia — Functional strength — trap bar & bench",
-          "Encyclopedia — Bulgarian bag strength series",
-          "Encyclopedia — Loaded carries",
-          "Project 50 Documentary — First Real Strength Numbers  (replaces one Friday)"
+          "Encyclopedia \u2014 Functional strength \u2014 trap bar & bench",
+          "Encyclopedia \u2014 Bulgarian bag strength series",
+          "Encyclopedia \u2014 Loaded carries",
+          "Project 50 Documentary \u2014 First Real Strength Numbers  (replaces one Friday)"
         ],
         "assessments": [
           "DEXA scan (8-wk recheck)",
@@ -2122,31 +2698,31 @@
         "month": "Nov 2026",
         "pillar": "Strength",
         "episodes": [
-          "Encyclopedia — Pull-up progression to 10",
-          "Encyclopedia — Posterior chain — RDL & hinge",
-          "Encyclopedia — Grip & forearm strength",
-          "Project 50 Documentary — The Pull-Up Project (chasing 10)  (replaces one Friday)"
+          "Encyclopedia \u2014 Pull-up progression to 10",
+          "Encyclopedia \u2014 Posterior chain \u2014 RDL & hinge",
+          "Encyclopedia \u2014 Grip & forearm strength",
+          "Project 50 Documentary \u2014 The Pull-Up Project (chasing 10)  (replaces one Friday)"
         ],
         "assessments": [
           "Strength-endurance retest (track pull-up progress)",
           "Timed holds retest"
         ],
         "race": {
-          "race": "🏃 RACE: Trail Half-Marathon — first race back",
-          "reg": "Register now (~2–3 mo out). Mt. Tam Trail Run or Almaden Quicksilver Half."
+          "race": "\ud83c\udfc3 RACE: Trail Half-Marathon \u2014 first race back",
+          "reg": "Register now (~2\u20133 mo out). Mt. Tam Trail Run or Almaden Quicksilver Half."
         }
       },
       {
         "month": "Dec 2026",
         "pillar": "Strength",
         "episodes": [
-          "Encyclopedia — Year-one review — what changed",
-          "Encyclopedia — Strength + BJJ carryover",
-          "Encyclopedia — Holiday training that holds",
-          "Project 50 Documentary — Year One: What the Data Says  (replaces one Friday)"
+          "Encyclopedia \u2014 Year-one review \u2014 what changed",
+          "Encyclopedia \u2014 Strength + BJJ carryover",
+          "Encyclopedia \u2014 Holiday training that holds",
+          "Project 50 Documentary \u2014 Year One: What the Data Says  (replaces one Friday)"
         ],
         "assessments": [
-          "Function Health labs (Q4 — full panel)",
+          "Function Health labs (Q4 \u2014 full panel)",
           "Apple Health gait re-check"
         ]
       },
@@ -2154,10 +2730,10 @@
         "month": "Jan 2027",
         "pillar": "Mobility",
         "episodes": [
-          "Encyclopedia — Stick Mobility series launch",
-          "Encyclopedia — Hip & ankle mobility for runners",
-          "Encyclopedia — Movement quality reset",
-          "Project 50 Documentary — Why Mobility Decides the Ultra  (replaces one Friday)"
+          "Encyclopedia \u2014 Stick Mobility series launch",
+          "Encyclopedia \u2014 Hip & ankle mobility for runners",
+          "Encyclopedia \u2014 Movement quality reset",
+          "Project 50 Documentary \u2014 Why Mobility Decides the Ultra  (replaces one Friday)"
         ],
         "assessments": [
           "DEXA scan (8-wk recheck)",
@@ -2169,28 +2745,28 @@
         "month": "Feb 2027",
         "pillar": "Mobility",
         "episodes": [
-          "Encyclopedia — SMR for grapplers",
-          "Encyclopedia — Thoracic & shoulder mobility",
-          "Encyclopedia — Mobility + strength integration",
-          "Project 50 Documentary — The Asymmetry Problem (gait deep-dive)  (replaces one Friday)"
+          "Encyclopedia \u2014 SMR for grapplers",
+          "Encyclopedia \u2014 Thoracic & shoulder mobility",
+          "Encyclopedia \u2014 Mobility + strength integration",
+          "Project 50 Documentary \u2014 The Asymmetry Problem (gait deep-dive)  (replaces one Friday)"
         ],
         "assessments": [
           "Speed/agility test (shuttle, T-test)",
           "Gait asymmetry deep-check"
         ],
         "race": {
-          "race": "🗓 REGISTER: 50K (spring 2027) — sign-up window",
-          "reg": "Book your first 50K 3–4 months out. Skyline 50K / Lake Chabot / Coastal Marin."
+          "race": "\ud83d\uddd3 REGISTER: 50K (spring 2027) \u2014 sign-up window",
+          "reg": "Book your first 50K 3\u20134 months out. Skyline 50K / Lake Chabot / Coastal Marin."
         }
       },
       {
         "month": "Mar 2027",
         "pillar": "Mobility",
         "episodes": [
-          "Encyclopedia — Building trail volume — from half to 50K",
-          "Encyclopedia — Trail running form",
-          "Encyclopedia — Mobility for trail durability",
-          "Project 50 Documentary — The Road to My First 50K  (replaces one Friday)"
+          "Encyclopedia \u2014 Building trail volume \u2014 from half to 50K",
+          "Encyclopedia \u2014 Trail running form",
+          "Encyclopedia \u2014 Mobility for trail durability",
+          "Project 50 Documentary \u2014 The Road to My First 50K  (replaces one Friday)"
         ],
         "assessments": [
           "Function Health labs (Q1)",
@@ -2202,10 +2778,10 @@
         "month": "Apr 2027",
         "pillar": "Longevity",
         "episodes": [
-          "Encyclopedia — Recovery stack — sauna, cold, red light",
-          "Encyclopedia — Wim Hof breathwork deep-dive",
-          "Encyclopedia — HRV & sleep optimization",
-          "Project 50 Documentary — Inside My Recovery System  (replaces one Friday)"
+          "Encyclopedia \u2014 Recovery stack \u2014 sauna, cold, red light",
+          "Encyclopedia \u2014 Wim Hof breathwork deep-dive",
+          "Encyclopedia \u2014 HRV & sleep optimization",
+          "Project 50 Documentary \u2014 Inside My Recovery System  (replaces one Friday)"
         ],
         "assessments": [
           "DEXA scan (8-wk recheck)",
@@ -2217,10 +2793,10 @@
         "month": "May 2027",
         "pillar": "Longevity",
         "episodes": [
-          "Encyclopedia — First 20-mile run — the build",
-          "Encyclopedia — Fueling for distance",
-          "Encyclopedia — Mental game of endurance",
-          "Project 50 Documentary — 20 Miles: The Longest I've Run  (replaces one Friday)"
+          "Encyclopedia \u2014 First 20-mile run \u2014 the build",
+          "Encyclopedia \u2014 Fueling for distance",
+          "Encyclopedia \u2014 Mental game of endurance",
+          "Project 50 Documentary \u2014 20 Miles: The Longest I've Run  (replaces one Friday)"
         ],
         "assessments": [
           "Aerobic test (long-run pace)",
@@ -2232,10 +2808,10 @@
         "month": "Jun 2027",
         "pillar": "Longevity",
         "episodes": [
-          "Encyclopedia — Two-year mark — full progress review",
-          "Encyclopedia — The 50K build begins",
-          "Encyclopedia — What the data taught me",
-          "Project 50 Documentary — Two Years In: The Halfway Mark  (replaces one Friday)"
+          "Encyclopedia \u2014 Two-year mark \u2014 full progress review",
+          "Encyclopedia \u2014 The 50K build begins",
+          "Encyclopedia \u2014 What the data taught me",
+          "Project 50 Documentary \u2014 Two Years In: The Halfway Mark  (replaces one Friday)"
         ],
         "assessments": [
           "DEXA scan",
@@ -2247,14 +2823,14 @@
     "note": "Each month: 3 Encyclopedia Fridays + 1 Project 50 Documentary Friday = 4 edited long-forms. Plus weekly Coach's Corner, Saturday clip, Sunday Journal."
   },
   "publishing": {
-    "cadence": "1 edited long-form/week + 3 shorts/week · 4 edited videos/month (editor) · anchored to Friday",
+    "cadence": "1 edited long-form/week + 3 shorts/week \u00b7 4 edited videos/month (editor) \u00b7 anchored to Friday",
     "model": "Teach. Teach. Teach. Document.",
     "weekly": [
       {
         "day": "Wednesday",
         "show": "Coach's Corner",
         "type": "short",
-        "desc": "One lesson I'm applying this week — tied to Current Focus. Practical, single-topic (your best-performing format)."
+        "desc": "One lesson I'm applying this week \u2014 tied to Current Focus. Practical, single-topic (your best-performing format)."
       },
       {
         "day": "Friday",
@@ -2272,12 +2848,12 @@
         "day": "Sunday",
         "show": "Project 50 Journal",
         "type": "short",
-        "desc": "Quick weekly update — keeps the audience connected to the story between documentaries. Filmed in Mission Control."
+        "desc": "Quick weekly update \u2014 keeps the audience connected to the story between documentaries. Filmed in Mission Control."
       }
     ],
     "monthly_feature": {
       "title": "Project 50 Documentary",
-      "cadence": "Once a month — replaces that week's Friday Encyclopedia upload (keeps editor at 4 long-forms/month, never 5)",
+      "cadence": "Once a month \u2014 replaces that week's Friday Encyclopedia upload (keeps editor at 4 long-forms/month, never 5)",
       "length": "15-20 min premium edit",
       "covers": [
         "BodySpec / DEXA",
@@ -2289,7 +2865,7 @@
         "Losses",
         "The month's real story"
       ],
-      "note": "Built from B-roll collected all month. Your life changes enough in 30 days to justify a documentary — not in 7. This is the 'Netflix episode.'"
+      "note": "Built from B-roll collected all month. Your life changes enough in 30 days to justify a documentary \u2014 not in 7. This is the 'Netflix episode.'"
     },
     "schedule_note": "Locked model. Encyclopedia owns Friday (the business foundation). Project 50 is documented weekly via the Sunday Journal short and released monthly as one premium documentary. Friday confirmed strongest by analytics; Sunday catches weekend-warrior audience.",
     "broll": [
@@ -2309,7 +2885,7 @@
     ]
   },
   "locations": {
-    "intro": "Nine zones — not rooms, but chapters. Each is a part of the story of becoming a 50-year athlete, from planning (Think) to validation (Test). Tiered by how often you film there.",
+    "intro": "Nine zones \u2014 not rooms, but chapters. Each is a part of the story of becoming a 50-year athlete, from planning (Think) to validation (Test). Tiered by how often you film there.",
     "sets": [
       {
         "verb": "Think",
@@ -2326,7 +2902,7 @@
           "Calendar",
           "Reflection"
         ],
-        "style": "Standing by the dining table, living room behind · Documentary · Personal"
+        "style": "Standing by the dining table, living room behind \u00b7 Documentary \u00b7 Personal"
       },
       {
         "verb": "Recover",
@@ -2344,14 +2920,14 @@
           "HRV",
           "Recovery philosophy"
         ],
-        "style": "Calm · Scientific · Personal"
+        "style": "Calm \u00b7 Scientific \u00b7 Personal"
       },
       {
         "verb": "Build",
         "name": "The Lab",
         "key": "test",
         "tier": "Regular",
-        "purpose": "Home performance lab — architect of the body",
+        "purpose": "Home performance lab \u2014 architect of the body",
         "content": [
           "Strength",
           "Mobility",
@@ -2360,14 +2936,14 @@
           "Experimentation",
           "Monthly benchmarks"
         ],
-        "style": "Laboratory · Testing · Progress"
+        "style": "Laboratory \u00b7 Testing \u00b7 Progress"
       },
       {
         "verb": "Practice",
         "name": "The Dojo",
         "key": "perform",
         "tier": "Anchor",
-        "purpose": "Being the student — mat humility",
+        "purpose": "Being the student \u2014 mat humility",
         "content": [
           "BJJ",
           "Mindset",
@@ -2377,14 +2953,14 @@
           "Humility",
           "Post-class reflection"
         ],
-        "style": "Athletic · Gritty · Authentic"
+        "style": "Athletic \u00b7 Gritty \u00b7 Authentic"
       },
       {
         "verb": "Coach",
         "name": "FCF Studio",
         "key": "teach",
         "tier": "Anchor",
-        "purpose": "Not about me — about the clients",
+        "purpose": "Not about me \u2014 about the clients",
         "content": [
           "Exercise Library",
           "Independence Series",
@@ -2393,7 +2969,7 @@
           "Demonstrations",
           "Teaching"
         ],
-        "style": "Bright · Clean · Professional"
+        "style": "Bright \u00b7 Clean \u00b7 Professional"
       },
       {
         "verb": "Endure",
@@ -2410,7 +2986,7 @@
           "Work capacity",
           "No excuses"
         ],
-        "style": "Gritty · Raw · Earned"
+        "style": "Gritty \u00b7 Raw \u00b7 Earned"
       },
       {
         "verb": "Fuel",
@@ -2426,7 +3002,7 @@
           "Recovery meals",
           "Grocery discussions"
         ],
-        "style": "Warm · Practical · Honest"
+        "style": "Warm \u00b7 Practical \u00b7 Honest"
       },
       {
         "verb": "Explore",
@@ -2442,7 +3018,7 @@
           "Philosophy",
           "Long-form conversations"
         ],
-        "style": "Cinematic · Reflective · Adventure"
+        "style": "Cinematic \u00b7 Reflective \u00b7 Adventure"
       },
       {
         "verb": "Test",
@@ -2460,7 +3036,7 @@
           "Spartan",
           "Travel"
         ],
-        "style": "Cinematic · Epic · Payoff"
+        "style": "Cinematic \u00b7 Epic \u00b7 Payoff"
       }
     ]
   },
@@ -2468,11 +3044,11 @@
     "series": [
       {
         "title": "Ground Control",
-        "subtitle": "Floor movement & fall-safety — Independence Through Movement follow-on. Frame every one as getting up safely; BJJ is the credibility, not the headline.",
+        "subtitle": "Floor movement & fall-safety \u2014 Independence Through Movement follow-on. Frame every one as getting up safely; BJJ is the credibility, not the headline.",
         "type": "series",
         "tiers": [
           {
-            "tier": "Tier 1 — Getting Down & Up Safely",
+            "tier": "Tier 1 \u2014 Getting Down & Up Safely",
             "items": [
               "Get down to the floor safely (controlled descent)",
               "Technical stand-up (up without both hands, stay protected)",
@@ -2481,7 +3057,7 @@
             ]
           },
           {
-            "tier": "Tier 2 — Ground Orientation",
+            "tier": "Tier 2 \u2014 Ground Orientation",
             "items": [
               "Shrimping / hip escape (creating space)",
               "Bridging (glute-driven hip bridge)",
@@ -2490,7 +3066,7 @@
             ]
           },
           {
-            "tier": "Tier 3 — Rolling & Rotation",
+            "tier": "Tier 3 \u2014 Rolling & Rotation",
             "items": [
               "Back roll (over the shoulder, not the neck)",
               "Forward roll (controlled shoulder roll)",
@@ -2498,11 +3074,11 @@
             ]
           },
           {
-            "tier": "Tier 4 — Transitions & Application",
+            "tier": "Tier 4 \u2014 Transitions & Application",
             "items": [
               "Turning over (back-to-front / simplified granby)",
               "Getting to hands-and-knees from your back",
-              "Full sequence: fall → recover → shrimp → stand"
+              "Full sequence: fall \u2192 recover \u2192 shrimp \u2192 stand"
             ]
           }
         ]
@@ -2511,31 +3087,31 @@
     "banks": [
       {
         "title": "Coach's Corner ideas",
-        "subtitle": "Wednesday. One lesson you're applying this week — keep it real-time, tied to Current Focus.",
+        "subtitle": "Wednesday. One lesson you're applying this week \u2014 keep it real-time, tied to Current Focus.",
         "type": "bank",
         "items": [
-          "Getting up off the floor — why it predicts independence",
+          "Getting up off the floor \u2014 why it predicts independence",
           "Why I test before I train (the case for baselines)",
           "What a DEXA scan actually tells you (and what it doesn't)",
-          "Sleep continuity — the recovery lever most people ignore",
+          "Sleep continuity \u2014 the recovery lever most people ignore",
           "Zone 2 explained without the jargon",
           "Why I don't cold plunge on strength days",
           "Grip strength as a longevity marker",
           "The one mobility drill I'd keep if I could only do one",
-          "Training around a diagnosis (thyroid — when ready)",
+          "Training around a diagnosis (thyroid \u2014 when ready)",
           "Why 'functional' isn't a buzzword"
         ]
       },
       {
         "title": "Project 50 Update ideas",
-        "subtitle": "Sunday Journal. 60–90 sec, filmed in Mission Control or on the trail — connection, not polish.",
+        "subtitle": "Sunday Journal. 60\u201390 sec, filmed in Mission Control or on the trail \u2014 connection, not polish.",
         "type": "bank",
         "items": [
           "This week's win / this week's struggle",
           "A number that moved (from the dashboard)",
           "Something that surprised me in training",
           "A recovery tool I'm dialing in",
-          "Countdown context — X days to 50, here's where I am",
+          "Countdown context \u2014 X days to 50, here's where I am",
           "Behind-the-scenes from filming the documentary",
           "A question from the comments, answered",
           "What I'm testing this week",
@@ -2546,7 +3122,7 @@
     ]
   },
   "race_ladder": {
-    "goal": "5 miles → Canyonlands 100, Moab — Oct 2028",
+    "goal": "5 miles \u2192 Canyonlands 100, Moab \u2014 Oct 2028",
     "rules": [
       "Never more than double your longest race distance in one jump",
       "Run at least 100K (racing or training) before the 100-mile start line"
@@ -2555,11 +3131,11 @@
       {
         "n": 1,
         "dist": "Trail Half-Marathon",
-        "window": "Late fall 2026 (Nov–Dec)",
+        "window": "Late fall 2026 (Nov\u2013Dec)",
         "year": "2026",
         "candidates": "Mt. Tam Trail Run (Stinson, early Nov) or Almaden Quicksilver Half (San Jose)",
-        "purpose": "First race back — re-blood the racing instinct, milestone long run.",
-        "signup": "Register ~2–3 months out. These rarely sell out, but early entry locks price and shirt size.",
+        "purpose": "First race back \u2014 re-blood the racing instinct, milestone long run.",
+        "signup": "Register ~2\u20133 months out. These rarely sell out, but early entry locks price and shirt size.",
         "done": false,
         "links": [
           {
@@ -2574,12 +3150,12 @@
       },
       {
         "n": 2,
-        "dist": "50K — first ultra",
+        "dist": "50K \u2014 first ultra",
         "window": "Spring 2027",
         "year": "2027",
         "candidates": "Skyline 50K (Castro Valley), Lake Chabot 50K, or a Coastal Trail Runs Marin 50K",
         "purpose": "Officially an ultramarathoner. Big documentary beat.",
-        "signup": "Register 3–4 months out. Mid-size NorCal 50Ks fill steadily — don't wait to race week.",
+        "signup": "Register 3\u20134 months out. Mid-size NorCal 50Ks fill steadily \u2014 don't wait to race week.",
         "done": false,
         "links": [
           {
@@ -2598,8 +3174,8 @@
         "window": "Fall 2027",
         "year": "2027",
         "candidates": "A NorCal 50-miler with real climb (Inside Trail / Coastal events)",
-        "purpose": "Year-one racing capstone — first true long-day effort.",
-        "signup": "Register 4–6 months out. 50-milers have caps and can fill; earlier is safer.",
+        "purpose": "Year-one racing capstone \u2014 first true long-day effort.",
+        "signup": "Register 4\u20136 months out. 50-milers have caps and can fill; earlier is safer.",
         "done": false,
         "links": [
           {
@@ -2614,12 +3190,12 @@
       },
       {
         "n": 4,
-        "dist": "100K — dress rehearsal",
+        "dist": "100K \u2014 dress rehearsal",
         "window": "Spring / early summer 2028",
         "year": "2028",
         "candidates": "Ideally altitude or technical terrain to prep for Moab",
         "purpose": "The rung that proves you can go the distance. Final big test before the 100.",
-        "signup": "Register 6+ months out (late 2027). 100Ks are smaller-field and fill early — book once 2028 dates post.",
+        "signup": "Register 6+ months out (late 2027). 100Ks are smaller-field and fill early \u2014 book once 2028 dates post.",
         "done": false,
         "links": [
           {
@@ -2630,13 +3206,13 @@
       },
       {
         "n": 5,
-        "dist": "Canyonlands 100 — Moab, UT",
+        "dist": "Canyonlands 100 \u2014 Moab, UT",
         "window": "Mid-October 2028",
         "year": "2028",
         "capstone": true,
-        "candidates": "Mad Moose Events · Run Moab Series · 100-mile",
+        "candidates": "Mad Moose Events \u00b7 Run Moab Series \u00b7 100-mile",
         "purpose": "THE capstone. As close to your 50th (Oct 22) as the race calendar allows.",
-        "signup": "Register the moment 2028 registration opens — typically ~9–12 months prior (watch late 2027). Moab 100s draw a national field and can fill; do not wait.",
+        "signup": "Register the moment 2028 registration opens \u2014 typically ~9\u201312 months prior (watch late 2027). Moab 100s draw a national field and can fill; do not wait.",
         "done": false,
         "links": [
           {
@@ -2650,20 +3226,20 @@
         ]
       }
     ],
-    "bridge": "Optional 2028 training trip to Moab — run the actual red-rock terrain, acclimatize to altitude + sand. Documentary gold."
+    "bridge": "Optional 2028 training trip to Moab \u2014 run the actual red-rock terrain, acclimatize to altitude + sand. Documentary gold."
   },
   "mileage": {
-    "phase": "Base Building — Trail Half prep",
-    "phase_window": "Aug → Nov 2026",
-    "current_weekly": "12–15 mi/wk",
-    "target_weekly": "25–30 mi/wk by October",
-    "long_run_now": "5–6 mi",
-    "long_run_target": "10–13 mi by late Oct",
-    "rule": "Build the long run ~1 mi every 1–2 wks. Never +10% total volume wk-over-wk. Every 4th week cut back ~30%.",
+    "phase": "Base Building \u2014 Trail Half prep",
+    "phase_window": "Aug \u2192 Nov 2026",
+    "current_weekly": "12\u201315 mi/wk",
+    "target_weekly": "25\u201330 mi/wk by October",
+    "long_run_now": "5\u20136 mi",
+    "long_run_target": "10\u201313 mi by late Oct",
+    "rule": "Build the long run ~1 mi every 1\u20132 wks. Never +10% total volume wk-over-wk. Every 4th week cut back ~30%.",
     "week_structure": [
       {
         "day": "Tue",
-        "run": "Easy short (3–5 mi, Zone 2)",
+        "run": "Easy short (3\u20135 mi, Zone 2)",
         "note": "Legs-friendly around Strength A. Keep it easy."
       },
       {
@@ -2673,7 +3249,7 @@
       },
       {
         "day": "Sun",
-        "run": "Long run — trail, easy pace",
+        "run": "Long run \u2014 trail, easy pace",
         "note": "The most important run. Grows over time. Roll lighter Thu/Sat the week it jumps."
       }
     ],
