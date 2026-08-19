@@ -2709,7 +2709,17 @@
         ],
         "race": {
           "race": "\ud83c\udfc3 RACE: Trail Half-Marathon \u2014 first race back",
-          "reg": "Register now (~2\u20133 mo out). Mt. Tam Trail Run or Almaden Quicksilver Half."
+          "reg": "Register now (~2\u20133 mo out). Mt. Tam Trail Run or Almaden Quicksilver Half.",
+          "links": [
+            {
+              "label": "Inside Trail Racing",
+              "url": "https://insidetrail.com/calendar/"
+            },
+            {
+              "label": "Coastal Trail Runs",
+              "url": "https://ultrasignup.com/groups.aspx?gid=69"
+            }
+          ]
         }
       },
       {
@@ -2756,7 +2766,17 @@
         ],
         "race": {
           "race": "\ud83d\uddd3 REGISTER: 50K (spring 2027) \u2014 sign-up window",
-          "reg": "Book your first 50K 3\u20134 months out. Skyline 50K / Lake Chabot / Coastal Marin."
+          "reg": "Book your first 50K 3\u20134 months out. Skyline 50K / Lake Chabot / Coastal Marin.",
+          "links": [
+            {
+              "label": "Inside Trail (NorCal 50Ks)",
+              "url": "https://ultrasignup.com/groups.aspx?gid=44"
+            },
+            {
+              "label": "Coastal Trail Runs",
+              "url": "https://ultrasignup.com/groups.aspx?gid=69"
+            }
+          ]
         }
       },
       {
