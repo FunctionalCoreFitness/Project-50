@@ -1151,7 +1151,7 @@ function render(d){
               <summary><i class="dot-broll"></i>B-roll shot list <span class="cal-broll-count ck-count" data-count-type="broll" data-count-month="${m.month}">${bDone}/${m.broll.length}</span></summary>
               <ul class="ck-list">${m.broll.map((b,i)=>ckItem(b,'broll',i)).join('')}</ul>
             </details>` : ''}
-            ${m.race ? `<div class="cal-race"><div class="cal-race-h">${m.race.race}</div><div class="cal-race-r">${m.race.reg}</div></div>` : ''}
+            ${m.race ? `<div class="cal-race"><div class="cal-race-h">${m.race.race}</div><div class="cal-race-r">${m.race.reg}</div>${(m.race.links&&m.race.links.length)?`<div class="race-links">${m.race.links.map(l=>`<a href="${l.url}" target="_blank" rel="noopener">${l.label} ↗</a>`).join('')}</div>`:''}</div>` : ''}
           </div>`;
         }).join('')}
       </div>
