@@ -1,0 +1,14 @@
+{
+  "name": "Project 50 — Omar Lima",
+  "short_name": "Project 50",
+  "description": "Personal dashboard for the 50-Year Athlete Project — training, health metrics, and race prep.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#141a22",
+  "theme_color": "#16243a",
+  "icons": [
+    { "src": "./icons/icon-180.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
