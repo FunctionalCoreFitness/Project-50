@@ -477,7 +477,7 @@
         {
           "name": "Walking Steadiness",
           "unit": "score",
-          "value": "ok",
+          "value": 100,
           "pacer": null,
           "goal": null,
           "direction": "up",
