@@ -123,7 +123,7 @@
         {
           "name": "A/G Ratio",
           "unit": "",
-          "value": "calories-1035",
+          "value": 1.17,
           "pacer": 1,
           "goal": 1,
           "direction": "down",
@@ -144,6 +144,10 @@
             },
             {
               "value": "rate-13",
+              "date": "2026-08-25"
+            },
+            {
+              "value": "calories-1035",
               "date": "2026-08-25"
             }
           ]
