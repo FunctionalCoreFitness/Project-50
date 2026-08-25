@@ -232,7 +232,8 @@ $('parseBtn').onclick=()=>{
     if(!name||val===''){ rows.push({cls:'match-bad',left:line,right:'could not parse',note:'use Name: value'}); return; }
     const res=findMetric(name);
     if(!res){ rows.push({cls:'match-bad',left:name,right:val,note:'no matching metric'}); return; }
-    const num=isNaN(Number(val))?val:Number(val);
+    const num=Number(val);
+    if(isNaN(num)){ rows.push({cls:'match-bad',left:`${res.m.cname} › ${res.m.name}`,right:val,note:'not a number — skipped'}); return; }
     parsedReadings.push({cid:res.m.cid,idx:res.m.idx,value:num,date});
     rows.push({cls:res.conf==='ok'?'match-ok':'match-warn',
       left:`${res.m.cname} › ${res.m.name}`,
