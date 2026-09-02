@@ -11,17 +11,26 @@ iPhone (HealthKit) --BGAppRefreshTask/foreground fallback--> Cloud Run --Firesto
 
 ## Status of each piece
 
-- **Backend** (`backend/`): fully implemented, 29 tests passing (`npm test`
-  in that folder), verified end-to-end over real HTTP including the CORS
-  preflight the browser read-path needs. Not deployed — that requires your
-  own GCP project; exact commands are in `backend/README.md`.
+- **Backend** (`backend/`): deployed and live on Cloud Run
+  (`project50-healthkit`, project `galvanized-env-507400-g6`,
+  `us-central1`). 29 tests passing locally, and verified for real in
+  production — a synced test reading round-tripped through `POST
+  /v1/healthkit-sync` and back out through `GET /v1/healthkit-latest`
+  correctly. Three deploy-time gotchas hit on a fresh GCP project (none
+  specific to this code, all now documented in `backend/README.md`'s
+  deploy commands so a future project doesn't need to rediscover them):
+  the default compute service account needs `roles/cloudbuild.builds.builder`
+  for the source build, `roles/secretmanager.secretAccessor` on both secrets
+  for the running service to read them, and `roles/datastore.user` for
+  Firestore access; and `getLatestDay()`'s `orderBy(documentId(), "desc")`
+  needs an explicit composite index (Firestore's automatic index only
+  covers ascending order on `__name__`).
 - **Web read-path** (`index.html`): implemented and verified against a live
   local server serving fake HealthKit data — the overlay correctly replaces
   `data.json`'s stored values for VO2 Max, Resting HR, Steps, etc. with the
   synced values, and the rest of the dashboard (bars, hero stats, hover
-  states) works on them unmodified. Currently pointed at placeholder
-  constants (`HEALTHKIT_API_BASE`, `HEALTHKIT_READ_TOKEN`) — fill those in
-  once the backend is deployed.
+  states) works on them unmodified. Now pointed at the real deployed
+  backend and its read token.
 - **iOS app** (`ios/`): complete Swift source, reasoned through against the
   real HealthKit/BackgroundTasks/SwiftUI APIs, but **not compiled** — this
   sandbox has no macOS/Xcode, which is required to build any iOS app
