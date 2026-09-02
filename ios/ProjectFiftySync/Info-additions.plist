@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Not a full Info.plist — Xcode generates and manages that for you when you
+  create the project. These are the entries this app needs added to it via
+  the Xcode target's Info tab (or by pasting into the raw Info.plist source).
+  See ../README.md for exactly where each of these goes.
+-->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>NSHealthShareUsageDescription</key>
+    <string>Project 50 Sync reads your daily health and fitness data to keep your training dashboard up to date.</string>
+
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>processing</string>
+        <string>fetch</string>
+    </array>
+
+    <key>BGTaskSchedulerPermittedIdentifiers</key>
+    <array>
+        <string>com.functionalcorefitness.project50sync.refresh</string>
+    </array>
+</dict>
+</plist>
