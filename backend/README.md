@@ -46,15 +46,56 @@ gcloud firestore databases create --location=REGION
 
 # Generate and store the two long-lived tokens. Keep the ingest one for the
 # iOS app's Keychain only — never put it in the web app or the repo.
-openssl rand -hex 32 | gcloud secrets create healthkit-ingest-key --data-file=-
-openssl rand -hex 32 | gcloud secrets create healthkit-read-key --data-file=-
+# openssl's trailing newline is stripped intentionally (`printf '%s'`) — a
+# newline baked into the secret's bytes will make every token comparison
+# fail once it's injected into Cloud Run as an env var.
+printf '%s' "$(openssl rand -hex 32)" | gcloud secrets create healthkit-ingest-key --data-file=-
+printf '%s' "$(openssl rand -hex 32)" | gcloud secrets create healthkit-read-key --data-file=-
+
+# New GCP projects don't grant the default compute service account the
+# permissions `gcloud run deploy --source` needs for its build step, or the
+# Secret Manager access the running service needs at startup — both show up
+# as deploy failures with a permission-denied error naming the missing role,
+# but are easy to grant up front:
+PROJECT_NUMBER=$(gcloud projects describe PROJECT_ID --format='value(projectNumber)')
+gcloud projects add-iam-policy-binding PROJECT_ID \
+  --member="serviceAccount:${PROJECT_NUMBER}-compute@developer.gserviceaccount.com" \
+  --role="roles/cloudbuild.builds.builder"
+gcloud secrets add-iam-policy-binding healthkit-ingest-key \
+  --member="serviceAccount:${PROJECT_NUMBER}-compute@developer.gserviceaccount.com" \
+  --role="roles/secretmanager.secretAccessor"
+gcloud secrets add-iam-policy-binding healthkit-read-key \
+  --member="serviceAccount:${PROJECT_NUMBER}-compute@developer.gserviceaccount.com" \
+  --role="roles/secretmanager.secretAccessor"
+gcloud projects add-iam-policy-binding PROJECT_ID \
+  --member="serviceAccount:${PROJECT_NUMBER}-compute@developer.gserviceaccount.com" \
+  --role="roles/datastore.user"
 
 # Deploy
 gcloud run deploy project50-healthkit \
   --source backend \
   --region REGION \
-  --no-allow-unauthenticated=false \
+  --allow-unauthenticated \
   --set-secrets=INGEST_API_KEY=healthkit-ingest-key:latest,READ_API_KEY=healthkit-read-key:latest
+
+# getLatestDay()'s orderBy(documentId(), "desc") needs an explicit composite
+# index — Firestore's automatic single-field index only covers ascending
+# order on __name__. The first real request will fail with a
+# FAILED_PRECONDITION error containing a ready-to-click console link for
+# this exact index; creating it from the CLI up front avoids that surprise:
+gcloud firestore indexes composite create \
+  --collection-group=healthkit_days \
+  --field-config=field-path=__name__,order=descending
+```
+
+If you ever rotate either secret with `gcloud secrets versions add`, Cloud
+Run won't pick up the new version on its own — the `:latest` reference is
+resolved once, at revision creation. Force a new revision to re-resolve it:
+
+```bash
+gcloud run services update project50-healthkit \
+  --region REGION \
+  --update-secrets=INGEST_API_KEY=healthkit-ingest-key:latest,READ_API_KEY=healthkit-read-key:latest
 ```
 
 `--allow-unauthenticated` (Cloud Run's own IAM layer, distinct from our
@@ -65,11 +106,6 @@ front too, switch to `--no-allow-unauthenticated` and have the iOS app fetch
 an identity token via a service account key instead of a bearer secret; that
 adds real complexity (service account key management on-device) for a
 single-user app that doesn't need it.
-
-Grant the Cloud Run service's runtime service account access to Firestore
-(the default compute service account has this by default in most projects
-via the Editor role; if you've locked that down, grant `roles/datastore.user`
-explicitly instead of a broader role).
 
 Read the two secret values back out to configure the iOS app and the web
 app respectively:
