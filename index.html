@@ -750,11 +750,72 @@ function metricCard(m){
   </div>`;
 }
 
+// ---- Live HealthKit sync read-path ----
+// Mirrors backend/src/metricMap.js — keep the two in sync if either changes.
+// HEALTHKIT_READ_TOKEN is a read-only token scoped to only this one GET
+// endpoint (see backend/README.md): it being visible in this page's public
+// source is an accepted tradeoff for a static site with no server to hide
+// secrets behind, not an oversight. It can never be used to write data.
+const HEALTHKIT_API_BASE = 'https://REPLACE_WITH_YOUR_CLOUD_RUN_URL';
+const HEALTHKIT_READ_TOKEN = 'REPLACE_WITH_READ_TOKEN';
+const HEALTHKIT_METRIC_MAP = {
+  vo2Max:                          { categoryId: "engine", name: "VO2 Max" },
+  restingHeartRate:                { categoryId: "engine", name: "Resting HR" },
+  hrvSDNN:                         { categoryId: "engine", name: "HRV (SDNN)" },
+  walkingHeartRateAverage:         { categoryId: "engine", name: "Walking HR" },
+  respiratoryRate:                 { categoryId: "engine", name: "Respiratory Rate" },
+  oxygenSaturation:                { categoryId: "engine", name: "Blood Oxygen" },
+  stepCount:                       { categoryId: "engine", name: "Steps" },
+  appleExerciseTime:               { categoryId: "engine", name: "Exercise" },
+  activeEnergyBurned:              { categoryId: "engine", name: "Active Calories" },
+  walkingAsymmetryPercentage:      { categoryId: "gait", name: "Walking Asymmetry" },
+  walkingDoubleSupportPercentage:  { categoryId: "gait", name: "Double Support Time" },
+  walkingSpeed:                    { categoryId: "gait", name: "Walking Speed" },
+  walkingStepLength:               { categoryId: "gait", name: "Step Length" },
+  walkingSteadiness:               { categoryId: "gait", name: "Walking Steadiness" },
+  sixMinuteWalkTestDistance:       { categoryId: "gait", name: "Six-Minute Walk" },
+  runningGroundContactTime:        { categoryId: "gait", name: "Ground Contact Time" },
+  runningStrideLength:             { categoryId: "gait", name: "Running Stride Length" },
+  runningVerticalOscillation:      { categoryId: "gait", name: "Vertical Oscillation" },
+  stairSpeedDown:                  { categoryId: "gait", name: "Stair Speed Down" },
+  bodyMass:                        { categoryId: "body", name: "Weight" },
+  sleepDurationHours:              { categoryId: "recovery", name: "Sleep Duration" },
+  deepSleepPercentage:             { categoryId: "recovery", name: "Deep Sleep" },
+};
+
+function fetchHealthKitLatest(){
+  if(HEALTHKIT_API_BASE.includes('REPLACE_WITH')) return Promise.resolve(null);
+  return fetch(`${HEALTHKIT_API_BASE}/v1/healthkit-latest`, {
+    headers: { Authorization: `Bearer ${HEALTHKIT_READ_TOKEN}` }
+  }).then(r => r.ok ? r.json() : null).catch(()=>null);
+}
+
+// Overlays live-synced values onto data.json's in-memory copy, before
+// render() runs — so every downstream computation (evaluate(), sparklines,
+// the Project 50 Score) sees the live number automatically. A metric with no
+// live value this run (backend not deployed yet, or that specific HealthKit
+// type had no data) just keeps whatever data.json already has — the manual
+// update.html console workflow stays a valid fallback, it doesn't get
+// replaced by this.
+function applyHealthKitOverlay(d, live){
+  if(!live || !live.metrics) return;
+  for(const [key, spec] of Object.entries(HEALTHKIT_METRIC_MAP)){
+    const value = live.metrics[key];
+    if(typeof value !== 'number' || !Number.isFinite(value)) continue;
+    const cat = d.categories.find(c => c.id === spec.categoryId);
+    const metric = cat && cat.metrics.find(m => m.name === spec.name);
+    if(!metric) continue;
+    metric.value = value;
+    metric.date = live.date;
+  }
+}
+
 Promise.all([
   fetch('data.json?v='+Date.now()).then(r=>{ if(!r.ok) throw new Error('data.json '+r.status); return r.json(); }),
-  fetch('training-log.json?v='+Date.now()).then(r=> r.ok ? r.json() : null).catch(()=>null)
+  fetch('training-log.json?v='+Date.now()).then(r=> r.ok ? r.json() : null).catch(()=>null),
+  fetchHealthKitLatest()
 ])
-  .then(([d, log])=>{ window.__LOG__=log; render(d); })
+  .then(([d, log, live])=>{ applyHealthKitOverlay(d, live); window.__LOG__=log; render(d); })
   .catch(err=>{
     document.getElementById('main').innerHTML =
       `<p style="padding:40px 0;color:var(--red)">Couldn't load data.json (${err.message}). Make sure it's in the same folder and you're serving over http, not opening the file directly.</p>`;
