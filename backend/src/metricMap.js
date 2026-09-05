@@ -36,6 +36,19 @@ const METRIC_MAP = {
   sleepDurationHours:              { categoryId: "recovery", name: "Sleep Duration" },
   deepSleepPercentage:             { categoryId: "recovery", name: "Deep Sleep" },
   mindfulMinutes:                  { categoryId: "recovery", name: "Mindful Minutes" },
+
+  dietaryFiber:                    { categoryId: "nutrition", name: "Fiber" },
+  dietaryProtein:                  { categoryId: "nutrition", name: "Protein" },
+  dietarySugar:                    { categoryId: "nutrition", name: "Sugar" },
+  dietaryFatSaturated:             { categoryId: "nutrition", name: "Saturated Fat" },
+  dietaryWater:                    { categoryId: "nutrition", name: "Water" },
+  dietaryVitaminD:                 { categoryId: "nutrition", name: "Vitamin D (diet)" },
+  dietaryFolate:                   { categoryId: "nutrition", name: "Folate (diet)" },
+  dietaryVitaminB12:               { categoryId: "nutrition", name: "B12 (diet)" },
+  dietaryMagnesium:                { categoryId: "nutrition", name: "Magnesium (diet)" },
+  dietaryZinc:                     { categoryId: "nutrition", name: "Zinc (diet)" },
+  dietaryPotassium:                { categoryId: "nutrition", name: "Potassium (diet)" },
+  dietarySodium:                   { categoryId: "nutrition", name: "Sodium (diet)" },
 };
 
 const VALID_KEYS = new Set(Object.keys(METRIC_MAP));

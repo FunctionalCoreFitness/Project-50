@@ -470,6 +470,35 @@
   .rc-tag-manual{background:var(--hair);color:var(--muted)}
   .rc-why{font-size:.82rem;color:#3a4049;line-height:1.4;margin-top:3px}
   .rc-caveat{font-size:.8rem;font-style:italic;color:var(--muted);line-height:1.45;margin-top:12px;padding:9px 12px;border:1px dashed var(--line);border-radius:4px}
+  /* nutrition */
+  .nu-lede{font-size:.9rem;color:#3a4049;line-height:1.55;margin-bottom:10px}
+  .nu-med{font-size:.85rem;color:#8a4a3a;line-height:1.5;background:rgba(190,80,60,.08);border-left:3px solid #b4573f;border-radius:3px;padding:10px 12px;margin-bottom:14px}
+  .nu-hero{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--green);border-radius:4px;padding:14px 16px;margin-bottom:14px}
+  .nu-hero-h{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .nu-hero-n{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.05rem;color:var(--navy);letter-spacing:.02em}
+  .nu-hero-t{font-size:.78rem;color:var(--muted)}
+  .nu-chart{display:flex;align-items:flex-end;gap:3px;height:90px;margin:12px 0 4px;padding-top:16px;position:relative}
+  .nu-goal{position:absolute;left:0;right:0;border-top:1px dashed var(--green);pointer-events:none}
+  .nu-goal span{position:absolute;right:0;top:2px;font-family:'Barlow Condensed',sans-serif;font-size:.66rem;letter-spacing:.04em;color:var(--green);background:var(--card);padding:0 3px;line-height:1}
+  .nu-bar{flex:1;min-width:4px;background:var(--steel);border-radius:2px 2px 0 0;position:relative}
+  .nu-bar.nu-hit{background:var(--green)}
+  .nu-bar.nu-none{background:var(--hair)}
+  .nu-xlab{display:flex;justify-content:space-between;font-size:.7rem;color:var(--muted);margin-bottom:8px}
+  .nu-empty{font-size:.85rem;color:var(--muted);line-height:1.45;padding:14px 0;text-align:center}
+  .nu-row{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--hair)}
+  .nu-row:last-child{border-bottom:none}
+  .nu-rank{font-family:'Bebas Neue',sans-serif;font-size:.9rem;color:#fff;background:var(--steel);border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;font-size:.68rem}
+  .nu-rb{flex:1;min-width:0}
+  .nu-rn{font-weight:600;font-size:.88rem;color:var(--navy)}
+  .nu-rm{font-size:.75rem;color:var(--muted);margin-top:1px}
+  .nu-rv{font-family:'Bebas Neue',sans-serif;font-size:1.15rem;color:var(--navy);white-space:nowrap;flex:0 0 auto;text-align:right}
+  .nu-rv small{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;color:var(--muted);letter-spacing:.03em}
+  .nu-rv.nu-no{color:var(--muted);font-size:.85rem}
+  .nu-det{padding:2px 0 10px 30px;font-size:.84rem;color:#3a4049;line-height:1.5}
+  .nu-det b{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.05em;font-size:.7rem;color:var(--steel);margin-right:5px}
+  .nu-food{color:#7a5a1e;background:rgba(200,144,49,.09);border-radius:3px;padding:6px 9px;margin-top:5px;display:block}
+  .nu-nt{font-size:.85rem;color:#3a4049;line-height:1.5;background:var(--hair);border-radius:3px;padding:10px 12px;margin-top:14px}
+  .nu-nt b{color:var(--navy)}
   .race-goal{background:rgba(74,126,199,.08);border-left:3px solid var(--steel);border-radius:3px;padding:9px 12px;font-size:.88rem;color:#2f4a6b;line-height:1.45;margin:10px 0}
   .race-teaches{font-size:.84rem;font-style:italic;color:var(--muted);margin-top:10px;padding:9px 12px;border:1px dashed var(--line);border-radius:4px;line-height:1.45}
   /* fueling / gut training */
@@ -964,7 +993,28 @@ const HEALTHKIT_METRIC_MAP = {
   sleepDurationHours:              { categoryId: "recovery", name: "Sleep Duration" },
   deepSleepPercentage:             { categoryId: "recovery", name: "Deep Sleep" },
   mindfulMinutes:                  { categoryId: "recovery", name: "Mindful Minutes" },
+  dietaryFiber:                    { categoryId: "nutrition", name: "Fiber" },
+  dietaryProtein:                  { categoryId: "nutrition", name: "Protein" },
+  dietarySugar:                    { categoryId: "nutrition", name: "Sugar" },
+  dietaryFatSaturated:             { categoryId: "nutrition", name: "Saturated Fat" },
+  dietaryWater:                    { categoryId: "nutrition", name: "Water" },
+  dietaryVitaminD:                 { categoryId: "nutrition", name: "Vitamin D (diet)" },
+  dietaryFolate:                   { categoryId: "nutrition", name: "Folate (diet)" },
+  dietaryVitaminB12:               { categoryId: "nutrition", name: "B12 (diet)" },
+  dietaryMagnesium:                { categoryId: "nutrition", name: "Magnesium (diet)" },
+  dietaryZinc:                     { categoryId: "nutrition", name: "Zinc (diet)" },
+  dietaryPotassium:                { categoryId: "nutrition", name: "Potassium (diet)" },
+  dietarySodium:                   { categoryId: "nutrition", name: "Sodium (diet)" },
 };
+
+// The daily series behind the nutrition chart. Separate from -latest because
+// "am I hitting fiber daily" is a question about the trend, not today's number.
+function fetchHealthKitHistory(days){
+  if(HEALTHKIT_API_BASE.includes('REPLACE_WITH')) return Promise.resolve(null);
+  return fetch(`${HEALTHKIT_API_BASE}/v1/healthkit-history?days=${days||30}`, {
+    headers: { Authorization: `Bearer ${HEALTHKIT_READ_TOKEN}` }
+  }).then(r => r.ok ? r.json() : null).catch(()=>null);
+}
 
 function fetchHealthKitLatest(){
   if(HEALTHKIT_API_BASE.includes('REPLACE_WITH')) return Promise.resolve(null);
@@ -996,9 +1046,10 @@ function applyHealthKitOverlay(d, live){
 Promise.all([
   fetch('data.json?v='+Date.now()).then(r=>{ if(!r.ok) throw new Error('data.json '+r.status); return r.json(); }),
   fetch('training-log.json?v='+Date.now()).then(r=> r.ok ? r.json() : null).catch(()=>null),
-  fetchHealthKitLatest()
+  fetchHealthKitLatest(),
+  fetchHealthKitHistory(30)
 ])
-  .then(([d, log, live])=>{ applyHealthKitOverlay(d, live); window.__LOG__=log; window.__LIVE__=live; render(d); })
+  .then(([d, log, live, hist])=>{ applyHealthKitOverlay(d, live); window.__LOG__=log; window.__LIVE__=live; window.__HIST__=hist; render(d); })
   .catch(err=>{
     document.getElementById('main').innerHTML =
       `<p style="padding:40px 0;color:var(--red)">Couldn't load data.json (${err.message}). Make sure it's in the same folder and you're serving over http, not opening the file directly.</p>`;
@@ -1047,6 +1098,7 @@ function render(d){
     (d.trails?`<a href="#trails">Trails</a>`:'') +
     (d.coaching?`<a href="#coaching">Coaching</a>`:'') +
     (d.recovery_sync?`<a href="#recovery-sync">Auto-Recovery</a>`:'') +
+    (d.nutrition?`<a href="#nutrition">Nutrition</a>`:'') +
     (d.locations?`<a href="#locations">Sets</a>`:'') +
     (d.wins?`<a href="#wins">Wins</a>`:'') +
     (d.protocol?`<a href="#protocol">Protocol</a>`:'') +
@@ -1062,6 +1114,7 @@ function render(d){
     `<a href="#trails">Trails</a>` +
     `<a href="#coaching">Form</a>` +
     `<a href="#recovery-sync">Recovery</a>` +
+    `<a href="#nutrition">Fuel</a>` +
     `<a href="workout.html">Log</a>` +
     `<a href="update.html" class="qb-update">Update</a>`;
 
@@ -1739,6 +1792,65 @@ function render(d){
     </section>`;
   }
 
+  // ===== NUTRITION =====
+  // Targets come from the blood panel, values from whatever app logs food into
+  // Apple Health. The top-priority target gets a 30-day chart because a single
+  // day's fibre says nothing — the question is whether it happens daily.
+  const nu=d.nutrition;
+  let nuHtml='';
+  if(nu && Array.isArray(nu.targets)){
+    const live=window.__LIVE__, hist=window.__HIST__;
+    const val=k=>(live&&live.metrics&&typeof live.metrics[k]==='number')?live.metrics[k]:null;
+    const targets=[...nu.targets].sort((a,b)=>(a.priority||99)-(b.priority||99));
+    const hero=targets[0];
+
+    let chart='<div class="nu-empty">No nutrition synced yet. Log a day in your nutrition app with Apple Health sharing on, and the chart fills in.</div>';
+    if(hist && Array.isArray(hist.days) && hist.days.length){
+      const series=hist.days.map(x=>({date:x.date, v:(x.metrics&&typeof x.metrics[hero.key]==='number')?x.metrics[hero.key]:null}));
+      if(series.some(p=>p.v!==null)){
+        const max=Math.max(hero.target, ...series.map(p=>p.v||0))*1.1;
+        const goalPct=100-(hero.target/max*100);
+        const bars=series.map(p=>{
+          if(p.v===null) return `<div class="nu-bar nu-none" style="height:3px" title="${p.date}: no log"></div>`;
+          const hit=hero.direction==='up' ? p.v>=hero.target : p.v<=hero.target;
+          return `<div class="nu-bar ${hit?'nu-hit':''}" style="height:${Math.max(3,(p.v/max)*100)}%" title="${p.date}: ${Math.round(p.v)} ${hero.unit}"></div>`;
+        }).join('');
+        const logged=series.filter(p=>p.v!==null);
+        const hits=logged.filter(p=>hero.direction==='up'?p.v>=hero.target:p.v<=hero.target).length;
+        chart=`<div class="nu-chart"><div class="nu-goal" style="top:${goalPct}%"><span>target ${hero.target}</span></div>${bars}</div>
+          <div class="nu-xlab"><span>${series[0].date}</span><span>${hits}/${logged.length} days on target</span><span>${series[series.length-1].date}</span></div>`;
+      }
+    }
+
+    const rows=targets.map(t=>{
+      const v=val(t.key);
+      const hit=v===null?null:(t.direction==='up'?v>=t.target:(t.direction==='down'?v<=t.target:true));
+      return `<div class="nu-row">
+        <span class="nu-rank">${t.priority}</span>
+        <div class="nu-rb"><div class="nu-rn">${t.name}</div><div class="nu-rm">${t.marker}</div></div>
+        <div class="nu-rv${v===null?' nu-no':''}">${v===null?'—':Math.round(v*10)/10}<small> / ${t.target} ${t.unit}${t.direction==='down'?' max':''}</small></div>
+      </div>
+      <div class="nu-det">${t.why}<span class="nu-food"><b>Food</b>${t.food}</span></div>`;
+    }).join('');
+
+    const nt=nu.not_trackable||{};
+    nuHtml=`
+    <section id="nutrition">
+      <div class="sec-head"><div class="sec-title">${nu.headline||'Nutrition'}</div>
+        <div class="sec-meta">From your blood panel, not generic RDAs<br>Synced daily from Apple Health</div></div>
+      <div class="nu-lede">${nu.basis||''}</div>
+      ${nu.medical_note?`<div class="nu-med">${nu.medical_note}</div>`:''}
+      <div class="nu-hero">
+        <div class="nu-hero-h"><span class="nu-hero-n">${hero.name} &mdash; last 30 days</span>
+          <span class="nu-hero-t">target ${hero.target} ${hero.unit}/day &middot; ${hero.marker}</span></div>
+        ${chart}
+      </div>
+      ${rows}
+      ${nt.what?`<div class="nu-nt"><b>Can't be tracked here &mdash; ${nt.what}:</b> ${nt.why}<br><span class="nu-rm">${nt.marker}</span></div>`:''}
+      ${nu.caveat?`<div class="rc-caveat">${nu.caveat}</div>`:''}
+    </section>`;
+  }
+
   // ===== RECOVERY AUTO-COMPLETE =====
   // Auto-ticks come from the live HealthKit payload, not from data.json, so
   // they reflect today rather than whatever was last committed. A manual tick
@@ -1826,7 +1938,7 @@ function render(d){
   const todayHtml = buildTodayCard(d, window.__LOG__, project50, scoreClass);
 
   document.getElementById('main').innerHTML =
-    todayHtml + focusHtml + scoreBlockHtml + gaugeHtml + html + pubHtml + calHtml + cbHtml + rlHtml + miHtml + fuHtml + trHtml + coHtml + rcHtml + locHtml + winsHtml;
+    todayHtml + focusHtml + scoreBlockHtml + gaugeHtml + html + pubHtml + calHtml + cbHtml + rlHtml + miHtml + fuHtml + trHtml + coHtml + rcHtml + nuHtml + locHtml + winsHtml;
 
   // ---- Checkable to-do / B-roll items (per-device, localStorage) ----
   const mainEl=document.getElementById('main');

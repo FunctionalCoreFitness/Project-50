@@ -43,4 +43,23 @@ async function getLatestDay() {
   };
 }
 
-module.exports = { db, upsertDay, getLatestDay, COLLECTION };
+// Returns up to `days` most-recent days, oldest-first, for charting a daily
+// series. Same documentId ordering trick as getLatestDay — descending for the
+// limit, then reversed so callers get chronological order without re-sorting.
+async function getRecentDays(days = 30) {
+  const limit = Math.min(Math.max(Number(days) || 30, 1), 180);
+  const snap = await db
+    .collection(COLLECTION)
+    .orderBy(FieldPath.documentId(), "desc")
+    .limit(limit)
+    .get();
+  if (snap.empty) return [];
+  return snap.docs
+    .map((doc) => {
+      const { date, receivedAt, ...metrics } = doc.data();
+      return { date: date || doc.id, metrics };
+    })
+    .reverse();
+}
+
+module.exports = { db, upsertDay, getLatestDay, getRecentDays, COLLECTION };

@@ -95,6 +95,35 @@ enum HealthMetrics {
         // Body Composition
         QuantityMetricSpec(key: "bodyMass", identifier: .bodyMass,
                             unit: .pound(), aggregation: .mostRecent),
+
+        // Nutrition. These arrive in HealthKit from whichever app logs food,
+        // and are cumulative across the day rather than point-in-time, so they
+        // sum. Targets are driven by the blood panel — fibre and saturated fat
+        // for ApoB, sugar for triglycerides, protein for training load.
+        QuantityMetricSpec(key: "dietaryFiber", identifier: .dietaryFiber,
+                            unit: .gram(), aggregation: .sum),
+        QuantityMetricSpec(key: "dietaryProtein", identifier: .dietaryProtein,
+                            unit: .gram(), aggregation: .sum),
+        QuantityMetricSpec(key: "dietarySugar", identifier: .dietarySugar,
+                            unit: .gram(), aggregation: .sum),
+        QuantityMetricSpec(key: "dietaryFatSaturated", identifier: .dietaryFatSaturated,
+                            unit: .gram(), aggregation: .sum),
+        QuantityMetricSpec(key: "dietaryWater", identifier: .dietaryWater,
+                            unit: .fluidOunceUS(), aggregation: .sum),
+        QuantityMetricSpec(key: "dietaryVitaminD", identifier: .dietaryVitaminD,
+                            unit: .gramUnit(with: .micro), aggregation: .sum),
+        QuantityMetricSpec(key: "dietaryFolate", identifier: .dietaryFolate,
+                            unit: .gramUnit(with: .micro), aggregation: .sum),
+        QuantityMetricSpec(key: "dietaryVitaminB12", identifier: .dietaryVitaminB12,
+                            unit: .gramUnit(with: .micro), aggregation: .sum),
+        QuantityMetricSpec(key: "dietaryMagnesium", identifier: .dietaryMagnesium,
+                            unit: .gramUnit(with: .milli), aggregation: .sum),
+        QuantityMetricSpec(key: "dietaryZinc", identifier: .dietaryZinc,
+                            unit: .gramUnit(with: .milli), aggregation: .sum),
+        QuantityMetricSpec(key: "dietaryPotassium", identifier: .dietaryPotassium,
+                            unit: .gramUnit(with: .milli), aggregation: .sum),
+        QuantityMetricSpec(key: "dietarySodium", identifier: .dietarySodium,
+                            unit: .gramUnit(with: .milli), aggregation: .sum),
     ]
 
     /// Every HKObjectType this app ever reads — used for the single bulk

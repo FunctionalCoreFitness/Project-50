@@ -2398,6 +2398,133 @@
           "note": "Not meaningful at total PSA 0.8"
         }
       ]
+    },
+    {
+      "id": "nutrition",
+      "name": "Nutrition",
+      "blurb": "Synced daily from Apple Health. Targets derived from the Function Health panel.",
+      "metrics": [
+        {
+          "name": "Fiber",
+          "unit": "g",
+          "value": null,
+          "pacer": 40,
+          "goal": 40,
+          "direction": "up",
+          "date": null,
+          "note": "ApoB 175 · LDL 199 · Triglycerides 321 · HbA1c 5.6 · hs-CRP 0.8"
+        },
+        {
+          "name": "Sugar",
+          "unit": "g",
+          "value": null,
+          "pacer": 40,
+          "goal": 40,
+          "direction": "down",
+          "date": null,
+          "note": "Triglycerides 321 (goal 80) · HbA1c 5.6 · Uric acid 5.8"
+        },
+        {
+          "name": "Saturated Fat",
+          "unit": "g",
+          "value": null,
+          "pacer": 20,
+          "goal": 20,
+          "direction": "down",
+          "date": null,
+          "note": "ApoB 175 · LDL 199 · Total cholesterol 297 · LDL small 509 · Pattern B"
+        },
+        {
+          "name": "Protein",
+          "unit": "g",
+          "value": null,
+          "pacer": 165,
+          "goal": 165,
+          "direction": "up",
+          "date": null,
+          "note": "Age 48 · 155 lb lean mass · 33 mi/wk peak training load"
+        },
+        {
+          "name": "Water",
+          "unit": "fl oz",
+          "value": null,
+          "pacer": 120,
+          "goal": 120,
+          "direction": "up",
+          "date": null,
+          "note": "BUN/Creatinine ratio 30 (goal 16) · BUN 19"
+        },
+        {
+          "name": "Vitamin D",
+          "unit": "mcg",
+          "value": null,
+          "pacer": 100,
+          "goal": 100,
+          "direction": "up",
+          "date": null,
+          "note": "Vitamin D 23 ng/mL (goal 50)"
+        },
+        {
+          "name": "Folate",
+          "unit": "mcg",
+          "value": null,
+          "pacer": 400,
+          "goal": 400,
+          "direction": "up",
+          "date": null,
+          "note": "Homocysteine 12.4 umol/L (goal 8)"
+        },
+        {
+          "name": "B12",
+          "unit": "mcg",
+          "value": null,
+          "pacer": 2.4,
+          "goal": 2.4,
+          "direction": "up",
+          "date": null,
+          "note": "Homocysteine 12.4 · B12 serum not measured (MMA 124, functionally in range)"
+        },
+        {
+          "name": "Zinc",
+          "unit": "mg",
+          "value": null,
+          "pacer": 11,
+          "goal": 11,
+          "direction": "up",
+          "date": null,
+          "note": "Zinc 67 mcg/dL (flagged direction: up)"
+        },
+        {
+          "name": "Magnesium",
+          "unit": "mg",
+          "value": null,
+          "pacer": 420,
+          "goal": 420,
+          "direction": "up",
+          "date": null,
+          "note": "RBC magnesium 6.2 mg/dL — in range"
+        },
+        {
+          "name": "Potassium",
+          "unit": "mg",
+          "value": null,
+          "pacer": 3400,
+          "goal": 3400,
+          "direction": "up",
+          "date": null,
+          "note": "Potassium 4.3 mmol/L — in range"
+        },
+        {
+          "name": "Sodium",
+          "unit": "mg",
+          "value": null,
+          "pacer": 2300,
+          "goal": 2300,
+          "direction": "neutral",
+          "date": null,
+          "note": "Sodium 139 mmol/L — in range"
+        }
+      ]
     }
   ],
   "protocol": {
@@ -4691,5 +4818,150 @@
       }
     ],
     "caveat": "An auto-tick is evidence a session happened, not proof you did the whole stack. Untick anything you did not actually do — the log is only worth what it honestly records."
+  },
+  "nutrition": {
+    "headline": "Nutrition Targets",
+    "basis": "Derived from your Function Health panel, not generic RDAs. Each target names the marker driving it. Synced daily from Apple Health, so whatever nutrition app you log in feeds this.",
+    "medical_note": "Several markers on your panel are substantially outside range — ApoB 175 (goal 70), LDL 199, triglycerides 321 (goal 80), LDL particle number 2761. Those are numbers a physician should be actively managing, not something to fix with a tracking dashboard alone. Treat everything here as support for a medical plan, not a substitute for one, and take this panel to your doctor if you have not already.",
+    "targets": [
+      {
+        "key": "dietaryFiber",
+        "name": "Fiber",
+        "unit": "g",
+        "target": 40,
+        "direction": "up",
+        "priority": 1,
+        "marker": "ApoB 175 · LDL 199 · Triglycerides 321 · HbA1c 5.6 · hs-CRP 0.8",
+        "why": "Your highest-leverage food lever and the one you asked about. Soluble fibre binds bile acids and lowers LDL and ApoB directly; it also blunts glucose response and feeds the gut bacteria that keep CRP down. It is the single nutrient touching the most out-of-range markers you have.",
+        "food": "Oats, beans, lentils, chia, psyllium, berries, avocado. Build up gradually — jumping to 40 g overnight causes exactly the GI distress your gut training is trying to avoid."
+      },
+      {
+        "key": "dietarySugar",
+        "name": "Sugar",
+        "unit": "g",
+        "target": 40,
+        "direction": "down",
+        "priority": 2,
+        "marker": "Triglycerides 321 (goal 80) · HbA1c 5.6 · Uric acid 5.8",
+        "why": "Triglycerides at 321 is the loudest number on your panel, and dietary sugar — fructose especially — is its most direct driver. Fructose also raises uric acid, which is separately above your goal.",
+        "food": "The cap is on added sugar, not fruit. Sports fuel during long runs is exempt: that carbohydrate is being burned, not stored, and the fuelling plan needs it."
+      },
+      {
+        "key": "dietaryFatSaturated",
+        "name": "Saturated Fat",
+        "unit": "g",
+        "target": 20,
+        "direction": "down",
+        "priority": 3,
+        "marker": "ApoB 175 · LDL 199 · Total cholesterol 297 · LDL small 509 · Pattern B",
+        "why": "Saturated fat raises LDL and ApoB more reliably than dietary cholesterol does. With ApoB at 2.5x your goal and a Pattern B particle profile, this is the fat lever that matters.",
+        "food": "Swap toward olive oil, nuts, avocado, fatty fish. Replacing saturated fat with unsaturated works better than just removing fat."
+      },
+      {
+        "key": "dietaryProtein",
+        "name": "Protein",
+        "unit": "g",
+        "target": 165,
+        "direction": "up",
+        "priority": 4,
+        "marker": "Age 48 · 155 lb lean mass · 33 mi/wk peak training load",
+        "why": "About 1.6-1.8 g per kg of bodyweight. Protein needs rise with age and with endurance volume, and you are adding both. This protects lean mass through a block that is deliberately adding running and holding strength at maintenance.",
+        "food": "Spread across the day rather than one large serving. Aim for 30-40 g in the post-long-run window."
+      },
+      {
+        "key": "dietaryWater",
+        "name": "Water",
+        "unit": "fl oz",
+        "target": 120,
+        "direction": "up",
+        "priority": 5,
+        "marker": "BUN/Creatinine ratio 30 (goal 16) · BUN 19",
+        "why": "Your own panel note says this ratio is 'often hydration + protein load in heavy trainers'. You are raising protein and mileage simultaneously, which pushes it further. This is the cheapest fix here.",
+        "food": "Baseline before accounting for runs. Add 16-24 fl oz per training hour on top."
+      },
+      {
+        "key": "dietaryVitaminD",
+        "name": "Vitamin D",
+        "unit": "mcg",
+        "target": 100,
+        "direction": "up",
+        "priority": 6,
+        "marker": "Vitamin D 23 ng/mL (goal 50)",
+        "why": "Less than half your goal and flagged 'still low, keep supplementing'. Matters for bone density under rising running load, immune function, and hormone production.",
+        "food": "Diet alone rarely closes a gap this size — the supplement you are already taking is the main lever. This tracks what food adds on top."
+      },
+      {
+        "key": "dietaryFolate",
+        "name": "Folate",
+        "unit": "mcg",
+        "target": 400,
+        "direction": "up",
+        "priority": 7,
+        "marker": "Homocysteine 12.4 umol/L (goal 8)",
+        "why": "Elevated homocysteine responds to folate, B12 and B6. Your panel note already says 'B-vitamins/methylation support'. Serum folate was not measured, so intake is the visible proxy.",
+        "food": "Leafy greens, legumes, asparagus, citrus."
+      },
+      {
+        "key": "dietaryVitaminB12",
+        "name": "B12",
+        "unit": "mcg",
+        "target": 2.4,
+        "direction": "up",
+        "priority": 8,
+        "marker": "Homocysteine 12.4 · B12 serum not measured (MMA 124, functionally in range)",
+        "why": "The functional marker looks fine, so this is maintenance rather than repair — tracked because it works with folate on the same homocysteine pathway.",
+        "food": "Animal protein covers this easily at your intake."
+      },
+      {
+        "key": "dietaryZinc",
+        "name": "Zinc",
+        "unit": "mg",
+        "target": 11,
+        "direction": "up",
+        "priority": 9,
+        "marker": "Zinc 67 mcg/dL (flagged direction: up)",
+        "why": "Low-normal on the panel. Supports immune function and testosterone, both worth protecting through a heavy block.",
+        "food": "Oysters, beef, pumpkin seeds, legumes."
+      },
+      {
+        "key": "dietaryMagnesium",
+        "name": "Magnesium",
+        "unit": "mg",
+        "target": 420,
+        "direction": "up",
+        "priority": 10,
+        "marker": "RBC magnesium 6.2 mg/dL — in range",
+        "why": "Not a deficit; tracked because magnesium supports sleep quality and muscle function under load, and it is cheap to watch while you are logging anyway.",
+        "food": "Pumpkin seeds, dark chocolate, spinach, almonds."
+      },
+      {
+        "key": "dietaryPotassium",
+        "name": "Potassium",
+        "unit": "mg",
+        "target": 3400,
+        "direction": "up",
+        "priority": 11,
+        "marker": "Potassium 4.3 mmol/L — in range",
+        "why": "In range. Tracked for blood pressure and cramp management as long-run duration grows.",
+        "food": "Potatoes, beans, bananas, leafy greens."
+      },
+      {
+        "key": "dietarySodium",
+        "name": "Sodium",
+        "unit": "mg",
+        "target": 2300,
+        "direction": "neutral",
+        "priority": 12,
+        "marker": "Sodium 139 mmol/L — in range",
+        "why": "Deliberately neutral rather than capped. Standard advice is to limit sodium, but you are about to sweat heavily for hours at a time and the fuelling plan calls for 300-800 mg per hour during long runs. Judge this against your training day, not a generic ceiling.",
+        "food": "Race and long-run intake is separate from daily baseline — do not confuse the two."
+      }
+    ],
+    "not_trackable": {
+      "what": "Omega-3 (EPA + DHA)",
+      "marker": "Omega-3 Index 3.4% (goal 8) · AA/EPA 31.6 (goal 5) · Omega 6:3 ratio 13.7 (goal 3)",
+      "why": "Your own panel note calls this 'the biggest easy win on the panel', and it is — three separate markers all point at it. But Apple Health has NO omega-3 identifier, so it cannot be charted here no matter which app you log in. It stays with your supplement stack and gets re-checked by blood test, not daily tracking."
+    },
+    "caveat": "These are nutrition targets reasoned from your lab values using general clinical guidance. They are not a prescription, and I am not your physician. Numbers this far out of range — particularly the lipid panel — warrant a doctor's plan; use this to execute and track that plan, not to replace it."
   }
 }

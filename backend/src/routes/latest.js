@@ -38,4 +38,28 @@ router.get("/v1/healthkit-latest", async (req, res) => {
   }
 });
 
+// GET /v1/healthkit-history?days=30
+// Same read-only token and CORS treatment as -latest. Serves the daily series
+// the dashboard charts nutrition from; without it the dashboard could only ever
+// show a single latest value, which is useless for "am I hitting fiber daily".
+router.options("/v1/healthkit-history", (req, res) => {
+  res.set({
+    "Access-Control-Allow-Origin": DASHBOARD_ORIGIN,
+    "Access-Control-Allow-Methods": "GET",
+    "Access-Control-Allow-Headers": "Authorization",
+  });
+  res.status(204).end();
+});
+
+router.get("/v1/healthkit-history", async (req, res) => {
+  res.set("Access-Control-Allow-Origin", DASHBOARD_ORIGIN);
+  try {
+    const days = await firestore.getRecentDays(req.query.days);
+    res.status(200).json({ days });
+  } catch (err) {
+    console.error("healthkit-history: Firestore read failed", { message: err.message });
+    res.status(502).json({ error: "storage read failed" });
+  }
+});
+
 module.exports = router;
