@@ -461,12 +461,35 @@
   .tr-link:hover{background:var(--steel);color:#fff}
   .tr-sub{font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:.76rem;color:var(--steel);margin:18px 0 6px}
   .tr-subnote{font-size:.84rem;color:#3a4049;line-height:1.45;margin-bottom:8px}
-  .tr-mini{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px}
-  .tr-minicard{border:1px solid var(--line);border-radius:4px;background:var(--card);padding:10px 12px}
   .today-trail{font-size:.82rem;color:#cfe0f5;background:rgba(74,126,199,.16);border-left:2px solid var(--steel);border-radius:3px;padding:7px 10px;margin-top:8px;line-height:1.4}
   .today-trail b{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.05em;font-size:.72rem;color:#8fb4e8;margin-right:6px}
   .today-trail a{color:#dce8f8;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:2px}
   .today-trail a:hover{color:#fff}
+  /* short runs */
+  .sr-sess{border:1px solid var(--line);border-radius:4px;background:var(--card);margin-bottom:10px;overflow:hidden}
+  .sr-sess.sr-now{border-color:var(--amber);box-shadow:inset 0 0 0 1px rgba(200,144,49,.3)}
+  .sr-sess>summary{cursor:pointer;list-style:none;padding:11px 14px;display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
+  .sr-sess>summary::-webkit-details-marker{display:none}
+  .sr-sess>summary:hover{background:var(--hair)}
+  .sr-day{font-family:'Bebas Neue',sans-serif;font-size:1.05rem;color:#fff;background:var(--steel);border-radius:3px;padding:1px 8px;letter-spacing:.04em}
+  .sr-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:var(--navy);letter-spacing:.02em}
+  .sr-dist{font-family:'Bebas Neue',sans-serif;font-size:1.05rem;color:var(--navy)}
+  .sr-when{font-size:.76rem;color:var(--muted);margin-left:auto}
+  .sr-body{padding:0 14px 12px}
+  .sr-need{font-size:.86rem;color:#2f4a6b;line-height:1.5;background:rgba(74,126,199,.08);border-left:3px solid var(--steel);border-radius:3px;padding:9px 12px;margin-bottom:7px}
+  .sr-avoid{font-size:.84rem;color:#8a4a3a;line-height:1.45;background:rgba(190,80,60,.07);border-left:3px solid #b4573f;border-radius:3px;padding:9px 12px;margin-bottom:4px}
+  .sr-avoid b,.sr-need b{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.05em;font-size:.72rem;margin-right:6px}
+  .sr-need b{color:var(--steel)}
+  .sr-avoid b{color:#b4573f}
+  .sr-opt{border-top:1px solid var(--hair);padding:10px 0}
+  .sr-opt-h{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:2px}
+  .sr-tag{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.68rem;border-radius:3px;padding:2px 7px;flex:0 0 auto}
+  .sr-tag-quick{background:var(--green);color:#fff}
+  .sr-tag-trail{background:var(--steel);color:#fff}
+  .sr-tag-new{background:var(--amber);color:#fff}
+  .sr-how{font-size:.82rem;color:#7a5a1e;background:rgba(200,144,49,.09);border-radius:3px;padding:6px 9px;line-height:1.4;margin-top:4px}
+  .sr-how b{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.05em;font-size:.7rem;color:#8a5f14;margin-right:5px}
+  .sr-rot{font-size:.84rem;color:#3a4049;line-height:1.45;margin-bottom:14px;padding:9px 12px;border:1px dashed var(--line);border-radius:4px}
   .race-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
   .race-links a{font-family:'Barlow Condensed',sans-serif;font-size:.82rem;letter-spacing:.02em;color:var(--steel);text-decoration:none;border:1px solid var(--steel);border-radius:3px;padding:4px 10px}
   .race-links a:hover{background:var(--steel);color:#fff}
@@ -1477,6 +1500,55 @@ function render(d){
     </section>`;
   }
 
+  // Short runs repeat weekly, so this is a rotating menu keyed to session type
+  // rather than a bespoke pick per week. Each Wednesday workout gets its own
+  // entry because hill repeats, tempo, strides and race-pace want different
+  // ground — a single "Wednesday" list would be wrong for most weeks.
+  function shortRunsHtml(d, curWk){
+    const sr=d.short_runs;
+    if(!sr || !Array.isArray(sr.sessions)) return '';
+    const tagClass=t=>'sr-tag-'+String(t||'').toLowerCase().replace(/[^a-z]/g,'');
+    const opt=o=>`
+      <div class="sr-opt">
+        <div class="sr-opt-h"><span class="sr-tag ${tagClass(o.tag)}">${o.tag}</span>
+          <span class="tr-name">${o.name}</span></div>
+        <div class="tr-park">${o.park}</div>
+        <div class="tr-stats">
+          <span class="tr-stat"><b>${o.miles}</b> mi</span>
+          <span class="tr-stat"><b>${o.vert_ft.toLocaleString()}</b> ft vert</span>
+          ${o.trailhead_mi!=null?`<span class="tr-stat"><b>${o.trailhead_mi}</b> mi to trailhead</span>`:'<span class="tr-stat">paved</span>'}
+          <span class="tr-stat">${o.route_type}</span>
+          <span class="tr-stat">${o.difficulty}</span>
+          <span class="tr-stat">★ <b>${o.rating}</b></span>
+        </div>
+        <div class="tr-why">${o.why}</div>
+        ${o.how?`<div class="sr-how"><b>How to run it</b>${o.how}</div>`:''}
+        <a class="tr-link" href="${o.url}" target="_blank" rel="noopener">AllTrails ↗</a>
+      </div>`;
+    const sess=s=>{
+      const active = curWk!==null && Array.isArray(s.weeks) && s.weeks.indexOf(curWk)!==-1;
+      return `<details class="sr-sess${active?' sr-now':''}"${active?' open':''}>
+        <summary>
+          <span class="sr-day">${s.day}</span>
+          <span class="sr-title">${s.title}</span>
+          <span class="sr-dist">${s.distance}</span>
+          <span class="sr-when">${s.when}</span>
+        </summary>
+        <div class="sr-body">
+          ${s.need?`<div class="sr-need"><b>Needs</b>${s.need}</div>`:''}
+          ${s.avoid?`<div class="sr-avoid"><b>Avoid</b>${s.avoid}</div>`:''}
+          ${s.options.map(opt).join('')}
+        </div>
+      </details>`;
+    };
+    return `
+      <div class="tr-sub">Short runs &mdash; Monday, Tuesday, Wednesday</div>
+      <div class="tr-subnote">${sr.principle||''}</div>
+      ${sr.rotation?`<div class="sr-rot">${sr.rotation}</div>`:''}
+      ${sr.sessions.map(sess).join('')}
+      ${sr.caveat?`<div class="tr-caveat">${sr.caveat}</div>`:''}`;
+  }
+
   // ===== LONG-RUN TRAILS =====
   // Options are pinned to a training week, so the "up next" card resolves the
   // same way the Today card does: by the log's week_start dates, not by a
@@ -1516,19 +1588,6 @@ function render(d){
         <div class="tr-body">${w.options.map(optHtml).join('')}</div>
       </details>`;
 
-    const mini=(list)=>`<div class="tr-mini">${list.map(o=>`
-      <div class="tr-minicard">
-        <div class="tr-name">${o.name}</div>
-        <div class="tr-park">${o.park}</div>
-        <div class="tr-stats">
-          <span class="tr-stat"><b>${o.miles}</b> mi</span>
-          <span class="tr-stat"><b>${o.vert_ft.toLocaleString()}</b> ft</span>
-          ${o.trailhead_mi!=null?`<span class="tr-stat"><b>${o.trailhead_mi}</b> mi away</span>`:''}
-        </div>
-        <div class="tr-why">${o.why}</div>
-        <a class="tr-link" href="${o.url}" target="_blank" rel="noopener">AllTrails ↗</a>
-      </div>`).join('')}</div>`;
-
     trHtml=`
     <section id="trails">
       <div class="sec-head"><div class="sec-title">${tr.headline||'Long-Run Trails'}</div>
@@ -1546,10 +1605,7 @@ function render(d){
       ${tr.terrain_note?`<div class="tr-terrain">${tr.terrain_note}</div>`:''}
       ${tr.caveat?`<div class="tr-caveat">${tr.caveat}</div>`:''}
       ${tr.weeks.map(wkHtml).join('')}
-      ${tr.back_to_back?`<div class="tr-sub">Monday back-to-back &mdash; keep it flat</div>
-        <div class="tr-subnote">${tr.back_to_back.note}</div>${mini(tr.back_to_back.options)}`:''}
-      ${tr.hill_venue?`<div class="tr-sub">Wednesday hill repeats</div>
-        <div class="tr-subnote">${tr.hill_venue.note}</div>${mini(tr.hill_venue.options)}`:''}
+      ${shortRunsHtml(d, curWk)}
     </section>`;
   }
 
@@ -1648,18 +1704,32 @@ function currentTrainingWeek(log, d){
   return wk ? wk.week : null;
 }
 
-// On the week's longest run, surface the nearest matching trail rather than
-// making him go find the section. Silent on every other day.
-function trailPickHtml(d, wk, day){
-  if(!d.trails || !Array.isArray(d.trails.weeks) || !wk) return '';
+// Surface a matching trail on any running day rather than making him go find
+// the section: the long run gets that week's top pick, a short run gets its
+// session's Quick option — the one that means the run still happens when the
+// day is tight. Silent on non-running days.
+function trailLine(label, o, note){
+  return `<div class="today-trail"><b>${label}</b>${o.name} &mdash; ${o.miles} mi, ${o.vert_ft.toLocaleString()} ft`
+    + (o.trailhead_mi!=null?`, ${o.trailhead_mi} mi out`:'')
+    + `. <a href="#trails">${note}</a></div>`;
+}
+function trailPickHtml(d, wk, day, dowKey){
+  if(!wk) return '';
   const mi = day.mileage||0;
   if(mi<=0) return '';
   const longest = Math.max(...Object.values(weekDays(wk)||{}).map(x=>x.mileage||0));
-  if(mi < longest) return '';
-  const plan = d.trails.weeks.find(w=>w.week===wk.week);
-  const o = plan && plan.options && plan.options[0];
-  if(!o) return '';
-  return `<div class="today-trail"><b>Trail</b>${o.name} &mdash; ${o.miles} mi, ${o.vert_ft.toLocaleString()} ft${o.trailhead_mi!=null?`, ${o.trailhead_mi} mi out`:''}. <a href="#trails">all 3 options →</a></div>`;
+  // The week's longest run — that's the one the long-run planner covers.
+  if(mi >= longest){
+    const plan = (d.trails&&d.trails.weeks||[]).find(w=>w.week===wk.week);
+    const o = plan && plan.options && plan.options[0];
+    return o ? trailLine('Trail', o, 'all 3 options →') : '';
+  }
+  // Otherwise it's a short run: find the session type covering this day+week.
+  const sess = (d.short_runs&&d.short_runs.sessions||[]).find(
+    s => s.day===dowKey && Array.isArray(s.weeks) && s.weeks.indexOf(wk.week)!==-1);
+  if(!sess) return '';
+  const q = (sess.options||[]).find(o=>o.tag==='Quick') || (sess.options||[])[0];
+  return q ? trailLine(sess.title, q, 'other options →') : '';
 }
 
 function buildTodayCard(d, log, project50, scoreClass){
@@ -1684,7 +1754,7 @@ function buildTodayCard(d, log, project50, scoreClass){
           <ul class="today-plan">${items}</ul>
           ${day.recovery?`<div class="today-recovery">Recovery: ${linkifyRecovery(day.recovery)}</div>`:''}
           ${(wk.carbs_per_hr_target && (day.mileage||0)>0)?`<div class="today-fuel"><b>Fuel</b>${wk.carbs_per_hr_target} g carb/hr on anything over an hour — start at 30 min. <a href="#fueling">gut plan →</a></div>`:''}
-          ${trailPickHtml(d, wk, day)}
+          ${trailPickHtml(d, wk, day, dowKey)}
           <a class="today-cta" href="workout.html">Log this session →</a>
         </div>`;
     }

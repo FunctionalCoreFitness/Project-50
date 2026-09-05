@@ -3889,81 +3889,372 @@
           }
         ]
       }
-    ],
-    "back_to_back": {
-      "note": "Monday's 3–4 mi on tired legs (weeks 17+) wants flat and close. Do not add climbing to these.",
-      "options": [
-        {
-          "name": "Ravenswood Loop",
-          "park": "Ravenswood Open Space",
-          "miles": 4.5,
-          "vert_ft": 22,
-          "trailhead_mi": 8.5,
-          "difficulty": "Easy",
-          "route_type": "Loop",
-          "rating": 3.8,
-          "url": "https://www.alltrails.com/trail/us/california/ravenswood-loop",
-          "why": "22 ft of gain across 4.5 mi — as flat as it gets.",
-          "adjust": "Right distance as-is."
-        },
-        {
-          "name": "Bedwell Bayfront Park",
-          "park": "Bedwell Bayfront Park",
-          "miles": 3.4,
-          "vert_ft": 229,
-          "trailhead_mi": 6.2,
-          "difficulty": "Easy",
-          "route_type": "Loop",
-          "rating": 4.3,
-          "url": "https://www.alltrails.com/trail/us/california/bedwell-bayfront-park-trail",
-          "why": "Flat bay loop, partially paved, easy to cut short.",
-          "adjust": "Right distance as-is."
-        },
-        {
-          "name": "Hallmark Park Loop",
-          "park": "Hallmark Park",
-          "miles": 3.4,
-          "vert_ft": 272,
-          "trailhead_mi": 2.1,
-          "difficulty": "Easy",
-          "route_type": "Loop",
-          "rating": 4.5,
-          "url": "https://www.alltrails.com/trail/us/california/hallmark-park-loop",
-          "why": "Closest easy option to the house.",
-          "adjust": "Right distance as-is."
-        }
-      ]
-    },
-    "hill_venue": {
-      "note": "Wednesday hill repeats need one steep pitch you can run over and over, not a long loop.",
-      "options": [
-        {
-          "name": "Dick Bishop, Hassler, Dusky-Footed Woodrat, and Polly Geraci Loop",
-          "park": "Pulgas Ridge Open Space",
-          "miles": 5.5,
-          "vert_ft": 1010,
-          "trailhead_mi": 3.4,
-          "difficulty": "Moderate",
-          "route_type": "Loop",
-          "rating": 4.6,
-          "url": "https://www.alltrails.com/trail/us/california/dick-bishop-hassler-dusky-footed-woodrat-and-polly-geraci-loop",
-          "why": "1,010 ft in 5.5 mi, 3.4 mi away. Best repeat gradient close to home.",
-          "adjust": "Use the lower climb as your repeat pitch; jog down as recovery."
-        },
-        {
-          "name": "John S Brooks Memorial Trail Loop",
-          "park": "Water Dog Lake Open Space",
-          "miles": 5.6,
-          "vert_ft": 941,
-          "trailhead_mi": 2.3,
-          "difficulty": "Moderate",
-          "route_type": "Loop",
-          "rating": 4.6,
-          "url": "https://www.alltrails.com/trail/us/california/john-s-brooks-memorial-trail",
-          "why": "Closest hill to the house. Fine when time is short.",
-          "adjust": "Repeat the steep lakeside climb."
-        }
-      ]
-    }
+    ]
+  },
+  "short_runs": {
+    "headline": "Short-Run Options",
+    "principle": "The Monday, Tuesday and Wednesday runs are three of your four running days, and they each want different ground — Monday flat, Tuesday gentle, Wednesday whatever that week's workout needs. Every session below gives you a Quick option near the house for days you're behind, a Trail option when you want dirt, and something New when the routine gets stale.",
+    "rotation": "Variety is the point, but not at the cost of the session. Rotate the Trail and New options week to week; keep the Quick one as the fallback that means the run still happens. A run done on the boring loop beats a run skipped because the good trail was an hour away.",
+    "caveat": "AllTrails figures. Trailhead distance is straight-line from the San Mateo / Redwood City midpoint, not drive time. Several of these are shared with mountain bikers — Water Dog and Big Canyon especially — so expect company on weekday evenings.",
+    "sessions": [
+      {
+        "key": "mon",
+        "day": "Mon",
+        "title": "Back-to-back easy",
+        "when": "Weeks 17–22",
+        "distance": "3–4 mi",
+        "weeks": [
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "need": "Flat. The tired legs from yesterday's long run ARE the stimulus — you don't need terrain to make this hard, and adding climbing here just steals from Tuesday.",
+        "avoid": "Sustained climbing, technical footing, and any temptation to 'make it count'. Deliberately slow is the instruction.",
+        "options": [
+          {
+            "tag": "Quick",
+            "name": "Hallmark Park Loop",
+            "park": "Hallmark Park",
+            "miles": 3.4,
+            "vert_ft": 272,
+            "trailhead_mi": 2.1,
+            "difficulty": "Easy",
+            "route_type": "Loop",
+            "rating": 4.5,
+            "url": "https://www.alltrails.com/trail/us/california/hallmark-park-loop",
+            "why": "Closest easy loop to the house. Two miles out, in and done inside an hour.",
+            "how": "Right distance as-is. Add half a lap on the 4 mi weeks."
+          },
+          {
+            "tag": "Trail",
+            "name": "John Brooks Trail and Lake Loop",
+            "park": "Water Dog Lake Open Space",
+            "miles": 3.0,
+            "vert_ft": 462,
+            "trailhead_mi": 1.41,
+            "difficulty": "Easy",
+            "route_type": "Loop",
+            "rating": 4.6,
+            "url": "https://www.alltrails.com/trail/us/california/john-brooks-trail-and-lake-loop-trail",
+            "why": "Nearest real trail on this whole list — 1.4 mi out. Dirt underfoot without the drive.",
+            "how": "Add a half-mile out-and-back from the lot to reach 3.5–4."
+          },
+          {
+            "tag": "New",
+            "name": "Ravenswood Loop",
+            "park": "Ravenswood Open Space",
+            "miles": 4.5,
+            "vert_ft": 22,
+            "trailhead_mi": 8.5,
+            "difficulty": "Easy",
+            "route_type": "Loop",
+            "rating": 3.8,
+            "url": "https://www.alltrails.com/trail/us/california/ravenswood-loop",
+            "why": "22 ft of gain across 4.5 mi — nothing else near you is this flat. Wide-open bay levee, a total change of scene from the redwoods.",
+            "how": "Right distance as-is; cut it short anywhere."
+          }
+        ]
+      },
+      {
+        "key": "tue",
+        "day": "Tue",
+        "title": "Zone 2 easy",
+        "when": "Every week",
+        "distance": "3.5–5 mi",
+        "weeks": [
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "need": "Gentle rolling. Holding HR under the ceiling is the entire point of this run, and a steep climb spikes it — which quietly turns your easy day into a second hard day.",
+        "avoid": "Anything you'd describe as a climb. If you're walking to keep HR down, the trail is wrong for this session, not you.",
+        "options": [
+          {
+            "tag": "Quick",
+            "name": "Lake Road and John Brooks Trail Loop",
+            "park": "Water Dog Lake Open Space",
+            "miles": 4.1,
+            "vert_ft": 626,
+            "trailhead_mi": 1.41,
+            "difficulty": "Moderate",
+            "route_type": "Loop",
+            "rating": 4.6,
+            "url": "https://www.alltrails.com/trail/us/california/lake-road-and-john-brooks-trail-loop",
+            "why": "Closest trail loop you have, and almost exactly the Tuesday distance. This is the default when the day is tight.",
+            "how": "4.1 mi as-is. Trim the lake spur for 3.5, add it twice for 5."
+          },
+          {
+            "tag": "Trail",
+            "name": "Edgewood, Serpentine, Franciscan and Baywood Glen Trail Loop",
+            "park": "Edgewood Park & Nature Preserve",
+            "miles": 4.0,
+            "vert_ft": 616,
+            "trailhead_mi": 3.51,
+            "difficulty": "Moderate",
+            "route_type": "Loop",
+            "rating": 4.7,
+            "url": "https://www.alltrails.com/trail/us/california/edgewood-serpentine-franciscan-and-baywood-glen-trail-loop",
+            "why": "Open serpentine grassland — completely different feel from the redwood singletrack you'll spend Sundays in. Rated 4.7.",
+            "how": "4.0 mi as-is; the Sylvan loop next door adds 2.6 if you want 5+."
+          },
+          {
+            "tag": "New",
+            "name": "Crystal Springs to Pulgas Water Temple",
+            "park": "SF Peninsula Watershed",
+            "miles": 5.0,
+            "vert_ft": 429,
+            "trailhead_mi": 3.5,
+            "difficulty": "Moderate",
+            "route_type": "Out & back",
+            "rating": 4.0,
+            "url": "https://www.alltrails.com/trail/us/california/crystal-springs-to-pulgas-water-temple",
+            "why": "Gentlest grade of anything at this distance — 429 ft across 5 mi. The easiest place to actually hold Zone 2 rather than fight it.",
+            "how": "Out-and-back, so turn around whenever the distance says."
+          }
+        ]
+      },
+      {
+        "key": "wed-hills",
+        "day": "Wed",
+        "title": "Hill repeats",
+        "when": "Weeks 13, 14, 15, 17, 18, 21",
+        "distance": "4.5–6 mi",
+        "weeks": [
+          13,
+          14,
+          15,
+          17,
+          18,
+          21
+        ],
+        "need": "One climb you can run five to eight times. A scenic loop is the wrong shape for this — you want a single pitch with a runnable descent, not a tour.",
+        "avoid": "Loops where the climb only comes once. You'll end up jogging a lot of flat between efforts and doing half the work.",
+        "options": [
+          {
+            "tag": "Quick",
+            "name": "Big Canyon Trail",
+            "park": "Big Canyon Park",
+            "miles": 4.0,
+            "vert_ft": 944,
+            "trailhead_mi": 2.76,
+            "difficulty": "Moderate",
+            "route_type": "Out & back",
+            "rating": 4.4,
+            "url": "https://www.alltrails.com/trail/us/california/big-canyon-trail",
+            "why": "944 ft packed into 4 mi — the steepest thing within 3 miles of your door, and out-and-back so the repeat structure is built in.",
+            "how": "Run the climb, jog back down, repeat. Stop at the week's rep count rather than the full distance."
+          },
+          {
+            "tag": "Trail",
+            "name": "Dick Bishop, Hassler, Dusky-Footed Woodrat, and Polly Geraci Loop",
+            "park": "Pulgas Ridge Open Space",
+            "miles": 5.5,
+            "vert_ft": 1010,
+            "trailhead_mi": 3.4,
+            "difficulty": "Moderate",
+            "route_type": "Loop",
+            "rating": 4.6,
+            "url": "https://www.alltrails.com/trail/us/california/dick-bishop-hassler-dusky-footed-woodrat-and-polly-geraci-loop",
+            "why": "Best sustained repeat gradient close to home — 1,010 ft, consistent pitch, no technical footing to think about while you're breathing hard.",
+            "how": "Use the lower climb as the repeat; jog down as recovery. Warm up on the flat section first."
+          },
+          {
+            "tag": "New",
+            "name": "Chinquapin Trail",
+            "park": "Huddart County Park",
+            "miles": 5.1,
+            "vert_ft": 1269,
+            "trailhead_mi": 5.7,
+            "difficulty": "Moderate",
+            "route_type": "Loop",
+            "rating": 4.6,
+            "url": "https://www.alltrails.com/trail/us/california/chinquapin-trail",
+            "why": "Redwood singletrack climbing — race-like footing while you do hard work. Worth the extra drive on the bigger rep weeks.",
+            "how": "Best on the 90s and 2–3 min rep weeks where you want a longer sustained pitch."
+          }
+        ]
+      },
+      {
+        "key": "wed-tempo",
+        "day": "Wed",
+        "title": "Tempo on rolling trail",
+        "when": "Weeks 16, 19",
+        "distance": "4–5 mi",
+        "weeks": [
+          16,
+          19
+        ],
+        "need": "Undulating and runnable, so you can hold one steady comfortably-hard effort. Tempo means continuous — every steep pitch that forces a walk break breaks the session.",
+        "avoid": "Real climbing. If you can't hold the effort through the terrain, it's a hill workout wearing a tempo costume.",
+        "options": [
+          {
+            "tag": "Quick",
+            "name": "Hallmark Park Loop",
+            "park": "Hallmark Park",
+            "miles": 3.4,
+            "vert_ft": 272,
+            "trailhead_mi": 2.1,
+            "difficulty": "Easy",
+            "route_type": "Loop",
+            "rating": 4.5,
+            "url": "https://www.alltrails.com/trail/us/california/hallmark-park-loop",
+            "why": "Gentle enough to hold a real tempo pace, and close enough that the whole session fits a lunch break.",
+            "how": "Warm up a lap, tempo the second, cool down. Add a partial lap for 4–5 mi."
+          },
+          {
+            "tag": "Trail",
+            "name": "Serpentine Trail",
+            "park": "Edgewood Park & Nature Preserve",
+            "miles": 3.9,
+            "vert_ft": 672,
+            "trailhead_mi": 3.51,
+            "difficulty": "Moderate",
+            "route_type": "Loop",
+            "rating": 4.7,
+            "url": "https://www.alltrails.com/trail/us/california/serpentine-trail",
+            "why": "Rolling open grassland with good rhythm — climbs are short enough to run through rather than survive. Rated 4.7.",
+            "how": "Warm up 1 mi, then run the tempo block continuously through the rolling section."
+          },
+          {
+            "tag": "New",
+            "name": "Crystal Springs Trail",
+            "park": "SF Peninsula Watershed",
+            "miles": 3.9,
+            "vert_ft": 452,
+            "trailhead_mi": 4.44,
+            "difficulty": "Moderate",
+            "route_type": "Out & back",
+            "rating": 3.7,
+            "url": "https://www.alltrails.com/trail/us/california/crystal-springs-trail--2",
+            "why": "Long steady grades rather than punchy ones — the easiest terrain here to settle into a threshold effort and stay there.",
+            "how": "Out-and-back; run the tempo block on the outbound, jog home."
+          }
+        ]
+      },
+      {
+        "key": "wed-strides",
+        "day": "Wed",
+        "title": "Strides on flat",
+        "when": "Week 20",
+        "distance": "4 mi",
+        "weeks": [
+          20
+        ],
+        "need": "Genuinely flat and smooth. Strides are near-max leg speed — that's how you roll an ankle on technical trail, and this is a cutback week where the whole point is to arrive at the peak intact.",
+        "avoid": "Roots, rocks, ruts. Save the technical footing for a day you aren't sprinting.",
+        "options": [
+          {
+            "tag": "Quick",
+            "name": "Upper Crystal Springs Reservoir",
+            "park": "SF Peninsula Watershed",
+            "miles": 2.9,
+            "vert_ft": 209,
+            "trailhead_mi": 3.52,
+            "difficulty": "Easy",
+            "route_type": "Out & back",
+            "rating": 3.5,
+            "url": "https://www.alltrails.com/trail/us/california/upper-crystal-springs-reservoir",
+            "why": "Flat, smooth, wide. 209 ft across 2.9 mi and nothing underfoot to catch a toe on.",
+            "how": "Extend the out-and-back to 4 mi; do the strides on the flattest straight."
+          },
+          {
+            "tag": "Trail",
+            "name": "Lower Crystal Springs via Sawyer Camp Trail",
+            "park": "SF State Fish & Game Refuge",
+            "miles": 5.5,
+            "vert_ft": 387,
+            "trailhead_mi": null,
+            "difficulty": "Moderate",
+            "route_type": "Out & back",
+            "rating": 4.6,
+            "url": "https://www.alltrails.com/trail/us/california/sawyer-camp-trail-san-andreas-lake-to-lower-crystal-springs-reservoir",
+            "why": "Paved, near-flat, zero surprises underfoot. The safest possible surface for full-speed strides.",
+            "how": "Turn around at 2 mi. Strides on the flat paved section, easy jog between."
+          },
+          {
+            "tag": "New",
+            "name": "Ravenswood Loop",
+            "park": "Ravenswood Open Space",
+            "miles": 4.5,
+            "vert_ft": 22,
+            "trailhead_mi": 8.5,
+            "difficulty": "Easy",
+            "route_type": "Loop",
+            "rating": 3.8,
+            "url": "https://www.alltrails.com/trail/us/california/ravenswood-loop",
+            "why": "Dead flat and wide open — you can see every stride you're about to take.",
+            "how": "Right distance. Strides anywhere; it's uniformly flat."
+          }
+        ]
+      },
+      {
+        "key": "wed-racepace",
+        "day": "Wed",
+        "title": "Race-pace on race-like terrain",
+        "when": "Weeks 22, 23",
+        "distance": "3–4 mi",
+        "weeks": [
+          22,
+          23
+        ],
+        "need": "Terrain that resembles Dec 5 — rolling, runnable, real trail. This is the last sharpening before the race.",
+        "avoid": "In week 23 (race week), take the Quick option and nothing else. Nothing new the week of a race — that rule applies to trails as much as to gels.",
+        "options": [
+          {
+            "tag": "Quick",
+            "name": "Lake Road and John Brooks Trail Loop",
+            "park": "Water Dog Lake Open Space",
+            "miles": 4.1,
+            "vert_ft": 626,
+            "trailhead_mi": 1.41,
+            "difficulty": "Moderate",
+            "route_type": "Loop",
+            "rating": 4.6,
+            "url": "https://www.alltrails.com/trail/us/california/lake-road-and-john-brooks-trail-loop",
+            "why": "Real trail, 1.4 mi from home, ground you'll know cold by December. The correct race-week choice.",
+            "how": "4.1 mi as-is; trim to 3 in race week."
+          },
+          {
+            "tag": "Trail",
+            "name": "Edgewood Trail Loop",
+            "park": "Edgewood Park & Nature Preserve",
+            "miles": 3.4,
+            "vert_ft": 593,
+            "trailhead_mi": 3.51,
+            "difficulty": "Moderate",
+            "route_type": "Loop",
+            "rating": 4.7,
+            "url": "https://www.alltrails.com/trail/us/california/edgewood-trail-loop",
+            "why": "Rolling with runnable climbs — about the profile a Bay Area trail half actually throws at you. Rated 4.7.",
+            "how": "3.4 mi as-is. Week 22 only."
+          },
+          {
+            "tag": "New",
+            "name": "Sylvan Loop Trail",
+            "park": "Edgewood Park & Nature Preserve",
+            "miles": 2.6,
+            "vert_ft": 479,
+            "trailhead_mi": 3.53,
+            "difficulty": "Moderate",
+            "route_type": "Loop",
+            "rating": 4.7,
+            "url": "https://www.alltrails.com/trail/us/california/sylvan-loop-trail",
+            "why": "Short and punchy — lap it so each rep starts fresh on the same terrain.",
+            "how": "Run it once as a warm-up, then use it as the interval loop. Week 22 only."
+          }
+        ]
+      }
+    ]
   }
 }
