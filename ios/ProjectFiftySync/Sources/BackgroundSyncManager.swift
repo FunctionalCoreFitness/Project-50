@@ -1,5 +1,6 @@
 import BackgroundTasks
 import Foundation
+import os
 
 /// Background sync strategy, and what it actually guarantees:
 ///
