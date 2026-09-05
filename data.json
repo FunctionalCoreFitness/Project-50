@@ -3303,10 +3303,10 @@
     "phase": "Block 2 — Trail Half Build",
     "phase_window": "Sep 21 → Dec 13 2026",
     "current_weekly": "12–15 mi/wk",
-    "target_weekly": "25–30 mi/wk by October",
+    "target_weekly": "26.5 mi/wk at Block 2 peak (week 21)",
     "long_run_now": "5–6 mi",
-    "long_run_target": "10–13 mi by late Oct",
-    "rule": "Build the long run ~1 mi every 1–2 wks. Keep weekly volume growth near 10% — measured against the previous peak, not the cutback week, and allowing 1–2 mi steps at low volume. Every 4th week cut back ~30%.",
+    "long_run_target": "13 mi dress rehearsal, week 21",
+    "rule": "Build the long run ~1 mi every 1–2 wks. Weekly volume never grows more than 10% over the previous peak — the peak, not the cutback week, so a post-cutback rebound isn't a real jump. Every 4th week cut back ~30%.",
     "week_structure": [
       {
         "day": "Tue",
