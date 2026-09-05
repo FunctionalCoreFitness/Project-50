@@ -4501,5 +4501,108 @@
         ]
       }
     ]
+  },
+  "coaching": {
+    "headline": "Running Coaching",
+    "principle": "Three things decide whether a 48-year-old gets to a 100-mile start line intact: running easy enough on easy days, hiking climbs well rather than badly, and protecting the quads on descents. Everything below serves one of those three.",
+    "caveat": "The heart-rate numbers are calculated from your resting HR of 56 and age 48 using standard formulas. Formula-based max HR carries roughly +/-10-12 bpm of individual variation, so treat these as a starting point, not a verdict. The talk test is the primary control; HR is the cross-check. If your heart rate behaves oddly against these bands -- and a documented thyroid condition is one reason it might -- trust the talk test and raise it with your doctor rather than forcing the numbers.",
+    "zones": {
+      "basis": "Resting HR 56, age 48. Max HR estimated 174 (Tanaka, 208 - 0.7 x age). Bands via Karvonen on a heart-rate reserve of 118. MAF (180 - age) independently gives 132, which sits inside the Zone 2 band below -- two different methods agreeing is why this ceiling is trustworthy enough to train on.",
+      "talk_test": "Zone 2 means full sentences without gasping. If you can only manage short phrases you are in Zone 3, which is the most common way endurance athletes ruin an easy day. If you can sing, you are too easy -- but that costs you far less than being too hard.",
+      "ceiling": "140 bpm — the hard cap for every run labelled Easy. Walk the hills to stay under it.",
+      "bands": [
+        {
+          "zone": "Z1 — recovery",
+          "bpm": "115–126",
+          "feel": "Absurdly easy, almost strolling",
+          "use": "Monday back-to-back if the legs are hammered"
+        },
+        {
+          "zone": "Z2 — easy / aerobic",
+          "bpm": "126–138",
+          "feel": "Full sentences, nose-breathing possible",
+          "use": "Tuesday, Monday, and every long run. Most of your mileage lives here"
+        },
+        {
+          "zone": "Z3 — steady",
+          "bpm": "138–150",
+          "feel": "Short phrases only",
+          "use": "Mostly a trap. Only for tempo work on Wednesdays"
+        },
+        {
+          "zone": "Z4 — threshold",
+          "bpm": "150–162",
+          "feel": "A few words at a time",
+          "use": "Wednesday tempo and race-pace efforts"
+        },
+        {
+          "zone": "Z5 — hard",
+          "bpm": "162–174",
+          "feel": "No talking",
+          "use": "Hill repeat efforts only. Never on an easy day"
+        }
+      ]
+    },
+    "skills": [
+      {
+        "name": "Power hiking — the ultra skill you don't have yet",
+        "cue": "Hands on quads, push down on each step. Short steps, tall chest, eyes 10 ft ahead. Drive with the arms.",
+        "why": "From the 50K up you will walk every steep climb, and hiking well is a trainable skill that is roughly as fast as running the same grade at a fraction of the cost. Most first-time ultrarunners lose more time hiking badly than they ever gain by running climbs.",
+        "drill": "On any climb over ~10% grade, hike it deliberately even when you could run. Practise on the Wednesday hill sessions and every Sunday climb."
+      },
+      {
+        "name": "Downhill — what actually ends trail races",
+        "cue": "Quick light steps, let gravity do it, lean slightly INTO the hill not back. Never brake with a stiff leg.",
+        "why": "Braking on descents is eccentric quad loading, and that is the damage that shows up at hour six as legs that will not run any more. It is the single most under-trained skill in trail running.",
+        "drill": "The long descents at Huddart and Wunderlich are the training ground. Start conservative — downhill damage accumulates silently and you feel it two days later."
+      },
+      {
+        "name": "Cadence",
+        "cue": "Aim ~170–180 steps/min. Count right-foot strikes for 30 s and double it, then double again.",
+        "why": "A low cadence means long strides, which means landing ahead of your body and braking on every step. Raising cadence is the cheapest form fix there is and reduces impact load per step.",
+        "drill": "If you are under 160, add 5% at a time, not all at once. A metronome app or 170+ bpm playlist works."
+      },
+      {
+        "name": "Posture and lean",
+        "cue": "Tall through the chest, lean from the ANKLES not the waist. Head over shoulders over hips.",
+        "why": "Bending at the waist closes the diaphragm and cuts breathing efficiency exactly when you need it — which is why form collapses on climbs and late in long runs.",
+        "drill": "Every 10 minutes on a long run, run a check: head, shoulders, hips, hands. It takes three seconds."
+      },
+      {
+        "name": "Arms and hands",
+        "cue": "Elbows ~90°, hands relaxed as if holding a crisp you don't want to crush. Swing front-to-back, not across.",
+        "why": "Clenched hands send tension up into the shoulders and neck, and cross-body arm swing rotates the torso and wastes energy over hours.",
+        "drill": "Every posture check, drop the shoulders and shake the hands out once."
+      },
+      {
+        "name": "Foot strike and landing",
+        "cue": "Land under your hips, not out in front. Light and quiet — if you can hear yourself slapping, you're overstriding.",
+        "why": "Where you land matters far more than which part of the foot lands. Landing ahead of the body brakes; landing under it rolls you forward.",
+        "drill": "Fix it with cadence rather than by consciously changing your foot. Cadence corrects overstriding on its own."
+      },
+      {
+        "name": "Eyes and line choice",
+        "cue": "Scan 10–15 ft ahead on trail, not at your feet. Pick the line before you get there.",
+        "why": "Looking straight down means reacting to every root instead of planning around it, and it drops your head, which drops your posture.",
+        "drill": "On technical ground at El Corte de Madera, deliberately lift the gaze. It feels wrong for a mile, then it feels obvious."
+      },
+      {
+        "name": "Uphill running",
+        "cue": "Shorten the stride, keep the cadence, let the pace drop. Same effort, not same speed.",
+        "why": "Trying to hold pace uphill spikes HR into Z4 on what is supposed to be an easy run — the commonest way an easy day quietly becomes a hard one.",
+        "drill": "Watch HR on the Tuesday climbs. If it crosses 140, hike until it comes back down. That is the session working, not you failing."
+      }
+    ],
+    "warmup": {
+      "before": "10 min easy jog, then 4 x 20 s strides building to fast-but-relaxed with a full walk-back. Required before Wednesday quality; optional before easy runs.",
+      "after": "5 min walk, then the mobility flow already in the plan. On long-run days get carbs and protein in within 30–60 min — that window matters more as you age."
+    },
+    "stop_signals": [
+      "Sharp pain — not soreness. Sharp means stop the run, today, no negotiation.",
+      "Pain that changes your gait. Limping to finish a session buys one workout and costs several weeks.",
+      "Resting HR up more than ~7 bpm from your 56 baseline for two mornings running — you are under-recovered or getting sick. Take the easy day, or take the day off.",
+      "HRV well below your ~42 ms weekly average alongside feeling flat. One low reading is noise; a trend is data.",
+      "Any chest symptom, unusual breathlessness, or your heart rate refusing to come down — stop and get it looked at. At 48, with a documented thyroid condition, that is not a run to push through."
+    ]
   }
 }

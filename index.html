@@ -421,6 +421,34 @@
   .tb-check{list-style:none;margin:0;padding:0}
   .tb-check li{font-size:.84rem;color:#3a4049;line-height:1.45;padding:4px 0 4px 18px;position:relative}
   .tb-check li:before{content:'\25A2';position:absolute;left:2px;color:var(--steel)}
+  /* coaching */
+  .co-lede{font-size:.92rem;color:#3a4049;line-height:1.55;margin-bottom:12px}
+  .co-caveat{font-size:.8rem;font-style:italic;color:var(--muted);line-height:1.45;margin-bottom:16px;padding:9px 12px;border:1px dashed var(--line);border-radius:4px}
+  .co-ceiling{background:rgba(74,126,199,.10);border-left:3px solid var(--steel);border-radius:3px;padding:12px 14px;margin-bottom:12px}
+  .co-ceiling-h{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:.74rem;color:var(--steel)}
+  .co-ceiling-v{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--navy);letter-spacing:.01em;margin:2px 0}
+  .co-ceiling-n{font-size:.84rem;color:#2f4a6b;line-height:1.45}
+  .co-zt{width:100%;border-collapse:collapse;font-size:.85rem;margin-bottom:10px}
+  .co-zt th{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.05em;font-size:.72rem;color:var(--steel);text-align:left;padding:5px 8px;border-bottom:1px solid var(--line)}
+  .co-zt td{padding:6px 8px;border-bottom:1px solid var(--hair);color:#3a4049;line-height:1.4;vertical-align:top}
+  .co-zt td.co-bpm{font-family:'Bebas Neue',sans-serif;font-size:1.05rem;color:var(--navy);white-space:nowrap}
+  .co-zt tr.co-z2 td{background:rgba(74,126,199,.07)}
+  .co-talk{font-size:.85rem;color:#3a4049;line-height:1.5;background:var(--hair);border-radius:3px;padding:9px 12px;margin-bottom:6px}
+  .co-skill{border:1px solid var(--line);border-radius:4px;background:var(--card);padding:12px 14px;margin-bottom:8px}
+  .co-sn{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:var(--navy);letter-spacing:.02em;margin-bottom:5px}
+  .co-cue{font-size:.88rem;color:#2f4a6b;font-weight:600;line-height:1.45;background:rgba(74,126,199,.08);border-radius:3px;padding:7px 10px;margin-bottom:6px}
+  .co-why{font-size:.85rem;color:#3a4049;line-height:1.5;margin-bottom:5px}
+  .co-drill{font-size:.83rem;color:#7a5a1e;background:rgba(200,144,49,.09);border-radius:3px;padding:6px 10px;line-height:1.4}
+  .co-drill b{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.05em;font-size:.7rem;color:#8a5f14;margin-right:5px}
+  .co-sub{font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:.76rem;color:var(--steel);margin:18px 0 6px}
+  .co-wu{display:grid;grid-template-columns:110px 1fr;gap:2px 14px;font-size:.86rem;line-height:1.5}
+  @media(max-width:600px){.co-wu{grid-template-columns:1fr}}
+  .co-wu-k{font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-size:.74rem;color:var(--steel);padding:7px 0}
+  .co-wu-v{color:#3a4049;padding:7px 0;border-bottom:1px solid var(--hair)}
+  .co-stop{list-style:none;margin:0;padding:0}
+  .co-stop li{font-size:.86rem;color:#3a4049;line-height:1.5;padding:8px 0 8px 22px;border-bottom:1px solid var(--hair);position:relative}
+  .co-stop li:last-child{border-bottom:none}
+  .co-stop li:before{content:'\26A0';position:absolute;left:2px;color:#b4573f}
   .race-goal{background:rgba(74,126,199,.08);border-left:3px solid var(--steel);border-radius:3px;padding:9px 12px;font-size:.88rem;color:#2f4a6b;line-height:1.45;margin:10px 0}
   .race-teaches{font-size:.84rem;font-style:italic;color:var(--muted);margin-top:10px;padding:9px 12px;border:1px dashed var(--line);border-radius:4px;line-height:1.45}
   /* fueling / gut training */
@@ -995,6 +1023,7 @@ function render(d){
     (d.mileage?`<a href="#mileage">Mileage</a>`:'') +
     (d.fueling?`<a href="#fueling">Fueling</a>`:'') +
     (d.trails?`<a href="#trails">Trails</a>`:'') +
+    (d.coaching?`<a href="#coaching">Coaching</a>`:'') +
     (d.locations?`<a href="#locations">Sets</a>`:'') +
     (d.wins?`<a href="#wins">Wins</a>`:'') +
     (d.protocol?`<a href="#protocol">Protocol</a>`:'') +
@@ -1008,6 +1037,7 @@ function render(d){
     `<a href="#p50-score">Score</a>` +
     `<a href="#fueling">Fuel</a>` +
     `<a href="#trails">Trails</a>` +
+    `<a href="#coaching">Form</a>` +
     `<a href="workout.html">Log</a>` +
     `<a href="update.html" class="qb-update">Update</a>`;
 
@@ -1685,10 +1715,48 @@ function render(d){
     </section>`;
   }
 
+  // ===== COACHING =====
+  const co=d.coaching;
+  let coHtml='';
+  if(co){
+    const z=co.zones||{};
+    const rows=(z.bands||[]).map(b=>`<tr class="${/Z2/.test(b.zone)?'co-z2':''}">
+      <td>${b.zone}</td><td class="co-bpm">${b.bpm}</td><td>${b.feel}</td><td>${b.use}</td></tr>`).join('');
+    const skills=(co.skills||[]).map(s=>`<div class="co-skill">
+      <div class="co-sn">${s.name}</div>
+      <div class="co-cue">${s.cue}</div>
+      <div class="co-why">${s.why}</div>
+      ${s.drill?`<div class="co-drill"><b>Practise</b>${s.drill}</div>`:''}
+    </div>`).join('');
+    const wu=co.warmup||{};
+    coHtml=`
+    <section id="coaching">
+      <div class="sec-head"><div class="sec-title">${co.headline||'Coaching'}</div>
+        <div class="sec-meta">Effort, form and the two ultra skills<br>Zones from your own resting HR</div></div>
+      <div class="co-lede">${co.principle||''}</div>
+      ${z.ceiling?`<div class="co-ceiling">
+        <div class="co-ceiling-h">Easy-run ceiling</div>
+        <div class="co-ceiling-v">${String(z.ceiling).split('—')[0].trim()}</div>
+        <div class="co-ceiling-n">${String(z.ceiling).split('—').slice(1).join('—').trim()}</div>
+      </div>`:''}
+      ${z.talk_test?`<div class="co-talk"><b>Talk test (the primary control):</b> ${z.talk_test}</div>`:''}
+      ${rows?`<table class="co-zt"><tr><th>Zone</th><th>BPM</th><th>Feel</th><th>Use</th></tr>${rows}</table>`:''}
+      ${z.basis?`<div class="co-caveat"><b>How these were derived:</b> ${z.basis}</div>`:''}
+      ${co.caveat?`<div class="co-caveat">${co.caveat}</div>`:''}
+      ${skills?`<div class="co-sub">Form and skills</div>${skills}`:''}
+      ${(wu.before||wu.after)?`<div class="co-sub">Warm-up and cool-down</div><div class="co-wu">
+        ${wu.before?`<div class="co-wu-k">Before</div><div class="co-wu-v">${wu.before}</div>`:''}
+        ${wu.after?`<div class="co-wu-k">After</div><div class="co-wu-v">${wu.after}</div>`:''}
+      </div>`:''}
+      ${(co.stop_signals||[]).length?`<div class="co-sub">Stop the run</div>
+        <ul class="co-stop">${co.stop_signals.map(x=>`<li>${x}</li>`).join('')}</ul>`:''}
+    </section>`;
+  }
+
   const todayHtml = buildTodayCard(d, window.__LOG__, project50, scoreClass);
 
   document.getElementById('main').innerHTML =
-    todayHtml + focusHtml + scoreBlockHtml + gaugeHtml + html + pubHtml + calHtml + cbHtml + rlHtml + miHtml + fuHtml + trHtml + locHtml + winsHtml;
+    todayHtml + focusHtml + scoreBlockHtml + gaugeHtml + html + pubHtml + calHtml + cbHtml + rlHtml + miHtml + fuHtml + trHtml + coHtml + locHtml + winsHtml;
 
   // ---- Checkable to-do / B-roll items (per-device, localStorage) ----
   const mainEl=document.getElementById('main');
