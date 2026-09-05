@@ -477,6 +477,7 @@
   .nu-hero-h{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
   .nu-hero-n{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.05rem;color:var(--navy);letter-spacing:.02em}
   .nu-hero-t{font-size:.78rem;color:var(--muted)}
+  .nu-dyn{font-size:.78rem;color:#2f4a6b;background:rgba(74,126,199,.08);border-radius:3px;padding:6px 9px;margin-top:7px;line-height:1.4}
   .nu-chart{display:flex;align-items:flex-end;gap:3px;height:90px;margin:12px 0 4px;padding-top:16px;position:relative}
   .nu-goal{position:absolute;left:0;right:0;border-top:1px dashed var(--green);pointer-events:none}
   .nu-goal span{position:absolute;right:0;top:2px;font-family:'Barlow Condensed',sans-serif;font-size:.66rem;letter-spacing:.04em;color:var(--green);background:var(--card);padding:0 3px;line-height:1}
@@ -1802,33 +1803,89 @@ function render(d){
     const live=window.__LIVE__, hist=window.__HIST__;
     const val=k=>(live&&live.metrics&&typeof live.metrics[k]==='number')?live.metrics[k]:null;
     const targets=[...nu.targets].sort((a,b)=>(a.priority||99)-(b.priority||99));
-    const hero=targets[0];
 
-    let chart='<div class="nu-empty">No nutrition synced yet. Log a day in your nutrition app with Apple Health sharing on, and the chart fills in.</div>';
-    if(hist && Array.isArray(hist.days) && hist.days.length){
-      const series=hist.days.map(x=>({date:x.date, v:(x.metrics&&typeof x.metrics[hero.key]==='number')?x.metrics[hero.key]:null}));
-      if(series.some(p=>p.v!==null)){
-        const max=Math.max(hero.target, ...series.map(p=>p.v||0))*1.1;
-        const goalPct=100-(hero.target/max*100);
-        const bars=series.map(p=>{
-          if(p.v===null) return `<div class="nu-bar nu-none" style="height:3px" title="${p.date}: no log"></div>`;
-          const hit=hero.direction==='up' ? p.v>=hero.target : p.v<=hero.target;
-          return `<div class="nu-bar ${hit?'nu-hit':''}" style="height:${Math.max(3,(p.v/max)*100)}%" title="${p.date}: ${Math.round(p.v)} ${hero.unit}"></div>`;
-        }).join('');
-        const logged=series.filter(p=>p.v!==null);
-        const hits=logged.filter(p=>hero.direction==='up'?p.v>=hero.target:p.v<=hero.target).length;
-        chart=`<div class="nu-chart"><div class="nu-goal" style="top:${goalPct}%"><span>target ${hero.target}</span></div>${bars}</div>
-          <div class="nu-xlab"><span>${series[0].date}</span><span>${hits}/${logged.length} days on target</span><span>${series[series.length-1].date}</span></div>`;
-      }
+    // Today's planned running, used to scale a dynamic target (water) — a flat
+    // number is the wrong shape for someone whose days range 0 to 15 miles.
+    const todayMiles=(()=>{
+      const log=window.__LOG__;
+      if(!log) return 0;
+      const now=new Date();
+      const wk=resolveTrainingWeek(log, programWeekNumber(d, now), now);
+      const days=wk?weekDays(wk):null;
+      const dk=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][now.getDay()];
+      return (days && days[dk] && days[dk].mileage) || 0;
+    })();
+    // Planned mileage for an arbitrary date. A historical day has to be judged
+    // against ITS OWN target — scoring a rest day against a 15-mile day's water
+    // goal makes every past day look like a failure.
+    function milesOn(date){
+      const log=window.__LOG__;
+      const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(date||'');
+      if(!log || !m) return 0;
+      const dt=new Date(+m[1], +m[2]-1, +m[3]);
+      const wk=resolveTrainingWeek(log, programWeekNumber(d, dt), dt);
+      const days=wk?weekDays(wk):null;
+      const dk=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][dt.getDay()];
+      return (days && days[dk] && days[dk].mileage) || 0;
+    }
+    function targetFor(t, miles){
+      const dy=t.dynamic;
+      if(!dy) return t.target;
+      const hours=miles>0 ? miles*(dy.pace_min_per_mile||12)/60 : 0;
+      return (dy.baseline_oz||t.target) + Math.round(hours*(dy.per_training_hour_oz||0)/5)*5;
+    }
+    function dynamicTarget(t){
+      const dy=t.dynamic;
+      if(!dy) return { value:t.target, note:null };
+      const value=targetFor(t, todayMiles);
+      const hours=todayMiles>0 ? todayMiles*(dy.pace_min_per_mile||12)/60 : 0;
+      return { value, note: todayMiles>0
+        ? `${dy.baseline_oz} baseline + ${value-dy.baseline_oz} for today's ${todayMiles} mi (~${hours.toFixed(1)} hr)`
+        : `${dy.baseline_oz} baseline — no run planned today` };
     }
 
+    function chartFor(t){
+      const dt=dynamicTarget(t), goal=dt.value;
+      if(!(hist && Array.isArray(hist.days) && hist.days.length))
+        return '<div class="nu-empty">No data synced yet. Log a day in your nutrition app with Apple Health sharing on, and the chart fills in.</div>';
+      const series=hist.days.map(x=>({date:x.date, v:(x.metrics&&typeof x.metrics[t.key]==='number')?x.metrics[t.key]:null}));
+      if(!series.some(p=>p.v!==null))
+        return '<div class="nu-empty">Nothing logged for this one yet.</div>';
+      // Each day carries its own target for a dynamic metric; the dashed line
+      // marks the baseline, and a run day's bar is scored against its own bar.
+      const base=t.dynamic ? (t.dynamic.baseline_oz||t.target) : goal;
+      const max=Math.max(goal, base, ...series.map(p=>p.v||0))*1.1;
+      const goalPct=100-(base/max*100);
+      const hit=(v,dayTarget)=>t.direction==='up'?v>=dayTarget:(t.direction==='down'?v<=dayTarget:true);
+      const bars=series.map(p=>{
+        if(p.v===null) return `<div class="nu-bar nu-none" style="height:3px" title="${p.date}: no log"></div>`;
+        const dayT=targetFor(t, milesOn(p.date));
+        return `<div class="nu-bar ${hit(p.v,dayT)?'nu-hit':''}" style="height:${Math.max(3,(p.v/max)*100)}%" title="${p.date}: ${Math.round(p.v)} ${t.unit} (target ${dayT})"></div>`;
+      }).join('');
+      const logged=series.filter(p=>p.v!==null);
+      const hits=logged.filter(p=>hit(p.v, targetFor(t, milesOn(p.date)))).length;
+      return `<div class="nu-chart"><div class="nu-goal" style="top:${goalPct}%"><span>${t.dynamic?'baseline':'target'} ${base}</span></div>${bars}</div>
+        <div class="nu-xlab"><span>${series[0].date}</span><span>${hits}/${logged.length} days on target</span><span>${series[series.length-1].date}</span></div>`;
+    }
+
+    const charted=targets.filter(t=>t.chart);
+    const heroes=charted.map(t=>{
+      const dt=dynamicTarget(t);
+      return `<div class="nu-hero">
+        <div class="nu-hero-h"><span class="nu-hero-n">${t.name} &mdash; last 30 days</span>
+          <span class="nu-hero-t">target ${dt.value} ${t.unit}/day &middot; ${t.marker}</span></div>
+        ${dt.note?`<div class="nu-dyn">${dt.note}${t.dynamic&&t.dynamic.note?` &mdash; ${t.dynamic.note}`:''}</div>`:''}
+        ${chartFor(t)}
+      </div>`;
+    }).join('');
+
     const rows=targets.map(t=>{
-      const v=val(t.key);
-      const hit=v===null?null:(t.direction==='up'?v>=t.target:(t.direction==='down'?v<=t.target:true));
+      const v=val(t.key), goal=dynamicTarget(t).value;
+      const hit=v===null?null:(t.direction==='up'?v>=goal:(t.direction==='down'?v<=goal:true));
       return `<div class="nu-row">
         <span class="nu-rank">${t.priority}</span>
         <div class="nu-rb"><div class="nu-rn">${t.name}</div><div class="nu-rm">${t.marker}</div></div>
-        <div class="nu-rv${v===null?' nu-no':''}">${v===null?'—':Math.round(v*10)/10}<small> / ${t.target} ${t.unit}${t.direction==='down'?' max':''}</small></div>
+        <div class="nu-rv${v===null?' nu-no':''}">${v===null?'—':Math.round(v*10)/10}<small> / ${goal} ${t.unit}${t.direction==='down'?' max':''}</small></div>
       </div>
       <div class="nu-det">${t.why}<span class="nu-food"><b>Food</b>${t.food}</span></div>`;
     }).join('');
@@ -1840,11 +1897,7 @@ function render(d){
         <div class="sec-meta">From your blood panel, not generic RDAs<br>Synced daily from Apple Health</div></div>
       <div class="nu-lede">${nu.basis||''}</div>
       ${nu.medical_note?`<div class="nu-med">${nu.medical_note}</div>`:''}
-      <div class="nu-hero">
-        <div class="nu-hero-h"><span class="nu-hero-n">${hero.name} &mdash; last 30 days</span>
-          <span class="nu-hero-t">target ${hero.target} ${hero.unit}/day &middot; ${hero.marker}</span></div>
-        ${chart}
-      </div>
+      ${heroes}
       ${rows}
       ${nt.what?`<div class="nu-nt"><b>Can't be tracked here &mdash; ${nt.what}:</b> ${nt.why}<br><span class="nu-rm">${nt.marker}</span></div>`:''}
       ${nu.caveat?`<div class="rc-caveat">${nu.caveat}</div>`:''}

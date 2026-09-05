@@ -4833,7 +4833,8 @@
         "priority": 1,
         "marker": "ApoB 175 · LDL 199 · Triglycerides 321 · HbA1c 5.6 · hs-CRP 0.8",
         "why": "Your highest-leverage food lever and the one you asked about. Soluble fibre binds bile acids and lowers LDL and ApoB directly; it also blunts glucose response and feeds the gut bacteria that keep CRP down. It is the single nutrient touching the most out-of-range markers you have.",
-        "food": "Oats, beans, lentils, chia, psyllium, berries, avocado. Build up gradually — jumping to 40 g overnight causes exactly the GI distress your gut training is trying to avoid."
+        "food": "Oats, beans, lentils, chia, psyllium, berries, avocado. Build up gradually — jumping to 40 g overnight causes exactly the GI distress your gut training is trying to avoid.",
+        "chart": true
       },
       {
         "key": "dietarySugar",
@@ -4876,8 +4877,15 @@
         "direction": "up",
         "priority": 5,
         "marker": "BUN/Creatinine ratio 30 (goal 16) · BUN 19",
-        "why": "Your own panel note says this ratio is 'often hydration + protein load in heavy trainers'. You are raising protein and mileage simultaneously, which pushes it further. This is the cheapest fix here.",
-        "food": "Baseline before accounting for runs. Add 16-24 fl oz per training hour on top."
+        "why": "Your own panel note says a BUN/Creatinine ratio of 30 is 'often hydration + protein load in heavy trainers'. You are raising protein AND mileage at the same time, which pushes it further in the wrong direction. This is the cheapest correction on the whole list.",
+        "food": "120 fl oz is the BASELINE for a non-running day. Training adds on top — see the day-adjusted target on the chart. Front-load it: most of it before evening, or it costs you sleep.",
+        "chart": true,
+        "dynamic": {
+          "baseline_oz": 120,
+          "per_training_hour_oz": 20,
+          "pace_min_per_mile": 12,
+          "note": "Baseline plus 20 fl oz per hour of running. Hours are estimated from the day's planned mileage at a 12 min/mi trail pace — deliberately rough, because the point is to drink more on big days, not to hit a decimal. Heat, or a day that leaves you crusted in salt, means more."
+        }
       },
       {
         "key": "dietaryVitaminD",
