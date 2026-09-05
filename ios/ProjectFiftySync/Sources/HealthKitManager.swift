@@ -61,7 +61,33 @@ final class HealthKitManager {
             }
         }
 
+        // Mindfulness: total minutes recorded on `day`. The Watch's Breathe /
+        // Mindfulness sessions land here, which is what lets the dashboard tick
+        // the morning recovery stack (breathwork, and whatever is done
+        // alongside it) without any manual entry. Absent on days with no
+        // session — the key is simply omitted rather than sent as zero, so a
+        // missed day never overwrites a real value with a false 0.
+        if let minutes = await fetchMindfulMinutes(predicate: dayPredicate), minutes > 0 {
+            result["mindfulMinutes"] = minutes
+        }
+
         return result
+    }
+
+    /// Summed duration of every mindful session on the day, in minutes.
+    private func fetchMindfulMinutes(predicate: NSPredicate) async -> Double? {
+        guard let mindfulType = HKObjectType.categoryType(forIdentifier: .mindfulSession) else { return nil }
+        return await withCheckedContinuation { continuation in
+            let query = HKSampleQuery(sampleType: mindfulType, predicate: predicate,
+                                      limit: HKObjectQueryNoLimit, sortDescriptors: nil) { _, samples, _ in
+                guard let samples = samples as? [HKCategorySample], !samples.isEmpty else {
+                    continuation.resume(returning: nil); return
+                }
+                let seconds = samples.reduce(0.0) { $0 + $1.endDate.timeIntervalSince($1.startDate) }
+                continuation.resume(returning: (seconds / 60.0).rounded())
+            }
+            self.store.execute(query)
+        }
     }
 
     private func fetchQuantity(spec: QuantityMetricSpec, predicate: NSPredicate) async -> Double? {

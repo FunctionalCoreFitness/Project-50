@@ -35,6 +35,7 @@ const METRIC_MAP = {
 
   sleepDurationHours:              { categoryId: "recovery", name: "Sleep Duration" },
   deepSleepPercentage:             { categoryId: "recovery", name: "Deep Sleep" },
+  mindfulMinutes:                  { categoryId: "recovery", name: "Mindful Minutes" },
 };
 
 const VALID_KEYS = new Set(Object.keys(METRIC_MAP));

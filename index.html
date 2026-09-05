@@ -449,6 +449,27 @@
   .co-stop li{font-size:.86rem;color:#3a4049;line-height:1.5;padding:8px 0 8px 22px;border-bottom:1px solid var(--hair);position:relative}
   .co-stop li:last-child{border-bottom:none}
   .co-stop li:before{content:'\26A0';position:absolute;left:2px;color:#b4573f}
+  /* recovery auto-complete */
+  .rc-lede{font-size:.92rem;color:#3a4049;line-height:1.55;margin-bottom:12px}
+  .rc-how{font-size:.85rem;color:#2f4a6b;line-height:1.5;background:rgba(74,126,199,.08);border-left:3px solid var(--steel);border-radius:3px;padding:10px 12px;margin-bottom:12px}
+  .rc-sig{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:11px 13px;margin-bottom:14px}
+  .rc-sig-h{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:.72rem;color:var(--steel)}
+  .rc-sig-v{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;color:var(--navy);letter-spacing:.01em;margin:1px 0}
+  .rc-sig-v.rc-none{color:var(--muted);font-size:1.1rem}
+  .rc-sig-n{font-size:.8rem;color:var(--muted);line-height:1.4}
+  .rc-tool{display:flex;align-items:flex-start;gap:10px;border:1px solid var(--line);border-radius:4px;background:var(--card);padding:10px 12px;margin-bottom:6px}
+  .rc-tool.rc-done{border-color:var(--green);background:rgba(74,143,90,.06)}
+  .rc-box{flex:0 0 auto;width:22px;height:22px;border:2px solid var(--line);border-radius:4px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.85rem;color:#fff;background:#fff;user-select:none}
+  .rc-tool.rc-done .rc-box{background:var(--green);border-color:var(--green)}
+  .rc-box.rc-locked{cursor:default;opacity:.9}
+  .rc-b{flex:1}
+  .rc-tn{font-weight:600;font-size:.9rem;color:var(--navy);line-height:1.35}
+  .rc-meta{font-size:.77rem;color:var(--muted);margin-top:1px}
+  .rc-tag{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:.66rem;border-radius:3px;padding:1px 6px;margin-left:6px}
+  .rc-tag-auto{background:var(--green);color:#fff}
+  .rc-tag-manual{background:var(--hair);color:var(--muted)}
+  .rc-why{font-size:.82rem;color:#3a4049;line-height:1.4;margin-top:3px}
+  .rc-caveat{font-size:.8rem;font-style:italic;color:var(--muted);line-height:1.45;margin-top:12px;padding:9px 12px;border:1px dashed var(--line);border-radius:4px}
   .race-goal{background:rgba(74,126,199,.08);border-left:3px solid var(--steel);border-radius:3px;padding:9px 12px;font-size:.88rem;color:#2f4a6b;line-height:1.45;margin:10px 0}
   .race-teaches{font-size:.84rem;font-style:italic;color:var(--muted);margin-top:10px;padding:9px 12px;border:1px dashed var(--line);border-radius:4px;line-height:1.45}
   /* fueling / gut training */
@@ -942,6 +963,7 @@ const HEALTHKIT_METRIC_MAP = {
   bodyMass:                        { categoryId: "body", name: "Weight" },
   sleepDurationHours:              { categoryId: "recovery", name: "Sleep Duration" },
   deepSleepPercentage:             { categoryId: "recovery", name: "Deep Sleep" },
+  mindfulMinutes:                  { categoryId: "recovery", name: "Mindful Minutes" },
 };
 
 function fetchHealthKitLatest(){
@@ -976,7 +998,7 @@ Promise.all([
   fetch('training-log.json?v='+Date.now()).then(r=> r.ok ? r.json() : null).catch(()=>null),
   fetchHealthKitLatest()
 ])
-  .then(([d, log, live])=>{ applyHealthKitOverlay(d, live); window.__LOG__=log; render(d); })
+  .then(([d, log, live])=>{ applyHealthKitOverlay(d, live); window.__LOG__=log; window.__LIVE__=live; render(d); })
   .catch(err=>{
     document.getElementById('main').innerHTML =
       `<p style="padding:40px 0;color:var(--red)">Couldn't load data.json (${err.message}). Make sure it's in the same folder and you're serving over http, not opening the file directly.</p>`;
@@ -1024,6 +1046,7 @@ function render(d){
     (d.fueling?`<a href="#fueling">Fueling</a>`:'') +
     (d.trails?`<a href="#trails">Trails</a>`:'') +
     (d.coaching?`<a href="#coaching">Coaching</a>`:'') +
+    (d.recovery_sync?`<a href="#recovery-sync">Auto-Recovery</a>`:'') +
     (d.locations?`<a href="#locations">Sets</a>`:'') +
     (d.wins?`<a href="#wins">Wins</a>`:'') +
     (d.protocol?`<a href="#protocol">Protocol</a>`:'') +
@@ -1038,6 +1061,7 @@ function render(d){
     `<a href="#fueling">Fuel</a>` +
     `<a href="#trails">Trails</a>` +
     `<a href="#coaching">Form</a>` +
+    `<a href="#recovery-sync">Recovery</a>` +
     `<a href="workout.html">Log</a>` +
     `<a href="update.html" class="qb-update">Update</a>`;
 
@@ -1715,6 +1739,52 @@ function render(d){
     </section>`;
   }
 
+  // ===== RECOVERY AUTO-COMPLETE =====
+  // Auto-ticks come from the live HealthKit payload, not from data.json, so
+  // they reflect today rather than whatever was last committed. A manual tick
+  // is per-device localStorage, same as the race-ladder checkmarks. An auto
+  // tick can be overridden manually — evidence a session happened is not proof
+  // the whole stack was done.
+  function recoveryKey(tool){ return 'p50rec::'+new Date().toISOString().slice(0,10)+'::'+tool; }
+  const rcSync=d.recovery_sync;
+  let rcHtml='';
+  if(rcSync && Array.isArray(rcSync.mappings)){
+    const live=window.__LIVE__;
+    const sigKey=(rcSync.signal||{}).key;
+    const sigVal=(live && live.metrics && typeof live.metrics[sigKey]==='number') ? live.metrics[sigKey] : null;
+    const freq={};
+    ((window.__LOG__||{}).recovery_tools||[]).forEach(t=>{ freq[t.tool]=t.frequency; });
+    const rows=rcSync.mappings.map(m=>{
+      const auto = m.mode==='auto' && sigVal!==null && sigVal>=(m.threshold_min||0);
+      const manual = localStorage.getItem(recoveryKey(m.tool))==='1';
+      const off = localStorage.getItem(recoveryKey(m.tool))==='0';
+      const done = off ? false : (auto || manual);
+      return `<div class="rc-tool${done?' rc-done':''}" data-rc="${m.tool}">
+        <span class="rc-box">${done?'\u2713':''}</span>
+        <div class="rc-b">
+          <div class="rc-tn">${m.tool}<span class="rc-tag ${m.mode==='auto'?'rc-tag-auto':'rc-tag-manual'}">${m.mode==='auto'?'auto':'manual'}</span></div>
+          <div class="rc-meta">${freq[m.tool]||''}${(m.mode==='auto'&&m.threshold_min)?` \u00b7 ticks at ${m.threshold_min}+ min`:''}${auto?' \u00b7 auto-ticked today':''}</div>
+          <div class="rc-why">${m.why||''}</div>
+        </div>
+      </div>`;
+    }).join('');
+    const sig=rcSync.signal||{};
+    rcHtml=`
+    <section id="recovery-sync">
+      <div class="sec-head"><div class="sec-title">${rcSync.headline||'Recovery'}</div>
+        <div class="sec-meta">What the Watch can see, ticked for you<br>Everything else is one tap</div></div>
+      <div class="rc-lede">${rcSync.principle||''}</div>
+      ${rcSync.how_to_log?`<div class="rc-how"><b>How to log it:</b> ${rcSync.how_to_log}</div>`:''}
+      <div class="rc-sig">
+        <div class="rc-sig-h">${sig.label||'Signal'} today</div>
+        <div class="rc-sig-v${sigVal===null?' rc-none':''}">${sigVal===null?'no session synced yet':sigVal+' min'}</div>
+        <div class="rc-sig-n">${sig.source||''}${sig.note?' \u00b7 '+sig.note:''}</div>
+      </div>
+      ${rows}
+      ${rcSync.caveat?`<div class="rc-caveat">${rcSync.caveat}</div>`:''}
+    </section>`;
+  }
+
   // ===== COACHING =====
   const co=d.coaching;
   let coHtml='';
@@ -1756,7 +1826,7 @@ function render(d){
   const todayHtml = buildTodayCard(d, window.__LOG__, project50, scoreClass);
 
   document.getElementById('main').innerHTML =
-    todayHtml + focusHtml + scoreBlockHtml + gaugeHtml + html + pubHtml + calHtml + cbHtml + rlHtml + miHtml + fuHtml + trHtml + coHtml + locHtml + winsHtml;
+    todayHtml + focusHtml + scoreBlockHtml + gaugeHtml + html + pubHtml + calHtml + cbHtml + rlHtml + miHtml + fuHtml + trHtml + coHtml + rcHtml + locHtml + winsHtml;
 
   // ---- Checkable to-do / B-roll items (per-device, localStorage) ----
   const mainEl=document.getElementById('main');
@@ -1764,6 +1834,16 @@ function render(d){
     // supplement expand/collapse
     const supp=e.target.closest('.supp-toggle');
     if(supp){ supp.closest('.supp-item').classList.toggle('open'); return; }
+    // recovery tool tick — an explicit '0' records "auto said yes, I say no"
+    const rt=e.target.closest('.rc-tool');
+    if(rt){
+      const tool=rt.dataset.rc, key=`p50rec::${new Date().toISOString().slice(0,10)}::${tool}`;
+      const wasDone=rt.classList.contains('rc-done');
+      localStorage.setItem(key, wasDone?'0':'1');
+      rt.classList.toggle('rc-done', !wasDone);
+      rt.querySelector('.rc-box').textContent = wasDone?'':'\u2713';
+      return;
+    }
     // race ladder checkmark (inside summary — prevent the details toggle)
     const rc=e.target.closest('.race-check');
     if(rc){

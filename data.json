@@ -1124,6 +1124,16 @@
           "history": []
         },
         {
+          "name": "Mindful Minutes",
+          "unit": "min",
+          "value": null,
+          "pacer": 10,
+          "goal": 15,
+          "direction": "up",
+          "date": null,
+          "note": "Synced from Apple Health. Watch Breathe/Mindfulness sessions land here — this is the signal that auto-ticks the morning recovery stack."
+        },
+        {
           "name": "HRV Weekly Avg",
           "unit": "ms",
           "value": 42.3,
@@ -4604,5 +4614,81 @@
       "HRV well below your ~42 ms weekly average alongside feeling flat. One low reading is noise; a trend is data.",
       "Any chest symptom, unusual breathlessness, or your heart rate refusing to come down — stop and get it looked at. At 48, with a documented thyroid condition, that is not a run to push through."
     ]
+  },
+  "recovery_sync": {
+    "headline": "Recovery Auto-Complete",
+    "principle": "Apple Health has no sensor for a sauna, a cold plunge or a red-light panel — nothing detects them. What it does record is a Mindfulness session, so one logged session can stand in for the whole stack you do alongside it. Everything the Watch can genuinely see is ticked automatically; everything it can't stays a manual tap.",
+    "how_to_log": "On the Watch: Mindfulness app → Breathe (or Reflect) for the length of your breathwork. That single session is what arrives here. You do not need to log the red light separately — the mapping below treats them as one morning block because that is how you actually do them.",
+    "signal": {
+      "key": "mindfulMinutes",
+      "label": "Mindful minutes",
+      "source": "Apple Health · HKCategoryType mindfulSession",
+      "note": "Summed across every mindful session that day. Omitted entirely on days with none, so a missed day never overwrites a real value with a zero."
+    },
+    "mappings": [
+      {
+        "tool": "Wim Hof Breathwork",
+        "mode": "auto",
+        "threshold_min": 10,
+        "why": "This IS the mindfulness session. A logged Breathe of 10 min or more is the breathwork."
+      },
+      {
+        "tool": "Red Light Therapy",
+        "mode": "auto",
+        "threshold_min": 10,
+        "why": "Done in the same morning block as the breathwork, so the same session ticks it. Uncheck manually on days you skipped the panel."
+      },
+      {
+        "tool": "Infrared Sauna",
+        "mode": "manual",
+        "why": "No Health signal exists. Log it as an 'Other' workout if you want it counted later."
+      },
+      {
+        "tool": "Cold Plunge",
+        "mode": "manual",
+        "why": "No Health signal exists."
+      },
+      {
+        "tool": "Steam",
+        "mode": "manual",
+        "why": "No Health signal exists."
+      },
+      {
+        "tool": "Normatec Boots + Hip Attachment",
+        "mode": "manual",
+        "why": "No Health signal exists."
+      },
+      {
+        "tool": "Stick Mobility",
+        "mode": "manual",
+        "why": "Would show as a Mind & Body workout if you started one, but it is usually done inside the mobility flow rather than logged separately."
+      },
+      {
+        "tool": "RAD Massage Ball Kit",
+        "mode": "manual",
+        "why": "No Health signal exists."
+      },
+      {
+        "tool": "Power Plate",
+        "mode": "manual",
+        "why": "No Health signal exists."
+      },
+      {
+        "tool": "NeoCarbon EMS Stim",
+        "mode": "manual",
+        "why": "No Health signal exists."
+      },
+      {
+        "tool": "Venom Back/Shoulder Wrap",
+        "mode": "manual",
+        "why": "No Health signal exists."
+      },
+      {
+        "tool": "Venom Lower Back Band",
+        "mode": "manual",
+        "why": "No Health signal exists."
+      }
+    ],
+    "caveat": "An auto-tick is evidence a session happened, not proof you did the whole stack. Untick anything you did not actually do — the log is only worth what it honestly records."
   }
 }

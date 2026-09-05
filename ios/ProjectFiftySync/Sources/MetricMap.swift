@@ -107,6 +107,12 @@ enum HealthMetrics {
         if let sleep = HKObjectType.categoryType(forIdentifier: .sleepAnalysis) {
             types.insert(sleep)
         }
+        // Mindfulness is how the Watch records breathwork — a Wim Hof session
+        // logged there is what lets the dashboard tick the morning recovery
+        // stack without any manual entry.
+        if let mindful = HKObjectType.categoryType(forIdentifier: .mindfulSession) {
+            types.insert(mindful)
+        }
         return types
     }
 }
