@@ -1357,7 +1357,7 @@ function render(d){
               <summary><i class="dot-broll"></i>B-roll shot list <span class="cal-broll-count ck-count" data-count-type="broll" data-count-month="${m.month}">${bDone}/${m.broll.length}</span></summary>
               <ul class="ck-list">${m.broll.map((b,i)=>ckItem(b,'broll',i)).join('')}</ul>
             </details>` : ''}
-            ${m.race ? `<div class="cal-race"><div class="cal-race-h">${m.race.race}</div><div class="cal-race-r">${m.race.reg}</div>${(m.race.links&&m.race.links.length)?`<div class="race-links">${m.race.links.map(l=>`<a href="${l.url}" target="_blank" rel="noopener">${l.label} ↗</a>`).join('')}</div>`:''}</div>` : ''}
+            ${calRaceHtml(m.race)}
           </div>`;
         }).join('')}
       </div>
@@ -1806,6 +1806,18 @@ function trailPickHtml(d, wk, day, dowKey){
   if(!sess) return '';
   const q = (sess.options||[]).find(o=>o.tag==='Quick') || (sess.options||[])[0];
   return q ? trailLine(sess.title, q, 'other options →') : '';
+}
+
+// A calendar month may carry more than one dated event (the race, a
+// registration window opening, a retest), so this takes an object or a list.
+function calRaceHtml(race){
+  if(!race) return '';
+  const items = Array.isArray(race) ? race : [race];
+  return items.filter(Boolean).map(r=>`<div class="cal-race">
+    <div class="cal-race-h">${r.race}</div>
+    <div class="cal-race-r">${r.reg||''}</div>
+    ${(r.links&&r.links.length)?`<div class="race-links">${r.links.map(l=>`<a href="${l.url}" target="_blank" rel="noopener">${l.label} ↗</a>`).join('')}</div>`:''}
+  </div>`).join('');
 }
 
 function buildTodayCard(d, log, project50, scoreClass){

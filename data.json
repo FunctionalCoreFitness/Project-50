@@ -2691,7 +2691,8 @@
         "assessments": [
           "Function Health labs (Q3 — recheck lipids, ApoB, Vit D)",
           "VO2 max check",
-          "Aerobic test (5K time trial)"
+          "Aerobic test (5K time trial)",
+          "Week 12 deload + retest (Sep 14–20) — 9-field panel vs the Week 1 baseline"
         ]
       },
       {
@@ -2706,7 +2707,8 @@
         "assessments": [
           "DEXA scan (8-wk recheck)",
           "Max-strength test (est. 1RM: DL, bench, front squat)",
-          "Power test (vertical, broad jump, med ball)"
+          "Power test (vertical, broad jump, med ball)",
+          "Fuel product test — two carb sources + one savory, weeks 17–19"
         ]
       },
       {
@@ -2722,20 +2724,26 @@
           "Strength-endurance retest (track pull-up progress)",
           "Timed holds retest"
         ],
-        "race": {
-          "race": "🏃 RACE: Peacock Gap Trail Run half -- Sat Dec 5, San Rafael",
-          "reg": "Registered Sep 5 2026 (order 4496890). Nothing left to book.",
-          "links": [
-            {
-              "label": "Inside Trail Racing",
-              "url": "https://insidetrail.com/calendar/"
-            },
-            {
-              "label": "Coastal Trail Runs",
-              "url": "https://ultrasignup.com/groups.aspx?gid=69"
-            }
-          ]
-        }
+        "race": [
+          {
+            "race": "🗓 REGISTER: Feb/Mar marathon — window opens Nov 21",
+            "reg": "Books the bridge rung. Opens two weeks BEFORE your half — do it while still training.",
+            "links": [
+              {
+                "label": "Inside Trail Racing",
+                "url": "https://insidetrail.com/calendar/"
+              },
+              {
+                "label": "Coastal Trail Runs",
+                "url": "https://ultrasignup.com/groups.aspx?gid=69"
+              }
+            ]
+          },
+          {
+            "race": "⚡ Week 21 PEAK — 15 mi dress rehearsal, Sun Nov 22",
+            "reg": "Race kit, race breakfast, 65 g carb/hr. Whatever works becomes the Dec 5 plan."
+          }
+        ]
       },
       {
         "month": "Dec 2026",
@@ -2749,6 +2757,30 @@
         "assessments": [
           "Function Health labs (Q4 — full panel)",
           "Apple Health gait re-check"
+        ],
+        "race": [
+          {
+            "race": "🏃 RACE: Peacock Gap Trail Run half — Sat Dec 5, San Rafael",
+            "reg": "Registered Sep 5 2026, order 4496890. Rung 1."
+          },
+          {
+            "race": "🗓 REGISTER: 50K — window opens Dec 17",
+            "reg": "Runs to Jan 16. Target a spring 50K; an August one collides with the Oct 50-miler.",
+            "links": [
+              {
+                "label": "Inside Trail Racing",
+                "url": "https://insidetrail.com/calendar/"
+              },
+              {
+                "label": "Coastal Trail Runs",
+                "url": "https://ultrasignup.com/groups.aspx?gid=69"
+              }
+            ]
+          },
+          {
+            "race": "✓ Week 24 retest — Dec 7–13",
+            "reg": "Same panel as weeks 1 and 12, plus race time, longest run, biggest vert week, carbs/hr tolerated."
+          }
         ]
       },
       {
@@ -2764,6 +2796,22 @@
           "DEXA scan (8-wk recheck)",
           "Movement screen retest",
           "Longevity tests retest"
+        ],
+        "race": [
+          {
+            "race": "⏰ 50K registration CLOSES Jan 16",
+            "reg": "Last call on the spring 50K. After this you are gambling on late entry.",
+            "links": [
+              {
+                "label": "Inside Trail Racing",
+                "url": "https://insidetrail.com/calendar/"
+              },
+              {
+                "label": "Coastal Trail Runs",
+                "url": "https://ultrasignup.com/groups.aspx?gid=69"
+              }
+            ]
+          }
         ]
       },
       {
@@ -2779,20 +2827,22 @@
           "Speed/agility test (shuttle, T-test)",
           "Gait asymmetry deep-check"
         ],
-        "race": {
-          "race": "🗓 REGISTER: Feb marathon + Apr 50K — both windows are ALREADY OPEN",
-          "reg": "Late. Marathon window was Nov 21 – Dec 22 2026; 50K window was Dec 17 – Jan 16. If you are reading this in Feb, book both today.",
-          "links": [
-            {
-              "label": "Inside Trail (NorCal 50Ks)",
-              "url": "https://ultrasignup.com/groups.aspx?gid=44"
-            },
-            {
-              "label": "Coastal Trail Runs",
-              "url": "https://ultrasignup.com/groups.aspx?gid=69"
-            }
-          ]
-        }
+        "race": [
+          {
+            "race": "🏃 RACE window: marathon / 30K — the bridge",
+            "reg": "Feb or Mar. Makes the half-to-50K jump legal (2.37x becomes 1.19x). If it lands late March, push the 50K to May/June — five weeks between them is not enough.",
+            "links": [
+              {
+                "label": "Inside Trail Racing",
+                "url": "https://insidetrail.com/calendar/"
+              },
+              {
+                "label": "Coastal Trail Runs",
+                "url": "https://ultrasignup.com/groups.aspx?gid=69"
+              }
+            ]
+          }
+        ]
       },
       {
         "month": "Mar 2027",
@@ -2806,7 +2856,7 @@
         "assessments": [
           "Function Health labs (Q1)",
           "VO2 max check",
-          "First trail 10K (timed)"
+          "Long-run build check — 20 mi run logged (the 50K entry gate)"
         ]
       },
       {
@@ -2822,6 +2872,22 @@
           "DEXA scan (8-wk recheck)",
           "Recovery modality audit (weekly doses)",
           "Power test retest"
+        ],
+        "race": [
+          {
+            "race": "🏃 RACE: 50K — first ultra",
+            "reg": "SPASM Lake Chabot (~Sat Apr 24) is the lead. Rung 3.",
+            "links": [
+              {
+                "label": "Inside Trail Racing",
+                "url": "https://insidetrail.com/calendar/"
+              },
+              {
+                "label": "Coastal Trail Runs",
+                "url": "https://ultrasignup.com/groups.aspx?gid=69"
+              }
+            ]
+          }
         ]
       },
       {
@@ -2835,7 +2901,7 @@
         ],
         "assessments": [
           "Aerobic test (long-run pace)",
-          "First 20-mile run (logged)",
+          "Back-to-back check — 26 mi Sat / 14 mi Sun (the 50-mile entry gate)",
           "Full physical retest battery"
         ]
       },
@@ -2855,7 +2921,7 @@
         ]
       }
     ],
-    "note": "Each month: 3 Encyclopedia Fridays + 1 Project 50 Documentary Friday = 4 edited long-forms. Plus weekly Coach's Corner, Saturday clip, Sunday Journal."
+    "note": "Each month: 3 Encyclopedia Fridays + 1 Project 50 Documentary Friday = 4 edited long-forms. Plus weekly Coach's Corner, Saturday clip, Sunday Journal. Race and registration entries are generated from the race ladder — if a date moves there, it moves here."
   },
   "publishing": {
     "cadence": "1 edited long-form/week + 3 shorts/week · 4 edited videos/month (editor) · anchored to Friday",
@@ -3196,13 +3262,13 @@
       {
         "n": 2,
         "dist": "Marathon — the bridge",
-        "window": "Late Feb 2027",
+        "window": "Feb–Mar 2027",
         "year": 2027,
-        "target_date": "2027-02-20",
+        "target_date": "2027-03-20",
         "date_status": "target",
         "candidates": "A NorCal trail marathon. SPASM Lake Chabot (Castro Valley) runs a marathon alongside its 50K; Inside Trail and Coastal Trail Runs both card winter marathons.",
         "purpose": "The rung that makes the ladder legal. Without it the jump from half to 50K is 2.37x, past the ladder's own limit.",
-        "goal": "Finish a marathon on trail without walking from exhaustion. Time is irrelevant — this race exists to make the 50K a small step instead of a leap.",
+        "goal": "Finish a marathon on trail without walking from exhaustion. Time is irrelevant — this race exists to make the 50K a small step instead of a leap. If this lands in late March, move the 50K to May/June: five weeks between a first marathon and a first 50K is not enough to recover and build.",
         "gate": "Longest run 18–20 mi, peak 30–33 mi/wk. You finish Block 2 at 33 mi/wk with a 15 mi long run, so this is a modest extension rather than a new build.",
         "fuel_target": "50–70 g carb/hr for 4–5 hr — the first time fuelling matters more than fitness",
         "vert_prep": "3,000–4,000 ft weeks; one long run with 2,000+ ft",
