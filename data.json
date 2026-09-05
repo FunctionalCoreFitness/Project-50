@@ -3575,9 +3575,10 @@
         "note": "The most important run. Grows over time. Roll lighter Thu/Sat the week it jumps."
       }
     ],
-    "bjj_lever": "Tie roll intensity to the running week: drill-only or light rolling around your long-run and quality days.",
+    "bjj_lever": "BJJ is Mon / Thu / Sat, and the week already balances itself: Saturday is a teaching day, so the load is naturally light going into Sunday's long run. Thursday is the one day to roll hard -- nothing runs Thursday or Friday. Monday is the only real collision, sharing the day with the back-to-back run, so that is where intensity gives if something has to. Wednesday carries no BJJ at all, which leaves the quality run day clean.",
     "ladder_note": "3 days carries you through the half and 50K. Add a 4th easy day in 2027 when 50-mile / 100 volume demands it.",
-    "vert_note": "Weekly vertical gain is a tracked variable, not an afterthought: 1,600 ft in week 13 to 4,000 ft at peak. For the 100 it matters at least as much as mileage."
+    "vert_note": "Weekly vertical gain is a tracked variable, not an afterthought: 1,600 ft in week 13 to 4,000 ft at peak. For the 100 it matters at least as much as mileage.",
+    "week_shape": "Mon run + BJJ · Tue run + Strength A · Wed QUALITY run + mobility (no BJJ) · Thu BJJ (hard) + core · Fri Strength B · Sat teach · Sun LONG RUN"
   },
   "fueling": {
     "headline": "Gut Training & Race Fueling",
