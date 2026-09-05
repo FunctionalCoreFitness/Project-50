@@ -393,6 +393,34 @@
   /* race rung detail */
   .race-date{font-family:'Barlow Condensed',sans-serif;font-size:.74rem;letter-spacing:.05em;text-transform:uppercase;color:var(--amber);margin-left:auto;white-space:nowrap}
   .race-date.race-booked{background:var(--green);color:#fff;border-radius:3px;padding:1px 7px}
+  /* races to verify + book */
+  .tb{border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:4px;background:var(--card);padding:14px 16px;margin-bottom:16px}
+  .tb-h{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:.86rem;color:#8a5f14;margin-bottom:6px}
+  .tb-note{font-size:.87rem;color:#3a4049;line-height:1.5;margin-bottom:10px}
+  .tb-caveat{font-size:.8rem;color:#8a4a3a;line-height:1.45;background:rgba(190,80,60,.07);border-radius:3px;padding:8px 11px;margin-bottom:14px}
+  .tb-slot{border-top:1px solid var(--hair);padding-top:12px;margin-top:12px}
+  .tb-slot:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  .tb-slot-h{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:3px}
+  .tb-what{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:var(--navy);letter-spacing:.02em}
+  .tb-status{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:.7rem;border-radius:3px;padding:2px 8px;color:#fff}
+  .tb-open{background:var(--green)} .tb-soon{background:var(--steel)} .tb-late{background:#b4573f}
+  .tb-win{font-size:.78rem;color:var(--muted)}
+  .tb-why{font-size:.84rem;color:#2f4a6b;line-height:1.45;margin:5px 0 9px}
+  .tb-cand{display:flex;gap:9px;align-items:flex-start;padding:7px 0;border-top:1px solid var(--hair)}
+  .tb-cand.tb-star{background:rgba(200,144,49,.07);border-radius:3px;padding:8px 9px}
+  .tb-cand-b{flex:1}
+  .tb-cn{font-weight:600;font-size:.89rem;color:var(--navy);line-height:1.35}
+  .tb-cd{font-size:.79rem;color:var(--muted);margin:1px 0 3px}
+  .tb-cnote{font-size:.83rem;color:#3a4049;line-height:1.4}
+  .tb-go{flex:0 0 auto;font-family:'Barlow Condensed',sans-serif;font-size:.78rem;letter-spacing:.02em;color:var(--steel);text-decoration:none;border:1px solid var(--steel);border-radius:3px;padding:3px 9px;white-space:nowrap}
+  .tb-go:hover{background:var(--steel);color:#fff}
+  .tb-out{font-size:.83rem;color:#3a4049;line-height:1.45;background:var(--hair);border-radius:3px;padding:9px 11px;margin-top:14px}
+  .tb-out b{color:var(--navy)}
+  .tb-sub{font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:.74rem;color:var(--steel);margin:14px 0 6px}
+  .tb-cals{display:flex;flex-wrap:wrap;gap:6px}
+  .tb-check{list-style:none;margin:0;padding:0}
+  .tb-check li{font-size:.84rem;color:#3a4049;line-height:1.45;padding:4px 0 4px 18px;position:relative}
+  .tb-check li:before{content:'\25A2';position:absolute;left:2px;color:var(--steel)}
   .race-goal{background:rgba(74,126,199,.08);border-left:3px solid var(--steel);border-radius:3px;padding:9px 12px;font-size:.88rem;color:#2f4a6b;line-height:1.45;margin:10px 0}
   .race-teaches{font-size:.84rem;font-style:italic;color:var(--muted);margin-top:10px;padding:9px 12px;border:1px dashed var(--line);border-radius:4px;line-height:1.45}
   /* fueling / gut training */
@@ -1378,6 +1406,52 @@ function render(d){
     </section>`;
   }
 
+  // Registration windows are the thing that actually gets missed — Nov 7 sold
+  // out while the plan was being written around it — so the status is computed
+  // live against today rather than being a static "register 3-4 months out".
+  function toBookHtml(tb){
+    if(!tb || !Array.isArray(tb.slots)) return '';
+    const today=new Date(); const t0=new Date(today.getFullYear(),today.getMonth(),today.getDate());
+    const parse=s=>{const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(s||''); return m?new Date(+m[1],+m[2]-1,+m[3]):null;};
+    const days=(a,b)=>Math.round((b-a)/86400000);
+    const slot=s=>{
+      const o=parse(s.opens), c=parse(s.closes);
+      let cls='tb-soon', txt='';
+      if(o && t0<o) txt='opens in '+days(t0,o)+' days';
+      else if(c && t0<=c){ cls='tb-open'; txt='open now — '+days(t0,c)+' days left'; }
+      else { cls='tb-late'; txt='overdue — book today'; }
+      const win=(o?o.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'}):'')
+        +(c?' \u2192 '+c.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'}):'');
+      const cands=(s.candidates||[]).map(x=>`
+        <div class="tb-cand${x.star?' tb-star':''}">
+          <div class="tb-cand-b">
+            <div class="tb-cn">${x.star?'\u2b50 ':''}${x.name}</div>
+            <div class="tb-cd">${x.dist} &middot; ${x.date}</div>
+            <div class="tb-cnote">${x.note||''}</div>
+          </div>
+          <a class="tb-go" href="${x.url}" target="_blank" rel="noopener">Check \u2197</a>
+        </div>`).join('');
+      return `<div class="tb-slot">
+        <div class="tb-slot-h"><span class="tb-what">Rung ${s.rung} &mdash; ${s.what}</span>
+          <span class="tb-status ${cls}">${txt}</span></div>
+        <div class="tb-win">${win}</div>
+        <div class="tb-why">${s.why||''}</div>${cands}
+      </div>`;
+    };
+    return `<div class="tb">
+      <div class="tb-h">${tb.headline||'Races to book'}</div>
+      <div class="tb-note">${tb.note||''}</div>
+      ${tb.caveat?`<div class="tb-caveat">${tb.caveat}</div>`:''}
+      ${tb.slots.map(slot).join('')}
+      ${(tb.ruled_out||[]).map(r=>`<div class="tb-out"><b>Ruled out &mdash; ${r.name}:</b> ${r.reason}
+        <a class="tb-go" href="${r.url}" target="_blank" rel="noopener">See it \u2197</a></div>`).join('')}
+      ${(tb.calendars||[]).length?`<div class="tb-sub">Calendars to scan</div>
+        <div class="tb-cals">${tb.calendars.map(c=>`<a class="tb-go" href="${c.url}" target="_blank" rel="noopener">${c.label} \u2197</a>`).join('')}</div>`:''}
+      ${(tb.checklist||[]).length?`<div class="tb-sub">Confirm on each</div>
+        <ul class="tb-check">${tb.checklist.map(x=>`<li>${x}</li>`).join('')}</ul>`:''}
+    </div>`;
+  }
+
   // ===== RACE LADDER (progression to Moab 100) =====
   // ISO date -> "Dec 5 2026", parsed as local so it doesn't slip a day in
   // negative-offset timezones the way new Date('2026-12-05') would.
@@ -1419,6 +1493,7 @@ function render(d){
     <section id="raceladder">
       <div class="sec-head"><div class="sec-title">Race Ladder</div>
         <div class="sec-meta">${rl.goal}<br>Tap ✓ when raced</div></div>
+      ${toBookHtml(rl.to_book)}
       <div class="race-rules">${(rl.rules||[]).map(x=>`<div class="race-rule">${x}</div>`).join('')}</div>
       ${rungs}
       ${rl.bridge?`<div class="race-bridge">${rl.bridge}</div>`:''}

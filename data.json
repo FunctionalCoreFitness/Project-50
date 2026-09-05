@@ -3331,7 +3331,148 @@
         "target_window": "Oct 2028"
       }
     ],
-    "bridge": "Skyline 50K (early Aug, Lake Chabot) is the classic NorCal first 50K and is deliberately NOT rung 3 — August collides with the October 50-miler. Keep it in mind as a 2028 tune-up instead. Optional 2028 training trip to Moab — run the actual red-rock terrain, acclimatize to altitude + sand. Documentary gold."
+    "bridge": "Skyline 50K (early Aug, Lake Chabot) is the classic NorCal first 50K and is deliberately NOT rung 3 — August collides with the October 50-miler. Keep it in mind as a 2028 tune-up instead. Optional 2028 training trip to Moab — run the actual red-rock terrain, acclimatize to altitude + sand. Documentary gold.",
+    "to_book": {
+      "headline": "Races to verify and book",
+      "note": "Two registration windows, both opening before the Dec 5 half. Book while you are still training, not after — Nov 7 sold out while this plan was being written around it.",
+      "caveat": "EVERY DATE BELOW IS UNVERIFIED. These came from web search, which returned at least one confirmed-wrong date (it claimed Skyline 50K ran Feb 20 2027; it actually runs in early August). Trust only what the race's own site says, and confirm before paying.",
+      "slots": [
+        {
+          "rung": 2,
+          "what": "Marathon or 30K — the bridge",
+          "opens": "2026-11-21",
+          "closes": "2026-12-22",
+          "why": "A marathon is 2.00x your half and makes the 50K a 1.19x step. A 30K is 1.42x — gentler, but leaves more of the jump for the 50K. Either keeps the ladder legal.",
+          "candidates": [
+            {
+              "name": "Napa Valley Trail",
+              "dist": "Marathon, half, 10K",
+              "date": "Sat Mar 20 2027",
+              "url": "https://insidetrail.com/calendar/",
+              "note": "The only true marathon found. ~1.5 hr drive.",
+              "star": true
+            },
+            {
+              "name": "Marin Ultra Challenge",
+              "dist": "8K, half, 30K, 50K",
+              "date": "~March, Marin Headlands",
+              "url": "https://insidetrail.com/calendar/marin-ultra-challenge/",
+              "note": "Coastal singletrack and fire road — good terrain match.",
+              "star": false
+            },
+            {
+              "name": "Pacifica Foothills Trail Run",
+              "dist": "10K, half, 30K",
+              "date": "~winter",
+              "url": "https://insidetrail.com/calendar/pacifica-foothills-trail-run/",
+              "note": "Closest of these to home.",
+              "star": false
+            },
+            {
+              "name": "Chabot Redtail Ridge",
+              "dist": "varies",
+              "date": "~winter",
+              "url": "https://insidetrail.com/calendar/chabot-redtail-ridge-trail-run/",
+              "note": "Same park as the 50K lead — worth knowing the ground.",
+              "star": false
+            }
+          ]
+        },
+        {
+          "rung": 3,
+          "what": "50K — first ultra",
+          "opens": "2026-12-17",
+          "closes": "2027-01-16",
+          "why": "Must be spring. An August 50K leaves only 9 weeks to the October 50-miler.",
+          "candidates": [
+            {
+              "name": "SPASM Lake Chabot Trail Run",
+              "dist": "8K, half, 30K, marathon, 50K",
+              "date": "Sat Apr 24 2027",
+              "url": "https://runsignup.com/Race/CA/CastroValley/LakeChabotTrailRun",
+              "note": "Best lead: cards the 30K, marathon AND 50K on one day, so it could serve as both the bridge and this rung across two years, on ground you would already know.",
+              "star": true
+            },
+            {
+              "name": "Big Alta",
+              "dist": "50K, 28K",
+              "date": "~March, Marin",
+              "url": "https://www.daybreakracing.com/big-alta",
+              "note": "Marin, real climbing.",
+              "star": false
+            },
+            {
+              "name": "Mendocino Coast 50K",
+              "dist": "50K",
+              "date": "~April",
+              "url": "https://mendocinoultra.com/",
+              "note": "Reported date matched my own placeholder exactly — likely a search echo. Verify hard.",
+              "star": false
+            },
+            {
+              "name": "Lake Chabot Trail Challenge",
+              "dist": "half, 5K",
+              "date": "2027",
+              "url": "https://runsignup.com/Race/CA/CastroValley/LakeChabotTrailChallenge",
+              "note": "No 50K — listed only so you don't confuse it with SPASM above.",
+              "star": false
+            }
+          ]
+        }
+      ],
+      "ruled_out": [
+        {
+          "name": "Skyline 50K — Castro Valley",
+          "url": "https://ultrasignup.com/register.aspx?did=132046",
+          "reason": "The classic NorCal first 50K, running since 1982 at Lake Chabot Marina — and deliberately NOT rung 3. It runs early August (Aug 2 2026, Aug 3 2025, Aug 6 2023), which leaves 9 weeks to the October 50-miler. Keep it for 2028."
+        }
+      ],
+      "calendars": [
+        {
+          "label": "Inside Trail Racing",
+          "url": "https://insidetrail.com/calendar/"
+        },
+        {
+          "label": "Coastal Trail Runs",
+          "url": "https://ultrasignup.com/groups.aspx?gid=69"
+        },
+        {
+          "label": "Inside Trail 50Ks (UltraSignup)",
+          "url": "https://ultrasignup.com/groups.aspx?gid=44"
+        },
+        {
+          "label": "Brazen Racing",
+          "url": "https://brazenracing.com/races/calendar/"
+        },
+        {
+          "label": "Enviro Sports",
+          "url": "https://envirosports.com/all-trail-runs"
+        },
+        {
+          "label": "RunGuides — all CA 50Ks",
+          "url": "https://www.runguides.com/california/runs/50k/all"
+        },
+        {
+          "label": "GoTrail — SF Bay",
+          "url": "https://gotrail.run/en/calendar/united-states/california/san-francisco"
+        },
+        {
+          "label": "UltraRunning — Inside Trail",
+          "url": "https://ultrarunning.com/calendar/organization/inside-trail-racing"
+        },
+        {
+          "label": "UltraRunning — Coastal",
+          "url": "https://ultrarunning.com/calendar/organization/coastal-trail-runs"
+        }
+      ],
+      "checklist": [
+        "Date — is it actually a Saturday inside the window?",
+        "Distance offered — 30K vs marathon changes the jump math",
+        "Vertical gain — for the 50-mile rung you want climb, not flat",
+        "Is registration actually open, and is there a cap?",
+        "Field size — small fields fill fastest, and that is how Nov 7 was lost"
+      ]
+    }
   },
   "mileage": {
     "phase": "Block 2 — Trail Half Build",
