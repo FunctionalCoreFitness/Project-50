@@ -115,7 +115,7 @@
   <!-- WEEK SELECT -->
   <section id="weekSec" style="opacity:.5;pointer-events:none">
     <h2>2 · Pick a week</h2>
-    <div class="hint">Weeks 2-11 are training weeks. Week 1 is the baseline panel, Week 12 is deload + retest.</div>
+    <div class="hint">Block 1 (Foundation, weeks 1-12) and Block 2 (Trail Half Build, weeks 13-24). Training weeks carry day plans; weeks 1, 12 and 24 are test panels &mdash; week 1 baseline, 12 and 24 retests.</div>
     <div class="week-nav">
       <select id="weekSel"></select>
       <span id="phasePill" class="pill phase"></span>
@@ -125,7 +125,7 @@
   <!-- BASELINE / RETEST PANEL (shown for week 1 / 12) -->
   <section id="panelSec" style="display:none">
     <h2 id="panelTitle">Test Panel</h2>
-    <div class="hint">Log these once. The same panel is used for Week 1 (baseline) and Week 12 (retest) so the two are directly comparable.</div>
+    <div class="hint">Log these once. Weeks 1, 12 and 24 share the same core panel so the numbers are directly comparable across blocks. Week 24 adds four Block 2 outcome fields (race time, longest run, biggest vert week, carbs/hr tolerated).</div>
     <div class="row">
       <div><label>Date</label><input id="panelDate" type="date"></div>
       <div><label>Bodyweight (lb)</label><input id="panelBW" type="text" inputmode="decimal"></div>
@@ -211,6 +211,7 @@ function buildWeekSelect(){
     const o=document.createElement('option');
     o.value=w.week;
     let lbl=`Week ${w.week}`;
+    if(w.block) lbl+=` (B${w.block})`;
     if(w.type==='baseline') lbl+=' — Baseline Panel';
     else if(w.type==='deload_retest') lbl+=' — Deload + Retest';
     else lbl+=` — ${w.phase}`;

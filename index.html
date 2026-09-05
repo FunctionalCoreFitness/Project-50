@@ -389,6 +389,45 @@
   .mi-lever{font-size:.84rem;color:#3a4049;margin-top:12px;padding:8px 12px;background:var(--hair);border-radius:3px;line-height:1.45}
   .mi-lever b{color:var(--navy)}
   .mi-ladder{font-size:.8rem;font-style:italic;color:var(--muted);margin-top:10px;line-height:1.45}
+  .mi-vert{font-size:.84rem;color:#2f4a6b;margin-top:10px;padding:8px 12px;background:rgba(74,126,199,.07);border-radius:3px;line-height:1.45}
+  /* race rung detail */
+  .race-date{font-family:'Barlow Condensed',sans-serif;font-size:.74rem;letter-spacing:.05em;text-transform:uppercase;color:var(--amber);margin-left:auto;white-space:nowrap}
+  .race-goal{background:rgba(74,126,199,.08);border-left:3px solid var(--steel);border-radius:3px;padding:9px 12px;font-size:.88rem;color:#2f4a6b;line-height:1.45;margin:10px 0}
+  .race-teaches{font-size:.84rem;font-style:italic;color:var(--muted);margin-top:10px;padding:9px 12px;border:1px dashed var(--line);border-radius:4px;line-height:1.45}
+  /* fueling / gut training */
+  .fuel-lede{font-size:.92rem;color:#3a4049;line-height:1.55;margin-bottom:12px}
+  .fuel-caveat{font-size:.8rem;font-style:italic;color:var(--muted);line-height:1.45;margin-bottom:16px;padding:9px 12px;border:1px dashed var(--line);border-radius:4px}
+  .fuel-now{background:rgba(200,144,49,.10);border-left:3px solid var(--amber);border-radius:3px;padding:12px 14px;margin-bottom:16px}
+  .fuel-now-h{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:.74rem;color:#8a5f14}
+  .fuel-now-v{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;color:var(--navy);letter-spacing:.01em;margin:2px 0}
+  .fuel-now-n{font-size:.84rem;color:#7a5a1e;line-height:1.45}
+  .fuel-sub{font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:.76rem;color:var(--steel);margin:18px 0 8px}
+  .fuel-ladder{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+  .fuel-stage{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:11px 12px}
+  .fuel-stage.now{border-color:var(--amber);box-shadow:inset 0 0 0 1px rgba(200,144,49,.35)}
+  .fuel-st-n{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.86rem;color:var(--navy);letter-spacing:.02em}
+  .fuel-st-c{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--steel);letter-spacing:.01em;margin:3px 0 1px}
+  .fuel-st-d{font-size:.76rem;color:var(--muted);margin-bottom:5px}
+  .fuel-st-f{font-size:.8rem;color:#3a4049;line-height:1.45}
+  .fuel-rules{list-style:none;margin:0;padding:0}
+  .fuel-rules li{font-size:.86rem;color:#3a4049;line-height:1.5;padding:7px 0 7px 20px;border-bottom:1px solid var(--hair);position:relative}
+  .fuel-rules li:last-child{border-bottom:none}
+  .fuel-rules li:before{content:'';position:absolute;left:4px;top:14px;width:6px;height:6px;border-radius:50%;background:var(--amber)}
+  .fuel-tl{display:grid;grid-template-columns:150px 1fr;gap:2px 14px;font-size:.86rem;line-height:1.5}
+  @media(max-width:600px){.fuel-tl{grid-template-columns:1fr;gap:1px}}
+  .fuel-tl-k{font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-size:.74rem;color:var(--steel);padding:7px 0}
+  .fuel-tl-v{color:#3a4049;padding:7px 0;border-bottom:1px solid var(--hair)}
+  @media(max-width:600px){.fuel-tl-k{padding-bottom:0}.fuel-tl-v{padding-top:2px;margin-bottom:6px}}
+  .gi-row{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:11px 12px;margin-bottom:8px}
+  .gi-sym{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.92rem;color:var(--navy);letter-spacing:.02em}
+  .gi-why{font-size:.8rem;color:var(--muted);margin:3px 0;line-height:1.4}
+  .gi-try{font-size:.85rem;color:#3a4049;line-height:1.45}
+  .gi-try b{color:var(--steel);font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.05em;font-size:.72rem;margin-right:6px}
+  .fuel-test{font-size:.84rem;color:#2f4a6b;line-height:1.45;margin-top:14px;padding:9px 12px;background:rgba(74,126,199,.08);border-radius:3px}
+  .today-fuel{font-size:.82rem;color:#e8c98a;background:rgba(200,144,49,.14);border-left:2px solid var(--amber);border-radius:3px;padding:7px 10px;margin-top:8px;line-height:1.4}
+  .today-fuel b{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.05em;font-size:.72rem;color:var(--amber);margin-right:6px}
+  .today-fuel a{color:#f0d9a8;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:2px}
+  .today-fuel a:hover{color:#fff}
   .race-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
   .race-links a{font-family:'Barlow Condensed',sans-serif;font-size:.82rem;letter-spacing:.02em;color:var(--steel);text-decoration:none;border:1px solid var(--steel);border-radius:3px;padding:4px 10px}
   .race-links a:hover{background:var(--steel);color:#fff}
@@ -648,8 +687,11 @@ function evaluate(m){
 
 function sparkline(m){
   if(!m.history || !m.history.length || m.value==null) return "";
-  // build series: history values (oldest->newest) then current
-  const pts = [...m.history.map(h=>h.value), m.value].filter(v=>v!=null);
+  // build series: history values (oldest->newest) then current.
+  // Filter to finite numbers, not just non-null — a stray string (the
+  // update.html parser used to store unit fragments like "bpm") would make
+  // Math.min/max NaN and emit an SVG path the browser rejects outright.
+  const pts = [...m.history.map(h=>h.value), m.value].filter(v=>typeof v==='number' && isFinite(v));
   if(pts.length<2) return "";
   const w=120, h=30, pad=3;
   const min=Math.min(...pts), max=Math.max(...pts);
@@ -860,6 +902,7 @@ function render(d){
     (d.content_bank?`<a href="#contentbank">Content Bank</a>`:'') +
     (d.race_ladder?`<a href="#raceladder">Race Ladder</a>`:'') +
     (d.mileage?`<a href="#mileage">Mileage</a>`:'') +
+    (d.fueling?`<a href="#fueling">Fueling</a>`:'') +
     (d.locations?`<a href="#locations">Sets</a>`:'') +
     (d.wins?`<a href="#wins">Wins</a>`:'') +
     (d.protocol?`<a href="#protocol">Protocol</a>`:'') +
@@ -871,6 +914,7 @@ function render(d){
     `<a href="#today" class="qb-accent">Today</a>` +
     `<a href="#calendar">Calendar</a>` +
     `<a href="#p50-score">Score</a>` +
+    `<a href="#fueling">Fuel</a>` +
     `<a href="workout.html">Log</a>` +
     `<a href="update.html" class="qb-update">Update</a>`;
 
@@ -1270,6 +1314,14 @@ function render(d){
   }
 
   // ===== RACE LADDER (progression to Moab 100) =====
+  // ISO date -> "Dec 5 2026", parsed as local so it doesn't slip a day in
+  // negative-offset timezones the way new Date('2026-12-05') would.
+  function fmtRaceDate(iso){
+    const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(iso||'');
+    if(!m) return iso||'';
+    const dt=new Date(+m[1], +m[2]-1, +m[3]);
+    return dt.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'});
+  }
   const rl=d.race_ladder;
   let rlHtml='';
   if(rl){
@@ -1282,12 +1334,19 @@ function render(d){
           <span class="race-num">${r.capstone?'\u{1F3AF}':r.n}</span>
           <span class="race-dist">${r.dist}</span>
           <span class="race-window">${r.window}</span>
+          ${r.target_date?`<span class="race-date">${fmtRaceDate(r.target_date)}</span>`:''}
         </summary>
         <div class="race-body">
           <div class="race-purpose">${r.purpose}</div>
+          ${r.goal?`<div class="race-goal"><span class="race-lbl">Goal</span>${r.goal}</div>`:''}
+          ${r.gate?`<div class="race-row"><span class="race-lbl">Training gate</span>${r.gate}</div>`:''}
+          ${r.fuel_target?`<div class="race-row"><span class="race-lbl">Fuel target</span>${r.fuel_target}</div>`:''}
+          ${r.vert_prep?`<div class="race-row"><span class="race-lbl">Vert prep</span>${r.vert_prep}</div>`:''}
+          ${r.kit?`<div class="race-row"><span class="race-lbl">Kit</span>${r.kit}</div>`:''}
           <div class="race-row"><span class="race-lbl">Candidates</span>${r.candidates}</div>
           <div class="race-row race-signup"><span class="race-lbl">Sign up</span>${r.signup}</div>
           ${(r.links&&r.links.length)?`<div class="race-links">${r.links.map(l=>`<a href="${l.url}" target="_blank" rel="noopener">${l.label} ↗</a>`).join('')}</div>`:''}
+          ${r.teaches?`<div class="race-teaches"><b>What this rung teaches:</b> ${r.teaches}</div>`:''}
         </div>
       </details>`;
     }).join('');
@@ -1324,13 +1383,63 @@ function render(d){
       <div class="mi-rule">${mi.rule}</div>
       <div class="mi-week">${wk}</div>
       ${mi.bjj_lever?`<div class="mi-lever"><b>BJJ lever:</b> ${mi.bjj_lever}</div>`:''}
+      ${mi.vert_note?`<div class="mi-vert"><b>Vertical:</b> ${mi.vert_note}</div>`:''}
       ${mi.ladder_note?`<div class="mi-ladder">${mi.ladder_note}</div>`:''}
     </section>`;
   }
+  // ===== FUELING / GUT TRAINING =====
+  // The gut is a trainable system on the same ladder as the legs, so this
+  // section is keyed to the block you're in and the rung you're climbing toward.
+  const fu=d.fueling;
+  let fuHtml='';
+  if(fu){
+    const cb=fu.current_block||{};
+    const stages=(fu.ladder||[]).map(s=>{
+      // stage labels read "Block 2 \u2014 Trail Half"; match on the block number,
+      // which is stable, rather than on the block's display name.
+      const now=cb.block!=null && s.stage && s.stage.indexOf('Block '+cb.block)===0;
+      return `<div class="fuel-stage${now?' now':''}">
+        <div class="fuel-st-n">${s.stage}</div>
+        <div class="fuel-st-c">${/\/hr/.test(s.carbs_per_hr)?s.carbs_per_hr:s.carbs_per_hr+' g/hr'}</div>
+        <div class="fuel-st-d">${s.duration}</div>
+        <div class="fuel-st-f">${s.focus}</div>
+      </div>`;
+    }).join('');
+    const rules=(fu.long_run_rules||[]).map(r=>`<li>${r}</li>`).join('');
+    const tplLabels={night_before:'Night before',breakfast:'Breakfast',final_top_up:'Final top-up',
+      on_course:'On course',when_it_goes_wrong:'If it goes wrong',after:'After'};
+    const tpl=Object.keys(tplLabels)
+      .filter(k=>(fu.race_day_template||{})[k])
+      .map(k=>`<div class="fuel-tl-k">${tplLabels[k]}</div><div class="fuel-tl-v">${fu.race_day_template[k]}</div>`)
+      .join('');
+    const gi=(fu.gi_troubleshooting||[]).map(g=>`<div class="gi-row">
+      <div class="gi-sym">${g.symptom}</div>
+      <div class="gi-why">Likely: ${g.likely}</div>
+      <div class="gi-try"><b>Try</b>${g.try}</div>
+    </div>`).join('');
+    fuHtml=`
+    <section id="fueling">
+      <div class="sec-head"><div class="sec-title">${fu.headline||'Fueling'}</div>
+        <div class="sec-meta">Gut training for the race ladder<br>Log GI comfort every long run</div></div>
+      <div class="fuel-lede">${fu.principle||''}</div>
+      ${cb.target_range?`<div class="fuel-now">
+        <div class="fuel-now-h">Block ${cb.block} target &mdash; ${cb.name}</div>
+        <div class="fuel-now-v">${cb.target_range}</div>
+        <div class="fuel-now-n">${cb.note||''}</div>
+      </div>`:''}
+      ${fu.caveat?`<div class="fuel-caveat">${fu.caveat}</div>`:''}
+      ${stages?`<div class="fuel-sub">Carb ladder &mdash; block by block</div><div class="fuel-ladder">${stages}</div>`:''}
+      ${rules?`<div class="fuel-sub">Long-run rules</div><ul class="fuel-rules">${rules}</ul>`:''}
+      ${tpl?`<div class="fuel-sub">Race-day template</div><div class="fuel-tl">${tpl}</div>`:''}
+      ${gi?`<div class="fuel-sub">When the stomach turns</div>${gi}`:''}
+      ${fu.products_to_test?`<div class="fuel-test"><b>Test now, not later:</b> ${fu.products_to_test}</div>`:''}
+    </section>`;
+  }
+
   const todayHtml = buildTodayCard(d, window.__LOG__, project50, scoreClass);
 
   document.getElementById('main').innerHTML =
-    todayHtml + focusHtml + scoreBlockHtml + gaugeHtml + html + pubHtml + calHtml + cbHtml + rlHtml + miHtml + locHtml + winsHtml;
+    todayHtml + focusHtml + scoreBlockHtml + gaugeHtml + html + pubHtml + calHtml + cbHtml + rlHtml + miHtml + fuHtml + locHtml + winsHtml;
 
   // ---- Checkable to-do / B-roll items (per-device, localStorage) ----
   const mainEl=document.getElementById('main');
@@ -1389,29 +1498,55 @@ function buildTodayCard(d, log, project50, scoreClass){
       const days=Math.floor((now - sd)/86400000);
       wkNum = Math.floor(days/7)+1;
     }
-    // clamp to available training weeks (2..11 have day plans; else nearest)
-    const trainingWeeks = log.weeks.filter(w=>w.type==='training');
-    let wk = trainingWeeks.find(w=>w.week===wkNum);
-    if(!wk){
-      if(wkNum!==null && wkNum<2) wk=trainingWeeks[0];
-      else if(wkNum!==null && wkNum>11) wk=trainingWeeks[trainingWeeks.length-1];
-      else wk=trainingWeeks[0];
+    // Resolve the current week. Any week carrying a day plan is a candidate —
+    // deload/retest weeks included, since those carry real sessions under
+    // deload_days and shouldn't fall through to some earlier week's plan.
+    const dayMap = w => w.days || w.deload_days || null;
+    const planned = log.weeks.filter(w=>dayMap(w));
+    const today0 = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const startOf = w => {
+      const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(w.week_start||'');
+      return m ? new Date(+m[1], +m[2]-1, +m[3]) : null;
+    };
+    // A week with an explicit week_start (Block 2 onward) owns its calendar
+    // range exactly, and is matched ONLY by date — the block boundaries don't
+    // land on clean 7-day multiples of program_start, so letting the arithmetic
+    // week number match a dated week would start Block 2 three days early.
+    let wk = planned.find(w=>{
+      const s=startOf(w);
+      if(!s) return false;
+      const e=new Date(s.getFullYear(), s.getMonth(), s.getDate()+7);
+      return today0>=s && today0<e;
+    });
+    const undated = planned.filter(w=>!w.week_start);
+    // Past the end of everything written so far, show no plan rather than
+    // silently replaying an old week — that's the cue to write the next block.
+    const datedEnd = planned.map(startOf).filter(Boolean).sort((a,b)=>b-a)[0];
+    const pastProgram = datedEnd && today0 >= new Date(datedEnd.getFullYear(), datedEnd.getMonth(), datedEnd.getDate()+7);
+    if(!wk && !pastProgram){
+      wk = undated.find(w=>w.week===wkNum);
+      if(!wk && undated.length){
+        const earlier = wkNum===null ? [] : undated.filter(w=>w.week<wkNum);
+        wk = earlier.length ? earlier[earlier.length-1] : undated[0];
+      }
     }
-    if(wk && wk.days && wk.days[dowKey]){
-      const day=wk.days[dowKey];
+    const wkDays = wk ? dayMap(wk) : null;
+    if(wkDays && wkDays[dowKey]){
+      const day=wkDays[dowKey];
       const items=(day.plan||[]).map((p,i)=>`<li${i===0?' class="lead-item"':''}>${p}</li>`).join('');
       planBlock=`
         <div class="today-block">
-          <div class="today-block-h"><span class="today-pillar">${day.pillar||''}</span> Week ${wk.week} · ${day.day_full||dowFull}</div>
+          <div class="today-block-h"><span class="today-pillar">${day.pillar||''}</span> ${wk.block?`Block ${wk.block} · `:''}Week ${wk.week}${wk.phase?` (${wk.phase})`:''} · ${day.day_full||dowFull}</div>
           <ul class="today-plan">${items}</ul>
           ${day.recovery?`<div class="today-recovery">Recovery: ${linkifyRecovery(day.recovery)}</div>`:''}
+          ${(wk.carbs_per_hr_target && (day.mileage||0)>0)?`<div class="today-fuel"><b>Fuel</b>${wk.carbs_per_hr_target} g carb/hr on anything over an hour — start at 30 min. <a href="#fueling">gut plan →</a></div>`:''}
           <a class="today-cta" href="workout.html">Log this session →</a>
         </div>`;
     }
   }
   if(!planBlock){
     planBlock=`<div class="today-block"><div class="today-block-h">Today's plan</div>
-      <div class="today-empty">No plan mapped for today. <a href="workout.html">Open the workout log →</a></div></div>`;
+      <div class="today-empty">No plan mapped for today — the written blocks may have run out. <a href="workout.html">Open the workout log →</a></div></div>`;
   }
 
   // --- next calendar item ---
