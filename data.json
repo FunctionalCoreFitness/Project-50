@@ -3167,11 +3167,11 @@
       {
         "n": 1,
         "dist": "Trail Half-Marathon",
-        "window": "Late fall 2026 (Nov–Dec)",
+        "window": "Early Nov 2026",
         "year": "2026",
         "candidates": "Mt. Tam Trail Run (Stinson, early Nov) or Almaden Quicksilver Half (San Jose)",
         "purpose": "First race back — re-blood the racing instinct, milestone long run.",
-        "signup": "Register ~2–3 months out. These rarely sell out, but early entry locks price and shirt size.",
+        "signup": "Register NOW -- the race is inside 9 weeks. Confirm the exact event and that its date is Sat Nov 7 before the plan is trusted any further.",
         "done": false,
         "links": [
           {
@@ -3183,10 +3183,10 @@
             "url": "https://ultrasignup.com/groups.aspx?gid=69"
           }
         ],
-        "target_date": "2026-12-05",
+        "target_date": "2026-11-07",
         "goal": "Finish strong with a negative split. The clock is secondary — 2:15–2:45 is a realistic band on trail.",
-        "gate": "One 13 mi long run (Block 2, week 21) and one full dress rehearsal at race effort.",
-        "fuel_target": "40–60 g carb/hr, starting at 30 min",
+        "gate": "One 13 mi long run (Block 2, week 17) and one full dress rehearsal at race effort.",
+        "fuel_target": "40-60 g carb/hr, starting at 30 min",
         "vert_prep": "Peak training week ~2,800 ft; race likely 1,000–2,000 ft",
         "teaches": "Racing again after a long layoff, and that fuel goes in before you feel like you need it.",
         "kit": "Race shoes + handheld or light vest. Nothing unrehearsed."
@@ -3301,11 +3301,11 @@
   },
   "mileage": {
     "phase": "Block 2 — Trail Half Build",
-    "phase_window": "Sep 21 → Dec 13 2026",
+    "phase_window": "Sep 21 -> Nov 15 2026",
     "current_weekly": "12–15 mi/wk",
-    "target_weekly": "26.5 mi/wk at Block 2 peak (week 21)",
+    "target_weekly": "26.5 mi/wk at Block 2 peak (week 17)",
     "long_run_now": "5–6 mi",
-    "long_run_target": "13 mi dress rehearsal, week 21",
+    "long_run_target": "13 mi dress rehearsal, week 17",
     "rule": "Build the long run ~1 mi every 1–2 wks. Weekly volume never grows more than 10% over the previous peak — the peak, not the cutback week, so a post-cutback rebound isn't a real jump. Every 4th week cut back ~30%.",
     "week_structure": [
       {
@@ -3335,14 +3335,14 @@
     "current_block": {
       "block": 2,
       "name": "Trail Half Build",
-      "target_range": "30 → 75 g carb/hr",
-      "note": "Ramps across the block. Week 21's peak long run is the full dress rehearsal — whatever works there becomes the race plan."
+      "target_range": "30 -> 60 g carb/hr",
+      "note": "Ramps across 7 weeks to the race. Week 17's peak long run (13 mi, Sun Oct 25) is the full dress rehearsal -- whatever works there becomes the Nov 7 race plan."
     },
     "ladder": [
       {
-        "stage": "Block 2 — Trail Half",
-        "carbs_per_hr": "30 → 75",
-        "duration": "2–2.5 hr",
+        "stage": "Block 2 - Trail Half",
+        "carbs_per_hr": "30 -> 60",
+        "duration": "2-2.5 hr",
         "focus": "Start fueling at 30 min. Establish that food goes in on a clock, not on hunger."
       },
       {
@@ -3410,205 +3410,17 @@
         "try": "Ease the effort, take sodium, and note the conditions. Look for the pattern across several runs, not one."
       }
     ],
-    "products_to_test": "Test at least two carb sources and one savory option during Block 2's weeks 19–21, before they matter. Record brand, amount, and GI comfort in the workout log."
+    "products_to_test": "Test at least two carb sources and one savory option in weeks 15-17, before they matter. With only 7 weeks there is no room to discover a problem late. Record brand, amount and GI comfort in the workout log."
   },
   "trails": {
     "headline": "Long-Run Trails",
     "anchor": "Anchored between San Mateo and Redwood City",
     "principle": "Each Sunday has three options, ordered closest-first. They are not scenic picks — each one is chosen because its distance and climbing match what that specific week is trying to build. Early weeks stay close to home; the block branches out to Huddart, Purisima and El Corte de Madera as the long run grows and needs terrain that a small local park can't provide.",
     "caveat": "Distances, elevation gain, ratings and trailhead distances are AllTrails figures. Trailhead distance is straight-line from the San Mateo / Redwood City midpoint, not drive time — check the actual route, and check park hours and closures (Purisima and El Corte de Madera close trails after heavy rain).",
-    "terrain_note": "The redwood singletrack at Huddart, Purisima and Wunderlich is the closest match to what a Bay Area trail half actually feels like. Get on it before race day so nothing on Dec 5 is new.",
+    "terrain_note": "The redwood singletrack at Huddart, Purisima and Wunderlich is the closest match to what a Bay Area trail half actually feels like. Get on it before race day so nothing on Nov 7 is new.",
     "weeks": [
       {
         "week": 13,
-        "long_run_mi": 7,
-        "long_run_vert": "~450 ft",
-        "need": "Establish the Sunday habit. Runnable and low-consequence — the point is that it happens, not that it hurts.",
-        "options": [
-          {
-            "name": "Crystal Springs to Pulgas Water Temple",
-            "park": "SF Peninsula Watershed",
-            "miles": 5.0,
-            "vert_ft": 429,
-            "trailhead_mi": 3.5,
-            "difficulty": "Moderate",
-            "route_type": "Out & back",
-            "rating": 4.0,
-            "url": "https://www.alltrails.com/trail/us/california/crystal-springs-to-pulgas-water-temple",
-            "why": "Wide, gentle, reservoir the whole way. The lowest-consequence real trail you have — nothing here will beat you up.",
-            "adjust": "Run 3.5 mi out, turn, come back — that's 7 on the nose."
-          },
-          {
-            "name": "Lower Crystal Springs via Sawyer Camp Trail",
-            "park": "SF State Fish & Game Refuge",
-            "miles": 5.5,
-            "vert_ft": 387,
-            "trailhead_mi": null,
-            "difficulty": "Moderate",
-            "route_type": "Out & back",
-            "rating": 4.6,
-            "url": "https://www.alltrails.com/trail/us/california/sawyer-camp-trail-san-andreas-lake-to-lower-crystal-springs-reservoir",
-            "why": "Paved and near-flat. The bail-out when legs are cranky or it's dark early — you can run this one on autopilot.",
-            "adjust": "Continue along the reservoir past the listed turnaround to reach 7."
-          },
-          {
-            "name": "John S Brooks Memorial Trail Loop",
-            "park": "Water Dog Lake Open Space",
-            "miles": 5.6,
-            "vert_ft": 941,
-            "trailhead_mi": 2.3,
-            "difficulty": "Moderate",
-            "route_type": "Loop",
-            "rating": 4.6,
-            "url": "https://www.alltrails.com/trail/us/california/john-s-brooks-memorial-trail",
-            "why": "Your closest genuine trail. Real dirt, real climbing, 10 minutes from the door.",
-            "adjust": "Add a 1.4 mi warm-up out-and-back from the lot first. More vert than the week asks — hike the steep bits, keep the effort easy."
-          }
-        ]
-      },
-      {
-        "week": 14,
-        "long_run_mi": 8,
-        "long_run_vert": "~600 ft",
-        "need": "First real step up. Still conversational — you should be able to talk the whole way.",
-        "options": [
-          {
-            "name": "Rambler, Ohlone, Chaparral, Berry, Lake, John Brooks and Finch Loop",
-            "park": "Hidden Canyon / Water Dog",
-            "miles": 7.0,
-            "vert_ft": 1131,
-            "trailhead_mi": 1.75,
-            "difficulty": "Moderate",
-            "route_type": "Loop",
-            "rating": 4.5,
-            "url": "https://www.alltrails.com/trail/us/california/rambler-ohlone-chaparral-berry-lake-john-brooks-and-lower-finch-loop",
-            "why": "Nearest trailhead of anything on this list, and a full 7 mi without repeating yourself.",
-            "adjust": "Add 1 mi as an out-and-back from the trailhead before starting the loop."
-          },
-          {
-            "name": "John S Brooks Memorial Trail Loop",
-            "park": "Water Dog Lake Open Space",
-            "miles": 5.6,
-            "vert_ft": 941,
-            "trailhead_mi": 2.3,
-            "difficulty": "Moderate",
-            "route_type": "Loop",
-            "rating": 4.6,
-            "url": "https://www.alltrails.com/trail/us/california/john-s-brooks-memorial-trail",
-            "why": "Your closest genuine trail. Real dirt, real climbing, 10 minutes from the door.",
-            "adjust": "Lap the lake section for the extra 2.4 mi."
-          },
-          {
-            "name": "Dick Bishop, Hassler, Dusky-Footed Woodrat, and Polly Geraci Loop",
-            "park": "Pulgas Ridge Open Space",
-            "miles": 5.5,
-            "vert_ft": 1010,
-            "trailhead_mi": 3.4,
-            "difficulty": "Moderate",
-            "route_type": "Loop",
-            "rating": 4.6,
-            "url": "https://www.alltrails.com/trail/us/california/dick-bishop-hassler-dusky-footed-woodrat-and-polly-geraci-loop",
-            "why": "Steady sustained climb in a small package — the cheapest vert per mile of driving you have.",
-            "adjust": "Add a 2.5 mi out-and-back on the lower fire road. Good week to start feeling sustained climbing."
-          }
-        ]
-      },
-      {
-        "week": 15,
-        "long_run_mi": 8.5,
-        "long_run_vert": "~800 ft",
-        "need": "Vert starts to matter. Pick something with a real climb in it, not just distance.",
-        "options": [
-          {
-            "name": "Rambler, Ohlone, Chaparral, Berry, Lake, John Brooks and Finch Loop",
-            "park": "Hidden Canyon / Water Dog",
-            "miles": 7.0,
-            "vert_ft": 1131,
-            "trailhead_mi": 1.75,
-            "difficulty": "Moderate",
-            "route_type": "Loop",
-            "rating": 4.5,
-            "url": "https://www.alltrails.com/trail/us/california/rambler-ohlone-chaparral-berry-lake-john-brooks-and-lower-finch-loop",
-            "why": "Nearest trailhead of anything on this list, and a full 7 mi without repeating yourself.",
-            "adjust": "Add 1.5 mi before or after the loop."
-          },
-          {
-            "name": "Miramontes, Mount Redondo and Raymundo Trail Loop",
-            "park": "Huddart County Park",
-            "miles": 6.3,
-            "vert_ft": 1082,
-            "trailhead_mi": 5.7,
-            "difficulty": "Moderate",
-            "route_type": "Loop",
-            "rating": 4.6,
-            "url": "https://www.alltrails.com/trail/us/california/miramontes-mount-redondo-and-raymundo-trail-loop",
-            "why": "Redwood singletrack — the closest thing nearby to what a Bay Area trail half actually feels like underfoot.",
-            "adjust": "Add 2.2 mi. First Huddart trip — worth the drive to learn the terrain early."
-          },
-          {
-            "name": "Skyline Trail",
-            "park": "Redwood City",
-            "miles": 8.1,
-            "vert_ft": 1476,
-            "trailhead_mi": 6.9,
-            "difficulty": "Moderate",
-            "route_type": "Out & back",
-            "rating": 4.5,
-            "url": "https://www.alltrails.com/trail/us/california/skyline-trail--3",
-            "why": "Ridge running with a turnaround you choose. Exposed enough to teach you something about pacing in wind.",
-            "adjust": "Turn around at 4.25 mi for 8.5 exactly."
-          }
-        ]
-      },
-      {
-        "week": 16,
-        "long_run_mi": 6,
-        "long_run_vert": "~500 ft",
-        "need": "Cutback. Do not prove anything today. Short, flat, done.",
-        "options": [
-          {
-            "name": "Crystal Springs to Pulgas Water Temple",
-            "park": "SF Peninsula Watershed",
-            "miles": 5.0,
-            "vert_ft": 429,
-            "trailhead_mi": 3.5,
-            "difficulty": "Moderate",
-            "route_type": "Out & back",
-            "rating": 4.0,
-            "url": "https://www.alltrails.com/trail/us/california/crystal-springs-to-pulgas-water-temple",
-            "why": "Wide, gentle, reservoir the whole way. The lowest-consequence real trail you have — nothing here will beat you up.",
-            "adjust": "Add 1 mi. Keep it genuinely easy."
-          },
-          {
-            "name": "Lower Crystal Springs via Sawyer Camp Trail",
-            "park": "SF State Fish & Game Refuge",
-            "miles": 5.5,
-            "vert_ft": 387,
-            "trailhead_mi": null,
-            "difficulty": "Moderate",
-            "route_type": "Out & back",
-            "rating": 4.6,
-            "url": "https://www.alltrails.com/trail/us/california/sawyer-camp-trail-san-andreas-lake-to-lower-crystal-springs-reservoir",
-            "why": "Paved and near-flat. The bail-out when legs are cranky or it's dark early — you can run this one on autopilot.",
-            "adjust": "Flattest thing you have. Use it."
-          },
-          {
-            "name": "Clarkia, Sunset, Serpentine and Edgewood Trail",
-            "park": "Edgewood Park & Nature Preserve",
-            "miles": 3.2,
-            "vert_ft": 393,
-            "trailhead_mi": 4.6,
-            "difficulty": "Moderate",
-            "route_type": "Loop",
-            "rating": 4.5,
-            "url": "https://www.alltrails.com/trail/us/california/clarkia-sunset-serpentine-and-edgewood-trail",
-            "why": "Short rolling loop, easy to lap. Good when you want the option to stop early without driving home defeated.",
-            "adjust": "Two laps of the 3.2 mi loop is 6.4 — close enough, and easy to cut short."
-          }
-        ]
-      },
-      {
-        "week": 17,
         "long_run_mi": 9,
         "long_run_vert": "~1,000 ft",
         "need": "Back-to-backs begin. Leave something in the tank — Monday's 3 mi on tired legs is the actual stimulus.",
@@ -3655,7 +3467,7 @@
         ]
       },
       {
-        "week": 18,
+        "week": 14,
         "long_run_mi": 10,
         "long_run_vert": "~1,250 ft",
         "need": "Sustained climbing on tired legs. This is the week the block starts asking real questions.",
@@ -3702,7 +3514,7 @@
         ]
       },
       {
-        "week": 19,
+        "week": 15,
         "long_run_mi": 11,
         "long_run_vert": "~1,500 ft",
         "need": "Biggest effort before the peak. Full fuel rehearsal — 60 g/hr, on the clock, from 30 minutes.",
@@ -3749,7 +3561,7 @@
         ]
       },
       {
-        "week": 20,
+        "week": 16,
         "long_run_mi": 6,
         "long_run_vert": "~750 ft",
         "need": "Second cutback, and the last one before peak. Absorb the last three weeks.",
@@ -3796,10 +3608,10 @@
         ]
       },
       {
-        "week": 21,
+        "week": 17,
         "long_run_mi": 13,
         "long_run_vert": "~1,800 ft",
-        "need": "PEAK — full dress rehearsal. Race kit, race breakfast, 75 g carb/hr, everything you plan to use on Dec 5. Whatever works today becomes the race plan.",
+        "need": "PEAK — full dress rehearsal. Race kit, race breakfast, 75 g carb/hr, everything you plan to use on Nov 7. Whatever works today becomes the race plan.",
         "options": [
           {
             "name": "North and Harkins Ridge, Purisima Creek, and Whittemore Gulch Loop",
@@ -3843,7 +3655,7 @@
         ]
       },
       {
-        "week": 22,
+        "week": 18,
         "long_run_mi": 10,
         "long_run_vert": "~1,100 ft",
         "need": "Taper. Sharpen, don't build. Nothing new — familiar ground only.",
@@ -3904,12 +3716,12 @@
         "when": "Weeks 17–22",
         "distance": "3–4 mi",
         "weeks": [
+          13,
+          14,
+          15,
+          16,
           17,
-          18,
-          19,
-          20,
-          21,
-          22
+          18
         ],
         "need": "Flat. The tired legs from yesterday's long run ARE the stimulus — you don't need terrain to make this hard, and adding climbing here just steals from Tuesday.",
         "avoid": "Sustained climbing, technical footing, and any temptation to 'make it count'. Deliberately slow is the instruction.",
@@ -3971,11 +3783,7 @@
           16,
           17,
           18,
-          19,
-          20,
-          21,
-          22,
-          23
+          19
         ],
         "need": "Gentle rolling. Holding HR under the ceiling is the entire point of this run, and a steep climb spikes it — which quietly turns your easy day into a second hard day.",
         "avoid": "Anything you'd describe as a climb. If you're walking to keep HR down, the trail is wrong for this session, not you.",
@@ -4033,10 +3841,7 @@
         "weeks": [
           13,
           14,
-          15,
-          17,
-          18,
-          21
+          17
         ],
         "need": "One climb you can run five to eight times. A scenic loop is the wrong shape for this — you want a single pitch with a runnable descent, not a tour.",
         "avoid": "Loops where the climb only comes once. You'll end up jogging a lot of flat between efforts and doing half the work.",
@@ -4092,8 +3897,7 @@
         "when": "Weeks 16, 19",
         "distance": "4–5 mi",
         "weeks": [
-          16,
-          19
+          15
         ],
         "need": "Undulating and runnable, so you can hold one steady comfortably-hard effort. Tempo means continuous — every steep pitch that forces a walk break breaks the session.",
         "avoid": "Real climbing. If you can't hold the effort through the terrain, it's a hill workout wearing a tempo costume.",
@@ -4149,7 +3953,7 @@
         "when": "Week 20",
         "distance": "4 mi",
         "weeks": [
-          20
+          16
         ],
         "need": "Genuinely flat and smooth. Strides are near-max leg speed — that's how you roll an ankle on technical trail, and this is a cutback week where the whole point is to arrive at the peak intact.",
         "avoid": "Roots, rocks, ruts. Save the technical footing for a day you aren't sprinting.",
@@ -4205,11 +4009,11 @@
         "when": "Weeks 22, 23",
         "distance": "3–4 mi",
         "weeks": [
-          22,
-          23
+          18,
+          19
         ],
-        "need": "Terrain that resembles Dec 5 — rolling, runnable, real trail. This is the last sharpening before the race.",
-        "avoid": "In week 23 (race week), take the Quick option and nothing else. Nothing new the week of a race — that rule applies to trails as much as to gels.",
+        "need": "Terrain that resembles Nov 7 — rolling, runnable, real trail. This is the last sharpening before the race.",
+        "avoid": "In week 19 (race week), take the Quick option and nothing else. Nothing new the week of a race — that rule applies to trails as much as to gels.",
         "options": [
           {
             "tag": "Quick",
@@ -4237,7 +4041,7 @@
             "rating": 4.7,
             "url": "https://www.alltrails.com/trail/us/california/edgewood-trail-loop",
             "why": "Rolling with runnable climbs — about the profile a Bay Area trail half actually throws at you. Rated 4.7.",
-            "how": "3.4 mi as-is. Week 22 only."
+            "how": "3.4 mi as-is. Week 18 only."
           },
           {
             "tag": "New",
@@ -4251,7 +4055,7 @@
             "rating": 4.7,
             "url": "https://www.alltrails.com/trail/us/california/sylvan-loop-trail",
             "why": "Short and punchy — lap it so each rep starts fresh on the same terrain.",
-            "how": "Run it once as a warm-up, then use it as the interval loop. Week 22 only."
+            "how": "Run it once as a warm-up, then use it as the interval loop. Week 18 only."
           }
         ]
       }
