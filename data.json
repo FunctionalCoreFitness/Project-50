@@ -2402,7 +2402,8 @@
     {
       "id": "nutrition",
       "name": "Nutrition",
-      "blurb": "Synced daily from Apple Health. Targets derived from the Function Health panel.",
+      "source": "Apple Health (nutrition app)",
+      "cadence": "Daily",
       "metrics": [
         {
           "name": "Fiber",
@@ -4845,7 +4846,8 @@
         "priority": 2,
         "marker": "Triglycerides 321 (goal 80) · HbA1c 5.6 · Uric acid 5.8",
         "why": "Triglycerides at 321 is the loudest number on your panel, and dietary sugar — fructose especially — is its most direct driver. Fructose also raises uric acid, which is separately above your goal.",
-        "food": "The cap is on added sugar, not fruit. Sports fuel during long runs is exempt: that carbohydrate is being burned, not stored, and the fuelling plan needs it."
+        "food": "The cap is on added sugar, not fruit. Sports fuel during long runs is exempt: that carbohydrate is being burned, not stored, and the fuelling plan needs it.",
+        "chart": true
       },
       {
         "key": "dietaryFatSaturated",
@@ -4867,7 +4869,8 @@
         "priority": 4,
         "marker": "Age 48 · 155 lb lean mass · 33 mi/wk peak training load",
         "why": "About 1.6-1.8 g per kg of bodyweight. Protein needs rise with age and with endurance volume, and you are adding both. This protects lean mass through a block that is deliberately adding running and holding strength at maintenance.",
-        "food": "Spread across the day rather than one large serving. Aim for 30-40 g in the post-long-run window."
+        "food": "Spread across the day rather than one large serving. Aim for 30-40 g in the post-long-run window.",
+        "chart": true
       },
       {
         "key": "dietaryWater",

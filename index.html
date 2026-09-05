@@ -1099,7 +1099,7 @@ function render(d){
     (d.trails?`<a href="#trails">Trails</a>`:'') +
     (d.coaching?`<a href="#coaching">Coaching</a>`:'') +
     (d.recovery_sync?`<a href="#recovery-sync">Auto-Recovery</a>`:'') +
-    (d.nutrition?`<a href="#nutrition">Nutrition</a>`:'') +
+    (d.nutrition?`<a href="#nutrition-targets">Nutrition</a>`:'') +
     (d.locations?`<a href="#locations">Sets</a>`:'') +
     (d.wins?`<a href="#wins">Wins</a>`:'') +
     (d.protocol?`<a href="#protocol">Protocol</a>`:'') +
@@ -1115,7 +1115,7 @@ function render(d){
     `<a href="#trails">Trails</a>` +
     `<a href="#coaching">Form</a>` +
     `<a href="#recovery-sync">Recovery</a>` +
-    `<a href="#nutrition">Fuel</a>` +
+    `<a href="#nutrition-targets">Targets</a>` +
     `<a href="workout.html">Log</a>` +
     `<a href="update.html" class="qb-update">Update</a>`;
 
@@ -1864,8 +1864,8 @@ function render(d){
       }).join('');
       const logged=series.filter(p=>p.v!==null);
       const hits=logged.filter(p=>hit(p.v, targetFor(t, milesOn(p.date)))).length;
-      return `<div class="nu-chart"><div class="nu-goal" style="top:${goalPct}%"><span>${t.dynamic?'baseline':'target'} ${base}</span></div>${bars}</div>
-        <div class="nu-xlab"><span>${series[0].date}</span><span>${hits}/${logged.length} days on target</span><span>${series[series.length-1].date}</span></div>`;
+      return `<div class="nu-chart"><div class="nu-goal" style="top:${goalPct}%"><span>${t.dynamic?'baseline':(t.direction==='down'?'max':'target')} ${base}</span></div>${bars}</div>
+        <div class="nu-xlab"><span>${series[0].date}</span><span>${hits}/${logged.length} days ${t.direction==='down'?'under':'on target'}</span><span>${series[series.length-1].date}</span></div>`;
     }
 
     const charted=targets.filter(t=>t.chart);
@@ -1873,7 +1873,7 @@ function render(d){
       const dt=dynamicTarget(t);
       return `<div class="nu-hero">
         <div class="nu-hero-h"><span class="nu-hero-n">${t.name} &mdash; last 30 days</span>
-          <span class="nu-hero-t">target ${dt.value} ${t.unit}/day &middot; ${t.marker}</span></div>
+          <span class="nu-hero-t">${t.direction==='down'?'max':'target'} ${dt.value} ${t.unit}/day &middot; ${t.marker}</span></div>
         ${dt.note?`<div class="nu-dyn">${dt.note}${t.dynamic&&t.dynamic.note?` &mdash; ${t.dynamic.note}`:''}</div>`:''}
         ${chartFor(t)}
       </div>`;
@@ -1892,7 +1892,7 @@ function render(d){
 
     const nt=nu.not_trackable||{};
     nuHtml=`
-    <section id="nutrition">
+    <section id="nutrition-targets">
       <div class="sec-head"><div class="sec-title">${nu.headline||'Nutrition'}</div>
         <div class="sec-meta">From your blood panel, not generic RDAs<br>Synced daily from Apple Health</div></div>
       <div class="nu-lede">${nu.basis||''}</div>
