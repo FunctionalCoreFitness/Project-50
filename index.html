@@ -428,6 +428,45 @@
   .today-fuel b{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.05em;font-size:.72rem;color:var(--amber);margin-right:6px}
   .today-fuel a{color:#f0d9a8;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:2px}
   .today-fuel a:hover{color:#fff}
+  /* long-run trails */
+  .tr-lede{font-size:.92rem;color:#3a4049;line-height:1.55;margin-bottom:12px}
+  .tr-caveat{font-size:.8rem;font-style:italic;color:var(--muted);line-height:1.45;margin-bottom:16px;padding:9px 12px;border:1px dashed var(--line);border-radius:4px}
+  .tr-terrain{font-size:.84rem;color:#2f4a6b;line-height:1.45;margin-bottom:16px;padding:9px 12px;background:rgba(74,126,199,.08);border-radius:3px}
+  .tr-next{background:rgba(200,144,49,.10);border-left:3px solid var(--amber);border-radius:3px;padding:12px 14px;margin-bottom:16px}
+  .tr-next-h{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:.74rem;color:#8a5f14}
+  .tr-next-v{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;color:var(--navy);letter-spacing:.01em;margin:2px 0}
+  .tr-next-n{font-size:.84rem;color:#7a5a1e;line-height:1.45}
+  .tr-wk{border:1px solid var(--line);border-radius:4px;background:var(--card);margin-bottom:8px;overflow:hidden}
+  .tr-wk.tr-now{border-color:var(--amber);box-shadow:inset 0 0 0 1px rgba(200,144,49,.3)}
+  .tr-wk>summary{cursor:pointer;list-style:none;padding:11px 14px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .tr-wk>summary::-webkit-details-marker{display:none}
+  .tr-wk>summary:hover{background:var(--hair)}
+  .tr-wknum{font-family:'Bebas Neue',sans-serif;font-size:1.15rem;color:var(--steel);letter-spacing:.02em}
+  .tr-wkmi{font-family:'Bebas Neue',sans-serif;font-size:1.15rem;color:var(--navy)}
+  .tr-wkvert{font-size:.78rem;color:var(--muted)}
+  .tr-wkneed{flex:1 1 100%;font-size:.83rem;color:#3a4049;line-height:1.4}
+  .tr-body{padding:0 14px 12px}
+  .tr-opt{border-top:1px solid var(--hair);padding:11px 0}
+  .tr-opt-h{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:3px}
+  .tr-rank{font-family:'Bebas Neue',sans-serif;font-size:.95rem;color:#fff;background:var(--steel);border-radius:50%;width:19px;height:19px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;font-size:.72rem}
+  .tr-name{font-weight:600;font-size:.9rem;color:var(--navy);line-height:1.35}
+  .tr-park{font-size:.78rem;color:var(--muted)}
+  .tr-stats{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+  .tr-stat{font-family:'Barlow Condensed',sans-serif;font-size:.76rem;letter-spacing:.03em;color:var(--steel);border:1px solid var(--line);border-radius:3px;padding:2px 7px;white-space:nowrap}
+  .tr-stat b{color:var(--navy);font-weight:600}
+  .tr-why{font-size:.85rem;color:#3a4049;line-height:1.45;margin-bottom:4px}
+  .tr-adj{font-size:.82rem;color:#7a5a1e;background:rgba(200,144,49,.09);border-radius:3px;padding:6px 9px;line-height:1.4}
+  .tr-adj b{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.05em;font-size:.7rem;color:#8a5f14;margin-right:5px}
+  .tr-link{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:.8rem;letter-spacing:.02em;color:var(--steel);text-decoration:none;border:1px solid var(--steel);border-radius:3px;padding:3px 9px;margin-top:7px}
+  .tr-link:hover{background:var(--steel);color:#fff}
+  .tr-sub{font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:.76rem;color:var(--steel);margin:18px 0 6px}
+  .tr-subnote{font-size:.84rem;color:#3a4049;line-height:1.45;margin-bottom:8px}
+  .tr-mini{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px}
+  .tr-minicard{border:1px solid var(--line);border-radius:4px;background:var(--card);padding:10px 12px}
+  .today-trail{font-size:.82rem;color:#cfe0f5;background:rgba(74,126,199,.16);border-left:2px solid var(--steel);border-radius:3px;padding:7px 10px;margin-top:8px;line-height:1.4}
+  .today-trail b{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.05em;font-size:.72rem;color:#8fb4e8;margin-right:6px}
+  .today-trail a{color:#dce8f8;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:2px}
+  .today-trail a:hover{color:#fff}
   .race-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
   .race-links a{font-family:'Barlow Condensed',sans-serif;font-size:.82rem;letter-spacing:.02em;color:var(--steel);text-decoration:none;border:1px solid var(--steel);border-radius:3px;padding:4px 10px}
   .race-links a:hover{background:var(--steel);color:#fff}
@@ -903,6 +942,7 @@ function render(d){
     (d.race_ladder?`<a href="#raceladder">Race Ladder</a>`:'') +
     (d.mileage?`<a href="#mileage">Mileage</a>`:'') +
     (d.fueling?`<a href="#fueling">Fueling</a>`:'') +
+    (d.trails?`<a href="#trails">Trails</a>`:'') +
     (d.locations?`<a href="#locations">Sets</a>`:'') +
     (d.wins?`<a href="#wins">Wins</a>`:'') +
     (d.protocol?`<a href="#protocol">Protocol</a>`:'') +
@@ -915,6 +955,7 @@ function render(d){
     `<a href="#calendar">Calendar</a>` +
     `<a href="#p50-score">Score</a>` +
     `<a href="#fueling">Fuel</a>` +
+    `<a href="#trails">Trails</a>` +
     `<a href="workout.html">Log</a>` +
     `<a href="update.html" class="qb-update">Update</a>`;
 
@@ -1436,10 +1477,86 @@ function render(d){
     </section>`;
   }
 
+  // ===== LONG-RUN TRAILS =====
+  // Options are pinned to a training week, so the "up next" card resolves the
+  // same way the Today card does: by the log's week_start dates, not by a
+  // guessed week number.
+  const tr=d.trails;
+  let trHtml='';
+  if(tr && Array.isArray(tr.weeks)){
+    const curWk = currentTrainingWeek(window.__LOG__, d);
+    const upcoming = tr.weeks.find(w=>curWk!==null && w.week>=curWk) || null;
+
+    const optHtml=(o,i)=>`
+      <div class="tr-opt">
+        <div class="tr-opt-h"><span class="tr-rank">${i+1}</span>
+          <span class="tr-name">${o.name}</span></div>
+        <div class="tr-park">${o.park}</div>
+        <div class="tr-stats">
+          <span class="tr-stat"><b>${o.miles}</b> mi</span>
+          <span class="tr-stat"><b>${o.vert_ft.toLocaleString()}</b> ft vert</span>
+          ${o.trailhead_mi!=null?`<span class="tr-stat"><b>${o.trailhead_mi}</b> mi to trailhead</span>`:'<span class="tr-stat">paved</span>'}
+          <span class="tr-stat">${o.route_type}</span>
+          <span class="tr-stat">${o.difficulty}</span>
+          <span class="tr-stat">★ <b>${o.rating}</b></span>
+        </div>
+        <div class="tr-why">${o.why}</div>
+        ${o.adjust?`<div class="tr-adj"><b>To hit the number</b>${o.adjust}</div>`:''}
+        <a class="tr-link" href="${o.url}" target="_blank" rel="noopener">AllTrails ↗</a>
+      </div>`;
+
+    const wkHtml=(w)=>`
+      <details class="tr-wk${upcoming&&w.week===upcoming.week?' tr-now':''}"${upcoming&&w.week===upcoming.week?' open':''}>
+        <summary>
+          <span class="tr-wknum">WK ${w.week}</span>
+          <span class="tr-wkmi">${w.long_run_mi} mi</span>
+          <span class="tr-wkvert">${w.long_run_vert} on the long run</span>
+          <span class="tr-wkneed">${w.need}</span>
+        </summary>
+        <div class="tr-body">${w.options.map(optHtml).join('')}</div>
+      </details>`;
+
+    const mini=(list)=>`<div class="tr-mini">${list.map(o=>`
+      <div class="tr-minicard">
+        <div class="tr-name">${o.name}</div>
+        <div class="tr-park">${o.park}</div>
+        <div class="tr-stats">
+          <span class="tr-stat"><b>${o.miles}</b> mi</span>
+          <span class="tr-stat"><b>${o.vert_ft.toLocaleString()}</b> ft</span>
+          ${o.trailhead_mi!=null?`<span class="tr-stat"><b>${o.trailhead_mi}</b> mi away</span>`:''}
+        </div>
+        <div class="tr-why">${o.why}</div>
+        <a class="tr-link" href="${o.url}" target="_blank" rel="noopener">AllTrails ↗</a>
+      </div>`).join('')}</div>`;
+
+    trHtml=`
+    <section id="trails">
+      <div class="sec-head"><div class="sec-title">${tr.headline||'Long-Run Trails'}</div>
+        <div class="sec-meta">${tr.anchor||''}<br>Three options per Sunday, closest first</div></div>
+      <div class="tr-lede">${tr.principle||''}</div>
+      ${upcoming?`<div class="tr-next">
+        <div class="tr-next-h">Up next &mdash; week ${upcoming.week} long run</div>
+        <div class="tr-next-v">${upcoming.long_run_mi} mi &middot; ${upcoming.long_run_vert}</div>
+        <div class="tr-next-n">${upcoming.need}</div>
+      </div>`:`<div class="tr-next">
+        <div class="tr-next-h">No long run scheduled</div>
+        <div class="tr-next-v">Block 2 is done</div>
+        <div class="tr-next-n">Race week and the recovery week carry no planned long run. These options stay here as a library &mdash; the next block gets its own set.</div>
+      </div>`}
+      ${tr.terrain_note?`<div class="tr-terrain">${tr.terrain_note}</div>`:''}
+      ${tr.caveat?`<div class="tr-caveat">${tr.caveat}</div>`:''}
+      ${tr.weeks.map(wkHtml).join('')}
+      ${tr.back_to_back?`<div class="tr-sub">Monday back-to-back &mdash; keep it flat</div>
+        <div class="tr-subnote">${tr.back_to_back.note}</div>${mini(tr.back_to_back.options)}`:''}
+      ${tr.hill_venue?`<div class="tr-sub">Wednesday hill repeats</div>
+        <div class="tr-subnote">${tr.hill_venue.note}</div>${mini(tr.hill_venue.options)}`:''}
+    </section>`;
+  }
+
   const todayHtml = buildTodayCard(d, window.__LOG__, project50, scoreClass);
 
   document.getElementById('main').innerHTML =
-    todayHtml + focusHtml + scoreBlockHtml + gaugeHtml + html + pubHtml + calHtml + cbHtml + rlHtml + miHtml + fuHtml + locHtml + winsHtml;
+    todayHtml + focusHtml + scoreBlockHtml + gaugeHtml + html + pubHtml + calHtml + cbHtml + rlHtml + miHtml + fuHtml + trHtml + locHtml + winsHtml;
 
   // ---- Checkable to-do / B-roll items (per-device, localStorage) ----
   const mainEl=document.getElementById('main');
@@ -1481,6 +1598,70 @@ function render(d){
 }
 
 // ---- Today card builder ----
+// Resolve which planned week a date falls in. Any week carrying a day plan is
+// a candidate — deload/retest weeks included, since those carry real sessions
+// under deload_days and shouldn't fall through to some earlier week's plan.
+//
+// A week with an explicit week_start (Block 2 onward) owns its calendar range
+// exactly and is matched ONLY by date: the block boundaries don't land on clean
+// 7-day multiples of program_start, so letting the arithmetic week number match
+// a dated week would start Block 2 three days early. Past the end of everything
+// written, this returns null rather than silently replaying an old week.
+function weekDays(w){ return w.days || w.deload_days || null; }
+function weekStartDate(w){
+  const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(w.week_start||'');
+  return m ? new Date(+m[1], +m[2]-1, +m[3]) : null;
+}
+function resolveTrainingWeek(log, wkNum, now){
+  if(!log || !Array.isArray(log.weeks)) return null;
+  const planned = log.weeks.filter(weekDays);
+  if(!planned.length) return null;
+  const today0 = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  let wk = planned.find(w=>{
+    const s=weekStartDate(w);
+    if(!s) return false;
+    const e=new Date(s.getFullYear(), s.getMonth(), s.getDate()+7);
+    return today0>=s && today0<e;
+  });
+  if(wk) return wk;
+  const datedEnd = planned.map(weekStartDate).filter(Boolean).sort((a,b)=>b-a)[0];
+  if(datedEnd && today0 >= new Date(datedEnd.getFullYear(), datedEnd.getMonth(), datedEnd.getDate()+7)) return null;
+  const undated = planned.filter(w=>!w.week_start);
+  wk = undated.find(w=>w.week===wkNum);
+  if(!wk && undated.length){
+    const earlier = wkNum===null ? [] : undated.filter(w=>w.week<wkNum);
+    wk = earlier.length ? earlier[earlier.length-1] : undated[0];
+  }
+  return wk || null;
+}
+// Program week number from the athlete's start date, or null if unset.
+function programWeekNumber(d, now){
+  const start = d.athlete && (d.athlete.program_start||d.athlete.project_start);
+  if(!start) return null;
+  const sd=new Date(start+'T00:00:00');
+  return Math.floor(Math.floor((now - sd)/86400000)/7)+1;
+}
+// The week the trails section should point at: whatever week today falls in.
+function currentTrainingWeek(log, d){
+  const now=new Date();
+  const wk=resolveTrainingWeek(log, programWeekNumber(d, now), now);
+  return wk ? wk.week : null;
+}
+
+// On the week's longest run, surface the nearest matching trail rather than
+// making him go find the section. Silent on every other day.
+function trailPickHtml(d, wk, day){
+  if(!d.trails || !Array.isArray(d.trails.weeks) || !wk) return '';
+  const mi = day.mileage||0;
+  if(mi<=0) return '';
+  const longest = Math.max(...Object.values(weekDays(wk)||{}).map(x=>x.mileage||0));
+  if(mi < longest) return '';
+  const plan = d.trails.weeks.find(w=>w.week===wk.week);
+  const o = plan && plan.options && plan.options[0];
+  if(!o) return '';
+  return `<div class="today-trail"><b>Trail</b>${o.name} &mdash; ${o.miles} mi, ${o.vert_ft.toLocaleString()} ft${o.trailhead_mi!=null?`, ${o.trailhead_mi} mi out`:''}. <a href="#trails">all 3 options →</a></div>`;
+}
+
 function buildTodayCard(d, log, project50, scoreClass){
   const now=new Date();
   const dowFull=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][now.getDay()];
@@ -1491,46 +1672,9 @@ function buildTodayCard(d, log, project50, scoreClass){
   let planBlock='';
   if(log && Array.isArray(log.weeks)){
     // determine current program week from project_start
-    const start = d.athlete && (d.athlete.program_start||d.athlete.project_start);
-    let wkNum=null;
-    if(start){
-      const sd=new Date(start+'T00:00:00');
-      const days=Math.floor((now - sd)/86400000);
-      wkNum = Math.floor(days/7)+1;
-    }
-    // Resolve the current week. Any week carrying a day plan is a candidate —
-    // deload/retest weeks included, since those carry real sessions under
-    // deload_days and shouldn't fall through to some earlier week's plan.
-    const dayMap = w => w.days || w.deload_days || null;
-    const planned = log.weeks.filter(w=>dayMap(w));
-    const today0 = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    const startOf = w => {
-      const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(w.week_start||'');
-      return m ? new Date(+m[1], +m[2]-1, +m[3]) : null;
-    };
-    // A week with an explicit week_start (Block 2 onward) owns its calendar
-    // range exactly, and is matched ONLY by date — the block boundaries don't
-    // land on clean 7-day multiples of program_start, so letting the arithmetic
-    // week number match a dated week would start Block 2 three days early.
-    let wk = planned.find(w=>{
-      const s=startOf(w);
-      if(!s) return false;
-      const e=new Date(s.getFullYear(), s.getMonth(), s.getDate()+7);
-      return today0>=s && today0<e;
-    });
-    const undated = planned.filter(w=>!w.week_start);
-    // Past the end of everything written so far, show no plan rather than
-    // silently replaying an old week — that's the cue to write the next block.
-    const datedEnd = planned.map(startOf).filter(Boolean).sort((a,b)=>b-a)[0];
-    const pastProgram = datedEnd && today0 >= new Date(datedEnd.getFullYear(), datedEnd.getMonth(), datedEnd.getDate()+7);
-    if(!wk && !pastProgram){
-      wk = undated.find(w=>w.week===wkNum);
-      if(!wk && undated.length){
-        const earlier = wkNum===null ? [] : undated.filter(w=>w.week<wkNum);
-        wk = earlier.length ? earlier[earlier.length-1] : undated[0];
-      }
-    }
-    const wkDays = wk ? dayMap(wk) : null;
+    const wkNum = programWeekNumber(d, now);
+    const wk = resolveTrainingWeek(log, wkNum, now);
+    const wkDays = wk ? weekDays(wk) : null;
     if(wkDays && wkDays[dowKey]){
       const day=wkDays[dowKey];
       const items=(day.plan||[]).map((p,i)=>`<li${i===0?' class="lead-item"':''}>${p}</li>`).join('');
@@ -1540,6 +1684,7 @@ function buildTodayCard(d, log, project50, scoreClass){
           <ul class="today-plan">${items}</ul>
           ${day.recovery?`<div class="today-recovery">Recovery: ${linkifyRecovery(day.recovery)}</div>`:''}
           ${(wk.carbs_per_hr_target && (day.mileage||0)>0)?`<div class="today-fuel"><b>Fuel</b>${wk.carbs_per_hr_target} g carb/hr on anything over an hour — start at 30 min. <a href="#fueling">gut plan →</a></div>`:''}
+          ${trailPickHtml(d, wk, day)}
           <a class="today-cta" href="workout.html">Log this session →</a>
         </div>`;
     }

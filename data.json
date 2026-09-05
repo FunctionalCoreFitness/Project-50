@@ -3411,5 +3411,559 @@
       }
     ],
     "products_to_test": "Test at least two carb sources and one savory option during Block 2's weeks 19–21, before they matter. Record brand, amount, and GI comfort in the workout log."
+  },
+  "trails": {
+    "headline": "Long-Run Trails",
+    "anchor": "Anchored between San Mateo and Redwood City",
+    "principle": "Each Sunday has three options, ordered closest-first. They are not scenic picks — each one is chosen because its distance and climbing match what that specific week is trying to build. Early weeks stay close to home; the block branches out to Huddart, Purisima and El Corte de Madera as the long run grows and needs terrain that a small local park can't provide.",
+    "caveat": "Distances, elevation gain, ratings and trailhead distances are AllTrails figures. Trailhead distance is straight-line from the San Mateo / Redwood City midpoint, not drive time — check the actual route, and check park hours and closures (Purisima and El Corte de Madera close trails after heavy rain).",
+    "terrain_note": "The redwood singletrack at Huddart, Purisima and Wunderlich is the closest match to what a Bay Area trail half actually feels like. Get on it before race day so nothing on Dec 5 is new.",
+    "weeks": [
+      {
+        "week": 13,
+        "long_run_mi": 7,
+        "long_run_vert": "~450 ft",
+        "need": "Establish the Sunday habit. Runnable and low-consequence — the point is that it happens, not that it hurts.",
+        "options": [
+          {
+            "name": "Crystal Springs to Pulgas Water Temple",
+            "park": "SF Peninsula Watershed",
+            "miles": 5.0,
+            "vert_ft": 429,
+            "trailhead_mi": 3.5,
+            "difficulty": "Moderate",
+            "route_type": "Out & back",
+            "rating": 4.0,
+            "url": "https://www.alltrails.com/trail/us/california/crystal-springs-to-pulgas-water-temple",
+            "why": "Wide, gentle, reservoir the whole way. The lowest-consequence real trail you have — nothing here will beat you up.",
+            "adjust": "Run 3.5 mi out, turn, come back — that's 7 on the nose."
+          },
+          {
+            "name": "Lower Crystal Springs via Sawyer Camp Trail",
+            "park": "SF State Fish & Game Refuge",
+            "miles": 5.5,
+            "vert_ft": 387,
+            "trailhead_mi": null,
+            "difficulty": "Moderate",
+            "route_type": "Out & back",
+            "rating": 4.6,
+            "url": "https://www.alltrails.com/trail/us/california/sawyer-camp-trail-san-andreas-lake-to-lower-crystal-springs-reservoir",
+            "why": "Paved and near-flat. The bail-out when legs are cranky or it's dark early — you can run this one on autopilot.",
+            "adjust": "Continue along the reservoir past the listed turnaround to reach 7."
+          },
+          {
+            "name": "John S Brooks Memorial Trail Loop",
+            "park": "Water Dog Lake Open Space",
+            "miles": 5.6,
+            "vert_ft": 941,
+            "trailhead_mi": 2.3,
+            "difficulty": "Moderate",
+            "route_type": "Loop",
+            "rating": 4.6,
+            "url": "https://www.alltrails.com/trail/us/california/john-s-brooks-memorial-trail",
+            "why": "Your closest genuine trail. Real dirt, real climbing, 10 minutes from the door.",
+            "adjust": "Add a 1.4 mi warm-up out-and-back from the lot first. More vert than the week asks — hike the steep bits, keep the effort easy."
+          }
+        ]
+      },
+      {
+        "week": 14,
+        "long_run_mi": 8,
+        "long_run_vert": "~600 ft",
+        "need": "First real step up. Still conversational — you should be able to talk the whole way.",
+        "options": [
+          {
+            "name": "Rambler, Ohlone, Chaparral, Berry, Lake, John Brooks and Finch Loop",
+            "park": "Hidden Canyon / Water Dog",
+            "miles": 7.0,
+            "vert_ft": 1131,
+            "trailhead_mi": 1.75,
+            "difficulty": "Moderate",
+            "route_type": "Loop",
+            "rating": 4.5,
+            "url": "https://www.alltrails.com/trail/us/california/rambler-ohlone-chaparral-berry-lake-john-brooks-and-lower-finch-loop",
+            "why": "Nearest trailhead of anything on this list, and a full 7 mi without repeating yourself.",
+            "adjust": "Add 1 mi as an out-and-back from the trailhead before starting the loop."
+          },
+          {
+            "name": "John S Brooks Memorial Trail Loop",
+            "park": "Water Dog Lake Open Space",
+            "miles": 5.6,
+            "vert_ft": 941,
+            "trailhead_mi": 2.3,
+            "difficulty": "Moderate",
+            "route_type": "Loop",
+            "rating": 4.6,
+            "url": "https://www.alltrails.com/trail/us/california/john-s-brooks-memorial-trail",
+            "why": "Your closest genuine trail. Real dirt, real climbing, 10 minutes from the door.",
+            "adjust": "Lap the lake section for the extra 2.4 mi."
+          },
+          {
+            "name": "Dick Bishop, Hassler, Dusky-Footed Woodrat, and Polly Geraci Loop",
+            "park": "Pulgas Ridge Open Space",
+            "miles": 5.5,
+            "vert_ft": 1010,
+            "trailhead_mi": 3.4,
+            "difficulty": "Moderate",
+            "route_type": "Loop",
+            "rating": 4.6,
+            "url": "https://www.alltrails.com/trail/us/california/dick-bishop-hassler-dusky-footed-woodrat-and-polly-geraci-loop",
+            "why": "Steady sustained climb in a small package — the cheapest vert per mile of driving you have.",
+            "adjust": "Add a 2.5 mi out-and-back on the lower fire road. Good week to start feeling sustained climbing."
+          }
+        ]
+      },
+      {
+        "week": 15,
+        "long_run_mi": 8.5,
+        "long_run_vert": "~800 ft",
+        "need": "Vert starts to matter. Pick something with a real climb in it, not just distance.",
+        "options": [
+          {
+            "name": "Rambler, Ohlone, Chaparral, Berry, Lake, John Brooks and Finch Loop",
+            "park": "Hidden Canyon / Water Dog",
+            "miles": 7.0,
+            "vert_ft": 1131,
+            "trailhead_mi": 1.75,
+            "difficulty": "Moderate",
+            "route_type": "Loop",
+            "rating": 4.5,
+            "url": "https://www.alltrails.com/trail/us/california/rambler-ohlone-chaparral-berry-lake-john-brooks-and-lower-finch-loop",
+            "why": "Nearest trailhead of anything on this list, and a full 7 mi without repeating yourself.",
+            "adjust": "Add 1.5 mi before or after the loop."
+          },
+          {
+            "name": "Miramontes, Mount Redondo and Raymundo Trail Loop",
+            "park": "Huddart County Park",
+            "miles": 6.3,
+            "vert_ft": 1082,
+            "trailhead_mi": 5.7,
+            "difficulty": "Moderate",
+            "route_type": "Loop",
+            "rating": 4.6,
+            "url": "https://www.alltrails.com/trail/us/california/miramontes-mount-redondo-and-raymundo-trail-loop",
+            "why": "Redwood singletrack — the closest thing nearby to what a Bay Area trail half actually feels like underfoot.",
+            "adjust": "Add 2.2 mi. First Huddart trip — worth the drive to learn the terrain early."
+          },
+          {
+            "name": "Skyline Trail",
+            "park": "Redwood City",
+            "miles": 8.1,
+            "vert_ft": 1476,
+            "trailhead_mi": 6.9,
+            "difficulty": "Moderate",
+            "route_type": "Out & back",
+            "rating": 4.5,
+            "url": "https://www.alltrails.com/trail/us/california/skyline-trail--3",
+            "why": "Ridge running with a turnaround you choose. Exposed enough to teach you something about pacing in wind.",
+            "adjust": "Turn around at 4.25 mi for 8.5 exactly."
+          }
+        ]
+      },
+      {
+        "week": 16,
+        "long_run_mi": 6,
+        "long_run_vert": "~500 ft",
+        "need": "Cutback. Do not prove anything today. Short, flat, done.",
+        "options": [
+          {
+            "name": "Crystal Springs to Pulgas Water Temple",
+            "park": "SF Peninsula Watershed",
+            "miles": 5.0,
+            "vert_ft": 429,
+            "trailhead_mi": 3.5,
+            "difficulty": "Moderate",
+            "route_type": "Out & back",
+            "rating": 4.0,
+            "url": "https://www.alltrails.com/trail/us/california/crystal-springs-to-pulgas-water-temple",
+            "why": "Wide, gentle, reservoir the whole way. The lowest-consequence real trail you have — nothing here will beat you up.",
+            "adjust": "Add 1 mi. Keep it genuinely easy."
+          },
+          {
+            "name": "Lower Crystal Springs via Sawyer Camp Trail",
+            "park": "SF State Fish & Game Refuge",
+            "miles": 5.5,
+            "vert_ft": 387,
+            "trailhead_mi": null,
+            "difficulty": "Moderate",
+            "route_type": "Out & back",
+            "rating": 4.6,
+            "url": "https://www.alltrails.com/trail/us/california/sawyer-camp-trail-san-andreas-lake-to-lower-crystal-springs-reservoir",
+            "why": "Paved and near-flat. The bail-out when legs are cranky or it's dark early — you can run this one on autopilot.",
+            "adjust": "Flattest thing you have. Use it."
+          },
+          {
+            "name": "Clarkia, Sunset, Serpentine and Edgewood Trail",
+            "park": "Edgewood Park & Nature Preserve",
+            "miles": 3.2,
+            "vert_ft": 393,
+            "trailhead_mi": 4.6,
+            "difficulty": "Moderate",
+            "route_type": "Loop",
+            "rating": 4.5,
+            "url": "https://www.alltrails.com/trail/us/california/clarkia-sunset-serpentine-and-edgewood-trail",
+            "why": "Short rolling loop, easy to lap. Good when you want the option to stop early without driving home defeated.",
+            "adjust": "Two laps of the 3.2 mi loop is 6.4 — close enough, and easy to cut short."
+          }
+        ]
+      },
+      {
+        "week": 17,
+        "long_run_mi": 9,
+        "long_run_vert": "~1,000 ft",
+        "need": "Back-to-backs begin. Leave something in the tank — Monday's 3 mi on tired legs is the actual stimulus.",
+        "options": [
+          {
+            "name": "Skyline Watershed Ridge Trail",
+            "park": "Redwood City",
+            "miles": 11.7,
+            "vert_ft": 1381,
+            "trailhead_mi": 5.2,
+            "difficulty": "Moderate",
+            "route_type": "Out & back",
+            "rating": 4.6,
+            "url": "https://www.alltrails.com/trail/us/california/skyline-watershed-ridge-trail-2",
+            "why": "The workhorse of this block. Out-and-back means you set the distance exactly by when you turn around, and the vert-per-mile lands almost exactly on your weekly ratio.",
+            "adjust": "Turn around at 4.5 mi. Best vert-per-mile match of any option this week."
+          },
+          {
+            "name": "Crystal Springs, Summit, Chinquapin and Dean Loop",
+            "park": "Huddart County Park",
+            "miles": 7.3,
+            "vert_ft": 1437,
+            "trailhead_mi": 5.7,
+            "difficulty": "Moderate",
+            "route_type": "Loop",
+            "rating": 4.7,
+            "url": "https://www.alltrails.com/trail/us/california/crystal-springs-summit-chinquapin-dean-loop",
+            "why": "Rolling rather than one big climb — closer to race rhythm than a single out-and-up.",
+            "adjust": "Add 1.7 mi. Rolling profile, good rhythm practice."
+          },
+          {
+            "name": "Lonely Trail to Richards Road Loop",
+            "park": "Huddart County Park",
+            "miles": 8.9,
+            "vert_ft": 1856,
+            "trailhead_mi": 5.7,
+            "difficulty": "Hard",
+            "route_type": "Loop",
+            "rating": 4.7,
+            "url": "https://www.alltrails.com/trail/us/california/crystal-springs-to-lonely-trail-loop",
+            "why": "The hardest thing at Huddart. Take it when you want the climbing to actually cost you something.",
+            "adjust": "Nearly the exact distance, but the extra 800 ft will cost you Monday. Only if week 16 left you fresh."
+          }
+        ]
+      },
+      {
+        "week": 18,
+        "long_run_mi": 10,
+        "long_run_vert": "~1,250 ft",
+        "need": "Sustained climbing on tired legs. This is the week the block starts asking real questions.",
+        "options": [
+          {
+            "name": "Skyline Watershed Ridge Trail",
+            "park": "Redwood City",
+            "miles": 11.7,
+            "vert_ft": 1381,
+            "trailhead_mi": 5.2,
+            "difficulty": "Moderate",
+            "route_type": "Out & back",
+            "rating": 4.6,
+            "url": "https://www.alltrails.com/trail/us/california/skyline-watershed-ridge-trail-2",
+            "why": "The workhorse of this block. Out-and-back means you set the distance exactly by when you turn around, and the vert-per-mile lands almost exactly on your weekly ratio.",
+            "adjust": "Turn around at 5 mi."
+          },
+          {
+            "name": "Lonely, Mount Redondo, Dean and Chinquapin Trail Loop",
+            "park": "Huddart County Park",
+            "miles": 8.4,
+            "vert_ft": 1742,
+            "trailhead_mi": 6.8,
+            "difficulty": "Moderate",
+            "route_type": "Loop",
+            "rating": 4.7,
+            "url": "https://www.alltrails.com/trail/us/california/lonely-mount-redondo-dean-and-chinquapin-trail-loop",
+            "why": "Long sustained descents. This is where you train quads for downhill, which is what actually wrecks people late in a trail race.",
+            "adjust": "Add 1.6 mi. The long descents here are the point — let the quads take a beating."
+          },
+          {
+            "name": "Bear Gulch and Alambique Trail Loop",
+            "park": "Wunderlich County Park",
+            "miles": 10.0,
+            "vert_ft": 2076,
+            "trailhead_mi": 7.9,
+            "difficulty": "Hard",
+            "route_type": "Loop",
+            "rating": 4.6,
+            "url": "https://www.alltrails.com/trail/us/california/bear-gulch-and-alambique-trail-loop",
+            "why": "Ten miles on the nose, climbing throughout. New park, familiar redwood terrain.",
+            "adjust": "Exactly 10 mi. More vert than targeted; walk the steepest pitches and it lands right."
+          }
+        ]
+      },
+      {
+        "week": 19,
+        "long_run_mi": 11,
+        "long_run_vert": "~1,500 ft",
+        "need": "Biggest effort before the peak. Full fuel rehearsal — 60 g/hr, on the clock, from 30 minutes.",
+        "options": [
+          {
+            "name": "Skyline Watershed Ridge Trail",
+            "park": "Redwood City",
+            "miles": 11.7,
+            "vert_ft": 1381,
+            "trailhead_mi": 5.2,
+            "difficulty": "Moderate",
+            "route_type": "Out & back",
+            "rating": 4.6,
+            "url": "https://www.alltrails.com/trail/us/california/skyline-watershed-ridge-trail-2",
+            "why": "The workhorse of this block. Out-and-back means you set the distance exactly by when you turn around, and the vert-per-mile lands almost exactly on your weekly ratio.",
+            "adjust": "Run the full 11.7 mi. Closest match on both distance and vert of anything available."
+          },
+          {
+            "name": "El Corte De Madera Loop - Fir Trail and Methuselah",
+            "park": "El Corte De Madera Creek",
+            "miles": 11.5,
+            "vert_ft": 2148,
+            "trailhead_mi": 7.9,
+            "difficulty": "Hard",
+            "route_type": "Loop",
+            "rating": 4.7,
+            "url": "https://www.alltrails.com/trail/us/california/el-corte-de-madera-loop-fir-trail-and-methuselah",
+            "why": "The most technical footing on this list. Roots, ruts, and switchbacks — run it once before race day so nothing surprises you.",
+            "adjust": "Technical footing. Run this at least once before race day so the terrain isn't new."
+          },
+          {
+            "name": "Whittemore Gulch and Purisima Creek Loop",
+            "park": "Purisima Creek Redwoods",
+            "miles": 9.8,
+            "vert_ft": 2125,
+            "trailhead_mi": 6.0,
+            "difficulty": "Hard",
+            "route_type": "Loop",
+            "rating": 4.8,
+            "url": "https://www.alltrails.com/trail/us/california/whittemore-gulch-and-purisima-creek-loop-trail",
+            "why": "Highest-rated trail within easy reach (4.8). Steep, wooded, and genuinely hard — the vert here is honest.",
+            "adjust": "Add 1.2 mi. Hardest option; back the effort off to compensate."
+          }
+        ]
+      },
+      {
+        "week": 20,
+        "long_run_mi": 6,
+        "long_run_vert": "~750 ft",
+        "need": "Second cutback, and the last one before peak. Absorb the last three weeks.",
+        "options": [
+          {
+            "name": "John S Brooks Memorial Trail Loop",
+            "park": "Water Dog Lake Open Space",
+            "miles": 5.6,
+            "vert_ft": 941,
+            "trailhead_mi": 2.3,
+            "difficulty": "Moderate",
+            "route_type": "Loop",
+            "rating": 4.6,
+            "url": "https://www.alltrails.com/trail/us/california/john-s-brooks-memorial-trail",
+            "why": "Your closest genuine trail. Real dirt, real climbing, 10 minutes from the door.",
+            "adjust": "Right distance, right effort, ten minutes away."
+          },
+          {
+            "name": "Dick Bishop, Hassler, Dusky-Footed Woodrat, and Polly Geraci Loop",
+            "park": "Pulgas Ridge Open Space",
+            "miles": 5.5,
+            "vert_ft": 1010,
+            "trailhead_mi": 3.4,
+            "difficulty": "Moderate",
+            "route_type": "Loop",
+            "rating": 4.6,
+            "url": "https://www.alltrails.com/trail/us/california/dick-bishop-hassler-dusky-footed-woodrat-and-polly-geraci-loop",
+            "why": "Steady sustained climb in a small package — the cheapest vert per mile of driving you have.",
+            "adjust": "Add half a mile. Keeps a little climbing in without a long day."
+          },
+          {
+            "name": "Lower Crystal Springs via Sawyer Camp Trail",
+            "park": "SF State Fish & Game Refuge",
+            "miles": 5.5,
+            "vert_ft": 387,
+            "trailhead_mi": null,
+            "difficulty": "Moderate",
+            "route_type": "Out & back",
+            "rating": 4.6,
+            "url": "https://www.alltrails.com/trail/us/california/sawyer-camp-trail-san-andreas-lake-to-lower-crystal-springs-reservoir",
+            "why": "Paved and near-flat. The bail-out when legs are cranky or it's dark early — you can run this one on autopilot.",
+            "adjust": "If the legs want flat, give them flat."
+          }
+        ]
+      },
+      {
+        "week": 21,
+        "long_run_mi": 13,
+        "long_run_vert": "~1,800 ft",
+        "need": "PEAK — full dress rehearsal. Race kit, race breakfast, 75 g carb/hr, everything you plan to use on Dec 5. Whatever works today becomes the race plan.",
+        "options": [
+          {
+            "name": "North and Harkins Ridge, Purisima Creek, and Whittemore Gulch Loop",
+            "park": "Purisima Creek Redwoods",
+            "miles": 13.1,
+            "vert_ft": 3192,
+            "trailhead_mi": 6.0,
+            "difficulty": "Hard",
+            "route_type": "Loop",
+            "rating": 4.7,
+            "url": "https://www.alltrails.com/trail/us/california/north-and-harkins-ridge-purisima-creek-and-whittemore-gulch-loop",
+            "why": "Exactly half-marathon distance, on trail, 6 miles from your door. This is the dress rehearsal the whole block points at.",
+            "adjust": "Exact race distance. But 3,192 ft is well over the ~1,800 ft this week targets — hike the climbs deliberately and treat it as time-on-feet, or accept the week runs over on vert."
+          },
+          {
+            "name": "Skyline Watershed Ridge Trail",
+            "park": "Redwood City",
+            "miles": 11.7,
+            "vert_ft": 1381,
+            "trailhead_mi": 5.2,
+            "difficulty": "Moderate",
+            "route_type": "Out & back",
+            "rating": 4.6,
+            "url": "https://www.alltrails.com/trail/us/california/skyline-watershed-ridge-trail-2",
+            "why": "The workhorse of this block. Out-and-back means you set the distance exactly by when you turn around, and the vert-per-mile lands almost exactly on your weekly ratio.",
+            "adjust": "Add 1.3 mi. The measured choice: right distance, right vert, nothing heroic three weeks out."
+          },
+          {
+            "name": "Gordon Mill to Timberview to Virginia Mill and Lawrence Creek Loop",
+            "park": "El Corte De Madera Creek",
+            "miles": 14.3,
+            "vert_ft": 3238,
+            "trailhead_mi": 8.7,
+            "difficulty": "Hard",
+            "route_type": "Loop",
+            "rating": 4.7,
+            "url": "https://www.alltrails.com/trail/us/california/gordon-mill-to-timberview-to-virginia-mill-and-lawrence-creek-loop",
+            "why": "Biggest day available close to home. Save it for when you want the full time-on-feet, not the exact mileage.",
+            "adjust": "Runs 1.3 mi long — no adjustment needed, just accept the extra. Choose it only if you'd rather rehearse a long day than an exact distance."
+          }
+        ]
+      },
+      {
+        "week": 22,
+        "long_run_mi": 10,
+        "long_run_vert": "~1,100 ft",
+        "need": "Taper. Sharpen, don't build. Nothing new — familiar ground only.",
+        "options": [
+          {
+            "name": "Skyline Watershed Ridge Trail",
+            "park": "Redwood City",
+            "miles": 11.7,
+            "vert_ft": 1381,
+            "trailhead_mi": 5.2,
+            "difficulty": "Moderate",
+            "route_type": "Out & back",
+            "rating": 4.6,
+            "url": "https://www.alltrails.com/trail/us/california/skyline-watershed-ridge-trail-2",
+            "why": "The workhorse of this block. Out-and-back means you set the distance exactly by when you turn around, and the vert-per-mile lands almost exactly on your weekly ratio.",
+            "adjust": "Turn around at 5 mi. You'll know this trail cold by now."
+          },
+          {
+            "name": "Purisima Creek, Craig Britton and Skyline Trail Loop",
+            "park": "Purisima Creek Redwoods",
+            "miles": 8.4,
+            "vert_ft": 1597,
+            "trailhead_mi": 6.8,
+            "difficulty": "Hard",
+            "route_type": "Loop",
+            "rating": 4.6,
+            "url": "https://www.alltrails.com/trail/us/california/purisima-creek-craig-britton-and-skyline-trail-loop",
+            "why": "Purisima terrain at a taper-friendly dose — the feel of race day without the bill.",
+            "adjust": "Add 1.6 mi. Race-like terrain at a taper dose."
+          },
+          {
+            "name": "Crystal Springs, Summit, Chinquapin and Dean Loop",
+            "park": "Huddart County Park",
+            "miles": 7.3,
+            "vert_ft": 1437,
+            "trailhead_mi": 5.7,
+            "difficulty": "Moderate",
+            "route_type": "Loop",
+            "rating": 4.7,
+            "url": "https://www.alltrails.com/trail/us/california/crystal-springs-summit-chinquapin-dean-loop",
+            "why": "Rolling rather than one big climb — closer to race rhythm than a single out-and-up.",
+            "adjust": "Add 2.7 mi. Comfortable, known, no surprises."
+          }
+        ]
+      }
+    ],
+    "back_to_back": {
+      "note": "Monday's 3–4 mi on tired legs (weeks 17+) wants flat and close. Do not add climbing to these.",
+      "options": [
+        {
+          "name": "Ravenswood Loop",
+          "park": "Ravenswood Open Space",
+          "miles": 4.5,
+          "vert_ft": 22,
+          "trailhead_mi": 8.5,
+          "difficulty": "Easy",
+          "route_type": "Loop",
+          "rating": 3.8,
+          "url": "https://www.alltrails.com/trail/us/california/ravenswood-loop",
+          "why": "22 ft of gain across 4.5 mi — as flat as it gets.",
+          "adjust": "Right distance as-is."
+        },
+        {
+          "name": "Bedwell Bayfront Park",
+          "park": "Bedwell Bayfront Park",
+          "miles": 3.4,
+          "vert_ft": 229,
+          "trailhead_mi": 6.2,
+          "difficulty": "Easy",
+          "route_type": "Loop",
+          "rating": 4.3,
+          "url": "https://www.alltrails.com/trail/us/california/bedwell-bayfront-park-trail",
+          "why": "Flat bay loop, partially paved, easy to cut short.",
+          "adjust": "Right distance as-is."
+        },
+        {
+          "name": "Hallmark Park Loop",
+          "park": "Hallmark Park",
+          "miles": 3.4,
+          "vert_ft": 272,
+          "trailhead_mi": 2.1,
+          "difficulty": "Easy",
+          "route_type": "Loop",
+          "rating": 4.5,
+          "url": "https://www.alltrails.com/trail/us/california/hallmark-park-loop",
+          "why": "Closest easy option to the house.",
+          "adjust": "Right distance as-is."
+        }
+      ]
+    },
+    "hill_venue": {
+      "note": "Wednesday hill repeats need one steep pitch you can run over and over, not a long loop.",
+      "options": [
+        {
+          "name": "Dick Bishop, Hassler, Dusky-Footed Woodrat, and Polly Geraci Loop",
+          "park": "Pulgas Ridge Open Space",
+          "miles": 5.5,
+          "vert_ft": 1010,
+          "trailhead_mi": 3.4,
+          "difficulty": "Moderate",
+          "route_type": "Loop",
+          "rating": 4.6,
+          "url": "https://www.alltrails.com/trail/us/california/dick-bishop-hassler-dusky-footed-woodrat-and-polly-geraci-loop",
+          "why": "1,010 ft in 5.5 mi, 3.4 mi away. Best repeat gradient close to home.",
+          "adjust": "Use the lower climb as your repeat pitch; jog down as recovery."
+        },
+        {
+          "name": "John S Brooks Memorial Trail Loop",
+          "park": "Water Dog Lake Open Space",
+          "miles": 5.6,
+          "vert_ft": 941,
+          "trailhead_mi": 2.3,
+          "difficulty": "Moderate",
+          "route_type": "Loop",
+          "rating": 4.6,
+          "url": "https://www.alltrails.com/trail/us/california/john-s-brooks-memorial-trail",
+          "why": "Closest hill to the house. Fine when time is short.",
+          "adjust": "Repeat the steep lakeside climb."
+        }
+      ]
+    }
   }
 }
