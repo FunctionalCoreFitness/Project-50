@@ -2780,8 +2780,8 @@
           "Gait asymmetry deep-check"
         ],
         "race": {
-          "race": "🗓 REGISTER: 50K (spring 2027) — sign-up window",
-          "reg": "Book your first 50K 3–4 months out. Skyline 50K / Lake Chabot / Coastal Marin.",
+          "race": "🗓 REGISTER: Feb marathon + Apr 50K — both windows are ALREADY OPEN",
+          "reg": "Late. Marathon window was Nov 21 – Dec 22 2026; 50K window was Dec 17 – Jan 16. If you are reading this in Feb, book both today.",
           "links": [
             {
               "label": "Inside Trail (NorCal 50Ks)",
@@ -3161,7 +3161,8 @@
     "rules": [
       "Never more than double your longest race distance in one jump",
       "Run at least 100K (racing or training) before the 100-mile start line",
-      "Every race is a rehearsal for the next rung — log fuel taken, GI comfort, and what broke, every time."
+      "Every race is a rehearsal for the next rung — log fuel taken, GI comfort, and what broke, every time.",
+      "Only rung 1 has a confirmed date. Everything else is a target until you have paid — pin the date when you register, not before."
     ],
     "rungs": [
       {
@@ -3189,16 +3190,45 @@
         "fuel_target": "40-60 g carb/hr in the race, rehearsed at 65 g/hr in training",
         "vert_prep": "Peak training week ~4,000 ft; Peacock Gap runs the China Camp hills above San Rafael",
         "teaches": "Racing again after a long layoff, and that fuel goes in before you feel like you need it.",
-        "kit": "Race shoes + handheld or light vest. Nothing unrehearsed."
+        "kit": "Race shoes + handheld or light vest. Nothing unrehearsed.",
+        "date_status": "registered"
       },
       {
         "n": 2,
+        "dist": "Marathon — the bridge",
+        "window": "Late Feb 2027",
+        "year": 2027,
+        "target_date": "2027-02-20",
+        "date_status": "target",
+        "candidates": "A NorCal trail marathon. SPASM Lake Chabot (Castro Valley) runs a marathon alongside its 50K; Inside Trail and Coastal Trail Runs both card winter marathons.",
+        "purpose": "The rung that makes the ladder legal. Without it the jump from half to 50K is 2.37x, past the ladder's own limit.",
+        "goal": "Finish a marathon on trail without walking from exhaustion. Time is irrelevant — this race exists to make the 50K a small step instead of a leap.",
+        "gate": "Longest run 18–20 mi, peak 30–33 mi/wk. You finish Block 2 at 33 mi/wk with a 15 mi long run, so this is a modest extension rather than a new build.",
+        "fuel_target": "50–70 g carb/hr for 4–5 hr — the first time fuelling matters more than fitness",
+        "vert_prep": "3,000–4,000 ft weeks; one long run with 2,000+ ft",
+        "teaches": "What hours four and five feel like, and whether your stomach holds past the point where a half ends. Everything that breaks here is cheap to fix; the same failure in a 50K costs you the finish.",
+        "kit": "Vest with 1L, the fuel you settled on at Peacock Gap, tested chafe strategy.",
+        "signup": "Register Nov 21 – Dec 22 2026. That window opens two weeks BEFORE the Dec 5 half — book it while you are still training, not after.",
+        "done": false,
+        "links": [
+          {
+            "label": "Inside Trail Racing",
+            "url": "https://insidetrail.com/calendar/"
+          },
+          {
+            "label": "Coastal Trail Runs",
+            "url": "https://ultrasignup.com/groups.aspx?gid=69"
+          }
+        ]
+      },
+      {
+        "n": 3,
         "dist": "50K — first ultra",
-        "window": "Spring 2027",
+        "window": "Late Apr 2027",
         "year": "2027",
-        "candidates": "Skyline 50K (Castro Valley), Lake Chabot 50K, or a Coastal Trail Runs Marin 50K",
+        "candidates": "SPASM Lake Chabot Trail Run (Castro Valley, ~Sat Apr 24) is the lead — it cards a 50K, marathon and 30K on one day. NOT Skyline 50K: despite being the classic first 50K, it runs early August, which leaves only 9 weeks to the October 50-miler.",
         "purpose": "Officially an ultramarathoner. Big documentary beat.",
-        "signup": "Register 3–4 months out. Mid-size NorCal 50Ks fill steadily — don't wait to race week.",
+        "signup": "Register Dec 17 2026 – Jan 16 2027. Verify the date at the source first.",
         "done": false,
         "links": [
           {
@@ -3210,16 +3240,17 @@
             "url": "https://ultrasignup.com/groups.aspx?gid=69"
           }
         ],
-        "target_date": "2027-04-17",
+        "target_date": "2027-04-24",
         "goal": "Finish your first ultra. Walk the climbs on purpose, run the flats and downs. No bonk, no GI blowup.",
-        "gate": "Longest run 20–22 mi, plus a back-to-back of 16 mi Sat / 10 mi Sun. Peak ~35–40 mi/wk, 4,000–5,000 ft/wk.",
+        "gate": "Longest run 20–22 mi, plus a back-to-back of 16 mi Sat / 10 mi Sun. Peak ~35–40 mi/wk, 4,000–5,000 ft/wk. The Feb marathon should have already covered most of this.",
         "fuel_target": "60–80 g carb/hr, including real food (not gels alone) past hour 3",
         "vert_prep": "Sustained 4,000–5,000 ft weeks; single long runs with 2,000+ ft",
         "teaches": "Eating solid food while moving, and aid-station discipline — in and out, not a picnic.",
-        "kit": "Vest with 1.5 L capacity, poles if the course is steep, tested chafe strategy."
+        "kit": "Vest with 1.5 L capacity, poles if the course is steep, tested chafe strategy.",
+        "date_status": "target"
       },
       {
-        "n": 3,
+        "n": 4,
         "dist": "50-Mile",
         "window": "Fall 2027",
         "year": "2027",
@@ -3237,16 +3268,17 @@
             "url": "https://www.madmooseevents.com/dead-horse-ultra"
           }
         ],
-        "target_date": "2027-10-09",
         "goal": "Finish inside cutoffs with a working night section. First true long-day effort.",
         "gate": "Longest run 26–30 mi, back-to-back 26 Sat / 14 Sun. Peak 45–50 mi/wk, 6,000+ ft/wk. At least two runs finished in the dark.",
         "fuel_target": "60–90 g carb/hr sustained 11–14 hr; a caffeine plan for the night hours",
         "vert_prep": "6,000+ ft weeks; back-to-back weekends with big descent volume",
         "teaches": "Night running, low-point management, and that the race is decided by how you handle hour 9, not hour 1.",
-        "kit": "Headlamp + spare, drop bags, crew instructions written down."
+        "kit": "Headlamp + spare, drop bags, crew instructions written down.",
+        "date_status": "window",
+        "target_window": "Oct 2027"
       },
       {
-        "n": 4,
+        "n": 5,
         "dist": "100K — dress rehearsal",
         "window": "Spring / early summer 2028",
         "year": "2028",
@@ -3260,16 +3292,17 @@
             "url": "https://ultrasignup.com/"
           }
         ],
-        "target_date": "2028-05-20",
         "goal": "Dress rehearsal for the 100. Full crew, drop bags, night section, and the exact nutrition plan you'll use in Moab.",
         "gate": "Longest run 30–35 mi, back-to-back 30 Sat / 18 Sun. Peak 55–60 mi/wk. 100K in training or racing before the 100 start line (ladder rule).",
         "fuel_target": "70–90 g carb/hr sustained 14–18 hr, with a documented fallback for when sweet stops working",
         "vert_prep": "7,000–9,000 ft weeks; long runs on terrain that matches Canyonlands",
         "teaches": "Whether your stomach, feet, and crew plan survive a full day and night. Everything that breaks here gets fixed before Moab.",
-        "kit": "Full mandatory-gear rehearsal, foot care kit, pacer briefed."
+        "kit": "Full mandatory-gear rehearsal, foot care kit, pacer briefed.",
+        "date_status": "window",
+        "target_window": "May–Jun 2028"
       },
       {
-        "n": 5,
+        "n": 6,
         "dist": "Canyonlands 100 — Moab, UT",
         "window": "Mid-October 2028",
         "year": "2028",
@@ -3288,16 +3321,17 @@
             "url": "https://www.madmooseevents.com/canyonlands-ultra"
           }
         ],
-        "target_date": "2028-10-14",
         "goal": "Finish the Canyonlands 100, as close to your 50th as the calendar allows. Time goal is the cutoff; the real goal is the finish line.",
         "gate": "Everything above cleared, 100K completed, Moab terrain trip done, 60–70 mi/wk peak with 8,000–10,000 ft.",
         "fuel_target": "200–300 kcal/hr sustained 24–32 hr, sodium raised for desert dryness; savory options for late race",
         "vert_prep": "Race-specific: red rock, sand, sustained runnable climbs. Train on terrain that matches, not just any trail.",
         "teaches": "This is the one you've been building toward. Nothing after it to prepare for.",
-        "kit": "Crew, pacers, drop bags, sleep/no-sleep decision made in advance and written down."
+        "kit": "Crew, pacers, drop bags, sleep/no-sleep decision made in advance and written down.",
+        "date_status": "window",
+        "target_window": "Oct 2028"
       }
     ],
-    "bridge": "Optional 2028 training trip to Moab — run the actual red-rock terrain, acclimatize to altitude + sand. Documentary gold."
+    "bridge": "Skyline 50K (early Aug, Lake Chabot) is the classic NorCal first 50K and is deliberately NOT rung 3 — August collides with the October 50-miler. Keep it in mind as a 2028 tune-up instead. Optional 2028 training trip to Moab — run the actual red-rock terrain, acclimatize to altitude + sand. Documentary gold."
   },
   "mileage": {
     "phase": "Block 2 — Trail Half Build",

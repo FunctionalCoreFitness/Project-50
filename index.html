@@ -392,6 +392,7 @@
   .mi-vert{font-size:.84rem;color:#2f4a6b;margin-top:10px;padding:8px 12px;background:rgba(74,126,199,.07);border-radius:3px;line-height:1.45}
   /* race rung detail */
   .race-date{font-family:'Barlow Condensed',sans-serif;font-size:.74rem;letter-spacing:.05em;text-transform:uppercase;color:var(--amber);margin-left:auto;white-space:nowrap}
+  .race-date.race-booked{background:var(--green);color:#fff;border-radius:3px;padding:1px 7px}
   .race-goal{background:rgba(74,126,199,.08);border-left:3px solid var(--steel);border-radius:3px;padding:9px 12px;font-size:.88rem;color:#2f4a6b;line-height:1.45;margin:10px 0}
   .race-teaches{font-size:.84rem;font-style:italic;color:var(--muted);margin-top:10px;padding:9px 12px;border:1px dashed var(--line);border-radius:4px;line-height:1.45}
   /* fueling / gut training */
@@ -1398,7 +1399,7 @@ function render(d){
           <span class="race-num">${r.capstone?'\u{1F3AF}':r.n}</span>
           <span class="race-dist">${r.dist}</span>
           <span class="race-window">${r.window}</span>
-          ${r.target_date?`<span class="race-date">${fmtRaceDate(r.target_date)}</span>`:''}
+          ${(r.target_date||r.target_window)?`<span class="race-date${r.date_status==='registered'?' race-booked':''}">${r.date_status==='registered'?'\u2713 ':''}${r.target_date?fmtRaceDate(r.target_date):r.target_window}</span>`:''}
         </summary>
         <div class="race-body">
           <div class="race-purpose">${r.purpose}</div>
