@@ -3703,6 +3703,11 @@
     "rule": "Build the long run ~1 mi every 1–2 wks. Weekly volume never grows more than 10% over the previous peak — the peak, not the cutback week, so a post-cutback rebound isn't a real jump. Every 4th week cut back ~30%.",
     "week_structure": [
       {
+        "day": "Mon",
+        "run": "Easy short on tired legs (4-5 mi)",
+        "note": "The back-to-back stimulus: yesterday's long run is still in your legs, and that is the point. Deliberately slow. BJJ is technique and drilling only, not hard rolling."
+      },
+      {
         "day": "Tue",
         "run": "Easy short (3–5 mi, Zone 2)",
         "note": "Legs-friendly around Strength A. Keep it easy."
@@ -3710,7 +3715,7 @@
       {
         "day": "Wed",
         "run": "Moderate / tempo or hills",
-        "note": "Run before BJJ, or roll lighter that night. Your quality midweek run."
+        "note": "Your quality midweek run - tempo or hills on rolling trail. No BJJ this day in Block 2, so this is the one run you can push."
       },
       {
         "day": "Sun",

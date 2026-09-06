@@ -1648,10 +1648,30 @@ function render(d){
     </section>`;
   }
 
+  // "Weekly now" and "Long run now" were hand-typed and had drifted badly -
+  // they still read 12-15 mi/wk and 5-6 mi from Block 1's opening weeks while
+  // the log had him at 21-22 mi/wk with an 11-12 mi long run. Read them off
+  // the current week instead; the data.json strings stay as the fallback for
+  // weeks with no daily plan (the retest weeks).
+  function currentVolume(log, d){
+    const DOWK=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+    const wk=resolveTrainingWeek(log, programWeekNumber(d, new Date()), new Date());
+    const days=wk && weekDays(wk);
+    if(!days) return null;
+    const ms=DOWK.map(k=>(days[k]||{}).mileage||0);
+    const total=ms.reduce((a,b)=>a+b,0);
+    // A retest/deload week carries no mileage by design. Say so rather than
+    // falling through to a hand-typed number that describes some other week.
+    if(total<=0) return { weekly: 'Deload week', longest: 'Retest \u2014 no run target', week: wk.week };
+    return { weekly: `${Math.round(total*10)/10} mi/wk`,
+             longest: `${Math.max(...ms)} mi`, week: wk.week };
+  }
+
   // ===== MILEAGE TARGETS (current-phase running guidance) =====
   const mi=d.mileage;
   let miHtml='';
   if(mi){
+    const vol=currentVolume(window.__LOG__, d);
     const wk=(mi.week_structure||[]).map(w=>`
       <div class="mi-day">
         <div class="mi-dayname">${w.day}</div>
@@ -1663,9 +1683,9 @@ function render(d){
       <div class="sec-head"><div class="sec-title">Mileage Targets</div>
         <div class="sec-meta">${mi.phase}<br>${mi.phase_window}</div></div>
       <div class="mi-stats">
-        <div class="mi-stat"><div class="mi-k">Weekly now</div><div class="mi-v">${mi.current_weekly}</div></div>
+        <div class="mi-stat"><div class="mi-k">Weekly now</div><div class="mi-v">${vol?vol.weekly:mi.current_weekly}</div></div>
         <div class="mi-stat"><div class="mi-k">Weekly target</div><div class="mi-v">${mi.target_weekly}</div></div>
-        <div class="mi-stat"><div class="mi-k">Long run now</div><div class="mi-v">${mi.long_run_now}</div></div>
+        <div class="mi-stat"><div class="mi-k">Long run now</div><div class="mi-v">${vol?vol.longest:mi.long_run_now}</div></div>
         <div class="mi-stat"><div class="mi-k">Long run target</div><div class="mi-v">${mi.long_run_target}</div></div>
       </div>
       <div class="mi-rule">${mi.rule}</div>
