@@ -1470,7 +1470,7 @@
           "mileage": 9
         }
       },
-      "weekly_mileage": 22,
+      "weekly_mileage": 20.5,
       "weekly_vert_ft": 1600,
       "carbs_per_hr_target": 30,
       "mileage_note": "Week 13 (Sep 21): 20.5 mi, ~1,600 ft vert, 30 g carb/hr on the long run"
@@ -1589,7 +1589,7 @@
           "mileage": 10
         }
       },
-      "weekly_mileage": 24,
+      "weekly_mileage": 22.5,
       "weekly_vert_ft": 2000,
       "carbs_per_hr_target": 40,
       "mileage_note": "Week 14 (Sep 28): 22.5 mi, ~2,000 ft vert, 40 g carb/hr on the long run"
@@ -1708,7 +1708,7 @@
           "mileage": 11
         }
       },
-      "weekly_mileage": 26,
+      "weekly_mileage": 24.5,
       "weekly_vert_ft": 2400,
       "carbs_per_hr_target": 45,
       "mileage_note": "Week 15 (Oct 5): 24.5 mi, ~2,400 ft vert, 45 g carb/hr on the long run"
@@ -1827,7 +1827,7 @@
           "mileage": 6
         }
       },
-      "weekly_mileage": 19,
+      "weekly_mileage": 17,
       "weekly_vert_ft": 1200,
       "carbs_per_hr_target": 45,
       "mileage_note": "Week 16 (Oct 12): 17 mi, ~1,200 ft vert, 45 g carb/hr on the long run"
@@ -1946,7 +1946,7 @@
           "mileage": 12
         }
       },
-      "weekly_mileage": 28,
+      "weekly_mileage": 26.5,
       "weekly_vert_ft": 2800,
       "carbs_per_hr_target": 50,
       "mileage_note": "Week 17 (Oct 19): 26.5 mi, ~2,800 ft vert, 50 g carb/hr on the long run"
@@ -2065,7 +2065,7 @@
           "mileage": 13
         }
       },
-      "weekly_mileage": 28,
+      "weekly_mileage": 29,
       "weekly_vert_ft": 3200,
       "carbs_per_hr_target": 55,
       "mileage_note": "Week 18 (Oct 26): 29 mi, ~3,200 ft vert, 55 g carb/hr on the long run"
@@ -2184,7 +2184,7 @@
           "mileage": 14
         }
       },
-      "weekly_mileage": 28,
+      "weekly_mileage": 31,
       "weekly_vert_ft": 3600,
       "carbs_per_hr_target": 60,
       "mileage_note": "Week 19 (Nov 2): 31 mi, ~3,600 ft vert, 60 g carb/hr on the long run"
@@ -2303,7 +2303,7 @@
           "mileage": 8
         }
       },
-      "weekly_mileage": 19,
+      "weekly_mileage": 22,
       "weekly_vert_ft": 1800,
       "carbs_per_hr_target": 45,
       "mileage_note": "Week 20 (Nov 9): 22 mi, ~1,800 ft vert, 45 g carb/hr on the long run"
@@ -2422,7 +2422,7 @@
           "mileage": 15
         }
       },
-      "weekly_mileage": 28,
+      "weekly_mileage": 33,
       "weekly_vert_ft": 4000,
       "carbs_per_hr_target": 65,
       "mileage_note": "Week 21 (Nov 16): 33 mi, ~4,000 ft vert, 65 g carb/hr on the long run"
@@ -2539,7 +2539,7 @@
           "mileage": 11
         }
       },
-      "weekly_mileage": 22,
+      "weekly_mileage": 26,
       "weekly_vert_ft": 2400,
       "carbs_per_hr_target": 60,
       "mileage_note": "Week 22 (Nov 23): 26 mi, ~2,400 ft vert, 60 g carb/hr on the long run"
