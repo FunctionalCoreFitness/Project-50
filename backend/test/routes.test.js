@@ -286,6 +286,62 @@ test("GET /v1/healthkit-latest sets Access-Control-Allow-Origin on the real resp
   assert.equal(headers.get("access-control-allow-origin"), "https://functionalcorefitness.github.io");
 });
 
+// ---- history ----
+//
+// These exist because the history endpoint shipped with no auth at all: the
+// middleware in index.js was bound to /v1/healthkit-latest by path, and adding
+// a second route to latestRoute silently left it open. It returns up to 180
+// days at once, so it leaks strictly more than -latest does.
+
+test("GET /v1/healthkit-history rejects a missing token", async (t) => {
+  const server = await listen(app);
+  t.after(() => server.close());
+  const { status } = await request(server, {
+    method: "GET",
+    path: "/v1/healthkit-history?days=5",
+  });
+  assert.equal(status, 401);
+});
+
+test("GET /v1/healthkit-history rejects the ingest token (wrong scope)", async (t) => {
+  const server = await listen(app);
+  t.after(() => server.close());
+  const { status } = await request(server, {
+    method: "GET",
+    path: "/v1/healthkit-history?days=5",
+    token: "test-ingest-key",
+  });
+  assert.equal(status, 401);
+});
+
+test("GET /v1/healthkit-history returns recent days via the read token", async (t) => {
+  const original = firestore.getRecentDays;
+  firestore.getRecentDays = async () => [{ date: YESTERDAY, metrics: { dietaryFiber: 31 } }];
+  t.after(() => { firestore.getRecentDays = original; });
+
+  const server = await listen(app);
+  t.after(() => server.close());
+  const { status, json } = await request(server, {
+    method: "GET",
+    path: "/v1/healthkit-history?days=5",
+    token: "test-read-key",
+  });
+  assert.equal(status, 200);
+  assert.deepEqual(json.days, [{ date: YESTERDAY, metrics: { dietaryFiber: 31 } }]);
+});
+
+test("OPTIONS /v1/healthkit-history answers the CORS preflight without auth", async (t) => {
+  const server = await listen(app);
+  t.after(() => server.close());
+  const { status, headers } = await request(server, {
+    method: "OPTIONS",
+    path: "/v1/healthkit-history",
+  });
+  assert.equal(status, 204);
+  assert.equal(headers.get("access-control-allow-origin"), "https://functionalcorefitness.github.io");
+  assert.equal(headers.get("access-control-allow-headers"), "Authorization");
+});
+
 test("GET /healthz needs no auth", async (t) => {
   const server = await listen(app);
   t.after(() => server.close());

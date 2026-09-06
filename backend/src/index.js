@@ -31,7 +31,11 @@ app.get("/healthz", (req, res) => res.status(200).send("ok"));
 app.post("/v1/healthkit-sync", requireBearerToken(INGEST_API_KEY, "ingest"));
 app.use(syncRoute);
 
+// Both read routes live in latestRoute and both need the read token. Guard
+// them individually rather than via a prefix: the OPTIONS preflights must
+// stay unauthenticated (browsers don't send Authorization on a preflight).
 app.get("/v1/healthkit-latest", requireBearerToken(READ_API_KEY, "read"));
+app.get("/v1/healthkit-history", requireBearerToken(READ_API_KEY, "read"));
 app.use(latestRoute);
 
 app.use((req, res) => res.status(404).json({ error: "not found" }));
