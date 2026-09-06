@@ -471,6 +471,24 @@
   .rc-why{font-size:.82rem;color:#3a4049;line-height:1.4;margin-top:3px}
   .rc-caveat{font-size:.8rem;font-style:italic;color:var(--muted);line-height:1.45;margin-top:12px;padding:9px 12px;border:1px dashed var(--line);border-radius:4px}
   /* nutrition */
+  /* Phase arc: the whole journey on one line, current phase called out. */
+  .ph-strip{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+  .ph-cell{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--track);
+    border-radius:6px;padding:9px 8px;min-width:0}
+  .ph-cell.ph-done{border-top-color:var(--green)}
+  .ph-cell.ph-done .ph-n{background:var(--green);color:#fff;border-color:var(--green)}
+  .ph-cell.ph-now{border-top-color:var(--steel);box-shadow:0 0 0 2px rgba(74,126,199,.18)}
+  .ph-cell.ph-now .ph-n{background:var(--steel);color:#fff;border-color:var(--steel)}
+  .ph-n{font-family:var(--mono);font-size:.68rem;font-weight:700;width:19px;height:19px;
+    display:flex;align-items:center;justify-content:center;border-radius:50%;
+    border:1px solid var(--line);color:var(--muted);background:var(--paper);margin-bottom:6px}
+  .ph-name{font-size:.74rem;font-weight:700;line-height:1.25;color:var(--ink)}
+  .ph-cell.ph-now .ph-name{color:var(--navy)}
+  .ph-note{font-size:.66rem;color:var(--muted);line-height:1.35;margin-top:3px}
+  @media(max-width:760px){
+    .ph-strip{grid-template-columns:repeat(2,1fr)}
+    .ph-note{display:none}
+  }
   .nu-lede{font-size:.9rem;color:#3a4049;line-height:1.55;margin-bottom:10px}
   .nu-med{font-size:.85rem;color:#8a4a3a;line-height:1.5;background:rgba(190,80,60,.08);border-left:3px solid #b4573f;border-radius:3px;padding:10px 12px;margin-bottom:14px}
   .nu-hero{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--green);border-radius:4px;padding:14px 16px;margin-bottom:14px}
@@ -1063,8 +1081,11 @@ function render(d){
   const dLeft = daysUntil(fiftyStr);
   const curAge = ageOn(a.birthday, new Date());
 
+  const phNow = currentPhase(d, new Date());
+  const raceNow = currentRaceTarget(d, new Date());
+  const phaseLabel = phNow ? `${phNow.n}. ${phNow.name}` : a.current_phase;
   document.getElementById('hSub').textContent =
-    `${a.name} · Age ${curAge} · Phase: ${a.current_phase}`;
+    `${a.name} · Age ${curAge} · Phase: ${phaseLabel}`;
 
   // pull key hero metrics
   const find=(cat,name)=>{
@@ -1122,14 +1143,14 @@ function render(d){
   // episode export block
   const exItems=[
     {k:'Age',v:curAge},
-    {k:'Phase',v:a.current_phase},
+    {k:'Phase',v:phaseLabel},
     {k:'Weight',v:fmt(wt?.value),u:'lb'},
     {k:'DEXA BF',v:fmt(bf?.value),u:'%'},
     {k:'Lean Mass',v:fmt(lean?.value),u:'lb'},
     {k:'VO₂ Max',v:fmt(vo2?.value)},
     {k:'HRV',v:fmt(hrv?.value),u:'ms'},
     {k:'Resting HR',v:fmt(rhr?.value),u:'bpm'},
-    {k:'Race Target',v:a.current_race_target},
+    {k:'Race Target',v:raceNow?raceNow.text:a.current_race_target},
     {k:'Days to 50',v:dLeft.toLocaleString()},
   ];
   let html = `
@@ -1569,6 +1590,25 @@ function render(d){
     const dt=new Date(+m[1], +m[2]-1, +m[3]);
     return dt.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'});
   }
+  // The seven-phase arc. Lives in data.json and drives the header phase; this
+  // strip is the only place the whole journey is visible at once.
+  let phHtml='';
+  if(Array.isArray(d.phases) && d.phases.length){
+    const nowP = currentPhase(d, new Date());
+    const cells = d.phases.map(p=>{
+      const state = !nowP ? '' : (p.n < nowP.n ? 'ph-done' : (p.n === nowP.n ? 'ph-now' : ''));
+      return `<div class="ph-cell ${state}" title="${p.anchor||''}">
+        <div class="ph-n">${p.n}</div>
+        <div class="ph-name">${p.name}</div>
+        <div class="ph-note">${p.note||''}</div>
+      </div>`;
+    }).join('');
+    phHtml = `<section id="phases">
+      <div class="sec-head"><div class="sec-title">The Arc</div>
+        <div class="sec-meta">Seven phases, thyroid panel to Moab<br>Current phase derived from the calendar</div></div>
+      <div class="ph-strip">${cells}</div></section>`;
+  }
+
   const rl=d.race_ladder;
   let rlHtml='';
   if(rl){
@@ -1991,7 +2031,7 @@ function render(d){
   const todayHtml = buildTodayCard(d, window.__LOG__, project50, scoreClass);
 
   document.getElementById('main').innerHTML =
-    todayHtml + focusHtml + scoreBlockHtml + gaugeHtml + html + pubHtml + calHtml + cbHtml + rlHtml + miHtml + fuHtml + trHtml + coHtml + rcHtml + nuHtml + locHtml + winsHtml;
+    todayHtml + focusHtml + scoreBlockHtml + gaugeHtml + html + pubHtml + calHtml + cbHtml + phHtml + rlHtml + miHtml + fuHtml + trHtml + coHtml + rcHtml + nuHtml + locHtml + winsHtml;
 
   // ---- Checkable to-do / B-roll items (per-device, localStorage) ----
   const mainEl=document.getElementById('main');
@@ -2080,6 +2120,48 @@ function resolveTrainingWeek(log, wkNum, now){
   return wk || null;
 }
 // Program week number from the athlete's start date, or null if unset.
+// Phase and race target were hand-typed strings in data.json and both had gone
+// stale (phase still read "Baseline" in week 10; the target still read "first
+// trail 10K" after the Dec 5 half was registered and paid). Derive both, so
+// they track the calendar instead of needing a human to remember.
+function currentPhase(d, now){
+  const ph = Array.isArray(d.phases) ? d.phases.filter(p=>p.from) : [];
+  if(!ph.length) return null;
+  const t = now.getTime();
+  const past = ph.filter(p=>new Date(p.from+'T00:00:00').getTime() <= t);
+  return past.length ? past[past.length-1] : ph[0];
+}
+// The next rung not yet run. Rungs 4-6 carry only a target_window ("Oct 2027",
+// "May-Jun 2028"), so they need an end date too - without one they never expire
+// and the ladder stays stuck on the first undated rung forever.
+const MONTHS = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
+function windowEnd(str){
+  if(!str) return null;
+  const year = (String(str).match(/\b(20\d{2})\b/)||[])[1];
+  if(!year) return null;
+  // A range ("May-Jun 2028") ends in its last named month.
+  const months = String(str).toLowerCase().match(/[a-z]{3,}/g)||[];
+  let mi = -1;
+  months.forEach(m=>{ const i = MONTHS.indexOf(m.slice(0,3)); if(i>=0) mi = i; });
+  if(mi<0) mi = 11;
+  return new Date(Number(year), mi+1, 0); // last day of that month
+}
+function rungEnd(r){
+  if(r.target_date) return new Date(r.target_date+'T00:00:00');
+  return windowEnd(r.target_window || r.window || r.year);
+}
+function currentRaceTarget(d, now){
+  const rungs = (d.race_ladder && d.race_ladder.rungs) || [];
+  const t = now.getTime();
+  const next = rungs.find(r => { if(r.done) return false;
+    const e = rungEnd(r); return !e || e.getTime() >= t; });
+  if(!next) return null;
+  const when = next.target_date
+    ? new Date(next.target_date+'T00:00:00').toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'})
+    : (next.target_window || next.window || '');
+  return { text: `${next.dist}${when?' \u2014 '+when:''}`, rung: next };
+}
+
 function programWeekNumber(d, now){
   const start = d.athlete && (d.athlete.program_start||d.athlete.project_start);
   if(!start) return null;

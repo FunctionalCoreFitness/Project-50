@@ -2615,37 +2615,51 @@
     {
       "n": 1,
       "name": "Origin Story",
-      "note": "Thyroid discovery and Function Health"
+      "note": "Thyroid discovery and Function Health",
+      "from": "2026-06-26",
+      "anchor": "Project start — Function Health panel, thyroid discovery"
     },
     {
       "n": 2,
       "name": "Baseline",
-      "note": "BodySpec, Apple Health, strength/movement testing"
+      "note": "BodySpec, Apple Health, strength/movement testing",
+      "from": "2026-06-29",
+      "anchor": "Week 1, baseline testing panel"
     },
     {
       "n": 3,
       "name": "Build Foundation",
-      "note": "Strength, mobility, recovery, health markers"
+      "note": "Strength, mobility, recovery, health markers",
+      "from": "2026-07-06",
+      "anchor": "Week 2 — Block 1 training begins"
     },
     {
       "n": 4,
       "name": "Become a Runner Again",
-      "note": "Run durability and trail exposure"
+      "note": "Run durability and trail exposure",
+      "from": "2026-09-21",
+      "anchor": "Week 13 — Block 2, run durability and first trail race build"
     },
     {
       "n": 5,
       "name": "Trail Athlete",
-      "note": "Elevation, nutrition, gear, long efforts"
+      "note": "Elevation, nutrition, gear, long efforts",
+      "from": "2026-12-14",
+      "anchor": "After the Dec 5 trail half — build to the 2027 marathon"
     },
     {
       "n": 6,
       "name": "Ultra Foundation",
-      "note": "50K, 50-mile or 100K prep"
+      "note": "50K, 50-mile or 100K prep",
+      "from": "2027-03-21",
+      "anchor": "After the bridge marathon — 50K, 50-mile, 100K progression"
     },
     {
       "n": 7,
       "name": "100-Mile Goal",
-      "note": "Final race build and execution"
+      "note": "Final race build and execution",
+      "from": "2028-07-01",
+      "anchor": "Final build to Canyonlands 100"
     }
   ],
   "current_focus": {
