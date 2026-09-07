@@ -2208,19 +2208,47 @@ function trailPickHtml(d, wk, day, dowKey){
   if(!wk) return '';
   const mi = day.mileage||0;
   if(mi<=0) return '';
+  // Race day already has a venue. Suggesting a trail to drive to instead is
+  // nonsense, and the distance fallback would otherwise match one to 13.1 mi.
+  if((day.plan||[]).some(l=>/^\s*RACE\b/i.test(l))) return '';
   const longest = Math.max(...Object.values(weekDays(wk)||{}).map(x=>x.mileage||0));
+  // Trail plans were written for Block 2 (weeks 13-22), so Block 1, race week
+  // and the recovery week have no entry of their own. Rather than show nothing
+  // on those days, borrow the option closest in distance from the whole pool
+  // and label it as a match rather than a prescription.
+  const closest = (pool, target) => {
+    let best = null;
+    pool.forEach(entry => (entry.options||[]).forEach(o => {
+      if(typeof o.miles !== 'number') return;
+      const gap = Math.abs(o.miles - target);
+      if(!best || gap < best.gap) best = { gap, o, entry };
+    }));
+    return best;
+  };
+
   // The week's longest run — that's the one the long-run planner covers.
   if(mi >= longest){
-    const plan = (d.trails&&d.trails.weeks||[]).find(w=>w.week===wk.week);
-    const o = plan && plan.options && plan.options[0];
-    return o ? trailLine('Trail', o, 'all 3 options →') : '';
+    const plans = (d.trails&&d.trails.weeks) || [];
+    const plan = plans.find(w=>w.week===wk.week);
+    if(plan){
+      const o = plan.options && plan.options[0];
+      return o ? trailLine('Trail', o, 'all 3 options →') : '';
+    }
+    const best = closest(plans, mi);
+    return best ? trailLine('Trail', best.o, 'closest match · all options →') : '';
   }
   // Otherwise it's a short run: find the session type covering this day+week.
-  const sess = (d.short_runs&&d.short_runs.sessions||[]).find(
+  const sessions = (d.short_runs&&d.short_runs.sessions) || [];
+  const sess = sessions.find(
     s => s.day===dowKey && Array.isArray(s.weeks) && s.weeks.indexOf(wk.week)!==-1);
-  if(!sess) return '';
-  const q = (sess.options||[]).find(o=>o.tag==='Quick') || (sess.options||[])[0];
-  return q ? trailLine(sess.title, q, 'other options →') : '';
+  if(sess){
+    const q = (sess.options||[]).find(o=>o.tag==='Quick') || (sess.options||[])[0];
+    return q ? trailLine(sess.title, q, 'other options →') : '';
+  }
+  // Prefer a session written for this weekday; fall back to the whole set.
+  const sameDay = sessions.filter(s=>s.day===dowKey);
+  const best = closest(sameDay.length ? sameDay : sessions, mi);
+  return best ? trailLine(best.entry.title, best.o, 'closest match · other options →') : '';
 }
 
 // A calendar month may carry more than one dated event (the race, a
