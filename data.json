@@ -2457,7 +2457,7 @@
           "note": "BUN/Creatinine ratio 30 (goal 16) · BUN 19"
         },
         {
-          "name": "Vitamin D",
+          "name": "Vitamin D (diet)",
           "unit": "mcg",
           "value": null,
           "pacer": 100,
@@ -2467,7 +2467,7 @@
           "note": "Vitamin D 23 ng/mL (goal 50)"
         },
         {
-          "name": "Folate",
+          "name": "Folate (diet)",
           "unit": "mcg",
           "value": null,
           "pacer": 400,
@@ -2477,7 +2477,7 @@
           "note": "Homocysteine 12.4 umol/L (goal 8)"
         },
         {
-          "name": "B12",
+          "name": "B12 (diet)",
           "unit": "mcg",
           "value": null,
           "pacer": 2.4,
@@ -2487,7 +2487,7 @@
           "note": "Homocysteine 12.4 · B12 serum not measured (MMA 124, functionally in range)"
         },
         {
-          "name": "Zinc",
+          "name": "Zinc (diet)",
           "unit": "mg",
           "value": null,
           "pacer": 11,
@@ -2497,7 +2497,7 @@
           "note": "Zinc 67 mcg/dL (flagged direction: up)"
         },
         {
-          "name": "Magnesium",
+          "name": "Magnesium (diet)",
           "unit": "mg",
           "value": null,
           "pacer": 420,
@@ -2507,7 +2507,7 @@
           "note": "RBC magnesium 6.2 mg/dL — in range"
         },
         {
-          "name": "Potassium",
+          "name": "Potassium (diet)",
           "unit": "mg",
           "value": null,
           "pacer": 3400,
@@ -2517,7 +2517,7 @@
           "note": "Potassium 4.3 mmol/L — in range"
         },
         {
-          "name": "Sodium",
+          "name": "Sodium (diet)",
           "unit": "mg",
           "value": null,
           "pacer": 2300,
@@ -2763,6 +2763,13 @@
       "categories": [
         "recovery"
       ]
+    },
+    {
+      "name": "Nutrition",
+      "categories": [
+        "nutrition"
+      ],
+      "daily": true
     },
     {
       "name": "Blood Work",
