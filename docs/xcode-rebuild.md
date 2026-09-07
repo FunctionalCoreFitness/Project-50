@@ -1,7 +1,7 @@
 # Xcode rebuild checklist
 
 For updating the app you already have on your phone. This is **not** the
-first-time setup (that's `ios/README.md`) — you are only replacing two Swift
+first-time setup (that's `ios/README.md`) — you are only replacing Swift
 files. Nothing about signing, capabilities, entitlements or Info.plist changes.
 
 Expect 10–15 minutes.
@@ -14,11 +14,35 @@ Expect 10–15 minutes.
 |---|---|
 | `Sources/MetricMap.swift` | `.mindfulSession` read type + 12 dietary quantity types |
 | `Sources/HealthKitManager.swift` | `fetchMindfulMinutes()` and its result key |
+| `Sources/SyncCoordinator.swift` | Multi-day catch-up, replacing the single-day sync |
+| `Sources/ContentView.swift` | "Sync Now" + "Re-sync Last 14 Days", and a real result message |
+| `Sources/ProjectFiftySyncApp.swift` | Foreground catch-up now triggers on unsynced days |
+| `Sources/BackgroundSyncManager.swift` | Calls the catch-up; doc comment corrected |
 
-That's it. Two files, both additions.
+Six files, all replacements. Copy each one whole.
 
 Without the rebuild the dashboard's Nutrition and Auto-Recovery sections stay
 empty — they're wired up and waiting, but the phone isn't sending the data yet.
+
+### Why the sync files changed
+
+The old app synced exactly one day — yesterday — and only bothered if more
+than 20 hours had passed since the last successful run. Both halves lost data:
+
+- A sync at 5pm marked the app "fresh" until 1pm the next day, so opening it
+  over breakfast did nothing while yesterday sat unsent.
+- Because a run only ever covered one day, anything the background task
+  skipped was never picked up again. It was gone.
+
+Now the app asks the right question — *is there a day I have not uploaded
+yet?* — and walks every pending day up to yesterday, oldest first, capped at
+14 days. A failed upload stops the run and leaves the marker where it is, so
+the next attempt retries that day instead of stepping over it.
+
+**Use "Re-sync Last 14 Days" once after this rebuild.** Days already marked
+done are skipped by the normal button, and the days from before you granted
+the nutrition permissions are marked done — the forced re-sync is what pulls
+them in now that Health will actually hand them over.
 
 ---
 

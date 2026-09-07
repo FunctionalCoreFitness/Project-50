@@ -23,11 +23,12 @@ import os
 /// fallback, not a "6am cron job":
 ///   1. Request a `BGAppRefreshTask` with `earliestBeginDate` = next 6am
 ///      device-local time. This is the "try to do it quietly overnight" path.
-///   2. On every foreground launch, check `SyncCoordinator.isStale` (>20h
-///      since last success) and sync immediately if so. This is the actual
-///      reliability backstop — it guarantees a sync happens within ~20h of
-///      the last one as long as the user opens the app at least that often,
-///      independent of whatever the OS did with the background task.
+///   2. On every foreground launch, check `SyncCoordinator.hasUnsyncedDays`
+///      and catch up if any day through yesterday has not been uploaded.
+///      This is the actual reliability backstop — whatever the OS skipped is
+///      picked up the next time the app is opened, and because the catch-up
+///      walks every pending day rather than only yesterday, a missed run
+///      costs nothing permanently.
 enum BackgroundSyncManager {
     static let taskIdentifier = "com.functionalcorefitness.project50sync.refresh"
 
@@ -79,7 +80,7 @@ enum BackgroundSyncManager {
 
         let health = HealthKitManager()
         let work = Task {
-            let success = await SyncCoordinator.syncYesterday(health: health)
+            let success = await SyncCoordinator.syncPendingDays(health: health).isSuccess
             task.setTaskCompleted(success: success)
         }
 

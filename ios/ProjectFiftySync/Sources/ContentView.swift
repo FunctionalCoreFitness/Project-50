@@ -43,16 +43,33 @@ struct ContentView: View {
                         Text("Never synced yet.")
                             .foregroundStyle(.secondary)
                     }
+                    // Which day the server actually has is the useful fact.
+                    // "Last sync 4:45pm" told us nothing about whether
+                    // yesterday had made it.
+                    if let day = SyncCoordinator.lastSyncedDay {
+                        Text("Uploaded through \(SyncCoordinator.dayString(day)).")
+                            .font(.footnote)
+                            .foregroundStyle(SyncCoordinator.hasUnsyncedDays ? Color.orange : Color.secondary)
+                    }
                     Button {
-                        Task { await syncNow() }
+                        Task { await syncNow(force: false) }
                     } label: {
                         if isSyncing {
                             ProgressView()
                         } else {
-                            Text("Sync Yesterday Now")
+                            Text("Sync Now")
                         }
                     }
                     .disabled(isSyncing)
+
+                    Button("Re-sync Last \(SyncCoordinator.backfillWindowDays) Days") {
+                        Task { await syncNow(force: true) }
+                    }
+                    .disabled(isSyncing)
+                    Text("Use the re-sync after granting new Health permissions — days already marked done are skipped otherwise.")
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+
                     if let lastSyncResult {
                         Text(lastSyncResult).font(.footnote).foregroundStyle(.secondary)
                     }
@@ -72,10 +89,10 @@ struct ContentView: View {
         }
     }
 
-    private func syncNow() async {
+    private func syncNow(force: Bool) async {
         isSyncing = true
         defer { isSyncing = false }
-        let success = await SyncCoordinator.syncYesterday(health: health)
-        lastSyncResult = success ? "Synced." : "Sync failed or no data — check that HealthKit access is granted and the token is saved."
+        let outcome = await SyncCoordinator.syncPendingDays(health: health, force: force)
+        lastSyncResult = outcome.summary
     }
 }

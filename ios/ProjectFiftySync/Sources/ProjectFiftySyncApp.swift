@@ -20,9 +20,10 @@ struct ProjectFiftySyncApp: App {
             case .active:
                 // The real reliability backstop — see BackgroundSyncManager's
                 // doc comment. Runs every time the app comes to the
-                // foreground, but only actually syncs if >20h stale.
-                if SyncCoordinator.isStale {
-                    Task { await SyncCoordinator.syncYesterday(health: health) }
+                // foreground, and catches up every day the background task
+                // missed rather than only yesterday.
+                if SyncCoordinator.hasUnsyncedDays {
+                    Task { await SyncCoordinator.syncPendingDays(health: health) }
                 }
             case .background:
                 BackgroundSyncManager.scheduleNextRefresh()
