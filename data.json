@@ -2520,11 +2520,11 @@
           "name": "Sodium (diet)",
           "unit": "mg",
           "value": null,
-          "pacer": 2300,
-          "goal": 2300,
+          "pacer": null,
+          "goal": null,
           "direction": "neutral",
           "date": null,
-          "note": "Sodium 139 mmol/L — in range"
+          "note": "Sodium 139 mmol/L — in range. Tracked, not capped: you sweat for hours at a time and long-run fuelling calls for 300-800 mg/hr, so a generic 2,300 mg ceiling does not describe your day. Watch the trend, not a line."
         }
       ]
     }
@@ -4987,7 +4987,7 @@
         "key": "dietarySodium",
         "name": "Sodium",
         "unit": "mg",
-        "target": 2300,
+        "target": null,
         "direction": "neutral",
         "priority": 12,
         "marker": "Sodium 139 mmol/L — in range",

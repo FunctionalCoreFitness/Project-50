@@ -1177,7 +1177,10 @@ function render(d){
       if(ev.status==='green') green++;
       else if(ev.status==='amber') amber++;
       else if(ev.status==='red') red++;
-      else green++; // flat/tracked-with-no-target counts as ok
+      // A metric with no target is shown, not judged. Counting it green scored
+      // it as a perfect result for hitting a mark that was never set - dietary
+      // sodium alone was worth ~17 points of the Nutrition score that way.
+      // Leave it out of the denominator entirely, as an untested metric is.
     }
     const tested=green+amber+red;
     return {green,amber,red,untested,tested};
@@ -1322,20 +1325,25 @@ function render(d){
   // so "12 tracked" says less than the day it came from. Show the date instead,
   // and say plainly when it has gone stale rather than implying it is current.
   function dailySub(catIds, tested){
-    if(tested===0) return 'waiting on first sync';
-    let newest=null;
+    // Count what arrived, not what scored. Sodium is tracked without a target,
+    // so it is deliberately left out of the score - but it did sync, and
+    // saying "5 of 12" when six landed misreports the sync, not the score.
+    let landed=0, newest=null;
     for(const id of catIds){
       const c=d.categories.find(x=>x.id===id); if(!c) continue;
       for(const m of (c.metrics||[])){
-        if(m.value===null||m.value===undefined||!m.date) continue;
+        if(m.value===null||m.value===undefined) continue;
+        landed++;
+        if(!m.date) continue;
         if(!newest || m.date>newest) newest=m.date;
       }
     }
-    if(!newest) return `${tested} tracked`;
+    if(landed===0) return 'waiting on first sync';
+    if(!newest) return `${landed} tracked`;
     const dt=new Date(newest+'T00:00:00');
     const days=Math.round((new Date(new Date().toDateString()) - dt)/86400000);
     const when = days<=0 ? 'today' : (days===1 ? 'yesterday' : `${days} days ago`);
-    return `${tested} of 12 · ${when}`;
+    return `${landed} of 12 · ${when}`;
   }
   let scoreCardsHtml='', scoreSum=0, scoreCount=0;
   for(const grp of (d.score_groups||[])){
