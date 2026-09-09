@@ -496,6 +496,7 @@
   .watch-note{font-size:.78rem;color:var(--muted);line-height:1.5;margin-bottom:10px;max-width:62ch}
   .grid-watch{opacity:.72}
   .grid-watch .metric{background:var(--paper)}
+  .race-verified{font-size:.72rem;color:var(--green);margin-top:8px;line-height:1.45}
   .nu-lede{font-size:.9rem;color:#3a4049;line-height:1.55;margin-bottom:10px}
   .nu-med{font-size:.85rem;color:#8a4a3a;line-height:1.5;background:rgba(190,80,60,.08);border-left:3px solid #b4573f;border-radius:3px;padding:10px 12px;margin-bottom:14px}
   .nu-hero{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--green);border-radius:4px;padding:14px 16px;margin-bottom:14px}
@@ -1679,10 +1680,17 @@ function render(d){
           ${r.fuel_target?`<div class="race-row"><span class="race-lbl">Fuel target</span>${r.fuel_target}</div>`:''}
           ${r.vert_prep?`<div class="race-row"><span class="race-lbl">Vert prep</span>${r.vert_prep}</div>`:''}
           ${r.kit?`<div class="race-row"><span class="race-lbl">Kit</span>${r.kit}</div>`:''}
+          ${r.course?`<div class="race-row"><span class="race-lbl">Course</span>${r.course}</div>`:''}
+          ${r.on_course_fuel?`<div class="race-row"><span class="race-lbl">On course</span>${r.on_course_fuel}</div>`:''}
+          ${r.venue?`<div class="race-row"><span class="race-lbl">Venue</span>${r.venue}</div>`:''}
+          ${r.start_time?`<div class="race-row"><span class="race-lbl">Start</span>${r.start_time}</div>`:''}
+          ${r.logistics?`<div class="race-row"><span class="race-lbl">Logistics</span>${r.logistics}</div>`:''}
+          ${r.field_size?`<div class="race-row"><span class="race-lbl">Field</span>${r.field_size}</div>`:''}
           <div class="race-row"><span class="race-lbl">Candidates</span>${r.candidates}</div>
           <div class="race-row race-signup"><span class="race-lbl">Sign up</span>${r.signup}</div>
           ${(r.links&&r.links.length)?`<div class="race-links">${r.links.map(l=>`<a href="${l.url}" target="_blank" rel="noopener">${l.label} ↗</a>`).join('')}</div>`:''}
           ${r.teaches?`<div class="race-teaches"><b>What this rung teaches:</b> ${r.teaches}</div>`:''}
+          ${r.verified?`<div class="race-verified">✓ ${r.verified}</div>`:''}
         </div>
       </details>`;
     }).join('');

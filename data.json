@@ -3416,13 +3416,20 @@
           }
         ],
         "target_date": "2026-12-05",
-        "goal": "Finish strong with a negative split. The clock is secondary — 2:15–2:45 is a realistic band on trail.",
+        "goal": "Finish strong with a negative split. The clock is secondary - 2:15-2:45 is a realistic band on trail. The climb begins 1.5 miles in, so the opening mile should feel too easy on purpose: everyone around you will go out hard on the flat and pay for it on the first ascent.",
         "gate": "One 15 mi long run (Block 2, week 21) and one full dress rehearsal at race effort.",
         "fuel_target": "40-60 g carb/hr in the race, rehearsed at 65 g/hr in training",
         "vert_prep": "Peak training week ~4,000 ft; Peacock Gap runs the China Camp hills above San Rafael",
         "teaches": "Racing again after a long layoff, and that fuel goes in before you feel like you need it.",
-        "kit": "Race shoes + handheld or light vest. Nothing unrehearsed.",
-        "date_status": "registered"
+        "kit": "CUPLESS RACE - no cups at aid stations or the finish. You must carry your own. They ask for at least one 20 oz bottle; a handheld or light vest covers it. Race shoes. Nothing unrehearsed.",
+        "date_status": "confirmed",
+        "venue": "China Camp State Park and Henry Barbier Park, 800 N San Pedro Rd, San Rafael",
+        "start_time": "8:30 AM (half marathon and 30K start together). Check-in and bib pickup 7:30-9:00 AM.",
+        "field_size": "275 runners across all three distances - a small field.",
+        "course": "Twisting single-track through thick forest, up and over the peak, then descending onto open trail on the San Pablo Bay side. Views of Mt. Tam and both bays. The climb starts 1.5 miles in.",
+        "on_course_fuel": "Gu gels, chews and Stroopwafels; Skratch Labs hydration mix (80 cal and 4 g sugar per 100 ml, 800 mg sodium per litre); trail mix, pretzels, chips, PB&J, bananas, watermelon, tangerines, Coke, ginger ale; Salt-Stick tablets. No anti-inflammatories on course.",
+        "logistics": "Free parking along N. San Pedro Rd at the Miwok Meadows entrance, then walk up the dirt access road to the start. Carpooling encouraged. Registration closed Fri Dec 4, 11:59 PM PT - you are already in.",
+        "verified": "Confirmed at UltraSignup, Sep 9 2026. Date, start time, venue, course, aid stations and cup policy all read off the official listing."
       },
       {
         "n": 2,
@@ -3794,7 +3801,7 @@
     ],
     "race_day_template": {
       "night_before": "Normal-sized dinner, familiar food, nothing novel or high-fiber.",
-      "breakfast": "2.5–3 hr pre-start, the exact meal rehearsed in training. Carb-forward, low fibre, low fat.",
+      "breakfast": "2.5-3 hr pre-start, the exact meal rehearsed in training. For an 8:30 AM start that is 5:30-6:00 AM. Carb-forward, low fibre, low fat.",
       "final_top_up": "~15 min pre-start if the breakfast was early — small, liquid, familiar.",
       "on_course": "Begin at 30 min, then on a timer. Hit the block's g/hr target from the first hour.",
       "when_it_goes_wrong": "Back off the rate, switch to liquid calories or broth, slow down 10 minutes. Almost never fixes itself by pushing harder.",
@@ -3822,7 +3829,7 @@
         "try": "Ease the effort, take sodium, and note the conditions. Look for the pattern across several runs, not one."
       }
     ],
-    "products_to_test": "Test at least two carb sources and one savory option in weeks 17-19, before they matter. Record brand, amount and GI comfort in the workout log."
+    "products_to_test": "Peacock Gap runs Gu (gels, chews, Stroopwafels) and Skratch Labs hydration on course. Train on those two specifically in weeks 17-19 rather than a generic carb source - race day is the wrong place to find out your stomach dislikes Skratch. Also test one savoury option for later races. Record brand, amount and GI comfort in the workout log. If Gu or Skratch disagrees with you, you carry your own on Dec 5 and ignore the tables."
   },
   "trails": {
     "headline": "Long-Run Trails",
