@@ -10,19 +10,21 @@ Expect 10–15 minutes.
 
 ## What changed and why you need this
 
-| File | What was added |
+| File | What changed |
 |---|---|
-| `Sources/MetricMap.swift` | `.mindfulSession` read type + 12 dietary quantity types |
-| `Sources/HealthKitManager.swift` | `fetchMindfulMinutes()` and its result key |
 | `Sources/SyncCoordinator.swift` | Multi-day catch-up, replacing the single-day sync |
 | `Sources/ContentView.swift` | "Sync Now" + "Re-sync Last 14 Days", and a real result message |
 | `Sources/ProjectFiftySyncApp.swift` | Foreground catch-up now triggers on unsynced days |
 | `Sources/BackgroundSyncManager.swift` | Calls the catch-up; doc comment corrected |
 
-Six files, all replacements. Copy each one whole.
+**Four files, all whole-file replacements.**
 
-Without the rebuild the dashboard's Nutrition and Auto-Recovery sections stay
-empty — they're wired up and waiting, but the phone isn't sending the data yet.
+`MetricMap.swift` and `HealthKitManager.swift` were part of the *earlier*
+rebuild and are already on the phone — nutrition data is flowing, which is the
+proof. Do not touch them again.
+
+Nutrition and Auto-Recovery already work without this rebuild. What this adds
+is catch-up: today a missed day is lost forever, and after this it isn't.
 
 ### Why the sync files changed
 
