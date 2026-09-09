@@ -4790,13 +4790,13 @@
       {
         "tool": "Wim Hof Breathwork",
         "mode": "auto",
-        "threshold_min": 10,
-        "why": "This IS the mindfulness session. A logged Breathe of 10 min or more is the breathwork."
+        "threshold_min": 7,
+        "why": "This IS the mindfulness session. His usual round lands at 8 minutes, so the ticker sits at 7 - a minute of margin below normal, and still high enough that a stray two-minute Breathe log doesn't tick the day for him."
       },
       {
         "tool": "Red Light Therapy",
         "mode": "auto",
-        "threshold_min": 10,
+        "threshold_min": 7,
         "why": "Done in the same morning block as the breathwork, so the same session ticks it. Uncheck manually on days you skipped the panel."
       },
       {
