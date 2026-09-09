@@ -2464,7 +2464,8 @@
           "goal": 100,
           "direction": "up",
           "date": null,
-          "note": "Vitamin D 23 ng/mL (goal 50)"
+          "note": "Vitamin D 23 ng/mL (goal 50). Reference only — a gap this size does not close through food, so the supplement is the lever. The blood level is tracked under Blood Work.",
+          "watch": true
         },
         {
           "name": "Folate (diet)",
@@ -2484,7 +2485,8 @@
           "goal": 2.4,
           "direction": "up",
           "date": null,
-          "note": "Homocysteine 12.4 · B12 serum not measured (MMA 124, functionally in range)"
+          "note": "MMA 124, functionally in range. Reference only — animal protein covers this easily at your intake.",
+          "watch": true
         },
         {
           "name": "Zinc (diet)",
@@ -2494,7 +2496,8 @@
           "goal": 11,
           "direction": "up",
           "date": null,
-          "note": "Zinc 67 mcg/dL (flagged direction: up)"
+          "note": "Zinc 67 mcg/dL, low-normal. Reference only — worth knowing, not worth logging daily.",
+          "watch": true
         },
         {
           "name": "Magnesium (diet)",
@@ -2504,7 +2507,8 @@
           "goal": 420,
           "direction": "up",
           "date": null,
-          "note": "RBC magnesium 6.2 mg/dL — in range"
+          "note": "RBC magnesium 6.2 mg/dL — in range. Reference only.",
+          "watch": true
         },
         {
           "name": "Potassium (diet)",
@@ -2514,7 +2518,8 @@
           "goal": 3400,
           "direction": "up",
           "date": null,
-          "note": "Potassium 4.3 mmol/L — in range"
+          "note": "Potassium 4.3 mmol/L — in range. Reference only — revisit if cramping shows up as long runs grow.",
+          "watch": true
         },
         {
           "name": "Sodium (diet)",

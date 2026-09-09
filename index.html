@@ -489,6 +489,13 @@
     .ph-strip{grid-template-columns:repeat(2,1fr)}
     .ph-note{display:none}
   }
+  /* Reference metrics: present for context, visibly demoted so they don't
+     read as twelve daily obligations he is failing half of. */
+  .watch-head{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--muted);margin:18px 0 4px;padding-top:14px;border-top:1px solid var(--hair)}
+  .watch-note{font-size:.78rem;color:var(--muted);line-height:1.5;margin-bottom:10px;max-width:62ch}
+  .grid-watch{opacity:.72}
+  .grid-watch .metric{background:var(--paper)}
   .nu-lede{font-size:.9rem;color:#3a4049;line-height:1.55;margin-bottom:10px}
   .nu-med{font-size:.85rem;color:#8a4a3a;line-height:1.5;background:rgba(190,80,60,.08);border-left:3px solid #b4573f;border-radius:3px;padding:10px 12px;margin-bottom:14px}
   .nu-hero{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--green);border-radius:4px;padding:14px 16px;margin-bottom:14px}
@@ -1168,6 +1175,10 @@ function render(d){
   function sectionStatus(metrics, isLabs){
     let green=0, amber=0, red=0, untested=0;
     for(const m of metrics){
+      // Reference metrics are shown for context and never scored - they would
+      // otherwise sit permanently "untested" and read as a failure to track
+      // something that was never asked of him.
+      if(m.watch) continue;
       if(m.value===null||m.value===undefined){ untested++; continue; }
       if(isLabs){
         if(m.flag==='out') red++; else green++;
@@ -1227,9 +1238,15 @@ function render(d){
       labsNote = `<div class="labs-note"><b>Showing out-of-range markers only.</b> ${tested} markers tracked; the rest are in healthy range. Goal: zero out of range. Thyroid history on file: 7.7 cm right nodule, multinodular enlargement, cancer ruled out.</div>`;
     }
 
-    const gridInner = metricsToShow.length
-      ? metricsToShow.map(metricCard).join('')
+    const watchList = metricsToShow.filter(m=>m.watch);
+    const mainList  = metricsToShow.filter(m=>!m.watch);
+    const gridInner = mainList.length
+      ? mainList.map(metricCard).join('')
       : `<div class="all-clear">Every tracked marker is in healthy range. Goal met.</div>`;
+    const watchHtml = watchList.length ? `
+      <div class="watch-head">Reference &mdash; not logged daily</div>
+      <div class="watch-note">Your nutrition app doesn't report these, and four of the five are already in range. Kept for context; they don't count toward the score.</div>
+      <div class="grid grid-watch">${watchList.map(metricCard).join('')}</div>` : '';
 
     const sStat = sectionStatus(c.metrics, isLabs);
     html += `
@@ -1243,6 +1260,7 @@ function render(d){
         <div class="grid">
           ${gridInner}
         </div>
+        ${watchHtml}
       </section>`;
   }
   // protocol section
@@ -1328,10 +1346,12 @@ function render(d){
     // Count what arrived, not what scored. Sodium is tracked without a target,
     // so it is deliberately left out of the score - but it did sync, and
     // saying "5 of 12" when six landed misreports the sync, not the score.
-    let landed=0, newest=null;
+    let landed=0, total=0, newest=null;
     for(const id of catIds){
       const c=d.categories.find(x=>x.id===id); if(!c) continue;
       for(const m of (c.metrics||[])){
+        if(m.watch) continue;
+        total++;
         if(m.value===null||m.value===undefined) continue;
         landed++;
         if(!m.date) continue;
@@ -1343,7 +1363,7 @@ function render(d){
     const dt=new Date(newest+'T00:00:00');
     const days=Math.round((new Date(new Date().toDateString()) - dt)/86400000);
     const when = days<=0 ? 'today' : (days===1 ? 'yesterday' : `${days} days ago`);
-    return `${landed} of 12 · ${when}`;
+    return `${landed} of ${total} · ${when}`;
   }
   let scoreCardsHtml='', scoreSum=0, scoreCount=0;
   for(const grp of (d.score_groups||[])){
