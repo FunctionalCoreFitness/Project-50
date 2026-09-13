@@ -1241,17 +1241,17 @@
           "day_full": "Sunday",
           "pillar": "Foundation",
           "plan": [
-            "RUN: Long 12 mi, trail, easy conversational pace (PEAK — last big week before race)",
+            "RUN: Long 8 mi, trail, easy conversational pace",
             "Wim Hof breathwork, 3 rounds",
             "Weekly review (Project 50 dashboard)"
           ],
           "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
           "done": false,
           "notes": "",
-          "mileage": 12
+          "mileage": 8
         }
       },
-      "weekly_mileage": 22,
+      "weekly_mileage": 18,
       "block": 1
     },
     {
@@ -1531,7 +1531,7 @@
           "day_full": "Sunday",
           "pillar": "Foundation",
           "plan": [
-            "RUN: LONG 9 mi -- trail, easy conversational. Target ~1,600 ft vert for the week",
+            "RUN: Long 9 mi, trail, easy conversational pace",
             "Long run + first real back-to-back: Monday's easy 3 is run ON TIRED LEGS from this.",
             "FUEL: 45 g/hr. Rehearse race breakfast 2.5-3 hr before the long run for the first time."
           ],
@@ -1541,7 +1541,7 @@
           "mileage": 9
         }
       },
-      "weekly_mileage": 20.5,
+      "weekly_mileage": 17.5,
       "weekly_vert_ft": 1600,
       "carbs_per_hr_target": 30,
       "mileage_note": "Week 13 (Sep 21): 20.5 mi, ~1,600 ft vert, 30 g carb/hr on the long run"
@@ -1651,7 +1651,7 @@
           "day_full": "Sunday",
           "pillar": "Foundation",
           "plan": [
-            "RUN: LONG 10 mi -- trail, easy conversational. Target ~2,000 ft vert for the week",
+            "RUN: Long 10 mi, trail, easy conversational pace",
             "Long run. Add 3-4 controlled DOWNHILL efforts -- quads take the damage in a trail race, train them.",
             "FUEL: Step to 60 g/hr. Split across two carb sources if a single one sits heavy."
           ],
@@ -1661,7 +1661,7 @@
           "mileage": 10
         }
       },
-      "weekly_mileage": 22.5,
+      "weekly_mileage": 19.5,
       "weekly_vert_ft": 2000,
       "carbs_per_hr_target": 40,
       "mileage_note": "Week 14 (Sep 28): 22.5 mi, ~2,000 ft vert, 40 g carb/hr on the long run"
@@ -1771,7 +1771,7 @@
           "day_full": "Sunday",
           "pillar": "Foundation",
           "plan": [
-            "RUN: LONG 11 mi -- trail, easy conversational. Target ~2,400 ft vert for the week",
+            "RUN: Long 11 mi, trail, easy conversational pace",
             "Long run with sustained climbing. Practice power-hiking anything over ~15% grade.",
             "FUEL: 60 g/hr. Test two different product types this run and log which one your gut prefers."
           ],
@@ -1781,7 +1781,7 @@
           "mileage": 11
         }
       },
-      "weekly_mileage": 24.5,
+      "weekly_mileage": 21,
       "weekly_vert_ft": 2400,
       "carbs_per_hr_target": 45,
       "mileage_note": "Week 15 (Oct 5): 24.5 mi, ~2,400 ft vert, 45 g carb/hr on the long run"
@@ -1891,17 +1891,17 @@
           "day_full": "Sunday",
           "pillar": "Foundation",
           "plan": [
-            "RUN: LONG 6 mi -- trail, easy conversational. Target ~1,200 ft vert for the week",
+            "RUN: Long 8 mi, trail, easy conversational pace",
             "Easy cutback long run before the peak two weeks.",
             "FUEL: Back to 45 g/hr on the easy week. Absorption practice, not a test."
           ],
           "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
           "done": false,
           "notes": "",
-          "mileage": 6
+          "mileage": 8
         }
       },
-      "weekly_mileage": 17,
+      "weekly_mileage": 16,
       "weekly_vert_ft": 1200,
       "carbs_per_hr_target": 45,
       "mileage_note": "Week 16 (Oct 12): 17 mi, ~1,200 ft vert, 45 g carb/hr on the long run"
@@ -2011,7 +2011,7 @@
           "day_full": "Sunday",
           "pillar": "Foundation",
           "plan": [
-            "RUN: LONG 12 mi -- trail, easy conversational. Target ~2,800 ft vert for the week",
+            "RUN: Long 12 mi, trail, easy conversational pace",
             "PEAK LONG RUN -- full dress rehearsal: race shoes, race vest, race breakfast, race fuel.",
             "FUEL: 60-75 g/hr, full dress rehearsal. Whatever works here is your race plan. Nothing new after this."
           ],
@@ -2021,7 +2021,7 @@
           "mileage": 12
         }
       },
-      "weekly_mileage": 26.5,
+      "weekly_mileage": 22.5,
       "weekly_vert_ft": 2800,
       "carbs_per_hr_target": 50,
       "mileage_note": "Week 17 (Oct 19): 26.5 mi, ~2,800 ft vert, 50 g carb/hr on the long run"
@@ -2131,17 +2131,17 @@
           "day_full": "Sunday",
           "pillar": "Foundation",
           "plan": [
-            "RUN: LONG 13 mi -- trail, easy conversational. Target ~3,200 ft vert for the week",
+            "RUN: Long 10 mi, trail, easy conversational pace",
             "PEAK LONG RUN -- full dress rehearsal: race shoes, race vest, race breakfast, race fuel.",
             "FUEL: 60-75 g/hr, full dress rehearsal. Whatever works here is your race plan. Nothing new after this."
           ],
           "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
           "done": false,
           "notes": "",
-          "mileage": 13
+          "mileage": 10
         }
       },
-      "weekly_mileage": 29,
+      "weekly_mileage": 22,
       "weekly_vert_ft": 3200,
       "carbs_per_hr_target": 55,
       "mileage_note": "Week 18 (Oct 26): 29 mi, ~3,200 ft vert, 55 g carb/hr on the long run"
@@ -2251,17 +2251,17 @@
           "day_full": "Sunday",
           "pillar": "Foundation",
           "plan": [
-            "RUN: LONG 14 mi -- trail, easy conversational. Target ~3,600 ft vert for the week",
+            "RUN: Long 13 mi, trail, easy conversational pace (PEAK — last big week)",
             "PEAK LONG RUN -- full dress rehearsal: race shoes, race vest, race breakfast, race fuel.",
             "FUEL: 60-75 g/hr, full dress rehearsal. Whatever works here is your race plan. Nothing new after this."
           ],
           "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
           "done": false,
           "notes": "",
-          "mileage": 14
+          "mileage": 13
         }
       },
-      "weekly_mileage": 31,
+      "weekly_mileage": 25.5,
       "weekly_vert_ft": 3600,
       "carbs_per_hr_target": 60,
       "mileage_note": "Week 19 (Nov 2): 31 mi, ~3,600 ft vert, 60 g carb/hr on the long run"
@@ -2371,17 +2371,17 @@
           "day_full": "Sunday",
           "pillar": "Foundation",
           "plan": [
-            "RUN: LONG 8 mi -- trail, easy conversational. Target ~1,800 ft vert for the week",
+            "RUN: Long 9 mi, trail, easy conversational pace (taper)",
             "Easy cutback long run before the peak two weeks.",
             "FUEL: Back to 45 g/hr on the easy week. Absorption practice, not a test."
           ],
           "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
           "done": false,
           "notes": "",
-          "mileage": 8
+          "mileage": 9
         }
       },
-      "weekly_mileage": 22,
+      "weekly_mileage": 19.5,
       "weekly_vert_ft": 1800,
       "carbs_per_hr_target": 45,
       "mileage_note": "Week 20 (Nov 9): 22 mi, ~1,800 ft vert, 45 g carb/hr on the long run"
@@ -2491,17 +2491,17 @@
           "day_full": "Sunday",
           "pillar": "Foundation",
           "plan": [
-            "RUN: LONG 15 mi -- trail, easy conversational. Target ~4,000 ft vert for the week",
+            "RUN: Long 7 mi, trail, easy conversational pace (taper)",
             "PEAK LONG RUN -- full dress rehearsal: race shoes, race vest, race breakfast, race fuel.",
             "FUEL: 65 g/hr, full dress rehearsal. Whatever works here is your race plan. Nothing new after this."
           ],
           "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
           "done": false,
           "notes": "",
-          "mileage": 15
+          "mileage": 7
         }
       },
-      "weekly_mileage": 33,
+      "weekly_mileage": 20,
       "weekly_vert_ft": 4000,
       "carbs_per_hr_target": 65,
       "mileage_note": "Week 21 (Nov 16): 33 mi, ~4,000 ft vert, 65 g carb/hr on the long run"
@@ -2609,17 +2609,17 @@
           "day_full": "Sunday",
           "pillar": "Foundation",
           "plan": [
-            "RUN: LONG 11 mi -- trail, easy conversational. Target ~2,400 ft vert for the week",
+            "RUN: Long 5 mi, trail, easy conversational pace (race-week shakeout)",
             "Shorter long run at race effort for the middle third. Legs should start feeling springy.",
             "FUEL: 60 g/hr at race pace -- confirms the plan works at intensity, not just at easy pace."
           ],
           "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
           "done": false,
           "notes": "",
-          "mileage": 11
+          "mileage": 5
         }
       },
-      "weekly_mileage": 26,
+      "weekly_mileage": 16,
       "weekly_vert_ft": 2400,
       "carbs_per_hr_target": 60,
       "mileage_note": "Week 22 (Nov 23): 26 mi, ~2,400 ft vert, 60 g carb/hr on the long run"
