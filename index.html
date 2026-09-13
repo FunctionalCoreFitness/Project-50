@@ -497,6 +497,8 @@
   .grid-watch{opacity:.72}
   .grid-watch .metric{background:var(--paper)}
   .race-verified{font-size:.72rem;color:var(--green);margin-top:8px;line-height:1.45}
+  .tr-permit{font-size:.78rem;color:var(--red);background:#fdf4f2;border:1px solid #f0d9d4;
+    border-radius:5px;padding:6px 8px;margin:6px 0;line-height:1.45}
   .nu-lede{font-size:.9rem;color:#3a4049;line-height:1.55;margin-bottom:10px}
   .nu-med{font-size:.85rem;color:#8a4a3a;line-height:1.5;background:rgba(190,80,60,.08);border-left:3px solid #b4573f;border-radius:3px;padding:10px 12px;margin-bottom:14px}
   .nu-hero{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--green);border-radius:4px;padding:14px 16px;margin-bottom:14px}
@@ -1823,6 +1825,7 @@ function render(d){
           <span class="tr-stat">★ <b>${o.rating}</b></span>
         </div>
         <div class="tr-why">${o.why}</div>
+        ${o.permit?`<div class="tr-permit">⚠ ${o.permit}</div>`:''}
         ${o.how?`<div class="sr-how"><b>How to run it</b>${o.how}</div>`:''}
         <a class="tr-link" href="${o.url}" target="_blank" rel="noopener">AllTrails ↗</a>
       </div>`;
@@ -1874,6 +1877,7 @@ function render(d){
           <span class="tr-stat">★ <b>${o.rating}</b></span>
         </div>
         <div class="tr-why">${o.why}</div>
+        ${o.permit?`<div class="tr-permit">⚠ ${o.permit}</div>`:''}
         ${o.adjust?`<div class="tr-adj"><b>To hit the number</b>${o.adjust}</div>`:''}
         <a class="tr-link" href="${o.url}" target="_blank" rel="noopener">AllTrails ↗</a>
       </div>`;
