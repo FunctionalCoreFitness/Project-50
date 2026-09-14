@@ -2444,7 +2444,7 @@
           "goal": 165,
           "direction": "up",
           "date": null,
-          "note": "Age 48 · 155 lb lean mass · 33 mi/wk peak training load"
+          "note": "Age 48 · 155 lb lean mass · 30 mi/wk peak training load"
         },
         {
           "name": "Water",
@@ -2905,7 +2905,7 @@
             ]
           },
           {
-            "race": "⚡ Week 21 PEAK — 15 mi dress rehearsal, Sun Nov 22",
+            "race": "⚡ Week 19 PEAK — 13 mi dress rehearsal, Sun Nov 8",
             "reg": "Race kit, race breakfast, 65 g carb/hr. Whatever works becomes the Dec 5 plan."
           }
         ]
@@ -3417,7 +3417,7 @@
         ],
         "target_date": "2026-12-05",
         "goal": "Finish strong with a negative split. The clock is secondary - 2:15-2:45 is a realistic band on trail. The climb begins 1.5 miles in, so the opening mile should feel too easy on purpose: everyone around you will go out hard on the flat and pay for it on the first ascent.",
-        "gate": "One 15 mi long run (Block 2, week 21) and one full dress rehearsal at race effort.",
+        "gate": "One 13 mi long run (Block 2, week 19) and one full dress rehearsal at race effort.",
         "fuel_target": "40-60 g carb/hr in the race, rehearsed at 65 g/hr in training",
         "vert_prep": "Peak training week ~4,000 ft; Peacock Gap runs the China Camp hills above San Rafael",
         "teaches": "Racing again after a long layoff, and that fuel goes in before you feel like you need it.",
@@ -3441,7 +3441,7 @@
         "candidates": "A NorCal trail marathon. SPASM Lake Chabot (Castro Valley) runs a marathon alongside its 50K; Inside Trail and Coastal Trail Runs both card winter marathons.",
         "purpose": "The rung that makes the ladder legal. Without it the jump from half to 50K is 2.37x, past the ladder's own limit.",
         "goal": "Finish a marathon on trail without walking from exhaustion. Time is irrelevant — this race exists to make the 50K a small step instead of a leap. If this lands in late March, move the 50K to May/June: five weeks between a first marathon and a first 50K is not enough to recover and build.",
-        "gate": "Longest run 18–20 mi, peak 30–33 mi/wk. You finish Block 2 at 33 mi/wk with a 15 mi long run, so this is a modest extension rather than a new build.",
+        "gate": "Longest run 18–20 mi, peak 30–33 mi/wk. You finish Block 2 at 30 mi/wk with a 13 mi long run, so this is a real extension rather than a new build.",
         "fuel_target": "50–70 g carb/hr for 4–5 hr — the first time fuelling matters more than fitness",
         "vert_prep": "3,000–4,000 ft weeks; one long run with 2,000+ ft",
         "teaches": "What hours four and five feel like, and whether your stomach holds past the point where a half ends. Everything that breaks here is cheap to fix; the same failure in a 50K costs you the finish.",
@@ -3716,9 +3716,9 @@
     "phase": "Block 2 — Trail Half Build",
     "phase_window": "Sep 21 -> Dec 13 2026",
     "current_weekly": "12–15 mi/wk",
-    "target_weekly": "33 mi/wk at Block 2 peak (week 21)",
+    "target_weekly": "30 mi/wk at Block 2 peak (week 19)",
     "long_run_now": "5–6 mi",
-    "long_run_target": "15 mi dress rehearsal, week 21",
+    "long_run_target": "13 mi dress rehearsal, week 19",
     "rule": "Build the long run ~1 mi every 1–2 wks. Weekly volume never grows more than 10% over the previous peak — the peak, not the cutback week, so a post-cutback rebound isn't a real jump. Every 4th week cut back ~30%.",
     "week_structure": [
       {
@@ -3755,7 +3755,7 @@
       "block": 2,
       "name": "Trail Half Build",
       "target_range": "30 -> 65 g carb/hr",
-      "note": "Ramps across 11 weeks. Week 21's peak long run (15 mi, Sun Nov 22) is the full dress rehearsal -- whatever works there becomes the Dec 5 race plan."
+      "note": "Ramps across 11 weeks. Week 19's peak long run (13 mi, Sun Nov 8) is the full dress rehearsal -- whatever works there becomes the Dec 5 race plan."
     },
     "ladder": [
       {
@@ -3984,7 +3984,7 @@
       },
       {
         "week": 16,
-        "long_run_mi": 6,
+        "long_run_mi": 8,
         "long_run_vert": "~750 ft",
         "need": "Second cutback, and the last one before peak. Absorb the last three weeks.",
         "options": [
@@ -4079,7 +4079,7 @@
       },
       {
         "week": 18,
-        "long_run_mi": 13,
+        "long_run_mi": 10,
         "long_run_vert": "~2,000 ft",
         "need": "First time at race distance. Not race effort -- just proof the distance is routine.",
         "options": [
@@ -4127,9 +4127,9 @@
       },
       {
         "week": 19,
-        "long_run_mi": 14,
+        "long_run_mi": 13,
         "long_run_vert": "~2,200 ft",
-        "need": "Biggest pre-peak effort. Full fuel rehearsal at 60 g/hr, on the clock, from 30 minutes.",
+        "need": "PEAK and full dress rehearsal - this is now the biggest run of the block. Race kit, race breakfast, 60-65 g carb/hr on the clock from 30 minutes, the bottle you will carry at Peacock Gap. Whatever works today becomes the race plan.",
         "options": [
           {
             "name": "North and Harkins Ridge, Purisima Creek, and Whittemore Gulch Loop",
@@ -4175,7 +4175,7 @@
       },
       {
         "week": 20,
-        "long_run_mi": 8,
+        "long_run_mi": 9,
         "long_run_vert": "~1,100 ft",
         "need": "Cutback, and the last one before peak. Absorb the last three weeks.",
         "options": [
@@ -4222,84 +4222,82 @@
       },
       {
         "week": 21,
-        "long_run_mi": 15,
-        "long_run_vert": "~2,600 ft",
-        "need": "PEAK -- full dress rehearsal. Race kit, race breakfast, 65 g carb/hr, everything you plan to use at Peacock Gap. Whatever works today becomes the race plan.",
+        "long_run_mi": 7,
+        "long_run_vert": "~1,100 ft",
+        "need": "Taper. Race-like terrain at a light dose - rolling and runnable, like Peacock Gap, without the bill. Nothing new this close in.",
         "options": [
           {
-            "name": "North and Harkins Ridge, Purisima Creek, and Whittemore Gulch Loop",
-            "park": "Purisima Creek Redwoods",
-            "miles": 13.1,
-            "vert_ft": 3192,
-            "trailhead_mi": 6.0,
-            "difficulty": "Hard",
+            "name": "Crystal Springs, Summit, Chinquapin and Dean Loop",
+            "park": "Huddart County Park",
+            "miles": 7.3,
+            "vert_ft": 1437,
+            "trailhead_mi": 5.7,
+            "difficulty": "Moderate",
             "route_type": "Loop",
             "rating": 4.7,
-            "url": "https://www.alltrails.com/trail/us/california/north-and-harkins-ridge-purisima-creek-and-whittemore-gulch-loop",
-            "why": "Exactly race distance, on trail, 6 miles from your door.",
-            "adjust": "Add 1.9 mi. Race distance plus change, on race-like terrain, 6 mi from home. This is the rehearsal the block points at -- though 3,192 ft overshoots the ~2,600 this week targets, so hike the climbs deliberately."
+            "url": "https://www.alltrails.com/trail/us/california/crystal-springs-summit-chinquapin-dean-loop",
+            "why": "Rolling rather than one big climb — closer to race rhythm than a single out-and-up.",
+            "adjust": "7.3 mi as-is. Closest match to the day."
           },
           {
-            "name": "Gordon Mill to Timberview to Virginia Mill and Lawrence Creek Loop",
-            "park": "El Corte De Madera Creek",
-            "miles": 14.3,
-            "vert_ft": 3238,
-            "trailhead_mi": 8.7,
-            "difficulty": "Hard",
+            "name": "Miramontes, Mount Redondo and Raymundo Trail Loop",
+            "park": "Huddart County Park",
+            "miles": 6.3,
+            "vert_ft": 1082,
+            "trailhead_mi": 5.7,
+            "difficulty": "Moderate",
             "route_type": "Loop",
-            "rating": 4.7,
-            "url": "https://www.alltrails.com/trail/us/california/gordon-mill-to-timberview-to-virginia-mill-and-lawrence-creek-loop",
-            "why": "Biggest day available close to home, and now the block is long enough to use it.",
-            "adjust": "Add 0.7 mi. Biggest day close to home if you'd rather rehearse time-on-feet."
+            "rating": 4.6,
+            "url": "https://www.alltrails.com/trail/us/california/miramontes-mount-redondo-and-raymundo-trail-loop",
+            "why": "Redwood singletrack -- closest feel to a Bay Area trail half.",
+            "adjust": "6.3 mi as-is, or add a short out-and-back."
           },
           {
-            "name": "Skyline Watershed Ridge Trail",
+            "name": "Skyline Trail",
             "park": "Redwood City",
-            "miles": 11.7,
-            "vert_ft": 1381,
-            "trailhead_mi": 5.2,
+            "miles": 8.1,
+            "vert_ft": 1476,
+            "trailhead_mi": 6.9,
             "difficulty": "Moderate",
             "route_type": "Out & back",
-            "rating": 4.6,
-            "url": "https://www.alltrails.com/trail/us/california/skyline-watershed-ridge-trail-2",
-            "why": "The workhorse of this block. Out-and-back means you set the distance exactly by when you turn around.",
-            "adjust": "Add 3.3 mi. The measured choice three weeks out.",
-            "permit": "FREE PERMIT REQUIRED before you go — SF Peninsula Watershed land. sfpuc.gov/learning/come-visit/peninsula-trails/skyline-watershed-ridge-trail. Sort it once and it covers every week this trail appears."
+            "rating": 4.5,
+            "url": "https://www.alltrails.com/trail/us/california/skyline-trail--3",
+            "why": "Ridge running with a turnaround you choose.",
+            "adjust": "Turn around at 3.5 mi. Redwood singletrack, no permit needed."
           }
         ]
       },
       {
         "week": 22,
-        "long_run_mi": 11,
-        "long_run_vert": "~1,300 ft",
+        "long_run_mi": 6,
+        "long_run_vert": "~700 ft",
         "need": "Taper. Sharpen, don't build. Familiar ground only -- nothing new this close in.",
         "options": [
           {
-            "name": "Skyline Watershed Ridge Trail",
-            "park": "Redwood City",
-            "miles": 11.7,
-            "vert_ft": 1381,
-            "trailhead_mi": 5.2,
+            "name": "Miramontes, Mount Redondo and Raymundo Trail Loop",
+            "park": "Huddart County Park",
+            "miles": 6.3,
+            "vert_ft": 1082,
+            "trailhead_mi": 5.7,
             "difficulty": "Moderate",
-            "route_type": "Out & back",
-            "rating": 4.6,
-            "url": "https://www.alltrails.com/trail/us/california/skyline-watershed-ridge-trail-2",
-            "why": "The workhorse of this block. Out-and-back means you set the distance exactly by when you turn around, and the vert-per-mile lands almost exactly on your weekly ratio.",
-            "adjust": "Turn around at 5 mi. You'll know this trail cold by now.",
-            "permit": "FREE PERMIT REQUIRED before you go — SF Peninsula Watershed land. sfpuc.gov/learning/come-visit/peninsula-trails/skyline-watershed-ridge-trail. Sort it once and it covers every week this trail appears."
-          },
-          {
-            "name": "Purisima Creek, Craig Britton and Skyline Trail Loop",
-            "park": "Purisima Creek Redwoods",
-            "miles": 8.4,
-            "vert_ft": 1597,
-            "trailhead_mi": 6.8,
-            "difficulty": "Hard",
             "route_type": "Loop",
             "rating": 4.6,
-            "url": "https://www.alltrails.com/trail/us/california/purisima-creek-craig-britton-and-skyline-trail-loop",
-            "why": "Purisima terrain at a taper-friendly dose — the feel of race day without the bill.",
-            "adjust": "Add 1.6 mi. Race-like terrain at a taper dose."
+            "url": "https://www.alltrails.com/trail/us/california/miramontes-mount-redondo-and-raymundo-trail-loop",
+            "why": "Redwood singletrack -- closest feel to a Bay Area trail half.",
+            "adjust": "6.3 mi as-is."
+          },
+          {
+            "name": "John S Brooks Memorial Trail Loop",
+            "park": "Water Dog Lake Open Space",
+            "miles": 5.6,
+            "vert_ft": 941,
+            "trailhead_mi": 2.3,
+            "difficulty": "Moderate",
+            "route_type": "Loop",
+            "rating": 4.6,
+            "url": "https://www.alltrails.com/trail/us/california/john-s-brooks-memorial-trail",
+            "why": "Your closest genuine trail. Real dirt, real climbing, 10 minutes from the door.",
+            "adjust": "5.6 mi and only 2.3 mi from home - the low-friction option."
           },
           {
             "name": "Crystal Springs, Summit, Chinquapin and Dean Loop",
@@ -4312,7 +4310,7 @@
             "rating": 4.7,
             "url": "https://www.alltrails.com/trail/us/california/crystal-springs-summit-chinquapin-dean-loop",
             "why": "Rolling rather than one big climb — closer to race rhythm than a single out-and-up.",
-            "adjust": "Add 2.7 mi. Comfortable, known, no surprises."
+            "adjust": "7.3 mi. Take it only if the legs feel good."
           }
         ]
       }
@@ -4914,7 +4912,7 @@
         "target": 165,
         "direction": "up",
         "priority": 4,
-        "marker": "Age 48 · 155 lb lean mass · 33 mi/wk peak training load",
+        "marker": "Age 48 · 155 lb lean mass · 30 mi/wk peak training load",
         "why": "About 1.6-1.8 g per kg of bodyweight. Protein needs rise with age and with endurance volume, and you are adding both. This protects lean mass through a block that is deliberately adding running and holding strength at maintenance.",
         "food": "Spread across the day rather than one large serving. Aim for 30-40 g in the post-long-run window.",
         "chart": true

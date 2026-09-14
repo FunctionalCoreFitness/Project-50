@@ -1424,7 +1424,7 @@
       "weekly_mileage": 12,
       "weekly_vert_ft": 800,
       "carbs_per_hr_target": 40,
-      "mileage_note": "Week 12 (Sep 14): 12 mi, ~800 ft. Deload and retest -- 55% of week 11's volume, no quality, and the week 1 panel run again."
+      "mileage_note": "Week 12 (Sep 14): 12 mi, ~800 ft. "
     },
     {
       "week": 13,
@@ -1541,10 +1541,10 @@
           "mileage": 9
         }
       },
-      "weekly_mileage": 17.5,
+      "weekly_mileage": 20.5,
       "weekly_vert_ft": 1600,
       "carbs_per_hr_target": 30,
-      "mileage_note": "Week 13 (Sep 21): 20.5 mi, ~1,600 ft vert, 30 g carb/hr on the long run"
+      "mileage_note": "Week 13 (Sep 21): 20.5 mi, ~1,600 ft. Block 2 opens. Monday is new - an easy run on tired legs from Sunday."
     },
     {
       "week": 14,
@@ -1661,10 +1661,10 @@
           "mileage": 10
         }
       },
-      "weekly_mileage": 19.5,
+      "weekly_mileage": 22.5,
       "weekly_vert_ft": 2000,
       "carbs_per_hr_target": 40,
-      "mileage_note": "Week 14 (Sep 28): 22.5 mi, ~2,000 ft vert, 40 g carb/hr on the long run"
+      "mileage_note": "Week 14 (Sep 28): 22.5 mi, ~2,000 ft. Long run climbs a mile. Carb target steps to 40 g/hr."
     },
     {
       "week": 15,
@@ -1781,10 +1781,10 @@
           "mileage": 11
         }
       },
-      "weekly_mileage": 21,
+      "weekly_mileage": 24.5,
       "weekly_vert_ft": 2400,
       "carbs_per_hr_target": 45,
-      "mileage_note": "Week 15 (Oct 5): 24.5 mi, ~2,400 ft vert, 45 g carb/hr on the long run"
+      "mileage_note": "Week 15 (Oct 5): 24.5 mi, ~2,400 ft. Third build week. Long run 11 mi."
     },
     {
       "week": 16,
@@ -1901,10 +1901,10 @@
           "mileage": 8
         }
       },
-      "weekly_mileage": 16,
+      "weekly_mileage": 19.0,
       "weekly_vert_ft": 1200,
       "carbs_per_hr_target": 45,
-      "mileage_note": "Week 16 (Oct 12): 17 mi, ~1,200 ft vert, 45 g carb/hr on the long run"
+      "mileage_note": "Week 16 (Oct 12): 19 mi, ~1,200 ft. Cutback. Volume drops ~25% so the next block lands on fresh legs."
     },
     {
       "week": 17,
@@ -2021,10 +2021,10 @@
           "mileage": 12
         }
       },
-      "weekly_mileage": 22.5,
+      "weekly_mileage": 26.5,
       "weekly_vert_ft": 2800,
       "carbs_per_hr_target": 50,
-      "mileage_note": "Week 17 (Oct 19): 26.5 mi, ~2,800 ft vert, 50 g carb/hr on the long run"
+      "mileage_note": "Week 17 (Oct 19): 26.5 mi, ~2,800 ft. Build resumes. Longest run yet at 12 mi."
     },
     {
       "week": 18,
@@ -2141,10 +2141,10 @@
           "mileage": 10
         }
       },
-      "weekly_mileage": 22,
+      "weekly_mileage": 26.0,
       "weekly_vert_ft": 3200,
       "carbs_per_hr_target": 55,
-      "mileage_note": "Week 18 (Oct 26): 29 mi, ~3,200 ft vert, 55 g carb/hr on the long run"
+      "mileage_note": "Week 18 (Oct 26): 26 mi, ~3,200 ft. Steady week. Hold the vert, hold the fuelling."
     },
     {
       "week": 19,
@@ -2261,10 +2261,10 @@
           "mileage": 13
         }
       },
-      "weekly_mileage": 25.5,
+      "weekly_mileage": 30.0,
       "weekly_vert_ft": 3600,
       "carbs_per_hr_target": 60,
-      "mileage_note": "Week 19 (Nov 2): 31 mi, ~3,600 ft vert, 60 g carb/hr on the long run"
+      "mileage_note": "Week 19 (Nov 2): 30 mi, ~3,600 ft. PEAK. The 13 mi long run is the full dress rehearsal - race kit, race breakfast, race fuelling."
     },
     {
       "week": 20,
@@ -2381,10 +2381,10 @@
           "mileage": 9
         }
       },
-      "weekly_mileage": 19.5,
+      "weekly_mileage": 23.0,
       "weekly_vert_ft": 1800,
       "carbs_per_hr_target": 45,
-      "mileage_note": "Week 20 (Nov 9): 22 mi, ~1,800 ft vert, 45 g carb/hr on the long run"
+      "mileage_note": "Week 20 (Nov 9): 23 mi, ~1,800 ft. Cutback into the taper. Nothing to prove here."
     },
     {
       "week": 21,
@@ -2501,10 +2501,10 @@
           "mileage": 7
         }
       },
-      "weekly_mileage": 20,
-      "weekly_vert_ft": 4000,
+      "weekly_mileage": 25.0,
+      "weekly_vert_ft": 2400,
       "carbs_per_hr_target": 65,
-      "mileage_note": "Week 21 (Nov 16): 33 mi, ~4,000 ft vert, 65 g carb/hr on the long run"
+      "mileage_note": "Week 21 (Nov 16): 25 mi, ~2,400 ft. Taper. Race-like terrain at a light dose; sharpen, don't build."
     },
     {
       "week": 22,
@@ -2619,10 +2619,10 @@
           "mileage": 5
         }
       },
-      "weekly_mileage": 16,
-      "weekly_vert_ft": 2400,
+      "weekly_mileage": 20.0,
+      "weekly_vert_ft": 1400,
       "carbs_per_hr_target": 60,
-      "mileage_note": "Week 22 (Nov 23): 26 mi, ~2,400 ft vert, 60 g carb/hr on the long run"
+      "mileage_note": "Week 22 (Nov 23): 20 mi, ~1,400 ft. Taper continues. Familiar ground only - nothing new this close in."
     },
     {
       "week": 23,
@@ -2739,7 +2739,7 @@
       "weekly_mileage": 20.1,
       "weekly_vert_ft": 0,
       "carbs_per_hr_target": 60,
-      "mileage_note": "Week 23 (Nov 30): 20.1 mi, 60 g carb/hr on the long run"
+      "mileage_note": "Week 23 (Nov 30): 20.1 mi. Race week. Peacock Gap half on Saturday Dec 5."
     },
     {
       "week": 24,
