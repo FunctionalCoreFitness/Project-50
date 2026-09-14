@@ -2174,7 +2174,7 @@
           "day_full": "Tuesday",
           "pillar": "Strength",
           "plan": [
-            "RUN: Easy 5.5 mi -- Zone 2, HR under 140. Truly easy around strength",
+            "RUN: Easy 4.5 mi -- Zone 2, HR under 140. Truly easy around strength",
             "Strength A -- Lower / Posterior Chain (MAINTENANCE volume)",
             "Trap Bar Deadlift 3x5 @ ~80% of Block 1 top set",
             "Bulgarian Split Squat 3x8/leg",
@@ -2185,7 +2185,7 @@
           "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
           "done": false,
           "notes": "",
-          "mileage": 5.5
+          "mileage": 4.5
         },
         "Wed": {
           "day_full": "Wednesday",
@@ -2261,10 +2261,10 @@
           "mileage": 13
         }
       },
-      "weekly_mileage": 30.0,
+      "weekly_mileage": 29,
       "weekly_vert_ft": 3600,
       "carbs_per_hr_target": 60,
-      "mileage_note": "Week 19 (Nov 2): 30 mi, ~3,600 ft. PEAK. The 13 mi long run is the full dress rehearsal - race kit, race breakfast, race fuelling."
+      "mileage_note": "Week 19 (Nov 2): 29 mi, ~3,600 ft. PEAK. The 13 mi long run is the full dress rehearsal - race kit, race breakfast, race fuelling."
     },
     {
       "week": 20,

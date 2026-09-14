@@ -2444,7 +2444,7 @@
           "goal": 165,
           "direction": "up",
           "date": null,
-          "note": "Age 48 · 155 lb lean mass · 30 mi/wk peak training load"
+          "note": "Age 48 · 155 lb lean mass · 29 mi/wk peak training load"
         },
         {
           "name": "Water",
@@ -3441,7 +3441,7 @@
         "candidates": "A NorCal trail marathon. SPASM Lake Chabot (Castro Valley) runs a marathon alongside its 50K; Inside Trail and Coastal Trail Runs both card winter marathons.",
         "purpose": "The rung that makes the ladder legal. Without it the jump from half to 50K is 2.37x, past the ladder's own limit.",
         "goal": "Finish a marathon on trail without walking from exhaustion. Time is irrelevant — this race exists to make the 50K a small step instead of a leap. If this lands in late March, move the 50K to May/June: five weeks between a first marathon and a first 50K is not enough to recover and build.",
-        "gate": "Longest run 18–20 mi, peak 30–33 mi/wk. You finish Block 2 at 30 mi/wk with a 13 mi long run, so this is a real extension rather than a new build.",
+        "gate": "Longest run 18–20 mi, peak 30–33 mi/wk. You finish Block 2 at 29 mi/wk with a 13 mi long run, so this is a real extension rather than a new build.",
         "fuel_target": "50–70 g carb/hr for 4–5 hr — the first time fuelling matters more than fitness",
         "vert_prep": "3,000–4,000 ft weeks; one long run with 2,000+ ft",
         "teaches": "What hours four and five feel like, and whether your stomach holds past the point where a half ends. Everything that breaks here is cheap to fix; the same failure in a 50K costs you the finish.",
@@ -3716,7 +3716,7 @@
     "phase": "Block 2 — Trail Half Build",
     "phase_window": "Sep 21 -> Dec 13 2026",
     "current_weekly": "12–15 mi/wk",
-    "target_weekly": "30 mi/wk at Block 2 peak (week 19)",
+    "target_weekly": "29 mi/wk at Block 2 peak (week 19)",
     "long_run_now": "5–6 mi",
     "long_run_target": "13 mi dress rehearsal, week 19",
     "rule": "Build the long run ~1 mi every 1–2 wks. Weekly volume never grows more than 10% over the previous peak — the peak, not the cutback week, so a post-cutback rebound isn't a real jump. Every 4th week cut back ~30%.",
@@ -4912,7 +4912,7 @@
         "target": 165,
         "direction": "up",
         "priority": 4,
-        "marker": "Age 48 · 155 lb lean mass · 30 mi/wk peak training load",
+        "marker": "Age 48 · 155 lb lean mass · 29 mi/wk peak training load",
         "why": "About 1.6-1.8 g per kg of bodyweight. Protein needs rise with age and with endurance volume, and you are adding both. This protects lean mass through a block that is deliberately adding running and holding strength at maintenance.",
         "food": "Spread across the day rather than one large serving. Aim for 30-40 g in the post-long-run window.",
         "chart": true
