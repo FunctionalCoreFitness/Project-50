@@ -15,10 +15,10 @@
         "weeks": "13-24",
         "window": "Sep 21 - Dec 13 2026",
         "goal": "Peacock Gap Trail Run half marathon (Sat Dec 5 2026, San Rafael) -- rung 1 of the race ladder",
-        "adds": "weekly vertical targets to 4,000 ft, back-to-back long/easy pairing, gut training to 65 g/hr, strength held at maintenance"
+        "adds": "weekly vertical targets to 3,600 ft, back-to-back long/easy pairing, gut training to 65 g/hr, strength held at maintenance"
       }
     ],
-    "entry_assumption": "Block 2 starts where Block 1 week 11 leaves you -- 22 mi/wk with a 12 mi long run -- so week 13 steps DOWN to 20.5 mi and a 9 mi long run on purpose, then builds over 11 weeks to a 33 mi peak and a 15 mi long run. The 16-19 mi reload weeks of the original draft were written for someone arriving at 16 mi/wk and are not used. If you finish Block 1 short of 20 mi/wk or a 10 mi long run, repeat week 13 before advancing and accept a smaller peak.",
+    "entry_assumption": "Block 1 peaks at 21 mi/wk with an 11 mi long run in week 10, then week 11 eases to 18 mi and week 12 deloads to 12 mi for the retest. Block 2 opens at 20.5 mi with a 9 mi long run - below the Block 1 peak on purpose - and builds over 7 build weeks to 29 mi and a 13 mi long run in week 19, then tapers four weeks into Dec 5. No build week grows more than 10% over the previous peak. If you arrive at week 13 short of 18 mi/wk or an 8 mi long run, repeat week 13 before advancing and accept a smaller peak.",
     "_comment": "EDIT VIA workout.html, not by hand. done=true/false, notes are free text, panel.results[i].value holds the logged number as a string."
   },
   "recovery_tools": [
