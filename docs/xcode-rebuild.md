@@ -19,6 +19,10 @@ Expect 10–15 minutes.
 
 **Four files, all whole-file replacements.**
 
+A later single-file change also landed in `ProjectFiftySyncApp.swift`: the
+foreground sync now fires on cold launch, not only on return from background.
+If you already did the four-file rebuild, that one file is all you need.
+
 `MetricMap.swift` and `HealthKitManager.swift` were part of the *earlier*
 rebuild and are already on the phone — nutrition data is flowing, which is the
 proof. Do not touch them again.
