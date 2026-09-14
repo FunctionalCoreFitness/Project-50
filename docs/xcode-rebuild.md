@@ -52,6 +52,37 @@ them in now that Health will actually hand them over.
 
 ---
 
+## The 7-day expiry, and why the sync goes silent
+
+**An app built with a free Apple developer account stops working after 7
+days.** The provisioning profile expires, iOS refuses to launch it, and the
+phone says the app is "no longer available".
+
+This is not a bug and there is no warning. It killed the sync on Sep 8 2026
+and nothing uploaded for five days; the first sign was the Nutrition card on
+the dashboard reading "5 days ago".
+
+**The fix is the Apple Developer Program, $99/year.** Paid profiles last a
+year instead of a week — build once, forget it. Nothing in this project
+changes; it is purely a signing question.
+
+### After enrolling
+
+1. Xcode → **Settings** → **Accounts** → select your Apple ID → **Manage
+   Certificates** if prompted, then close.
+2. Project → **Signing & Capabilities** → **Team**: pick the paid team rather
+   than "(Personal Team)".
+3. Rebuild. The profile is now good for a year.
+
+### The card that tells you
+
+The Nutrition card's subtitle is the early-warning system. "6 of 7 ·
+yesterday" is healthy. Anything reading "3 days ago" or worse means the
+phone has stopped talking to the server — check whether the app still opens
+before looking for anything subtler.
+
+---
+
 ## 1. Get the new code onto the Mac
 
 Terminal, in wherever you cloned Project-50:
