@@ -1246,7 +1246,7 @@
             "Weekly review (Project 50 dashboard)"
           ],
           "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
-          "done": false,
+          "done": true,
           "notes": "",
           "mileage": 8
         }
@@ -1901,7 +1901,7 @@
           "mileage": 8
         }
       },
-      "weekly_mileage": 19.0,
+      "weekly_mileage": 19,
       "weekly_vert_ft": 1200,
       "carbs_per_hr_target": 45,
       "mileage_note": "Week 16 (Oct 12): 19 mi, ~1,200 ft. Cutback. Volume drops ~25% so the next block lands on fresh legs."
@@ -2141,7 +2141,7 @@
           "mileage": 10
         }
       },
-      "weekly_mileage": 26.0,
+      "weekly_mileage": 26,
       "weekly_vert_ft": 3200,
       "carbs_per_hr_target": 55,
       "mileage_note": "Week 18 (Oct 26): 26 mi, ~3,200 ft. Steady week. Hold the vert, hold the fuelling."
@@ -2381,7 +2381,7 @@
           "mileage": 9
         }
       },
-      "weekly_mileage": 23.0,
+      "weekly_mileage": 23,
       "weekly_vert_ft": 1800,
       "carbs_per_hr_target": 45,
       "mileage_note": "Week 20 (Nov 9): 23 mi, ~1,800 ft. Cutback into the taper. Nothing to prove here."
@@ -2501,7 +2501,7 @@
           "mileage": 7
         }
       },
-      "weekly_mileage": 25.0,
+      "weekly_mileage": 25,
       "weekly_vert_ft": 2400,
       "carbs_per_hr_target": 65,
       "mileage_note": "Week 21 (Nov 16): 25 mi, ~2,400 ft. Taper. Race-like terrain at a light dose; sharpen, don't build."
@@ -2619,7 +2619,7 @@
           "mileage": 5
         }
       },
-      "weekly_mileage": 20.0,
+      "weekly_mileage": 20,
       "weekly_vert_ft": 1400,
       "carbs_per_hr_target": 60,
       "mileage_note": "Week 22 (Nov 23): 20 mi, ~1,400 ft. Taper continues. Familiar ground only - nothing new this close in."
