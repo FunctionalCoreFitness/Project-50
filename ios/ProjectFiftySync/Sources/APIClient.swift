@@ -12,7 +12,7 @@ struct APIClient {
     /// constant rather than a build setting to keep this a one-file change
     /// for a single-user app — revisit if this ever needs per-environment
     /// (dev/prod) builds.
-    static let baseURL = URL(string: "https://REPLACE_WITH_YOUR_CLOUD_RUN_URL")!
+    static let baseURL = URL(string: "https://project50-healthkit-98049860738.us-central1.run.app")!
 
     /// Uploads one day's metrics. Throws on any non-2xx response so callers
     /// (background task and foreground fallback alike) can distinguish
