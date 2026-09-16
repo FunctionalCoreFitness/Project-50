@@ -1282,7 +1282,7 @@
         "Tue": {
           "day_full": "Tuesday",
           "pillar": "Strength",
-          "done": false,
+          "done": true,
           "notes": "",
           "plan": [
             "RETEST 2 of 3 -- STRENGTH. Do these FIRST, fully fresh, before the run: Push-ups max in 1 min, Goblet squat max reps in 1 min (note DB weight), Farmer carry max distance in 60s (note load), Plank hold max time.",
@@ -1296,7 +1296,7 @@
         "Wed": {
           "day_full": "Wednesday",
           "pillar": "Mobility",
-          "done": false,
+          "done": true,
           "notes": "",
           "plan": [
             "RUN: Easy 4 mi -- Zone 2, HR under 140. Flat and relaxed; no quality this week",
