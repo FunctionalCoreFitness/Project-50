@@ -610,11 +610,11 @@
         {
           "name": "Cooper 12-min Run",
           "unit": "mi",
-          "value": null,
+          "value": 1.36,
           "pacer": 1.5,
           "goal": 1.75,
           "direction": "up",
-          "date": null,
+          "date": "2026-09-19",
           "note": "Max distance covered in 12 min."
         }
       ]
