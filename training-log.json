@@ -103,7 +103,7 @@
       "panel": {
         "date": "",
         "bodyweight_lb": null,
-        "notes": "",
+        "notes": "1-mile time backfilled from Apple Health: Sat Aug 1 2026 outdoor run, 1.00 mi in 12:59 (avg pace 12'53\"/mi, avg HR 129 bpm). First tracked run of the program -- used as the baseline mile since no panel date was ever logged.",
         "results": [
           {
             "label": "Push-ups, max in 1 min",
@@ -128,7 +128,7 @@
           {
             "label": "1-mile run or hike, time",
             "unit": "min:sec",
-            "value": ""
+            "value": "12:59"
           },
           {
             "label": "Sit-and-reach",
