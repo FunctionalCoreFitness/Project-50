@@ -1325,7 +1325,7 @@
         "Fri": {
           "day_full": "Friday",
           "pillar": "Strength",
-          "done": false,
+          "done": true,
           "notes": "",
           "plan": [
             "Strength B -- Upper / Pull (DELOAD: 2 sets not 3, same weights)",
@@ -1355,7 +1355,7 @@
         "Sun": {
           "day_full": "Sunday",
           "pillar": "Foundation",
-          "done": false,
+          "done": true,
           "notes": "",
           "plan": [
             "RETEST 3 of 3 -- THE MILE. Warm up 1.5 mi easy, then 1 mile as hard as you can hold, then 2.5 mi easy to cool down. 5 mi total.",
