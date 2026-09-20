@@ -1369,9 +1369,9 @@
         }
       },
       "panel": {
-        "date": "",
+        "date": "2026-09-20",
         "bodyweight_lb": null,
-        "notes": "",
+        "notes": "1-mile retest from Sun Sep 20 run (5.01 mi total: 1.5 mi warm-up, 1 mi hard, 2.53 mi cooldown). Hard mile: 9:26 (9'25\"/mi pace), up from the 12:59 Week 1 baseline.",
         "results": [
           {
             "label": "Push-ups, max in 1 min",
@@ -1396,7 +1396,7 @@
           {
             "label": "1-mile run or hike, time",
             "unit": "min:sec",
-            "value": ""
+            "value": "9:26"
           },
           {
             "label": "Sit-and-reach",
