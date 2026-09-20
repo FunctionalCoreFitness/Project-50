@@ -1411,7 +1411,7 @@
           {
             "label": "Resting heart rate, morning avg",
             "unit": "bpm",
-            "value": ""
+            "value": "56"
           },
           {
             "label": "Average sleep, past 7 nights",
