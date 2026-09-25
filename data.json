@@ -4318,9 +4318,9 @@
   },
   "short_runs": {
     "headline": "Short-Run Options",
-    "principle": "The Monday, Tuesday and Wednesday runs are three of your four running days, and they each want different ground — Monday flat, Tuesday gentle, Wednesday whatever that week's workout needs. Every session below gives you a Quick option near the house for days you're behind, a Trail option when you want dirt, and something New when the routine gets stale.",
-    "rotation": "Variety is the point, but not at the cost of the session. Rotate the Trail and New options week to week; keep the Quick one as the fallback that means the run still happens. A run done on the boring loop beats a run skipped because the good trail was an hour away.",
-    "caveat": "AllTrails figures. Trailhead distance is straight-line from the San Mateo / Redwood City midpoint, not drive time. Several of these are shared with mountain bikers — Water Dog and Big Canyon especially — so expect company on weekday evenings.",
+    "principle": "The Monday, Tuesday and Wednesday runs are three of your four running days, and they each want different ground — Monday flat, Tuesday gentle, Wednesday whatever that week's workout needs. Every session below gives you a Quick option near the Peninsula anchor for days you're behind, a Trail option when you want dirt, something New when the routine gets stale, and now a Home option genuinely close to the house in Los Altos for days errands or traffic make the Peninsula drive impractical.",
+    "rotation": "Variety is the point, but not at the cost of the session. Rotate the Trail and New options week to week; keep Quick and Home as the two fallbacks that mean the run still happens — Quick if you're already near the Peninsula side, Home if you're not. A run done on the boring loop beats a run skipped because the good trail was an hour away.",
+    "caveat": "AllTrails figures. Quick/Trail/New trailhead distance is straight-line from the San Mateo / Redwood City midpoint, not drive time. The Home option's trailhead distance is straight-line from Loyola Corners (Los Altos) instead, and is deliberately capped south at Stevens Creek Reservoir / Fremont Older — nothing further south than that even when it would fit the day's terrain need better. Several of these are shared with mountain bikers — Water Dog and Big Canyon especially, and Rancho San Antonio on the Home side — so expect company on weekday evenings. Rancho San Antonio can require a parking reservation on weekends; check before driving over.",
     "sessions": [
       {
         "key": "mon",
@@ -4384,6 +4384,20 @@
             "url": "https://www.alltrails.com/trail/us/california/ravenswood-loop",
             "why": "22 ft of gain across 4.5 mi — nothing else near you is this flat. Wide-open bay levee, a total change of scene from the redwoods.",
             "how": "Right distance as-is; cut it short anywhere."
+          },
+          {
+            "tag": "Home",
+            "name": "Packard Trail",
+            "park": "Los Altos Hills",
+            "miles": 1.7,
+            "vert_ft": 209,
+            "trailhead_mi": 1.2,
+            "difficulty": "Easy",
+            "route_type": "Out & back",
+            "rating": 4.3,
+            "url": "https://www.alltrails.com/trail/us/california/packard-trail-2",
+            "why": "The flattest, closest thing to the house — nothing in the Los Altos foothills matches Ravenswood's 22 ft, but this is the gentlest option that doesn't need a drive at all.",
+            "how": "Out-and-back twice to reach 3.4 mi, or once plus a loop around the block for tired-legs days."
           }
         ]
       },
@@ -4450,6 +4464,20 @@
             "url": "https://www.alltrails.com/trail/us/california/crystal-springs-to-pulgas-water-temple",
             "why": "Gentlest grade of anything at this distance — 429 ft across 5 mi. The easiest place to actually hold Zone 2 rather than fight it.",
             "how": "Out-and-back, so turn around whenever the distance says."
+          },
+          {
+            "tag": "Home",
+            "name": "Broken House Path, Deer Creek Trail, and Los Altos Loop",
+            "park": "Los Altos",
+            "miles": 4.5,
+            "vert_ft": 715,
+            "trailhead_mi": 1.48,
+            "difficulty": "Moderate",
+            "route_type": "Loop",
+            "rating": 4.2,
+            "url": "https://www.alltrails.com/trail/us/california/broken-house-path-deer-creek-trail-and-los-altos-loop",
+            "why": "Right on the Tuesday distance and genuinely close — 1.5 mi from Loyola Corners. Rolling rather than one big pitch, close to the gentle profile this session wants.",
+            "how": "4.5 mi as-is. Cut the Deer Creek spur for something closer to 3.5 if HR is running hot."
           }
         ]
       },
@@ -4509,6 +4537,20 @@
             "url": "https://www.alltrails.com/trail/us/california/chinquapin-trail",
             "why": "Redwood singletrack climbing — race-like footing while you do hard work. Worth the extra drive on the bigger rep weeks.",
             "how": "Best on the 90s and 2–3 min rep weeks where you want a longer sustained pitch."
+          },
+          {
+            "tag": "Home",
+            "name": "Rhus Ridge Trail",
+            "park": "Rancho San Antonio Open Space Preserve",
+            "miles": 1.8,
+            "vert_ft": 626,
+            "trailhead_mi": 1.85,
+            "difficulty": "Moderate",
+            "route_type": "Out & back",
+            "rating": 4.7,
+            "url": "https://www.alltrails.com/trail/us/california/rhus-ridge-trail",
+            "why": "Out-and-back shape with a real single pitch — 626 ft in under a mile each way, right at the door in Rancho San Antonio.",
+            "how": "Run the climb, jog back down, repeat to the week's rep count rather than chasing full distance."
           }
         ]
       },
@@ -4566,6 +4608,20 @@
             "url": "https://www.alltrails.com/trail/us/california/crystal-springs-trail--2",
             "why": "Long steady grades rather than punchy ones — the easiest terrain here to settle into a threshold effort and stay there.",
             "how": "Out-and-back; run the tempo block on the outbound, jog home."
+          },
+          {
+            "tag": "Home",
+            "name": "Hidden Villa, Rhus Ridge, Black Mountain, Creek Trail Loop",
+            "park": "Rancho San Antonio Open Space Preserve",
+            "miles": 5.1,
+            "vert_ft": 813,
+            "trailhead_mi": 2.31,
+            "difficulty": "Moderate",
+            "route_type": "Loop",
+            "rating": 4.4,
+            "url": "https://www.alltrails.com/trail/us/california/hidden-villa-rhus-ridge-black-mountain-creek-trail-loop",
+            "why": "Continuous rolling loop right in the Wednesday tempo distance — 2.3 mi from Loyola Corners, no out-and-back turnaround to break rhythm.",
+            "how": "Warm up the first mile, hold tempo through the rolling middle section, cool down on the return."
           }
         ]
       },
@@ -4623,6 +4679,20 @@
             "url": "https://www.alltrails.com/trail/us/california/ravenswood-loop",
             "why": "Dead flat and wide open — you can see every stride you're about to take.",
             "how": "Right distance. Strides anywhere; it's uniformly flat."
+          },
+          {
+            "tag": "Home",
+            "name": "Dawson Path",
+            "park": "Juan Prado Mesa Preserve",
+            "miles": 1.2,
+            "vert_ft": 147,
+            "trailhead_mi": 1.58,
+            "difficulty": "Easy",
+            "route_type": "Out & back",
+            "rating": 4.0,
+            "url": "https://www.alltrails.com/trail/us/california/dawson-path",
+            "why": "The smoothest, flattest surface close to the house — partially paved, nothing to catch a toe on for full-speed strides.",
+            "how": "Out-and-back repeats to build to 4 mi; do the strides on the flattest paved stretch."
           }
         ]
       },
@@ -4681,6 +4751,20 @@
             "url": "https://www.alltrails.com/trail/us/california/sylvan-loop-trail",
             "why": "Short and punchy — lap it so each rep starts fresh on the same terrain.",
             "how": "Run it once as a warm-up, then use it as the interval loop. Weeks 21-22 only."
+          },
+          {
+            "tag": "Home",
+            "name": "Rhus Ridge to Mary Davey and Chamise Trail",
+            "park": "Rancho San Antonio Open Space Preserve",
+            "miles": 2.5,
+            "vert_ft": 688,
+            "trailhead_mi": 1.84,
+            "difficulty": "Moderate",
+            "route_type": "Out & back",
+            "rating": 4.6,
+            "url": "https://www.alltrails.com/trail/us/california/rhus-ridge-to-mary-davey-and-chamise-loop-trail",
+            "why": "Rolling, real trail, close enough that traffic can't cost you the session in race week -- a fair stand-in for Peacock Gap's profile.",
+            "how": "2.5 mi as-is; the shorter distance is the point in a taper week."
           }
         ]
       }
