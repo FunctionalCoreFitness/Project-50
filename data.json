@@ -321,10 +321,10 @@
         },
         {
           "name": "Exercise",
-          "unit": "min/wk",
+          "unit": "min/day",
           "value": 71,
-          "pacer": 420,
-          "goal": 420,
+          "pacer": 60,
+          "goal": 60,
           "direction": "up",
           "date": "2026-08-25",
           "history": [
