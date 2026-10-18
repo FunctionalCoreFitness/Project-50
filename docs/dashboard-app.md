@@ -65,9 +65,9 @@ before:
 
 - **Name under the icon:** target → **General** → **Display Name** →
   `Project 50`.
-- **Icon:** open `Assets` → `AppIcon` and drop in `icons/icon-512.png` from
-  the repo. Xcode asks for 1024×1024; the 512 works for a personal build and
-  only looks soft on the largest sizes.
+- **Icon:** open `Assets` → `AppIcon` and drop in `icons/icon-1024.png` from
+  the repo: the same P50 icon as the web app, at the 1024×1024 size Xcode
+  wants, with the border trimmed so iOS's rounded corners don't clip it.
 
 ## 5. Build to the phone
 
