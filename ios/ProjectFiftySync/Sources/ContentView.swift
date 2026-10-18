@@ -1,8 +1,8 @@
 import SwiftUI
 
-/// Deliberately minimal per scope — this is a background sync utility, not a
-/// second dashboard. One screen: grant HealthKit access, see last sync
-/// status, force a sync for testing.
+/// The Sync tab. The dashboard itself is `DashboardView`; this screen stays a
+/// minimal utility: grant HealthKit access, see last sync status, force a
+/// sync.
 struct ContentView: View {
     let health: HealthKitManager
 
@@ -75,7 +75,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationTitle("Project 50 Sync")
+            .navigationTitle("Sync")
         }
     }
 
@@ -94,5 +94,6 @@ struct ContentView: View {
         defer { isSyncing = false }
         let outcome = await SyncCoordinator.syncPendingDays(health: health, force: force)
         lastSyncResult = outcome.summary
+        NotificationCenter.default.post(name: .dashboardShouldReload, object: nil)
     }
 }
