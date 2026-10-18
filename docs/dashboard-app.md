@@ -84,7 +84,7 @@ Same as always: phone plugged in, select it as the destination, ⌘R.
 4. **Sync Now**, then back to Dashboard: it has reloaded.
 
 If the dashboard tab is blank or says it didn't load, open
-https://functionalcorefitness.github.io/project-50/ in Safari on the phone. If
+https://functionalcorefitness.github.io/Project-50/ in Safari on the phone. If
 Safari can't load it either, the problem is the connection or GitHub Pages,
 not the app.
 

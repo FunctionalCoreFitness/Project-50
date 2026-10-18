@@ -11,7 +11,7 @@ import WebKit
 /// `backend/src/routes/latest.js`), so the HealthKit overlay only works when
 /// the page is served from that origin.
 struct DashboardView: View {
-    static let url = URL(string: "https://functionalcorefitness.github.io/project-50/")!
+    static let url = URL(string: "https://functionalcorefitness.github.io/Project-50/")!
 
     var body: some View {
         DashboardWebView(url: Self.url)
