@@ -13,7 +13,14 @@ struct ProjectFiftySyncApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView(health: health)
+            // The dashboard is the app; the sync screen is a utility tab.
+            TabView {
+                DashboardView()
+                    .tabItem { Label("Dashboard", systemImage: "chart.bar.xaxis") }
+                ContentView(health: health)
+                    .tabItem { Label("Sync", systemImage: "arrow.triangle.2.circlepath") }
+            }
+            .preferredColorScheme(.dark)
         }
         // `initial: true` matters more than it looks. Without it this fires
         // only on a *change* of phase, and a cold launch sets .active as the
@@ -28,7 +35,12 @@ struct ProjectFiftySyncApp: App {
                 // foreground, and catches up every day the background task
                 // missed rather than only yesterday.
                 if SyncCoordinator.hasUnsyncedDays {
-                    Task { await SyncCoordinator.syncPendingDays(health: health) }
+                    Task {
+                        _ = await SyncCoordinator.syncPendingDays(health: health)
+                        // Reload so the days just uploaded show on the
+                        // dashboard instead of the values from before sync.
+                        NotificationCenter.default.post(name: .dashboardShouldReload, object: nil)
+                    }
                 }
             case .background:
                 BackgroundSyncManager.scheduleNextRefresh()
