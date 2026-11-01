@@ -739,12 +739,12 @@
     {
       "id": "max-strength",
       "name": "Max Strength",
-      "source": "Estimated 1RM from 3–5 rep test",
+      "source": "Tested 1-rep max",
       "cadence": "Every 6 months",
       "metrics": [
         {
           "name": "Barbell Deadlift",
-          "unit": "lb e1RM",
+          "unit": "lb 1RM",
           "value": 305,
           "pacer": 305,
           "goal": 380,
@@ -754,7 +754,7 @@
         },
         {
           "name": "Bench Press",
-          "unit": "lb e1RM",
+          "unit": "lb 1RM",
           "value": 225,
           "pacer": 195,
           "goal": 218,
@@ -764,7 +764,7 @@
         },
         {
           "name": "Back Squat",
-          "unit": "lb e1RM",
+          "unit": "lb 1RM",
           "value": 225,
           "pacer": 185,
           "goal": 218,
@@ -774,7 +774,7 @@
         },
         {
           "name": "Romanian Deadlift",
-          "unit": "lb e1RM",
+          "unit": "lb 1RM",
           "value": 225,
           "pacer": 195,
           "goal": 218,
@@ -784,7 +784,7 @@
         },
         {
           "name": "Overhead Press",
-          "unit": "lb e1RM",
+          "unit": "lb 1RM",
           "value": 155,
           "pacer": 135,
           "goal": 160,
