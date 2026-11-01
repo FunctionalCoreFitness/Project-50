@@ -749,7 +749,7 @@
           "pacer": 305,
           "goal": 380,
           "direction": "up",
-          "date": "2026-11-01",
+          "date": "2026-10-31",
           "note": "Goal: bodyweight+ pull."
         },
         {
@@ -759,7 +759,7 @@
           "pacer": 195,
           "goal": 218,
           "direction": "up",
-          "date": "2026-11-01",
+          "date": "2026-10-31",
           "note": "Goal: bodyweight bench (~217 lb)."
         },
         {
@@ -769,7 +769,7 @@
           "pacer": 185,
           "goal": 218,
           "direction": "up",
-          "date": "2026-11-01",
+          "date": "2026-10-31",
           "note": "Goal: bodyweight."
         },
         {
@@ -779,7 +779,7 @@
           "pacer": 195,
           "goal": 218,
           "direction": "up",
-          "date": "2026-11-01",
+          "date": "2026-10-31",
           "note": "Goal: bodyweight RDL."
         },
         {
@@ -789,7 +789,7 @@
           "pacer": 135,
           "goal": 160,
           "direction": "up",
-          "date": "2026-11-01"
+          "date": "2026-10-31"
         }
       ]
     },
