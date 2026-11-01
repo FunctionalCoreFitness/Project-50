@@ -739,57 +739,57 @@
     {
       "id": "max-strength",
       "name": "Max Strength",
-      "source": "Estimated 1RM from 3–5 rep test",
+      "source": "Tested 1-rep max",
       "cadence": "Every 6 months",
       "metrics": [
         {
-          "name": "Trap Bar Deadlift",
-          "unit": "lb e1RM",
-          "value": null,
+          "name": "Barbell Deadlift",
+          "unit": "lb 1RM",
+          "value": 305,
           "pacer": 305,
           "goal": 380,
           "direction": "up",
-          "date": null,
+          "date": "2026-10-31",
           "note": "Goal: bodyweight+ pull."
         },
         {
           "name": "Bench Press",
-          "unit": "lb e1RM",
-          "value": null,
+          "unit": "lb 1RM",
+          "value": 225,
           "pacer": 195,
           "goal": 218,
           "direction": "up",
-          "date": null,
+          "date": "2026-10-31",
           "note": "Goal: bodyweight bench (~217 lb)."
         },
         {
-          "name": "Front Squat",
-          "unit": "lb e1RM",
-          "value": null,
+          "name": "Back Squat",
+          "unit": "lb 1RM",
+          "value": 225,
           "pacer": 185,
           "goal": 218,
           "direction": "up",
-          "date": null,
-          "note": "Back squat OK. Goal: bodyweight."
+          "date": "2026-10-31",
+          "note": "Goal: bodyweight."
         },
         {
           "name": "Romanian Deadlift",
-          "unit": "lb e1RM",
-          "value": null,
+          "unit": "lb 1RM",
+          "value": 225,
           "pacer": 195,
           "goal": 218,
           "direction": "up",
-          "date": null,
+          "date": "2026-10-31",
           "note": "Goal: bodyweight RDL."
         },
         {
           "name": "Overhead Press",
-          "unit": "lb e1RM",
-          "value": null,
+          "unit": "lb 1RM",
+          "value": 155,
           "pacer": 135,
           "goal": 160,
           "direction": "up",
-          "date": null
+          "date": "2026-10-31"
         }
       ]
     },
