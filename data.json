@@ -3712,6 +3712,71 @@
       ]
     }
   },
+  "race_history": {
+    "note": "Triathlon results before Project 50. The longest continuous effort so far is 13:48:07; the 100 will be roughly double that.",
+    "races": [
+      {
+        "name": "IRONMAN California",
+        "date": "2023-10-22",
+        "distance": "Full IRONMAN · 2.4 mi swim · 112 mi bike · 26.2 mi run",
+        "age_group": "M45-49",
+        "finish": "13:48:07",
+        "splits": [
+          {
+            "k": "Swim",
+            "v": "1:01:55"
+          },
+          {
+            "k": "T1",
+            "v": "12:57"
+          },
+          {
+            "k": "Bike",
+            "v": "6:37:45"
+          },
+          {
+            "k": "T2",
+            "v": "10:31"
+          },
+          {
+            "k": "Run",
+            "v": "5:44:58"
+          }
+        ],
+        "note": "Raced on your 45th birthday. Marathon at 13:10/mi after 112 miles on the bike."
+      },
+      {
+        "name": "IRONMAN 70.3 Boulder",
+        "date": "2024-06-08",
+        "distance": "70.3 · 1.2 mi swim · 56 mi bike · 13.1 mi run",
+        "age_group": "M45-49",
+        "finish": "7:46:48",
+        "splits": [
+          {
+            "k": "Swim",
+            "v": "1:03:55"
+          },
+          {
+            "k": "T1",
+            "v": "6:47"
+          },
+          {
+            "k": "Bike",
+            "v": "3:29:12"
+          },
+          {
+            "k": "T2",
+            "v": "6:09"
+          },
+          {
+            "k": "Run",
+            "v": "3:00:46"
+          }
+        ],
+        "note": "Half marathon at 13:48/mi, at altitude in Boulder."
+      }
+    ]
+  },
   "mileage": {
     "phase": "Block 2 — Trail Half Build",
     "phase_window": "Sep 21 -> Dec 13 2026",

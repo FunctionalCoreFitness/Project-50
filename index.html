@@ -389,6 +389,16 @@
   .mi-lever{font-size:.84rem;color:#3a4049;margin-top:12px;padding:8px 12px;background:var(--hair);border-radius:3px;line-height:1.45}
   .mi-lever b{color:var(--navy)}
   .mi-ladder{font-size:.8rem;font-style:italic;color:var(--muted);margin-top:10px;line-height:1.45}
+  .rh-race{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:14px 14px 12px;margin-bottom:12px}
+  .rh-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+  .rh-name{font-family:'Bebas Neue',sans-serif;font-size:1.45rem;line-height:1.05;color:var(--navy)}
+  .rh-sub{font-family:'Barlow Condensed',sans-serif;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-top:2px}
+  .rh-finish{text-align:right;flex-shrink:0}
+  .rh-time{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;line-height:1;color:var(--navy);font-variant-numeric:tabular-nums}
+  .rh-dist{font-size:.82rem;color:var(--muted);margin:8px 0 10px}
+  .rh-splits{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+  @media(max-width:600px){.rh-splits{grid-template-columns:repeat(3,minmax(0,1fr))}}
+  .rh-note{font-size:.84rem;color:#2f4a6b;margin-top:10px;line-height:1.45}
   .mi-vert{font-size:.84rem;color:#2f4a6b;margin-top:10px;padding:8px 12px;background:rgba(74,126,199,.07);border-radius:3px;line-height:1.45}
   /* race rung detail */
   .race-date{font-family:'Barlow Condensed',sans-serif;font-size:.74rem;letter-spacing:.05em;text-transform:uppercase;color:var(--amber);margin-left:auto;white-space:nowrap}
@@ -1126,6 +1136,7 @@ function render(d){
     (d.calendar?`<a href="#calendar">Calendar</a>`:'') +
     (d.content_bank?`<a href="#contentbank">Content Bank</a>`:'') +
     (d.race_ladder?`<a href="#raceladder">Race Ladder</a>`:'') +
+    (d.race_history?`<a href="#racehistory">Race History</a>`:'') +
     (d.mileage?`<a href="#mileage">Mileage</a>`:'') +
     (d.fueling?`<a href="#fueling">Fueling</a>`:'') +
     (d.trails?`<a href="#trails">Trails</a>`:'') +
@@ -1708,6 +1719,30 @@ function render(d){
     </section>`;
   }
 
+  // ===== RACE HISTORY (triathlon results before Project 50) =====
+  const rh=d.race_history;
+  let rhHtml='';
+  if(rh&&(rh.races||[]).length){
+    const races=rh.races.map(r=>`
+      <div class="rh-race">
+        <div class="rh-head">
+          <div><div class="rh-name">${r.name}</div>
+            <div class="rh-sub">${fmtRaceDate(r.date)} · ${r.age_group||''}</div></div>
+          <div class="rh-finish"><div class="mi-k">Finish</div><div class="rh-time">${r.finish}</div></div>
+        </div>
+        <div class="rh-dist">${r.distance}</div>
+        <div class="rh-splits">${(r.splits||[]).map(x=>`<div class="mi-stat"><div class="mi-k">${x.k}</div><div class="mi-v">${x.v}</div></div>`).join('')}</div>
+        ${r.note?`<div class="rh-note">${r.note}</div>`:''}
+      </div>`).join('');
+    rhHtml=`
+    <section id="racehistory">
+      <div class="sec-head"><div class="sec-title">Race History</div>
+        <div class="sec-meta">Triathlon background</div></div>
+      ${rh.note?`<div class="mi-rule">${rh.note}</div>`:''}
+      ${races}
+    </section>`;
+  }
+
   // "Weekly now" and "Long run now" were hand-typed and had drifted badly -
   // they still read 12-15 mi/wk and 5-6 mi from Block 1's opening weeks while
   // the log had him at 21-22 mi/wk with an 11-12 mi long run. Read them off
@@ -2113,7 +2148,7 @@ function render(d){
   const todayHtml = buildTodayCard(d, window.__LOG__, project50, scoreClass);
 
   document.getElementById('main').innerHTML =
-    todayHtml + focusHtml + scoreBlockHtml + gaugeHtml + html + pubHtml + calHtml + cbHtml + phHtml + rlHtml + miHtml + fuHtml + trHtml + coHtml + rcHtml + nuHtml + locHtml + winsHtml;
+    todayHtml + focusHtml + scoreBlockHtml + gaugeHtml + html + pubHtml + calHtml + cbHtml + phHtml + rlHtml + rhHtml + miHtml + fuHtml + trHtml + coHtml + rcHtml + nuHtml + locHtml + winsHtml;
 
   // ---- Checkable to-do / B-roll items (per-device, localStorage) ----
   const mainEl=document.getElementById('main');
