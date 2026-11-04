@@ -18,11 +18,11 @@
         {
           "name": "Weight",
           "unit": "lb",
-          "value": 218.9,
+          "value": 222.2,
           "pacer": 213,
           "goal": 207,
           "direction": "down",
-          "date": "2026-08-05",
+          "date": "2026-11-04",
           "history": [
             {
               "value": 212.3,
@@ -31,17 +31,21 @@
             {
               "value": 217.5,
               "date": "2026-06-26"
+            },
+            {
+              "value": 218.9,
+              "date": "2026-08-05"
             }
           ]
         },
         {
           "name": "DEXA Body Fat",
           "unit": "%",
-          "value": 25.4,
+          "value": 26.6,
           "pacer": 22,
           "goal": 19,
           "direction": "down",
-          "date": "2026-08-05",
+          "date": "2026-11-04",
           "history": [
             {
               "value": 25.4,
@@ -50,17 +54,21 @@
             {
               "value": 24.7,
               "date": "2026-06-26"
+            },
+            {
+              "value": 25.4,
+              "date": "2026-08-05"
             }
           ]
         },
         {
           "name": "Fat Mass",
           "unit": "lb",
-          "value": 55.6,
+          "value": 59.2,
           "pacer": 47,
           "goal": 40,
           "direction": "down",
-          "date": "2026-08-05",
+          "date": "2026-11-04",
           "history": [
             {
               "value": 54,
@@ -69,17 +77,21 @@
             {
               "value": 53.8,
               "date": "2026-06-26"
+            },
+            {
+              "value": 55.6,
+              "date": "2026-08-05"
             }
           ]
         },
         {
           "name": "Lean Mass",
           "unit": "lb",
-          "value": 155.2,
+          "value": 154.9,
           "pacer": 158,
           "goal": 162,
           "direction": "up",
-          "date": "2026-08-05",
+          "date": "2026-11-04",
           "history": [
             {
               "value": 150.1,
@@ -88,17 +100,21 @@
             {
               "value": 155.6,
               "date": "2026-06-26"
+            },
+            {
+              "value": 155.2,
+              "date": "2026-08-05"
             }
           ]
         },
         {
           "name": "Visceral Fat",
           "unit": "lb",
-          "value": 1.95,
+          "value": 1.81,
           "pacer": 1.5,
           "goal": 1,
           "direction": "down",
-          "date": "2026-08-05",
+          "date": "2026-11-04",
           "history": [
             {
               "value": 1.58,
@@ -107,6 +123,10 @@
             {
               "value": 1.79,
               "date": "2026-06-24"
+            },
+            {
+              "value": 1.95,
+              "date": "2026-08-05"
             }
           ],
           "note": "DEXA visceral fat. Lower is better for metabolic health."
