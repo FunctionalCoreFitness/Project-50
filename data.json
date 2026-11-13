@@ -822,48 +822,51 @@
         {
           "name": "Vertical Jump",
           "unit": "in",
-          "value": null,
+          "value": 19,
           "pacer": 20,
           "goal": 22,
           "direction": "up",
-          "date": null
+          "date": "2026-11-13"
         },
         {
           "name": "Broad Jump",
           "unit": "ft",
-          "value": null,
+          "value": 5.75,
           "pacer": 6.5,
           "goal": 7,
           "direction": "up",
-          "date": null
+          "date": "2026-11-13",
+          "note": "Logged as 69 in, converted to ft to match this metric's units."
         },
         {
           "name": "Med Ball Chest Throw",
           "unit": "ft",
-          "value": null,
+          "value": 27,
           "pacer": null,
           "goal": null,
           "direction": "up",
-          "date": null,
-          "note": "Set baseline, then beat by 5%."
+          "date": "2026-11-13",
+          "note": "Set baseline, then beat by 5%. Logged as 9 yd, converted to ft. Baseline: 27 ft -- beat by 5% is 28.35 ft."
         },
         {
           "name": "Med Ball Rotational Throw L",
           "unit": "ft",
-          "value": null,
+          "value": 33,
           "pacer": null,
           "goal": null,
           "direction": "up",
-          "date": null
+          "date": "2026-11-13",
+          "note": "Logged as 11 yd, converted to ft."
         },
         {
           "name": "Med Ball Rotational Throw R",
           "unit": "ft",
-          "value": null,
+          "value": 36,
           "pacer": null,
           "goal": null,
           "direction": "up",
-          "date": null
+          "date": "2026-11-13",
+          "note": "Logged as 12 yd, converted to ft."
         }
       ]
     },
@@ -885,29 +888,29 @@
         {
           "name": "40-yard Sprint",
           "unit": "sec",
-          "value": null,
+          "value": 5.97,
           "pacer": null,
           "goal": null,
           "direction": "down",
-          "date": null
+          "date": "2026-11-13"
         },
         {
           "name": "5-10-5 Shuttle",
           "unit": "sec",
-          "value": null,
+          "value": 6.20,
           "pacer": null,
           "goal": null,
           "direction": "down",
-          "date": null
+          "date": "2026-11-13"
         },
         {
           "name": "T-Test",
           "unit": "sec",
-          "value": null,
+          "value": 11.71,
           "pacer": null,
           "goal": null,
           "direction": "down",
-          "date": null
+          "date": "2026-11-13"
         }
       ]
     },
