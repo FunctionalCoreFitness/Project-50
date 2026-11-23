@@ -168,11 +168,12 @@
         {
           "name": "VO2 Max",
           "unit": "mL/kg/min",
-          "value": 37.5,
+          "value": 41.71,
           "pacer": 38,
           "goal": 50,
           "direction": "up",
-          "date": "2026-08-25",
+          "date": "2026-11-13",
+          "note": "Lab-tested (Revolutions in Fitness, 4179 mL/min absolute) -- not an Apple Watch estimate.",
           "history": [
             {
               "value": 34.6,
@@ -185,6 +186,10 @@
             {
               "value": 33.7,
               "date": "2026-08-11"
+            },
+            {
+              "value": 37.5,
+              "date": "2026-08-25"
             }
           ]
         },
@@ -4861,41 +4866,68 @@
   "coaching": {
     "headline": "Running Coaching",
     "principle": "Three things decide whether a 48-year-old gets to a 100-mile start line intact: running easy enough on easy days, hiking climbs well rather than badly, and protecting the quads on descents. Everything below serves one of those three.",
-    "caveat": "The heart-rate numbers are calculated from your resting HR of 56 and age 48 using standard formulas. Formula-based max HR carries roughly +/-10-12 bpm of individual variation, so treat these as a starting point, not a verdict. The talk test is the primary control; HR is the cross-check. If your heart rate behaves oddly against these bands -- and a documented thyroid condition is one reason it might -- trust the talk test and raise it with your doctor rather than forcing the numbers.",
+    "caveat": "These bands are from a lab VO2max/lactate threshold test (Revolutions in Fitness, Nov 13 2026), not a formula estimate -- the thyroid-driven HR variability that made the old age-based formula shaky doesn't apply here, since this measured your actual response. The talk test and RPE columns are still the primary control day-to-day; the lab numbers are the baseline to check them against. If your HR behaves oddly on a given day, trust how you feel over the number.",
     "zones": {
-      "basis": "Resting HR 56, age 48. Max HR estimated 174 (Tanaka, 208 - 0.7 x age). Bands via Karvonen on a heart-rate reserve of 118. MAF (180 - age) independently gives 132, which sits inside the Zone 2 band below -- two different methods agreeing is why this ceiling is trustworthy enough to train on.",
+      "basis": "Lab-tested VO2max and lactate threshold assessment -- Revolutions in Fitness, Nov 13 2026 (Test ID 179536485654). VO2 Max 41.71 mL/kg/min (4179 mL/min absolute); MLSS/lactate threshold 9:04 min/mi (6.62 mph, 86.9% of VO2max). Replaces the earlier Tanaka/Karvonen/MAF formula estimate -- these bpm and pace targets are directly measured, not derived from age and resting HR. Retest recommended in 3-4 months (~Mar 2027) as fitness shifts the zones.",
       "talk_test": "Zone 2 means full sentences without gasping. If you can only manage short phrases you are in Zone 3, which is the most common way endurance athletes ruin an easy day. If you can sing, you are too easy -- but that costs you far less than being too hard.",
-      "ceiling": "140 bpm — the hard cap for every run labelled Easy. Walk the hills to stay under it.",
+      "ceiling": "14:58 min/mi pace — run slower than this to stay in Zone 2 (lab-tested boundary). Heart rate climbing toward 138 bpm (the Zone 3 target) is the same signal.",
+      "fatmax": "15:19 min/mi is the single pace that maximizes fat oxidation (365 kcal/hr). The crossover to primarily-carb fuel happens at 12:02 min/mi; by 12:52 min/mi you're burning 90 g carb/hr (110 kcal/hr) -- useful for calibrating the gut-training carb targets in Fueling.",
       "bands": [
         {
           "zone": "Z1 — recovery",
-          "bpm": "115–126",
-          "feel": "Absurdly easy, almost strolling",
-          "use": "Monday back-to-back if the legs are hammered"
+          "bpm": "Target 89",
+          "pace": "19:50–30:08 min/mi (target 23:57)",
+          "rpe": "1–4, very light",
+          "feel": "Minimal effort, comfortable conversation, breathing not heavy. Sustainable all day.",
+          "use": "Warm-ups, gentle recovery."
         },
         {
-          "zone": "Z2 — easy / aerobic",
-          "bpm": "126–138",
-          "feel": "Full sentences, nose-breathing possible",
-          "use": "Tuesday, Monday, and every long run. Most of your mileage lives here"
+          "zone": "Z2 — endurance",
+          "bpm": "Target 106",
+          "pace": "14:58–19:50 min/mi (target 17:01)",
+          "rpe": "5–6, moderate",
+          "feel": "Breathing and HR up, short sentences possible, some effort felt. Sustainable 2–4 hr.",
+          "use": "Tuesday, Monday, and every long run — most of your mileage lives here. Includes Fatmax (15:19/mi)."
         },
         {
-          "zone": "Z3 — steady",
-          "bpm": "138–150",
-          "feel": "Short phrases only",
-          "use": "Mostly a trap. Only for tempo work on Wednesdays"
+          "zone": "Z3 — tempo",
+          "bpm": "Target 138",
+          "pace": "10:19–12:07 min/mi (target 11:09)",
+          "rpe": "7, hard",
+          "feel": "Really working, brief phrases only, legs feel it. Sustainable 60–90 min.",
+          "use": "Wednesday tempo. You cross from fat to carb as primary fuel partway through this zone (12:02/mi)."
         },
         {
-          "zone": "Z4 — threshold",
-          "bpm": "150–162",
-          "feel": "A few words at a time",
-          "use": "Wednesday tempo and race-pace efforts"
+          "zone": "Z4 — threshold (MLSS/LT)",
+          "bpm": "Target 159",
+          "pace": "8:32–9:38 min/mi (target 9:03)",
+          "rpe": "8, very hard",
+          "feel": "Working significantly, speech labored. Sustainable 30–60 min.",
+          "use": "Wednesday tempo-hard and race-pace efforts. This is your measured lactate threshold."
         },
         {
-          "zone": "Z5 — hard",
-          "bpm": "162–174",
-          "feel": "No talking",
-          "use": "Hill repeat efforts only. Never on an easy day"
+          "zone": "Z5 — VO2 (CP6)",
+          "bpm": "Target max",
+          "pace": "7:05–8:07 min/mi (target 7:43)",
+          "rpe": "8–9, very very hard",
+          "feel": "Near maximal, a word at a time, lungs and legs burning after 60–90 sec.",
+          "use": "Hill repeat / VO2 interval efforts. Sustainable 3–7 min."
+        },
+        {
+          "zone": "Z6 — anaerobic capacity",
+          "bpm": "HR lags the effort, doesn't catch up",
+          "pace": "Not pace-defined",
+          "rpe": "9–10",
+          "feel": "Severe leg fatigue, conversation impossible.",
+          "use": "Short efforts, 30 sec–3 min."
+        },
+        {
+          "zone": "Z6/7 — neuromuscular power",
+          "bpm": "HR lags the effort, doesn't catch up",
+          "pace": "Not pace-defined",
+          "rpe": "Maximum",
+          "feel": "All-out, 100% effort.",
+          "use": "5–20 sec max — strides, sprints."
         }
       ]
     },

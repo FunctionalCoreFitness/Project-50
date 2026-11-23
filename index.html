@@ -442,6 +442,7 @@
   .co-zt th{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.05em;font-size:.72rem;color:var(--steel);text-align:left;padding:5px 8px;border-bottom:1px solid var(--line)}
   .co-zt td{padding:6px 8px;border-bottom:1px solid var(--hair);color:#3a4049;line-height:1.4;vertical-align:top}
   .co-zt td.co-bpm{font-family:'Bebas Neue',sans-serif;font-size:1.05rem;color:var(--navy);white-space:nowrap}
+  .co-zt td.co-pace{font-family:'Bebas Neue',sans-serif;font-size:1.05rem;color:var(--steel);white-space:nowrap}
   .co-zt tr.co-z2 td{background:rgba(74,126,199,.07)}
   .co-talk{font-size:.85rem;color:#3a4049;line-height:1.5;background:var(--hair);border-radius:3px;padding:9px 12px;margin-bottom:6px}
   .co-skill{border:1px solid var(--line);border-radius:4px;background:var(--card);padding:12px 14px;margin-bottom:8px}
@@ -2113,7 +2114,7 @@ function render(d){
   if(co){
     const z=co.zones||{};
     const rows=(z.bands||[]).map(b=>`<tr class="${/Z2/.test(b.zone)?'co-z2':''}">
-      <td>${b.zone}</td><td class="co-bpm">${b.bpm}</td><td>${b.feel}</td><td>${b.use}</td></tr>`).join('');
+      <td>${b.zone}</td><td class="co-bpm">${b.bpm}</td><td class="co-pace">${b.pace||''}</td><td>${b.feel}</td><td>${b.use}</td></tr>`).join('');
     const skills=(co.skills||[]).map(s=>`<div class="co-skill">
       <div class="co-sn">${s.name}</div>
       <div class="co-cue">${s.cue}</div>
@@ -2124,7 +2125,7 @@ function render(d){
     coHtml=`
     <section id="coaching">
       <div class="sec-head"><div class="sec-title">${co.headline||'Coaching'}</div>
-        <div class="sec-meta">Effort, form and the two ultra skills<br>Zones from your own resting HR</div></div>
+        <div class="sec-meta">Effort, form and the two ultra skills<br>Zones from your lab VO2max/lactate test</div></div>
       <div class="co-lede">${co.principle||''}</div>
       ${z.ceiling?`<div class="co-ceiling">
         <div class="co-ceiling-h">Easy-run ceiling</div>
@@ -2132,7 +2133,8 @@ function render(d){
         <div class="co-ceiling-n">${String(z.ceiling).split('—').slice(1).join('—').trim()}</div>
       </div>`:''}
       ${z.talk_test?`<div class="co-talk"><b>Talk test (the primary control):</b> ${z.talk_test}</div>`:''}
-      ${rows?`<table class="co-zt"><tr><th>Zone</th><th>BPM</th><th>Feel</th><th>Use</th></tr>${rows}</table>`:''}
+      ${z.fatmax?`<div class="co-talk"><b>Fat vs. carb fuel:</b> ${z.fatmax}</div>`:''}
+      ${rows?`<table class="co-zt"><tr><th>Zone</th><th>BPM</th><th>Pace</th><th>Feel</th><th>Use</th></tr>${rows}</table>`:''}
       ${z.basis?`<div class="co-caveat"><b>How these were derived:</b> ${z.basis}</div>`:''}
       ${co.caveat?`<div class="co-caveat">${co.caveat}</div>`:''}
       ${skills?`<div class="co-sub">Form and skills</div>${skills}`:''}
