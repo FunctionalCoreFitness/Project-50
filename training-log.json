@@ -1,6 +1,6 @@
 {
   "meta": {
-    "program": "Project 50 -- Year 1 of 2, Blocks 1-2 of 8",
+    "program": "Project 50 -- Year 1 of 2, Blocks 1-3 of 8",
     "blocks": [
       {
         "block": 1,
@@ -16,10 +16,19 @@
         "window": "Sep 21 - Dec 13 2026",
         "goal": "Peacock Gap Trail Run half marathon (Sat Dec 5 2026, San Rafael) -- rung 1 of the race ladder",
         "adds": "weekly vertical targets to 3,600 ft, back-to-back long/easy pairing, gut training to 65 g/hr, strength held at maintenance"
+      },
+      {
+        "block": 3,
+        "name": "Trail Marathon Build",
+        "weeks": "25-39",
+        "window": "Dec 14 2026 - Mar 28 2027",
+        "goal": "Trail marathon (target Sat Mar 20 2027) -- rung 2 of the race ladder, the bridge from the half to the 50K",
+        "adds": "long run from 10 to 20 mi (capped by time, not just distance), vertical to 4,000 ft/wk with one 2,000+ ft long run, fuelling to 50-70 g/hr for 4-5 hours, Wednesday quality paced from the Nov 13 lab zones, strength held at maintenance"
       }
     ],
     "entry_assumption": "Block 1 peaks at 21 mi/wk with an 11 mi long run in week 10, then week 11 eases to 18 mi and week 12 deloads to 12 mi for the retest. Block 2 opens at 20.5 mi with a 9 mi long run - below the Block 1 peak on purpose - and builds over 7 build weeks to 29 mi and a 13 mi long run in week 19, then tapers four weeks into Dec 5. No build week grows more than 10% over the previous peak. If you arrive at week 13 short of 18 mi/wk or an 8 mi long run, repeat week 13 before advancing and accept a smaller peak.",
-    "_comment": "EDIT VIA workout.html, not by hand. done=true/false, notes are free text, panel.results[i].value holds the logged number as a string."
+    "_comment": "EDIT VIA workout.html, not by hand. done=true/false, notes are free text, panel.results[i].value holds the logged number as a string.",
+    "block3_entry": "Block 3 opens at 22 mi with a 10 mi long run - below the Block 2 peak (29 mi, 13 mi long run) on purpose, two weeks after Peacock Gap. It builds in 3-up/1-down cycles to 34 mi and a 20 mi dress rehearsal in week 35, then tapers three weeks into the race. No build week grows more than 10% over the previous peak. If the half or the holidays leave you short of 18 mi/wk by week 25, repeat week 25 before advancing and drop the peak long run to 18 mi."
   },
   "recovery_tools": [
     {
@@ -2859,6 +2868,1811 @@
           {
             "label": "Carbs/hr tolerated without GI distress",
             "unit": "g/hr",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "week": 25,
+      "block": 3,
+      "type": "training",
+      "phase": "Re-entry",
+      "week_start": "2026-12-14",
+      "days": {
+        "Mon": {
+          "day_full": "Monday",
+          "pillar": "Mobility",
+          "plan": [
+            "RUN: Easy 3 mi -- first run of Block 3. Easy and short; Sunday was a recovery day.",
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s",
+            "BJJ: technique and drilling only today -- no hard rolling. Run first if you can; the tired legs from yesterday are the point of the Monday run."
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 3
+        },
+        "Tue": {
+          "day_full": "Tuesday",
+          "pillar": "Strength",
+          "plan": [
+            "RUN: Easy 4 mi -- Zone 2 -- slower than 14:58/mi, HR under ~138 (lab zones). Truly easy around strength",
+            "Strength A -- Lower / Posterior Chain (MAINTENANCE volume)",
+            "Trap Bar Deadlift 3x5 @ ~80% of Block 1 top set",
+            "Bulgarian Split Squat 3x8/leg",
+            "Single-Leg RDL 2x10/leg",
+            "Eccentric Calf Raise 3x12 (4s lower) -- downhill armor",
+            "Pallof Press 3x12/side"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
+          "done": false,
+          "notes": "",
+          "mileage": 4
+        },
+        "Wed": {
+          "day_full": "Wednesday",
+          "pillar": "Mobility",
+          "plan": [
+            "RUN: Quality 5 mi -- 6 x 60s strides on flat, otherwise easy",
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s",
+            "BJJ: run first -- Wednesday's run is the week's quality session and it stays the priority. Technique and drilling on the mat tonight, roll light."
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 5
+        },
+        "Thu": {
+          "day_full": "Thursday",
+          "pillar": "Foundation",
+          "plan": [
+            "BJJ + Foundation Core",
+            "Core circuit x3: Plank 60s, Bird Dog 15/side, Side Plank 40s/side, Hollow Hold 20s"
+          ],
+          "recovery": "Wim Hof 15 min + Normatec boots 20-30 min (legs)",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Fri": {
+          "day_full": "Friday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength B -- Upper / Pull (MAINTENANCE volume)",
+            "Pull-up 3x6",
+            "DB Bench Press 3x8",
+            "Single-Arm DB Row 3x10/side",
+            "DB Overhead Press 3x8",
+            "Farmer Carry 3x50m / Dead Bug 3x12/side",
+            "Zone 2 cardio finisher, 20 min (bike/row -- keep it off the legs)"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min + Power Plate 10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Sat": {
+          "day_full": "Saturday",
+          "pillar": "Longevity",
+          "plan": [
+            "Teach + Low-Med Rolling",
+            "Longevity: Sauna 20 min",
+            "Cold plunge 2-3 min",
+            "Red light 10 min"
+          ],
+          "recovery": "Wim Hof 15 min + Sauna 20-30 min + Cold Plunge 2-4 min + Red Light 15 min + Venom wraps 15 min ea",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Sun": {
+          "day_full": "Sunday",
+          "pillar": "Foundation",
+          "plan": [
+            "RUN: Long 10 mi, trail, easy conversational pace (or 2h45, whichever comes first)",
+            "First long run of Block 3. If anything is still sore from Peacock Gap, cut to 8 mi -- there is no prize for forcing it.",
+            "FUEL: 50 g/hr. Start from what worked at Peacock Gap."
+          ],
+          "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
+          "done": false,
+          "notes": "",
+          "mileage": 10
+        }
+      },
+      "weekly_mileage": 22,
+      "weekly_vert_ft": 2000,
+      "carbs_per_hr_target": 50,
+      "mileage_note": "Week 25 (Dec 14): 22 mi, ~2,000 ft. Block 3 opens below the Block 2 peak on purpose (29 mi). Two weeks after the half: rebuild rhythm, not fitness."
+    },
+    {
+      "week": 26,
+      "block": 3,
+      "type": "training",
+      "phase": "Build + Back-to-Back",
+      "week_start": "2026-12-21",
+      "days": {
+        "Mon": {
+          "day_full": "Monday",
+          "pillar": "Mobility",
+          "plan": [
+            "RUN: Easy 3.5 mi -- ON TIRED LEGS from yesterday's long run. Deliberately slow; this is the back-to-back stimulus",
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s",
+            "BJJ: technique and drilling only today -- no hard rolling. Run first if you can; the tired legs from yesterday are the point of the Monday run."
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 3.5
+        },
+        "Tue": {
+          "day_full": "Tuesday",
+          "pillar": "Strength",
+          "plan": [
+            "RUN: Easy 4.5 mi -- Zone 2 -- slower than 14:58/mi, HR under ~138 (lab zones). Truly easy around strength",
+            "Strength A -- Lower / Posterior Chain (MAINTENANCE volume)",
+            "Trap Bar Deadlift 3x5 @ ~80% of Block 1 top set",
+            "Bulgarian Split Squat 3x8/leg",
+            "Single-Leg RDL 2x10/leg",
+            "Eccentric Calf Raise 3x12 (4s lower) -- downhill armor",
+            "Pallof Press 3x12/side"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
+          "done": false,
+          "notes": "",
+          "mileage": 4.5
+        },
+        "Wed": {
+          "day_full": "Wednesday",
+          "pillar": "Mobility",
+          "plan": [
+            "RUN: Quality 5.5 mi -- Hills 6 x 2 min @ hard-but-repeatable (Z4), jog down",
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s",
+            "BJJ: run first -- Wednesday's run is the week's quality session and it stays the priority. Technique and drilling on the mat tonight, roll light."
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 5.5
+        },
+        "Thu": {
+          "day_full": "Thursday",
+          "pillar": "Foundation",
+          "plan": [
+            "BJJ + Foundation Core",
+            "Core circuit x3: Plank 60s, Bird Dog 15/side, Side Plank 40s/side, Hollow Hold 20s"
+          ],
+          "recovery": "Wim Hof 15 min + Normatec boots 20-30 min (legs)",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Fri": {
+          "day_full": "Friday",
+          "pillar": "Strength",
+          "plan": [
+            "CHRISTMAS -- if the gym is closed, move Strength B to Thursday after BJJ or skip it this week",
+            "Strength B -- Upper / Pull (MAINTENANCE volume)",
+            "Pull-up 3x6",
+            "DB Bench Press 3x8",
+            "Single-Arm DB Row 3x10/side",
+            "DB Overhead Press 3x8",
+            "Farmer Carry 3x50m / Dead Bug 3x12/side",
+            "Zone 2 cardio finisher, 20 min (bike/row -- keep it off the legs)"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min + Power Plate 10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Sat": {
+          "day_full": "Saturday",
+          "pillar": "Longevity",
+          "plan": [
+            "Teach + Low-Med Rolling",
+            "Longevity: Sauna 20 min",
+            "Cold plunge 2-3 min",
+            "Red light 10 min"
+          ],
+          "recovery": "Wim Hof 15 min + Sauna 20-30 min + Cold Plunge 2-4 min + Red Light 15 min + Venom wraps 15 min ea",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Sun": {
+          "day_full": "Sunday",
+          "pillar": "Foundation",
+          "plan": [
+            "RUN: Long 11 mi, trail, easy conversational pace (or 3h, whichever comes first)",
+            "Christmas week. Any familiar trail is fine; consistency beats location.",
+            "FUEL: 55 g/hr. Marathon fuelling starts here -- note what your stomach says after hour 2."
+          ],
+          "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
+          "done": false,
+          "notes": "",
+          "mileage": 11
+        }
+      },
+      "weekly_mileage": 24.5,
+      "weekly_vert_ft": 2400,
+      "carbs_per_hr_target": 55,
+      "mileage_note": "Week 26 (Dec 21): 24.5 mi, ~2,400 ft. Christmas week. Fri Dec 25: if the gym is closed, do Strength B Thursday or skip it -- the runs matter more this block."
+    },
+    {
+      "week": 27,
+      "block": 3,
+      "type": "training",
+      "phase": "Build + Back-to-Back",
+      "week_start": "2026-12-28",
+      "days": {
+        "Mon": {
+          "day_full": "Monday",
+          "pillar": "Mobility",
+          "plan": [
+            "RUN: Easy 4 mi -- ON TIRED LEGS from yesterday's long run. Deliberately slow; this is the back-to-back stimulus",
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s",
+            "BJJ: technique and drilling only today -- no hard rolling. Run first if you can; the tired legs from yesterday are the point of the Monday run."
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 4
+        },
+        "Tue": {
+          "day_full": "Tuesday",
+          "pillar": "Strength",
+          "plan": [
+            "RUN: Easy 5 mi -- Zone 2 -- slower than 14:58/mi, HR under ~138 (lab zones). Truly easy around strength",
+            "Strength A -- Lower / Posterior Chain (MAINTENANCE volume)",
+            "Trap Bar Deadlift 3x5 @ ~80% of Block 1 top set",
+            "Bulgarian Split Squat 3x8/leg",
+            "Single-Leg RDL 2x10/leg",
+            "Eccentric Calf Raise 3x12 (4s lower) -- downhill armor",
+            "Pallof Press 3x12/side"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
+          "done": false,
+          "notes": "",
+          "mileage": 5
+        },
+        "Wed": {
+          "day_full": "Wednesday",
+          "pillar": "Mobility",
+          "plan": [
+            "RUN: Quality 6 mi -- Tempo 20 min on rolling trail in Z3 (10:19-12:07/mi)",
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s",
+            "BJJ: run first -- Wednesday's run is the week's quality session and it stays the priority. Technique and drilling on the mat tonight, roll light."
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 6
+        },
+        "Thu": {
+          "day_full": "Thursday",
+          "pillar": "Foundation",
+          "plan": [
+            "BJJ + Foundation Core",
+            "Core circuit x3: Plank 60s, Bird Dog 15/side, Side Plank 40s/side, Hollow Hold 20s"
+          ],
+          "recovery": "Wim Hof 15 min + Normatec boots 20-30 min (legs)",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Fri": {
+          "day_full": "Friday",
+          "pillar": "Strength",
+          "plan": [
+            "NEW YEAR'S DAY -- if the gym is closed, move Strength B to Thursday after BJJ or skip it this week",
+            "Strength B -- Upper / Pull (MAINTENANCE volume)",
+            "Pull-up 3x6",
+            "DB Bench Press 3x8",
+            "Single-Arm DB Row 3x10/side",
+            "DB Overhead Press 3x8",
+            "Farmer Carry 3x50m / Dead Bug 3x12/side",
+            "Zone 2 cardio finisher, 20 min (bike/row -- keep it off the legs)"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min + Power Plate 10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Sat": {
+          "day_full": "Saturday",
+          "pillar": "Longevity",
+          "plan": [
+            "Teach + Low-Med Rolling",
+            "Longevity: Sauna 20 min",
+            "Cold plunge 2-3 min",
+            "Red light 10 min"
+          ],
+          "recovery": "Wim Hof 15 min + Sauna 20-30 min + Cold Plunge 2-4 min + Red Light 15 min + Venom wraps 15 min ea",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Sun": {
+          "day_full": "Sunday",
+          "pillar": "Foundation",
+          "plan": [
+            "RUN: Long 12 mi, trail, easy conversational pace (or 3h15, whichever comes first)",
+            "Power-hike anything steep. Practise the hike-run switch now; it is how marathons and ultras are run on trail.",
+            "FUEL: 55 g/hr."
+          ],
+          "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
+          "done": false,
+          "notes": "",
+          "mileage": 12
+        }
+      },
+      "weekly_mileage": 27,
+      "weekly_vert_ft": 2800,
+      "carbs_per_hr_target": 55,
+      "mileage_note": "Week 27 (Dec 28): 27 mi, ~2,800 ft. New Year week. Fri Jan 1: same rule as Christmas -- move or skip Strength B, keep the Sunday long run."
+    },
+    {
+      "week": 28,
+      "block": 3,
+      "type": "training",
+      "phase": "Cutback",
+      "week_start": "2027-01-04",
+      "days": {
+        "Mon": {
+          "day_full": "Monday",
+          "pillar": "Mobility",
+          "plan": [
+            "RUN: Easy 3 mi -- ON TIRED LEGS from yesterday's long run. Deliberately slow; this is the back-to-back stimulus",
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s",
+            "BJJ: technique and drilling only today -- no hard rolling. Run first if you can; the tired legs from yesterday are the point of the Monday run."
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 3
+        },
+        "Tue": {
+          "day_full": "Tuesday",
+          "pillar": "Strength",
+          "plan": [
+            "RUN: Easy 4 mi -- Zone 2 -- slower than 14:58/mi, HR under ~138 (lab zones). Truly easy around strength",
+            "Strength A -- Lower / Posterior Chain (MAINTENANCE volume)",
+            "Trap Bar Deadlift 3x5 @ ~80% of Block 1 top set",
+            "Bulgarian Split Squat 3x8/leg",
+            "Single-Leg RDL 2x10/leg",
+            "Eccentric Calf Raise 3x12 (4s lower) -- downhill armor",
+            "Pallof Press 3x12/side"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
+          "done": false,
+          "notes": "",
+          "mileage": 4
+        },
+        "Wed": {
+          "day_full": "Wednesday",
+          "pillar": "Mobility",
+          "plan": [
+            "RUN: Quality 5 mi -- 6 x 60s strides on flat, otherwise easy",
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s",
+            "BJJ: run first -- Wednesday's run is the week's quality session and it stays the priority. Technique and drilling on the mat tonight, roll light."
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 5
+        },
+        "Thu": {
+          "day_full": "Thursday",
+          "pillar": "Foundation",
+          "plan": [
+            "BJJ + Foundation Core",
+            "Core circuit x3: Plank 60s, Bird Dog 15/side, Side Plank 40s/side, Hollow Hold 20s"
+          ],
+          "recovery": "Wim Hof 15 min + Normatec boots 20-30 min (legs)",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Fri": {
+          "day_full": "Friday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength B -- Upper / Pull (MAINTENANCE volume)",
+            "Pull-up 3x6",
+            "DB Bench Press 3x8",
+            "Single-Arm DB Row 3x10/side",
+            "DB Overhead Press 3x8",
+            "Farmer Carry 3x50m / Dead Bug 3x12/side",
+            "Zone 2 cardio finisher, 20 min (bike/row -- keep it off the legs)"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min + Power Plate 10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Sat": {
+          "day_full": "Saturday",
+          "pillar": "Longevity",
+          "plan": [
+            "Teach + Low-Med Rolling",
+            "Longevity: Sauna 20 min",
+            "Cold plunge 2-3 min",
+            "Red light 10 min"
+          ],
+          "recovery": "Wim Hof 15 min + Sauna 20-30 min + Cold Plunge 2-4 min + Red Light 15 min + Venom wraps 15 min ea",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Sun": {
+          "day_full": "Sunday",
+          "pillar": "Foundation",
+          "plan": [
+            "RUN: Long 8 mi, trail, easy conversational pace",
+            "Easy cutback long run. Legs should feel better by the end than the start.",
+            "FUEL: 45 g/hr. Absorption practice, not a test."
+          ],
+          "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
+          "done": false,
+          "notes": "",
+          "mileage": 8
+        }
+      },
+      "weekly_mileage": 20,
+      "weekly_vert_ft": 1600,
+      "carbs_per_hr_target": 45,
+      "mileage_note": "Week 28 (Jan 4): 20 mi, ~1,600 ft. Cutback ~25%. This is where the first three weeks turn into fitness."
+    },
+    {
+      "week": 29,
+      "block": 3,
+      "type": "training",
+      "phase": "Build + Back-to-Back",
+      "week_start": "2027-01-11",
+      "days": {
+        "Mon": {
+          "day_full": "Monday",
+          "pillar": "Mobility",
+          "plan": [
+            "RUN: Easy 4 mi -- ON TIRED LEGS from yesterday's long run. Deliberately slow; this is the back-to-back stimulus",
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s",
+            "BJJ: technique and drilling only today -- no hard rolling. Run first if you can; the tired legs from yesterday are the point of the Monday run."
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 4
+        },
+        "Tue": {
+          "day_full": "Tuesday",
+          "pillar": "Strength",
+          "plan": [
+            "RUN: Easy 5 mi -- Zone 2 -- slower than 14:58/mi, HR under ~138 (lab zones). Truly easy around strength",
+            "Strength A -- Lower / Posterior Chain (MAINTENANCE volume)",
+            "Trap Bar Deadlift 3x5 @ ~80% of Block 1 top set",
+            "Bulgarian Split Squat 3x8/leg",
+            "Single-Leg RDL 2x10/leg",
+            "Eccentric Calf Raise 3x12 (4s lower) -- downhill armor",
+            "Pallof Press 3x12/side"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
+          "done": false,
+          "notes": "",
+          "mileage": 5
+        },
+        "Wed": {
+          "day_full": "Wednesday",
+          "pillar": "Mobility",
+          "plan": [
+            "RUN: Quality 6 mi -- Hills 5 x 3 min at Z4 threshold effort (target ~9:03/mi pace on flat), jog down",
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s",
+            "BJJ: run first -- Wednesday's run is the week's quality session and it stays the priority. Technique and drilling on the mat tonight, roll light."
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 6
+        },
+        "Thu": {
+          "day_full": "Thursday",
+          "pillar": "Foundation",
+          "plan": [
+            "BJJ + Foundation Core",
+            "Core circuit x3: Plank 60s, Bird Dog 15/side, Side Plank 40s/side, Hollow Hold 20s"
+          ],
+          "recovery": "Wim Hof 15 min + Normatec boots 20-30 min (legs)",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Fri": {
+          "day_full": "Friday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength B -- Upper / Pull (MAINTENANCE volume)",
+            "Pull-up 3x6",
+            "DB Bench Press 3x8",
+            "Single-Arm DB Row 3x10/side",
+            "DB Overhead Press 3x8",
+            "Farmer Carry 3x50m / Dead Bug 3x12/side",
+            "Zone 2 cardio finisher, 20 min (bike/row -- keep it off the legs)"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min + Power Plate 10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Sat": {
+          "day_full": "Saturday",
+          "pillar": "Longevity",
+          "plan": [
+            "Teach + Low-Med Rolling",
+            "Longevity: Sauna 20 min",
+            "Cold plunge 2-3 min",
+            "Red light 10 min"
+          ],
+          "recovery": "Wim Hof 15 min + Sauna 20-30 min + Cold Plunge 2-4 min + Red Light 15 min + Venom wraps 15 min ea",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Sun": {
+          "day_full": "Sunday",
+          "pillar": "Foundation",
+          "plan": [
+            "RUN: Long 14 mi, trail, easy conversational pace (or 3h45, whichever comes first)",
+            "LONGEST RUN OF THE PROJECT -- one mile past the Block 2 peak.",
+            "FUEL: 60 g/hr from the first 30 min. Carry it all; don't rely on stops."
+          ],
+          "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
+          "done": false,
+          "notes": "",
+          "mileage": 14
+        }
+      },
+      "weekly_mileage": 29,
+      "weekly_vert_ft": 3000,
+      "carbs_per_hr_target": 60,
+      "mileage_note": "Week 29 (Jan 11): 29 mi, ~3,000 ft. First week past the Block 2 peak: 29 mi matches it, and the long run goes to 14."
+    },
+    {
+      "week": 30,
+      "block": 3,
+      "type": "training",
+      "phase": "Build + Back-to-Back",
+      "week_start": "2027-01-18",
+      "days": {
+        "Mon": {
+          "day_full": "Monday",
+          "pillar": "Mobility",
+          "plan": [
+            "RUN: Easy 4.5 mi -- ON TIRED LEGS from yesterday's long run. Deliberately slow; this is the back-to-back stimulus",
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s",
+            "BJJ: technique and drilling only today -- no hard rolling. Run first if you can; the tired legs from yesterday are the point of the Monday run."
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 4.5
+        },
+        "Tue": {
+          "day_full": "Tuesday",
+          "pillar": "Strength",
+          "plan": [
+            "RUN: Easy 5 mi -- Zone 2 -- slower than 14:58/mi, HR under ~138 (lab zones). Truly easy around strength",
+            "Strength A -- Lower / Posterior Chain (MAINTENANCE volume)",
+            "Trap Bar Deadlift 3x5 @ ~80% of Block 1 top set",
+            "Bulgarian Split Squat 3x8/leg",
+            "Single-Leg RDL 2x10/leg",
+            "Eccentric Calf Raise 3x12 (4s lower) -- downhill armor",
+            "Pallof Press 3x12/side"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
+          "done": false,
+          "notes": "",
+          "mileage": 5
+        },
+        "Wed": {
+          "day_full": "Wednesday",
+          "pillar": "Mobility",
+          "plan": [
+            "RUN: Quality 6.5 mi -- Tempo 2 x 15 min in Z3, 3 min easy between",
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s",
+            "BJJ: run first -- Wednesday's run is the week's quality session and it stays the priority. Technique and drilling on the mat tonight, roll light."
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 6.5
+        },
+        "Thu": {
+          "day_full": "Thursday",
+          "pillar": "Foundation",
+          "plan": [
+            "BJJ + Foundation Core",
+            "Core circuit x3: Plank 60s, Bird Dog 15/side, Side Plank 40s/side, Hollow Hold 20s"
+          ],
+          "recovery": "Wim Hof 15 min + Normatec boots 20-30 min (legs)",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Fri": {
+          "day_full": "Friday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength B -- Upper / Pull (MAINTENANCE volume)",
+            "Pull-up 3x6",
+            "DB Bench Press 3x8",
+            "Single-Arm DB Row 3x10/side",
+            "DB Overhead Press 3x8",
+            "Farmer Carry 3x50m / Dead Bug 3x12/side",
+            "Zone 2 cardio finisher, 20 min (bike/row -- keep it off the legs)"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min + Power Plate 10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Sat": {
+          "day_full": "Saturday",
+          "pillar": "Longevity",
+          "plan": [
+            "Teach + Low-Med Rolling",
+            "Longevity: Sauna 20 min",
+            "Cold plunge 2-3 min",
+            "Red light 10 min"
+          ],
+          "recovery": "Wim Hof 15 min + Sauna 20-30 min + Cold Plunge 2-4 min + Red Light 15 min + Venom wraps 15 min ea",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Sun": {
+          "day_full": "Sunday",
+          "pillar": "Foundation",
+          "plan": [
+            "RUN: Long 15 mi, trail, easy conversational pace (or 4h, whichever comes first)",
+            "Wear the vest you plan to race in. Find the chafe points now, not on race day.",
+            "FUEL: 60 g/hr."
+          ],
+          "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
+          "done": false,
+          "notes": "",
+          "mileage": 15
+        }
+      },
+      "weekly_mileage": 31,
+      "weekly_vert_ft": 3400,
+      "carbs_per_hr_target": 60,
+      "mileage_note": "Week 30 (Jan 18): 31 mi, ~3,400 ft. 31 mi: within 10% of the 29 mi peak."
+    },
+    {
+      "week": 31,
+      "block": 3,
+      "type": "training",
+      "phase": "Build + Back-to-Back",
+      "week_start": "2027-01-25",
+      "days": {
+        "Mon": {
+          "day_full": "Monday",
+          "pillar": "Mobility",
+          "plan": [
+            "RUN: Easy 4.5 mi -- ON TIRED LEGS from yesterday's long run. Deliberately slow; this is the back-to-back stimulus",
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s",
+            "BJJ: technique and drilling only today -- no hard rolling. Run first if you can; the tired legs from yesterday are the point of the Monday run."
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 4.5
+        },
+        "Tue": {
+          "day_full": "Tuesday",
+          "pillar": "Strength",
+          "plan": [
+            "RUN: Easy 5.5 mi -- Zone 2 -- slower than 14:58/mi, HR under ~138 (lab zones). Truly easy around strength",
+            "Strength A -- Lower / Posterior Chain (MAINTENANCE volume)",
+            "Trap Bar Deadlift 3x5 @ ~80% of Block 1 top set",
+            "Bulgarian Split Squat 3x8/leg",
+            "Single-Leg RDL 2x10/leg",
+            "Eccentric Calf Raise 3x12 (4s lower) -- downhill armor",
+            "Pallof Press 3x12/side"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
+          "done": false,
+          "notes": "",
+          "mileage": 5.5
+        },
+        "Wed": {
+          "day_full": "Wednesday",
+          "pillar": "Mobility",
+          "plan": [
+            "RUN: Quality 6 mi -- Hills 6 x 3 min at Z4, jog down",
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s",
+            "BJJ: run first -- Wednesday's run is the week's quality session and it stays the priority. Technique and drilling on the mat tonight, roll light."
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 6
+        },
+        "Thu": {
+          "day_full": "Thursday",
+          "pillar": "Foundation",
+          "plan": [
+            "BJJ + Foundation Core",
+            "Core circuit x3: Plank 60s, Bird Dog 15/side, Side Plank 40s/side, Hollow Hold 20s"
+          ],
+          "recovery": "Wim Hof 15 min + Normatec boots 20-30 min (legs)",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Fri": {
+          "day_full": "Friday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength B -- Upper / Pull (MAINTENANCE volume)",
+            "Pull-up 3x6",
+            "DB Bench Press 3x8",
+            "Single-Arm DB Row 3x10/side",
+            "DB Overhead Press 3x8",
+            "Farmer Carry 3x50m / Dead Bug 3x12/side",
+            "Zone 2 cardio finisher, 20 min (bike/row -- keep it off the legs)"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min + Power Plate 10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Sat": {
+          "day_full": "Saturday",
+          "pillar": "Longevity",
+          "plan": [
+            "Teach + Low-Med Rolling",
+            "Longevity: Sauna 20 min",
+            "Cold plunge 2-3 min",
+            "Red light 10 min"
+          ],
+          "recovery": "Wim Hof 15 min + Sauna 20-30 min + Cold Plunge 2-4 min + Red Light 15 min + Venom wraps 15 min ea",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Sun": {
+          "day_full": "Sunday",
+          "pillar": "Foundation",
+          "plan": [
+            "RUN: Long 16 mi, trail, easy conversational pace (or 4h15, whichever comes first)",
+            "Hours 3-4 are new territory. Note energy, mood and stomach at each hour -- this is the data the marathon plan is built on.",
+            "FUEL: 65 g/hr."
+          ],
+          "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
+          "done": false,
+          "notes": "",
+          "mileage": 16
+        }
+      },
+      "weekly_mileage": 32,
+      "weekly_vert_ft": 3600,
+      "carbs_per_hr_target": 65,
+      "mileage_note": "Week 31 (Jan 25): 32 mi, ~3,600 ft. 32 mi. Roll lighter Thursday and Saturday -- the long run jumps again next build."
+    },
+    {
+      "week": 32,
+      "block": 3,
+      "type": "training",
+      "phase": "Cutback",
+      "week_start": "2027-02-01",
+      "days": {
+        "Mon": {
+          "day_full": "Monday",
+          "pillar": "Mobility",
+          "plan": [
+            "RUN: Easy 3.5 mi -- ON TIRED LEGS from yesterday's long run. Deliberately slow; this is the back-to-back stimulus",
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s",
+            "BJJ: technique and drilling only today -- no hard rolling. Run first if you can; the tired legs from yesterday are the point of the Monday run."
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 3.5
+        },
+        "Tue": {
+          "day_full": "Tuesday",
+          "pillar": "Strength",
+          "plan": [
+            "RUN: Easy 4.5 mi -- Zone 2 -- slower than 14:58/mi, HR under ~138 (lab zones). Truly easy around strength",
+            "Strength A -- Lower / Posterior Chain (MAINTENANCE volume)",
+            "Trap Bar Deadlift 3x5 @ ~80% of Block 1 top set",
+            "Bulgarian Split Squat 3x8/leg",
+            "Single-Leg RDL 2x10/leg",
+            "Eccentric Calf Raise 3x12 (4s lower) -- downhill armor",
+            "Pallof Press 3x12/side"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
+          "done": false,
+          "notes": "",
+          "mileage": 4.5
+        },
+        "Wed": {
+          "day_full": "Wednesday",
+          "pillar": "Mobility",
+          "plan": [
+            "RUN: Quality 5 mi -- 6 x 60s strides on flat, otherwise easy",
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s",
+            "BJJ: run first -- Wednesday's run is the week's quality session and it stays the priority. Technique and drilling on the mat tonight, roll light."
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 5
+        },
+        "Thu": {
+          "day_full": "Thursday",
+          "pillar": "Foundation",
+          "plan": [
+            "BJJ + Foundation Core",
+            "Core circuit x3: Plank 60s, Bird Dog 15/side, Side Plank 40s/side, Hollow Hold 20s"
+          ],
+          "recovery": "Wim Hof 15 min + Normatec boots 20-30 min (legs)",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Fri": {
+          "day_full": "Friday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength B -- Upper / Pull (MAINTENANCE volume)",
+            "Pull-up 3x6",
+            "DB Bench Press 3x8",
+            "Single-Arm DB Row 3x10/side",
+            "DB Overhead Press 3x8",
+            "Farmer Carry 3x50m / Dead Bug 3x12/side",
+            "Zone 2 cardio finisher, 20 min (bike/row -- keep it off the legs)"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min + Power Plate 10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Sat": {
+          "day_full": "Saturday",
+          "pillar": "Longevity",
+          "plan": [
+            "Teach + Low-Med Rolling",
+            "Longevity: Sauna 20 min",
+            "Cold plunge 2-3 min",
+            "Red light 10 min"
+          ],
+          "recovery": "Wim Hof 15 min + Sauna 20-30 min + Cold Plunge 2-4 min + Red Light 15 min + Venom wraps 15 min ea",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Sun": {
+          "day_full": "Sunday",
+          "pillar": "Foundation",
+          "plan": [
+            "RUN: Long 10 mi, trail, easy conversational pace",
+            "Cutback. Easy and short; recovery is the training this week.",
+            "FUEL: 50 g/hr."
+          ],
+          "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
+          "done": false,
+          "notes": "",
+          "mileage": 10
+        }
+      },
+      "weekly_mileage": 23,
+      "weekly_vert_ft": 2000,
+      "carbs_per_hr_target": 50,
+      "mileage_note": "Week 32 (Feb 1): 23 mi, ~2,000 ft. Cutback ~28% before the final three big weeks."
+    },
+    {
+      "week": 33,
+      "block": 3,
+      "type": "training",
+      "phase": "Build + Back-to-Back",
+      "week_start": "2027-02-08",
+      "days": {
+        "Mon": {
+          "day_full": "Monday",
+          "pillar": "Mobility",
+          "plan": [
+            "RUN: Easy 5 mi -- ON TIRED LEGS from yesterday's long run. Deliberately slow; this is the back-to-back stimulus",
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s",
+            "BJJ: technique and drilling only today -- no hard rolling. Run first if you can; the tired legs from yesterday are the point of the Monday run."
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 5
+        },
+        "Tue": {
+          "day_full": "Tuesday",
+          "pillar": "Strength",
+          "plan": [
+            "RUN: Easy 5.5 mi -- Zone 2 -- slower than 14:58/mi, HR under ~138 (lab zones). Truly easy around strength",
+            "Strength A -- Lower / Posterior Chain (MAINTENANCE volume)",
+            "Trap Bar Deadlift 3x5 @ ~80% of Block 1 top set",
+            "Bulgarian Split Squat 3x8/leg",
+            "Single-Leg RDL 2x10/leg",
+            "Eccentric Calf Raise 3x12 (4s lower) -- downhill armor",
+            "Pallof Press 3x12/side"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
+          "done": false,
+          "notes": "",
+          "mileage": 5.5
+        },
+        "Wed": {
+          "day_full": "Wednesday",
+          "pillar": "Mobility",
+          "plan": [
+            "RUN: Quality 5.5 mi -- Marathon effort 3 x 12 min on rolling trail (low Z3), 3 min easy between",
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s",
+            "BJJ: run first -- Wednesday's run is the week's quality session and it stays the priority. Technique and drilling on the mat tonight, roll light."
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 5.5
+        },
+        "Thu": {
+          "day_full": "Thursday",
+          "pillar": "Foundation",
+          "plan": [
+            "BJJ + Foundation Core",
+            "Core circuit x3: Plank 60s, Bird Dog 15/side, Side Plank 40s/side, Hollow Hold 20s"
+          ],
+          "recovery": "Wim Hof 15 min + Normatec boots 20-30 min (legs)",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Fri": {
+          "day_full": "Friday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength B -- Upper / Pull (MAINTENANCE volume)",
+            "Pull-up 3x6",
+            "DB Bench Press 3x8",
+            "Single-Arm DB Row 3x10/side",
+            "DB Overhead Press 3x8",
+            "Farmer Carry 3x50m / Dead Bug 3x12/side",
+            "Zone 2 cardio finisher, 20 min (bike/row -- keep it off the legs)"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min + Power Plate 10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Sat": {
+          "day_full": "Saturday",
+          "pillar": "Longevity",
+          "plan": [
+            "Teach + Low-Med Rolling",
+            "Longevity: Sauna 20 min",
+            "Cold plunge 2-3 min",
+            "Red light 10 min"
+          ],
+          "recovery": "Wim Hof 15 min + Sauna 20-30 min + Cold Plunge 2-4 min + Red Light 15 min + Venom wraps 15 min ea",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Sun": {
+          "day_full": "Sunday",
+          "pillar": "Foundation",
+          "plan": [
+            "RUN: Long 17 mi, trail, easy conversational pace (or 4h30, whichever comes first)",
+            "Race vest with 1 L. Monday's 5 mi on tired legs is the back-to-back test that matters most this block.",
+            "FUEL: 65 g/hr."
+          ],
+          "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
+          "done": false,
+          "notes": "",
+          "mileage": 17
+        }
+      },
+      "weekly_mileage": 33,
+      "weekly_vert_ft": 3800,
+      "carbs_per_hr_target": 65,
+      "mileage_note": "Week 33 (Feb 8): 33 mi, ~3,800 ft. 33 mi -- the marathon gate's weekly volume (30-33 mi/wk)."
+    },
+    {
+      "week": 34,
+      "block": 3,
+      "type": "training",
+      "phase": "Build + Back-to-Back",
+      "week_start": "2027-02-15",
+      "days": {
+        "Mon": {
+          "day_full": "Monday",
+          "pillar": "Mobility",
+          "plan": [
+            "RUN: Easy 4.5 mi -- ON TIRED LEGS from yesterday's long run. Deliberately slow; this is the back-to-back stimulus",
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s",
+            "BJJ: technique and drilling only today -- no hard rolling. Run first if you can; the tired legs from yesterday are the point of the Monday run."
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 4.5
+        },
+        "Tue": {
+          "day_full": "Tuesday",
+          "pillar": "Strength",
+          "plan": [
+            "RUN: Easy 5.5 mi -- Zone 2 -- slower than 14:58/mi, HR under ~138 (lab zones). Truly easy around strength",
+            "Strength A -- Lower / Posterior Chain (MAINTENANCE volume)",
+            "Trap Bar Deadlift 3x5 @ ~80% of Block 1 top set",
+            "Bulgarian Split Squat 3x8/leg",
+            "Single-Leg RDL 2x10/leg",
+            "Eccentric Calf Raise 3x12 (4s lower) -- downhill armor",
+            "Pallof Press 3x12/side"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
+          "done": false,
+          "notes": "",
+          "mileage": 5.5
+        },
+        "Wed": {
+          "day_full": "Wednesday",
+          "pillar": "Mobility",
+          "plan": [
+            "RUN: Quality 5 mi -- Tempo 30 min continuous in Z3",
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s",
+            "BJJ: run first -- Wednesday's run is the week's quality session and it stays the priority. Technique and drilling on the mat tonight, roll light."
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 5
+        },
+        "Thu": {
+          "day_full": "Thursday",
+          "pillar": "Foundation",
+          "plan": [
+            "BJJ + Foundation Core",
+            "Core circuit x3: Plank 60s, Bird Dog 15/side, Side Plank 40s/side, Hollow Hold 20s"
+          ],
+          "recovery": "Wim Hof 15 min + Normatec boots 20-30 min (legs)",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Fri": {
+          "day_full": "Friday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength B -- Upper / Pull (MAINTENANCE volume)",
+            "Pull-up 3x6",
+            "DB Bench Press 3x8",
+            "Single-Arm DB Row 3x10/side",
+            "DB Overhead Press 3x8",
+            "Farmer Carry 3x50m / Dead Bug 3x12/side",
+            "Zone 2 cardio finisher, 20 min (bike/row -- keep it off the legs)"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min + Power Plate 10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Sat": {
+          "day_full": "Saturday",
+          "pillar": "Longevity",
+          "plan": [
+            "Teach + Low-Med Rolling",
+            "Longevity: Sauna 20 min",
+            "Cold plunge 2-3 min",
+            "Red light 10 min"
+          ],
+          "recovery": "Wim Hof 15 min + Sauna 20-30 min + Cold Plunge 2-4 min + Red Light 15 min + Venom wraps 15 min ea",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Sun": {
+          "day_full": "Sunday",
+          "pillar": "Foundation",
+          "plan": [
+            "RUN: Long 18 mi, trail, with 2,000+ ft of climbing (or 4h45, whichever comes first)",
+            "The vert gate for the marathon: one long run with 2,000+ ft. Hike the climbs on purpose, run the downs relaxed.",
+            "FUEL: 70 g/hr -- the top of the marathon range. Back off to 60 if the stomach complains, and log it."
+          ],
+          "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
+          "done": false,
+          "notes": "",
+          "mileage": 18
+        }
+      },
+      "weekly_mileage": 33,
+      "weekly_vert_ft": 4000,
+      "carbs_per_hr_target": 70,
+      "mileage_note": "Week 34 (Feb 15): 33 mi, ~4,000 ft. 33 mi, ~4,000 ft: the biggest vert week of the block."
+    },
+    {
+      "week": 35,
+      "block": 3,
+      "type": "training",
+      "phase": "Peak",
+      "week_start": "2027-02-22",
+      "days": {
+        "Mon": {
+          "day_full": "Monday",
+          "pillar": "Mobility",
+          "plan": [
+            "RUN: Easy 4 mi -- ON TIRED LEGS from yesterday's long run. Deliberately slow; this is the back-to-back stimulus",
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s",
+            "BJJ: technique and drilling only today -- no hard rolling. Run first if you can; the tired legs from yesterday are the point of the Monday run."
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 4
+        },
+        "Tue": {
+          "day_full": "Tuesday",
+          "pillar": "Strength",
+          "plan": [
+            "RUN: Easy 5.5 mi -- Zone 2 -- slower than 14:58/mi, HR under ~138 (lab zones). Truly easy around strength",
+            "Strength A -- Lower / Posterior Chain (MAINTENANCE volume)",
+            "Trap Bar Deadlift 3x5 @ ~80% of Block 1 top set",
+            "Bulgarian Split Squat 3x8/leg",
+            "Single-Leg RDL 2x10/leg",
+            "Eccentric Calf Raise 3x12 (4s lower) -- downhill armor",
+            "Pallof Press 3x12/side"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
+          "done": false,
+          "notes": "",
+          "mileage": 5.5
+        },
+        "Wed": {
+          "day_full": "Wednesday",
+          "pillar": "Mobility",
+          "plan": [
+            "RUN: Quality 4.5 mi -- Easy 4.5 mi + 6 x 60s strides -- keep the midweek light around the peak long run",
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s",
+            "BJJ: run first -- Wednesday's run is the week's quality session and it stays the priority. Technique and drilling on the mat tonight, roll light."
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 4.5
+        },
+        "Thu": {
+          "day_full": "Thursday",
+          "pillar": "Foundation",
+          "plan": [
+            "BJJ + Foundation Core",
+            "Core circuit x3: Plank 60s, Bird Dog 15/side, Side Plank 40s/side, Hollow Hold 20s"
+          ],
+          "recovery": "Wim Hof 15 min + Normatec boots 20-30 min (legs)",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Fri": {
+          "day_full": "Friday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength B -- Upper / Pull (MAINTENANCE volume)",
+            "Pull-up 3x6",
+            "DB Bench Press 3x8",
+            "Single-Arm DB Row 3x10/side",
+            "DB Overhead Press 3x8",
+            "Farmer Carry 3x50m / Dead Bug 3x12/side",
+            "Zone 2 cardio finisher, 20 min (bike/row -- keep it off the legs)"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min + Power Plate 10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Sat": {
+          "day_full": "Saturday",
+          "pillar": "Longevity",
+          "plan": [
+            "Teach + Low-Med Rolling",
+            "Longevity: Sauna 20 min",
+            "Cold plunge 2-3 min",
+            "Red light 10 min"
+          ],
+          "recovery": "Wim Hof 15 min + Sauna 20-30 min + Cold Plunge 2-4 min + Red Light 15 min + Venom wraps 15 min ea",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Sun": {
+          "day_full": "Sunday",
+          "pillar": "Foundation",
+          "plan": [
+            "RUN: Long 20 mi, trail, easy conversational pace (or 5h15, whichever comes first)",
+            "PEAK LONG RUN -- full dress rehearsal: race shoes, race vest (1 L), race breakfast, race fuel, chafe strategy.",
+            "FUEL: 50-70 g/hr for the whole run. Whatever works here is your marathon plan. Nothing new after this."
+          ],
+          "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
+          "done": false,
+          "notes": "",
+          "mileage": 20
+        }
+      },
+      "weekly_mileage": 34,
+      "weekly_vert_ft": 3800,
+      "carbs_per_hr_target": 70,
+      "mileage_note": "Week 35 (Feb 22): 34 mi, ~3,800 ft. PEAK: 34 mi with a 20 mi dress rehearsal. Four weeks out, which leaves a full three-week taper."
+    },
+    {
+      "week": 36,
+      "block": 3,
+      "type": "training",
+      "phase": "Taper",
+      "week_start": "2027-03-01",
+      "days": {
+        "Mon": {
+          "day_full": "Monday",
+          "pillar": "Mobility",
+          "plan": [
+            "RUN: Easy 4 mi -- ON TIRED LEGS from yesterday's long run. Deliberately slow; this is the back-to-back stimulus",
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s",
+            "BJJ: technique and drilling only today -- no hard rolling. Run first if you can; the tired legs from yesterday are the point of the Monday run."
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 4
+        },
+        "Tue": {
+          "day_full": "Tuesday",
+          "pillar": "Strength",
+          "plan": [
+            "RUN: Easy 5 mi -- Zone 2 -- slower than 14:58/mi, HR under ~138 (lab zones). Truly easy around strength",
+            "Strength A -- Lower / Posterior Chain (MAINTENANCE volume)",
+            "Trap Bar Deadlift 3x5 @ ~80% of Block 1 top set",
+            "Bulgarian Split Squat 3x8/leg",
+            "Single-Leg RDL 2x10/leg",
+            "Eccentric Calf Raise 3x12 (4s lower) -- downhill armor",
+            "Pallof Press 3x12/side"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
+          "done": false,
+          "notes": "",
+          "mileage": 5
+        },
+        "Wed": {
+          "day_full": "Wednesday",
+          "pillar": "Mobility",
+          "plan": [
+            "RUN: Quality 5 mi -- Marathon effort 2 x 15 min on terrain like the course",
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s",
+            "BJJ: run first -- Wednesday's run is the week's quality session and it stays the priority. Technique and drilling on the mat tonight, roll light."
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 5
+        },
+        "Thu": {
+          "day_full": "Thursday",
+          "pillar": "Foundation",
+          "plan": [
+            "BJJ + Foundation Core",
+            "Core circuit x3: Plank 60s, Bird Dog 15/side, Side Plank 40s/side, Hollow Hold 20s"
+          ],
+          "recovery": "Wim Hof 15 min + Normatec boots 20-30 min (legs)",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Fri": {
+          "day_full": "Friday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength B -- Upper / Pull (MAINTENANCE volume)",
+            "Pull-up 3x6",
+            "DB Bench Press 3x8",
+            "Single-Arm DB Row 3x10/side",
+            "DB Overhead Press 3x8",
+            "Farmer Carry 3x50m / Dead Bug 3x12/side",
+            "Zone 2 cardio finisher, 20 min (bike/row -- keep it off the legs)"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min + Power Plate 10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Sat": {
+          "day_full": "Saturday",
+          "pillar": "Longevity",
+          "plan": [
+            "Teach + Low-Med Rolling",
+            "Longevity: Sauna 20 min",
+            "Cold plunge 2-3 min",
+            "Red light 10 min"
+          ],
+          "recovery": "Wim Hof 15 min + Sauna 20-30 min + Cold Plunge 2-4 min + Red Light 15 min + Venom wraps 15 min ea",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Sun": {
+          "day_full": "Sunday",
+          "pillar": "Foundation",
+          "plan": [
+            "RUN: Long 12 mi, trail, easy conversational pace (taper)",
+            "First taper week. Volume drops; keep the effort honest on Wednesday.",
+            "FUEL: 60 g/hr at the planned race mix."
+          ],
+          "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
+          "done": false,
+          "notes": "",
+          "mileage": 12
+        }
+      },
+      "weekly_mileage": 26,
+      "weekly_vert_ft": 2400,
+      "carbs_per_hr_target": 60,
+      "mileage_note": "Week 36 (Mar 1): 26 mi, ~2,400 ft. Taper begins: 26 mi (about -25%)."
+    },
+    {
+      "week": 37,
+      "block": 3,
+      "type": "training",
+      "phase": "Taper",
+      "week_start": "2027-03-08",
+      "days": {
+        "Mon": {
+          "day_full": "Monday",
+          "pillar": "Mobility",
+          "plan": [
+            "RUN: Easy 4 mi -- ON TIRED LEGS from yesterday's long run. Deliberately slow; this is the back-to-back stimulus",
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s",
+            "BJJ: technique and drilling only today -- no hard rolling. Run first if you can; the tired legs from yesterday are the point of the Monday run."
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 4
+        },
+        "Tue": {
+          "day_full": "Tuesday",
+          "pillar": "Strength",
+          "plan": [
+            "RUN: Easy 5 mi -- Zone 2 -- slower than 14:58/mi, HR under ~138 (lab zones). Truly easy around strength",
+            "Strength A -- Lower (TAPER: movement quality only, no load PRs)",
+            "Trap Bar Deadlift 2x5 @ light-moderate",
+            "Bulgarian Split Squat 2x8/leg (bodyweight or light)",
+            "Eccentric Calf Raise 2x12 (4s lower)",
+            "Pallof Press 2x12/side"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
+          "done": false,
+          "notes": "",
+          "mileage": 5
+        },
+        "Wed": {
+          "day_full": "Wednesday",
+          "pillar": "Mobility",
+          "plan": [
+            "RUN: Quality 5 mi -- Race-pace 3 x 8 min on terrain like the course",
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s",
+            "BJJ: run first -- Wednesday's run is the week's quality session and it stays the priority. Technique and drilling on the mat tonight, roll light."
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 5
+        },
+        "Thu": {
+          "day_full": "Thursday",
+          "pillar": "Foundation",
+          "plan": [
+            "BJJ + Foundation Core",
+            "Core circuit x3: Plank 60s, Bird Dog 15/side, Side Plank 40s/side, Hollow Hold 20s"
+          ],
+          "recovery": "Wim Hof 15 min + Normatec boots 20-30 min (legs)",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Fri": {
+          "day_full": "Friday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength B -- Upper (TAPER: light, keep the groove)",
+            "Pull-up 2x5",
+            "DB Bench Press 2x8 (light)",
+            "Single-Arm DB Row 2x10/side",
+            "Dead Bug 2x12/side",
+            "Zone 2 cardio finisher, 20 min (bike/row -- keep it off the legs)"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min + Power Plate 10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Sat": {
+          "day_full": "Saturday",
+          "pillar": "Longevity",
+          "plan": [
+            "Teach + Low-Med Rolling",
+            "Longevity: Sauna 20 min",
+            "Cold plunge 2-3 min",
+            "Red light 10 min"
+          ],
+          "recovery": "Wim Hof 15 min + Sauna 20-30 min + Cold Plunge 2-4 min + Red Light 15 min + Venom wraps 15 min ea",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Sun": {
+          "day_full": "Sunday",
+          "pillar": "Foundation",
+          "plan": [
+            "RUN: Long 8 mi, trail -- middle third at marathon effort",
+            "Legs should start feeling springy. Familiar ground only.",
+            "FUEL: 60 g/hr at race effort -- confirms the plan works at intensity, not just at easy pace."
+          ],
+          "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
+          "done": false,
+          "notes": "",
+          "mileage": 8
+        }
+      },
+      "weekly_mileage": 22,
+      "weekly_vert_ft": 1600,
+      "carbs_per_hr_target": 60,
+      "mileage_note": "Week 37 (Mar 8): 22 mi, ~1,600 ft. Taper continues: 22 mi. Nothing new this close in."
+    },
+    {
+      "week": 38,
+      "block": 3,
+      "type": "training",
+      "phase": "Race Week",
+      "week_start": "2027-03-15",
+      "days": {
+        "Mon": {
+          "day_full": "Monday",
+          "pillar": "Mobility",
+          "plan": [
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s"
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Tue": {
+          "day_full": "Tuesday",
+          "pillar": "Strength",
+          "plan": [
+            "RUN: Easy 4 mi -- Zone 2, HR under 140. Truly easy around strength",
+            "Strength A -- Lower (TAPER: movement quality only, no load PRs)",
+            "Trap Bar Deadlift 2x5 @ light-moderate",
+            "Bulgarian Split Squat 2x8/leg (bodyweight or light)",
+            "Eccentric Calf Raise 2x12 (4s lower)",
+            "Pallof Press 2x12/side"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min (legs)",
+          "done": false,
+          "notes": "",
+          "mileage": 4
+        },
+        "Wed": {
+          "day_full": "Wednesday",
+          "pillar": "Mobility",
+          "plan": [
+            "RUN: Quality 3 mi -- 4 x 90s at race effort, then done. Stay well within yourself.",
+            "BJJ + Mobility Flow (15-20 min)",
+            "Hip 90/90 hold 90s/side",
+            "T-spine open book 10/side",
+            "Couch stretch 60s/side",
+            "Deep squat hold 90s",
+            "BJJ: race is Saturday. Technique and drilling only, no rolling -- and skip the mat entirely if the legs feel anything but fresh. Nothing you gain Wednesday helps Saturday."
+          ],
+          "recovery": "Wim Hof 15 min + Stick Mobility (in flow) + RAD balls 5-10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 3
+        },
+        "Thu": {
+          "day_full": "Thursday",
+          "pillar": "Foundation",
+          "plan": [
+            "BJJ + Foundation Core",
+            "Core circuit x3: Plank 60s, Bird Dog 15/side, Side Plank 40s/side, Hollow Hold 20s"
+          ],
+          "recovery": "Wim Hof 15 min + Normatec boots 20-30 min (legs)",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Fri": {
+          "day_full": "Friday",
+          "pillar": "Strength",
+          "plan": [
+            "Strength B -- Upper (TAPER: light, keep the groove)",
+            "Pull-up 2x5",
+            "DB Bench Press 2x8 (light)",
+            "Single-Arm DB Row 2x10/side",
+            "Dead Bug 2x12/side",
+            "Zone 2 cardio finisher, 20 min (bike/row -- keep it off the legs)"
+          ],
+          "recovery": "Wim Hof 15 min + Red Light 15 min + EMS stim 20 min + Power Plate 10 min",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        },
+        "Sat": {
+          "day_full": "Saturday",
+          "pillar": "Foundation",
+          "plan": [
+            "RACE DAY -- Trail Marathon (26.2 mi) -- rung 2 of the race ladder. Race TBD: register by Dec 22 (SPASM Lake Chabot is the lead)",
+            "Breakfast 2.5-3 hr pre, exactly as rehearsed in week 35",
+            "Fuel 50-70 g carb/hr from the first 30 min -- do not wait for hunger. This race is about hours 4 and 5",
+            "Hike every climb from the start. The first half should feel too easy",
+            "Goal: finish without walking from exhaustion. Time is irrelevant"
+          ],
+          "recovery": "Post-race: walk 10 min, refuel within 30-60 min, Normatec + easy evening",
+          "done": false,
+          "notes": "",
+          "mileage": 26.2
+        },
+        "Sun": {
+          "day_full": "Sunday",
+          "pillar": "Longevity",
+          "plan": [
+            "Recovery walk or easy hike 30-45 min",
+            "Sauna + cold plunge",
+            "Log the race: fuel taken, GI comfort, what broke, what to change for the 50K"
+          ],
+          "recovery": "Wim Hof 20 min (extended) + Normatec boots 20-30 min (legs) + Steam 15-20 min",
+          "done": false,
+          "notes": "",
+          "mileage": 0
+        }
+      },
+      "weekly_mileage": 33.2,
+      "weekly_vert_ft": 0,
+      "carbs_per_hr_target": 60,
+      "mileage_note": "Week 38 (Mar 15): 33.2 mi with the race. Trail marathon Saturday Mar 20 -- rung 2 of the race ladder."
+    },
+    {
+      "week": 39,
+      "block": 3,
+      "type": "deload_retest",
+      "label": "Week 39 -- Recovery + Retest (Block 3 close-out)",
+      "week_start": "2027-03-22",
+      "deload_days": {
+        "Mon": {
+          "day_full": "Monday",
+          "pillar": "Recovery",
+          "done": false,
+          "notes": ""
+        },
+        "Tue": {
+          "day_full": "Tuesday",
+          "pillar": "Mobility",
+          "done": false,
+          "notes": ""
+        },
+        "Wed": {
+          "day_full": "Wednesday",
+          "pillar": "Recovery",
+          "done": false,
+          "notes": ""
+        },
+        "Thu": {
+          "day_full": "Thursday",
+          "pillar": "Mobility",
+          "done": false,
+          "notes": ""
+        },
+        "Fri": {
+          "day_full": "Friday",
+          "pillar": "Strength",
+          "done": false,
+          "notes": ""
+        },
+        "Sat": {
+          "day_full": "Saturday",
+          "pillar": "Longevity",
+          "done": false,
+          "notes": ""
+        },
+        "Sun": {
+          "day_full": "Sunday",
+          "pillar": "Foundation",
+          "done": false,
+          "notes": ""
+        }
+      },
+      "panel": {
+        "date": "",
+        "bodyweight_lb": null,
+        "notes": "",
+        "results": [
+          {
+            "label": "Push-ups, max in 1 min",
+            "unit": "reps",
+            "value": ""
+          },
+          {
+            "label": "Goblet squat, max reps in 1 min (note DB weight used)",
+            "unit": "reps / lb",
+            "value": ""
+          },
+          {
+            "label": "Farmer carry, max distance in 60 sec (note load used)",
+            "unit": "distance / lb",
+            "value": ""
+          },
+          {
+            "label": "Plank hold, max time",
+            "unit": "min:sec",
+            "value": ""
+          },
+          {
+            "label": "1-mile run, time",
+            "unit": "min:sec",
+            "value": ""
+          },
+          {
+            "label": "Sit-and-reach",
+            "unit": "cm",
+            "value": ""
+          },
+          {
+            "label": "Ankle dorsiflexion, knee-to-wall (L / R)",
+            "unit": "cm / cm",
+            "value": ""
+          },
+          {
+            "label": "Resting heart rate, morning avg",
+            "unit": "bpm",
+            "value": ""
+          },
+          {
+            "label": "Average sleep, past 7 nights",
+            "unit": "hrs",
+            "value": ""
+          },
+          {
+            "label": "Trail Marathon finish time",
+            "unit": "h:mm:ss",
+            "value": ""
+          },
+          {
+            "label": "Longest run this block",
+            "unit": "mi",
+            "value": ""
+          },
+          {
+            "label": "Biggest vert week",
+            "unit": "ft",
+            "value": ""
+          },
+          {
+            "label": "Carbs/hr tolerated without GI distress",
+            "unit": "g/hr",
+            "value": ""
+          },
+          {
+            "label": "Lab VO2 max retest (book for early April, once legs recover)",
+            "unit": "mL/kg/min",
             "value": ""
           }
         ]

@@ -1436,8 +1436,8 @@ function render(d){
     const calMonth=(d.calendar&&d.calendar.months||[]).find(m=>m.month===shortMonth);
     const r=raceNow&&raceNow.rung;
     const days=r&&r.target_date?daysUntil(r.target_date):null;
-    if(r && days!==null && days>=0 && days<=42){
-      cf={month:thisMonth,pillar:calMonth?calMonth.pillar:'',focus:`${r.dist} in ${days} day${days===1?'':'s'}`,
+    if(r && days!==null && days>=0 && days<=120){
+      cf={month:thisMonth,pillar:calMonth?calMonth.pillar:'',focus:days===0?`${r.dist} — RACE DAY`:`${r.dist} in ${days} day${days===1?'':'s'}`,
           why:[r.candidates?r.candidates.split('--')[0].trim():'', r.goal||''].filter(Boolean).join(' — ')};
     } else if(calMonth){
       cf={month:thisMonth,pillar:calMonth.pillar,focus:`${calMonth.pillar} month`,why:cf&&cf.focus?`Last set focus (${cf.month}): ${cf.focus}. Update current_focus in data.json for ${thisMonth}.`:''};
@@ -2312,7 +2312,7 @@ function windowEnd(str){
   return new Date(Number(year), mi+1, 0); // last day of that month
 }
 function rungEnd(r){
-  if(r.target_date) return new Date(r.target_date+'T00:00:00');
+  if(r.target_date) return new Date(r.target_date+'T23:59:59');   // race day counts as "still ahead" until it's over
   return windowEnd(r.target_window || r.window || r.year);
 }
 function currentRaceTarget(d, now){
