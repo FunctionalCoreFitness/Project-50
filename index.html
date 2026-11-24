@@ -1090,11 +1090,32 @@ Promise.all([
   fetchHealthKitLatest(),
   fetchHealthKitHistory(30)
 ])
-  .then(([d, log, live, hist])=>{ applyHealthKitOverlay(d, live); window.__LOG__=log; window.__LIVE__=live; window.__HIST__=hist; render(d); })
+  .then(([d, log, live, hist])=>{ applyHealthKitOverlay(d, live); fillLongestRun(d, log); window.__LOG__=log; window.__LIVE__=live; window.__HIST__=hist; render(d); })
   .catch(err=>{
     document.getElementById('main').innerHTML =
       `<p style="padding:40px 0;color:var(--red)">Couldn't load data.json (${err.message}). Make sure it's in the same folder and you're serving over http, not opening the file directly.</p>`;
   });
+
+// Longest Run has no manual entry; take it from days marked done in the
+// training log so the metric (and the 20-mile win) keep themselves current.
+function fillLongestRun(d, log){
+  if(!log || !Array.isArray(log.weeks)) return;
+  let best=null;
+  for(const w of log.weeks){
+    const days=w.days||{}; const order=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+    for(const k of Object.keys(days)){
+      const day=days[k]; if(!day||!day.done||!(day.mileage>0)) continue;
+      let date=null;
+      if(w.week_start){ const i=order.indexOf(k); if(i>=0){ const dt=new Date(w.week_start+'T00:00:00'); dt.setDate(dt.getDate()+i); date=dt.toISOString().slice(0,10); } }
+      if(!best||day.mileage>best.value) best={value:day.mileage,date};
+    }
+  }
+  if(!best) return;
+  for(const c of d.categories||[]){
+    const m=(c.metrics||[]).find(x=>x.name==='Longest Run');
+    if(m && (m.value===null||m.value===undefined||best.value>m.value)){ m.value=best.value; if(best.date) m.date=best.date; m.note=m.note||'From runs marked done in the training log.'; }
+  }
+}
 
 function render(d){
   const a=d.athlete;
@@ -1173,7 +1194,7 @@ function render(d){
     {k:'VO₂ Max',v:fmt(vo2?.value)},
     {k:'HRV',v:fmt(hrv?.value),u:'ms'},
     {k:'Resting HR',v:fmt(rhr?.value),u:'bpm'},
-    {k:'Race Target',v:raceNow?raceNow.text:a.current_race_target},
+    {k:'Race Target',v:raceNow?raceNow.text+((r=>{ if(!r||!r.target_date) return ''; const n=daysUntil(r.target_date); return n>0?` · ${n} day${n===1?'':'s'} out`:n===0?' · RACE DAY':''; })(raceNow.rung)):a.current_race_target},
     {k:'Days to 50',v:dLeft.toLocaleString()},
   ];
   let html = `
@@ -1406,7 +1427,22 @@ function render(d){
     </section>`;
 
   // ---- Current Focus ----
-  const cf=d.current_focus;
+  let cf=d.current_focus;
+  (function(){
+    const now=new Date();
+    const thisMonth=now.toLocaleDateString('en-US',{month:'long',year:'numeric'});
+    const shortMonth=now.toLocaleDateString('en-US',{month:'short',year:'numeric'});
+    if(cf && (cf.month===thisMonth || cf.month===shortMonth)) return;   // up to date
+    const calMonth=(d.calendar&&d.calendar.months||[]).find(m=>m.month===shortMonth);
+    const r=raceNow&&raceNow.rung;
+    const days=r&&r.target_date?daysUntil(r.target_date):null;
+    if(r && days!==null && days>=0 && days<=42){
+      cf={month:thisMonth,pillar:calMonth?calMonth.pillar:'',focus:`${r.dist} in ${days} day${days===1?'':'s'}`,
+          why:[r.candidates?r.candidates.split('--')[0].trim():'', r.goal||''].filter(Boolean).join(' — ')};
+    } else if(calMonth){
+      cf={month:thisMonth,pillar:calMonth.pillar,focus:`${calMonth.pillar} month`,why:cf&&cf.focus?`Last set focus (${cf.month}): ${cf.focus}. Update current_focus in data.json for ${thisMonth}.`:''};
+    }
+  })();
   const focusHtml = cf ? `
     <section id="focus">
       <div class="focus-card">
@@ -1417,7 +1453,17 @@ function render(d){
     </section>` : '';
 
   // ---- Wins ----
-  const wins=d.wins||[];
+  // A win with a "check" unlocks itself as soon as the metric it names
+  // meets the target, dated to that metric's measurement.
+  const metricByName=name=>{ for(const c of d.categories||[]){ const m=(c.metrics||[]).find(x=>x.name===name); if(m) return m; } return null; };
+  const winMet=c=>{
+    const m=metricByName(c.metric); if(!m) return null;
+    const v=m.value; if(v===null||v===undefined) return null;
+    const ok = c.op==='>'?v>c.value : c.op==='>='?v>=c.value : c.op==='<'?v<c.value : c.op==='<='?v<=c.value
+             : c.op==='in_range'?m.flag!=='out' : c.op==='logged'?true : false;
+    return ok ? (m.date||'Achieved') : null;
+  };
+  const wins=(d.wins||[]).map(w=>{ if(w.achieved||!w.check) return w; const when=winMet(w.check); return when?{...w,achieved:true,date:when,auto:true}:w; });
   const winsHtml = wins.length ? `
     <section id="wins">
       <div class="sec-head"><div class="sec-title">Wins</div>
@@ -1428,7 +1474,7 @@ function render(d){
             <div class="win-ico">${w.achieved?'\u{1F3C6}':'○'}</div>
             <div class="win-body">
               <div class="win-label">${w.label}</div>
-              <div class="win-sub">${w.achieved?(w.date||'Achieved'):'Goal'}</div>
+              <div class="win-sub">${w.achieved?(w.date||'Achieved'):(w.check&&w.check.value!==undefined?`Goal · ${w.check.metric} ${({'>=':'≥','<=':'≤'})[w.check.op]||w.check.op} ${w.check.value}`:'Goal')}</div>
             </div>
           </div>`).join('')}
       </div>

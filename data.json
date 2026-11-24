@@ -2722,27 +2722,33 @@
     },
     {
       "label": "First 10 strict pull-ups",
-      "achieved": false
+      "achieved": false,
+      "check": { "metric": "Pull-ups", "op": ">=", "value": 10 }
     },
     {
       "label": "VO2 max above 40",
-      "achieved": false
+      "achieved": false,
+      "check": { "metric": "VO2 Max", "op": ">", "value": 40 }
     },
     {
       "label": "Body fat under 22%",
-      "achieved": false
+      "achieved": false,
+      "check": { "metric": "DEXA Body Fat", "op": "<", "value": 22 }
     },
     {
       "label": "ApoB in range",
-      "achieved": false
+      "achieved": false,
+      "check": { "metric": "ApoB", "op": "in_range" }
     },
     {
       "label": "First trail 10K",
-      "achieved": false
+      "achieved": false,
+      "check": { "metric": "Trail 10K", "op": "logged" }
     },
     {
       "label": "First 20-mile run",
-      "achieved": false
+      "achieved": false,
+      "check": { "metric": "Longest Run", "op": ">=", "value": 20 }
     },
     {
       "label": "50K finish",
